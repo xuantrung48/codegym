@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Currency Converter</title>
+		<style>
+			html {
+				background-color: #1e4b85;
+			}
+
+			body {
+				width: 90%;
+				margin: 100px auto;
+				border: 5px solid black;
+				background-color: orange;
+				border-radius: 50px;
+			}
+
+			h1 {
+				color: #2357cf;
+				text-transform: uppercase;
+				text-align: center;
+				margin: 40px;
+				padding: 5px;
+				font-size: 50px;
+			}
+
+			table {
+				width: 90%;
+				margin: 50px auto;
+			}
+
+			td {
+				text-align: center;
+			}
+
+			button {
+				background-color: #2357cf;
+				color: white;
+				font-weight: bold;
+				border: 1px solid #03fcdf;
+				padding: 5px;
+				border-radius: 8px;
+			}
+
+			h2 {
+				text-align: center;
+				color: blue;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Currency Converter</h1>
+		<table>
+			<tr>
+				<th>Amount</th>
+				<th>From Currency</th>
+				<th>To Currency</th>
+			</tr>
+			<tr>
+				<td><input type="number" id="amount"></td>
+				<td>
+					<select id="fromcurrency">
+						<option>USD</option>
+						<option>VND</option>
+					</select>
+				</td>
+				<td>
+					<select id="tocurrency">
+						<option>VND</option>
+						<option>USD</option>
+					</select>
+				</td>
+				<td><button type="button" onclick="convert()">Convert</button></td>
+			</tr>
+		</table>
+		<h2 id="result"></h2>
+		<script>
+			function convert(){
+				var amount = document.getElementById("amount").value;
+				var a = document.getElementById("fromcurrency").value;
+				var b = document.getElementById("tocurrency").value;
+				var money;
+				
+				if (a == "USD" && b == "VND"){
+					money = amount * 23200;
+				} else if (a == "VND" && b == "USD"){
+					money = amount / 23200;
+				} else {
+					money = amount;
+				}
+				
+				document.getElementById("result").innerHTML ="Result: " + amount + a +" = " + money + b;
+			}
+		</script>
+	</body>
+</html>
