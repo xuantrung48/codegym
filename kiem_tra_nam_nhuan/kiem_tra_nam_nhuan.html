@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Ứng dụng kiểm tra năm nhuận</title>
+	</head>
+	<body>
+		<h1>Ứng dụng kiểm tra năm nhuận</h1>
+		<p>Nhập vào số năm: <input type="number" id="year"> <input type="button" onclick="check();" value="Kiểm tra"></p>
+		<p id="result"></p>
+		<script>
+			function check() {
+				var a = document.getElementById("year").value;
+
+				if ((a % 4 == 0 && a % 100 != 0) || (a % 100 == 0 && a % 400 == 0)) {
+					document.getElementById("result").innerHTML = "Năm " + a + " là năm nhuận";
+				} else {
+					document.getElementById("result").innerHTML = "Năm " + a + " là năm không nhuận.";
+				}
+			}
+		</script>
+	</body>
+</html>
