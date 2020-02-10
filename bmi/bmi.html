@@ -1,0 +1,42 @@
+<html>
+	<head>
+		<title>Ứng dụng tính chỉ số khối cơ thể - BMI</title>
+	</head>
+	<body>
+		<h1>Ứng dụng tính chỉ số khối cơ thể - BMI</h1>
+		<table>
+			<tr>
+				<td>Chiều cao của bạn (cm):</td>
+				<td><input type="number" id="height"></td>
+			</tr>
+			<tr>
+				<td>Cân nặng của bạn (kg):</td>
+				<td><input type="number" id="weight"></td>
+			</tr>
+		</table>
+		<br>
+		<input type="button" onclick="bmiFunction()" value="Xem kết quả">
+		<h2 id="result"></h2>
+		<h2 id="result2"></h2>
+		<script>
+			function bmiFunction() {
+				var h = parseInt(document.getElementById("height").value)/100;
+				var w = parseInt(document.getElementById("weight").value);
+
+				var bmi = w / (h*h)
+
+				document.getElementById("result").innerHTML = "Chỉ số BMI của bạn là: " + bmi;
+
+				if (bmi >= 30) {
+					document.getElementById("result2").innerHTML = "Bạn bị béo phì";
+				} else if (bmi >= 25) {
+					document.getElementById("result2").innerHTML = "Bạn hơi béo";
+				} else if (bmi >= 18.5) {
+					document.getElementById("result2").innerHTML = "Bạn bình thường";
+				} else {
+					document.getElementById("result2").innerHTML = "Bạn hơi ốm";
+				}
+			}
+		</script>
+	</body>
+</html>
