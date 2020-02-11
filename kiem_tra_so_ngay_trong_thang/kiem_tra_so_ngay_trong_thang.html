@@ -1,0 +1,34 @@
+﻿<html>
+	<body>
+		<h1>Chương trình kiểm tra số ngày trong tháng</h1>
+		<p>Nhập vào tháng muốn kiểm tra: <input type="number" id="month" min="1" max="12"> <input type="button" onclick="monthCheck()" value="Tính số ngày"></p>
+		<b><p id="result"></p></b>
+		<script>
+			function monthCheck() {
+				var a = +document.getElementById("month").value;
+				switch (a) {
+					case 1:
+					case 3:
+					case 5:
+					case 7:
+					case 8:
+					case 10:
+					case 12:
+						document.getElementById("result").innerHTML = "Tháng " + a + " có 31 ngày.";
+						break;
+					case 4:
+					case 6:
+					case 9:
+					case 11:
+						document.getElementById("result").innerHTML = "Tháng " + a + " có 30 ngày.";
+						break;
+					case 2:
+						document.getElementById("result").innerHTML = "Tháng " + a + " có 28 hoặc 29 ngày.";
+						break;
+					default:
+						document.getElementById("result").innerHTML = a + " không phải là một tháng trong năm.";
+				}
+			}
+		</script>
+	</body>
+</html>
