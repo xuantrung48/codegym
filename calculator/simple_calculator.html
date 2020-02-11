@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Simple Calculator</title>
+	</head>
+	<body>
+		<h1>Calculator</h1>
+		<table>
+			<tr>
+				<td colspan="2"><input type="number" id="a"></td>
+				<td colspan="2"><input type="number" id="b"></td>
+			</tr>
+			<tr>
+				<td><button type="button" onclick="add()">Addition(+)</button></td>
+				<td><button type="button" onclick="sub()">Subtraction(-)</button></td>
+				<td><button type="button" onclick="mul()">Multiplication(x)</button></td>
+				<td><button type="button" onclick="div()">Division(/)</button></td>
+			</tr>
+		</table>
+		<h2 id="result"></h2>
+		<script>
+			function add() {
+				let a = parseInt(document.getElementById("a").value);
+				let b = parseInt(document.getElementById("b").value);
+				let c = a + b;
+				document.getElementById("result").innerHTML = "Result: " + c;
+			}
+
+			function sub() {
+				let a = parseInt(document.getElementById("a").value);
+				let b = parseInt(document.getElementById("b").value);
+				let c = a - b;
+				document.getElementById("result").innerHTML = "Result: " + c;
+			}
+
+			function mul() {
+				let a = parseInt(document.getElementById("a").value);
+				let b = parseInt(document.getElementById("b").value);
+				let c = a * b;
+				document.getElementById("result").innerHTML = "Result: " + c;
+			}
+
+			function div() {
+				let a = parseInt(document.getElementById("a").value);
+				let b = parseInt(document.getElementById("b").value);
+				let c = a / b;
+				document.getElementById("result").innerHTML = "Result: " + c;
+			}
+		</script>
+	</body>
+</html>
