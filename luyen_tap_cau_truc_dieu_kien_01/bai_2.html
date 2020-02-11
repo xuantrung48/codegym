@@ -1,0 +1,20 @@
+<html>
+	<body>
+		<h2>Xét tuổi vào học lớp 10</h2>
+		<p>(Điều kiện: tuổi từ 15 đến 18)</p>
+		<p>Nhập tuổi: <input type="number" id="tuoi"></p>
+		<input type="button" value="Kiểm tra" onclick="check()">
+		<p id="result"></p>
+		<script>
+			function check() {
+				var tuoi = +document.getElementById("tuoi").value;
+				
+				if (tuoi >= 15 && tuoi <=18) {
+					document.getElementById("result").innerHTML = "Đủ điều kiện vào học lớp 10.";
+				} else {
+					document.getElementById("result").innerHTML = "Không đủ điều kiện vào học lớp 10.";
+				}
+			}
+		</script>
+	<body>
+</html>

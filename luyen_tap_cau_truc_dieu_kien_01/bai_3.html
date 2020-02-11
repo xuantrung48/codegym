@@ -1,0 +1,21 @@
+<html>
+	<body>
+		<h2>Kiểm tra số lớn hơn 0 hay nhỏ hơn 0</h2>
+		<p>Nhập vào một số bất kỳ: <input type="number" id="a"></p>
+		<input type="button" onclick="check()" value="Kiểm tra">
+		<p id="result"></p>
+		<script>
+			function check() {
+				var a = document.getElementById("a").value;
+
+				if ( a > 0 ) {
+					document.getElementById("result").innerHTML = "Kết quả: " + a + " lớn hơn 0.";
+				} else if ( a < 0 ) {
+					document.getElementById("result").innerHTML = "Kết quả: " + a + " nhỏ hơn 0.";
+				} else {
+					document.getElementById("result").innerHTML = "Kết quả: " + a + " bằng 0.";
+				}
+			}
+		</script>
+	</body>
+</html>

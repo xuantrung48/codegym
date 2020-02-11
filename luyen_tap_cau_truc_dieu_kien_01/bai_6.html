@@ -1,0 +1,25 @@
+<html>
+	<body>
+		<h1>Tính hoa hồng tùy theo doanh số</h1>
+		<i><p>Giả sử mức hoa hồng theo doanh số bán hàng như sau:</p>
+		<ul>
+			<li>5% nếu doanh số nhỏ hơn hoặc bằng 100 triệu.</li>
+			<li>10% nếu doanh số nhỏ hơn hoặc bằng 300 triệu.</li>
+			<li>20 % nếu doanh số là lớn hơn 300 triệu.</li>
+		</ul></i>
+		<hr>
+		<p>Nhập vào doanh số bán hàng (đơn vị: triệu đồng): <input type="number" id="ds"></p>
+		<input type="button" onclick="hh()" value="Tính hoa hồng">
+		<h2 id="result"></h2>
+		<script>
+			function hh() {
+				var ds = +document.getElementById("ds").value;
+				if (ds >= 0) {
+					document.getElementById("result").innerHTML = "Hoa hồng là " + (ds <= 100 ? ds * 5 / 100 : ds <= 300 ? ds * 10 / 100 : ds * 20 / 100) + " triệu đồng.";
+				} else {
+					document.getElementById("result").innerHTML = "Hãy nhập vào doanh số đúng.";
+				}
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,33 @@
+<html>
+	<body>
+		<h2>Tính cước điện thoại</h2>
+		<i><p>Cước điện thoại bao gồm:</p>
+		<ul>
+			<li>Phí thuê bao bắt buộc là 25 nghìn.</li>
+			<li>600 đồng cho mỗi phút gọi của 50 phút đầu tiên.</li>
+			<li>400 đồng cho mỗi phút gọi của 150 phút tiếp theo.</li>
+			<li>200 đồng cho bất kỳ mỗi phút nào sau 200 phút đầu tiên.</li>
+		</ul></i>
+		<hr>
+		<p>Nhập vào số phút đã gọi: <input type="number" id="time"></p>
+		<input type="button" onclick="tinhCuoc()" value="Tính cước">
+		<h3 id="result"></h3>
+		<script>
+			function tinhCuoc() {
+				var time = +document.getElementById("time").value;
+
+				if (time >= 0) {
+					if (time <= 50) {
+						document.getElementById("result").innerHTML = "Cước phí là " + (25000 + time * 600) + " đồng.";
+					} else if (time <= 200) {
+						document.getElementById("result").innerHTML = "Cước phí là " + (25000 + 50 * 600 + (time - 50) * 400) + " đồng.";
+					} else {
+						document.getElementById("result").innerHTML = "Cước phí là " + (25000 + 50 * 600 + 150 * 400 + (time - 200) * 200) + " đồng.";
+					}
+				} else {
+					document.getElementById("result").innerHTML = "Hãy nhập vào đúng số phút đã gọi.";
+				}
+			}
+		</script>
+	</body>
+</html>

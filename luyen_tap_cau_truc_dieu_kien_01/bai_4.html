@@ -1,0 +1,44 @@
+<html>
+	<body>
+		<h1>Tìm số lớn nhất</h1>
+		<table>
+			<tr>
+				<td>Nhập vào số đầu tiên:</td>
+				<td><input type="number" id="a"></td>
+			</tr>
+			<tr>
+				<td>Nhập vào số thứ hai:</td>
+				<td><input type="number" id="b"></td>
+			</tr>
+			<tr>
+				<td>Nhập vào số thứ ba:</td>
+				<td><input type="number" id="c"></td>
+			</tr>
+		</table>
+		<input type="button" onclick="check()" value="Kiểm tra">
+		<h2 id="result"></h2>
+		<script>
+			function check() {
+				var a = +document.getElementById("a").value;
+				var b = +document.getElementById("b").value;
+				var c = +document.getElementById("c").value;
+
+				if (a > b) {
+					if (b > c) {
+						document.getElementById("result").innerHTML = a + " là số lớn nhất.";
+					} else if (a > c) {
+						document.getElementById("result").innerHTML = a + " là số lớn nhất.";
+					} else {
+						document.getElementById("result").innerHTML = c + " là số lớn nhất.";
+					}
+				} else {
+					if (b < c) {
+						document.getElementById("result").innerHTML = c + " là số lớn nhất.";
+					} else {
+						document.getElementById("result").innerHTML = b + " là số lớn nhất.";
+					}
+				}
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,45 @@
+<html>
+	<body>
+		<h2>Xếp hạng học lực học sinh</h2>
+		<i><p>Viết một chương trình đánh giá xếp hạng học sinh dựa vào các điểm (điểm kiểm tra miệng (ktm), điểm kiểm tra 15 phút (kt15), điểm kiểm tra 1 tiếng (kt60), điểm kiểm tra cuối kỳ (ktck)). Công thức tính xếp hạng học sinh như sau:</p>
+		<p>DTB = (ktm + kt15 + kt60*2 + ktck*4)/8.</p>
+		<ul>
+			<li>Nếu DTB  lớn hơn hoặc bằng 9, xếp loại giỏi</li>
+			<li>Nếu DTB  nhỏ hơn 9 và lớn hơn hoặc bằng 7, xếp loại khá</li>
+			<li>Nếu DTB nhỏ hơn 7 và lớn hơn hoặc bằng 5, xếp loại trung bình</li>
+			<li>Nếu DTB nhỏ hơn 5 xếp loại yếu</li>
+		</ul></i>
+		<hr>
+		<table>
+			<tr>
+				<td>Điểm kiểm tra miệng:</td>
+				<td><input type="number" id="ktm" min="0" max ="10"></td>
+			</tr>
+			<tr>
+				<td>Điểm kiểm tra 15 phút:</td>
+				<td><input type="number" id="kt15" min="0" max ="10"></td>
+			</tr>
+			<tr>
+				<td>Điểm kiểm tra 1 tiết:</td>
+				<td><input type="number" id="kt60" min="0" max ="10"></td>
+			</tr>
+			<tr>
+				<td>Điểm kiểm tra cuối kỳ:</td>
+				<td><input type="number" id="ktck" min="0" max ="10"></td>
+			</tr>
+		</table>
+		<input type="button" onclick="check()" value="Kiểm tra">
+		<h3 id="result"></h3>
+		<script>
+			function check() {
+				var ktm = +document.getElementById("ktm").value;
+				var kt15 = +document.getElementById("kt15").value;
+				var kt60 = +document.getElementById("kt60").value;
+				var ktck = +document.getElementById("ktck").value;
+
+				var dtb = (ktm + kt15 + kt60*2 + ktck*4)/8;
+				document.getElementById("result").innerHTML = "Điểm trung bình là " + Math.round(dtb * 100) / 100 + (dtb >= 9 ? ". Xếp loại giỏi." : dtb >= 7 ? ". Xếp loại khá." : dtb >= 5 ? ". Xếp loại trung bình." : ". Xếp loại yếu.");
+			}
+		</script>
+	</body>
+</html>

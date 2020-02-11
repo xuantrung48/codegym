@@ -1,0 +1,21 @@
+<html>
+        <body>
+            <h2>Kiểm tra a có chia hết cho b hay không?</h2>
+            <p>Nhập vào số a: <input type="number" id="a"></p>
+            <p>Nhập vào số b: <input type="number" id="b"></p>
+            <input type="button" onclick="check()" value="Kiểm tra">
+            <p id="result"></p>
+            <script>
+                function check() {
+                    let a = +document.getElementById("a").value;
+                    let b = +document.getElementById("b").value;
+                    
+                    if (a % b == 0) {
+                        document.getElementById("result").innerHTML = a + " chia hết cho " + b;
+                    } else {
+                        document.getElementById("result").innerHTML = a + " không chia hết cho " + b;
+                    }
+                }
+            </script>
+        </body>
+</html>
