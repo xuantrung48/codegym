@@ -1,0 +1,16 @@
+<html>
+	<body>
+		<script>
+			var n = +prompt("Nhập một số bất kỳ lớn hơn 0:");
+			var a = 0;
+			if (n > 0) {
+				for (var i = 0; i <= n; i++) {
+					a += i;
+				}
+				document.write("Tổng từ 1 đến " + n + " là: " + a);
+			} else {
+				location.reload();
+			}
+		</script>
+	</body>
+</html>
