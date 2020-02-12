@@ -1,0 +1,14 @@
+<html>
+	<body>
+		<h1>Chuyển từ <sup>o</sup>C sang <sup>o</sup>F</h1>
+		<p><input type="number" id="c"> <sup>o</sup>C </p>
+		<input type="button" onclick="convert()" value="Chuyển">
+		<h2 id="result"></h2>
+		<script>
+			function convert() {
+				var c = +document.getElementById("c").value;
+				document.getElementById("result").innerHTML = "Kết quả: " + (c * 9 / 5 + 32) + "<sup>o</sup>F";
+			}
+		</script>
+	</body>
+</html>

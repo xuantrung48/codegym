@@ -1,0 +1,70 @@
+﻿<html>
+	<head>
+		<style>
+			table, th, td {
+				border: 1px solid black;
+				border-collapse: collapse;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Chương trình tính giá điện sinh hoạt</h1>
+		<table>
+			<caption>Bảng giá điện</caption>
+			<tr>
+				<th>Bậc giá</th>
+				<th>Giá bán điện (đồng/kWh)</th>
+			</tr>
+			<tr>
+				<td>Bậc 1: Từ 0 - 50 kWh</td>
+				<td>1678</td>
+			</tr>
+			<tr>
+				<td>Bậc 2: Từ 51 - 100 kWh</td>
+				<td>1734</td>
+			</tr>
+			<tr>
+				<td>Bậc 3: Từ 101 - 200 kWh</td>
+				<td>2014</td>
+			</tr>
+			<tr>
+				<td>Bậc 4: Từ 201 - 300 kWh</td>
+				<td>2536</td>
+			</tr>
+			<tr>
+				<td>Bậc 5: Từ 301 - 400 kWh</td>
+				<td>2834</td>
+			</tr>
+			<tr>
+				<td>Bậc 6: Từ 401 kWh trở lên</td>
+				<td>2927</td>
+			</tr>
+		</table>
+		<hr>
+		<p>Nhập vào số kWh điện đã sử dụng: <input type="number" id="kwh"></p>
+		<input type="button" onclick="check()" value="Kiểm tra">
+		<h2 id="result"></h2>
+		<script>
+			function check() {
+				var kwh = +document.getElementById("kwh").value;
+				if (kwh >= 0) {
+					if (kwh <= 50) {
+						document.getElementById("result").innerHTML = "Tiền điện phải trả là " + (kwh * 1678) + " đồng.";
+					} else if (kwh <= 100) {
+						document.getElementById("result").innerHTML = "Tiền điện phải trả là " + (50 * 1678 + (kwh - 50) * 1734) + " đồng.";
+					} else if (kwh <= 200) {
+						document.getElementById("result").innerHTML = "Tiền điện phải trả là " + (50 * 1678 + 50 * 1734 + (kwh - 100) * 2014) + " đồng.";
+					} else if (kwh <= 300) {
+						document.getElementById("result").innerHTML = "Tiền điện phải trả là " + (50 * 1678 + 50 * 1734 + 100 * 2014 + (kwh - 200) * 2536) + " đồng.";
+					} else if (kwh <= 400) {
+						document.getElementById("result").innerHTML = "Tiền điện phải trả là " + (50 * 1678 + 50 * 1734 + 100 * 2014 + 100 * 2536 + (kwh - 300) * 2834) + " đồng.";
+					} else {
+						document.getElementById("result").innerHTML = "Tiền điện phải trả là " + (50 * 1678 + 50 * 1734 + 100 * 2014 + 100 * 2536 + 100 * 2834 + (kwh - 400) * 2927) + " đồng.";
+					}
+				} else {
+					document.getElementById("result").innerHTML = "Hãy nhập lại.";
+				}
+			}
+		</script>
+	</body>
+</html>

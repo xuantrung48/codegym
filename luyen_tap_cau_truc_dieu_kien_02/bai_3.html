@@ -1,0 +1,14 @@
+<html>
+	<body>
+		<h1>Tính diện tích hình vuông</h1>
+		<p>Nhập vào chiều dài cạnh: <input type="number" id="c"></p>
+		<input type="button" onclick="calculate()" value="Tính">
+		<h2 id="result"></h2>
+		<script>
+			function calculate() {
+				var c = +document.getElementById("c").value;
+				document.getElementById("result").innerHTML = "Diện tích hình vuông là " + c * c;
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,24 @@
+﻿<html>
+	<body>
+		<h3>Kiểm tra 3 số nhập vào có phải là cạnh của một tam giác?</h3>
+		<p>Nhập vào 3 số:</p>
+		<input type="number" id="a"><br>
+		<input type="number" id="b"><br>
+		<input type="number" id="c"><br>
+		<input type="button" onclick="check()" value="Kiểm tra">
+		<h3 id="result"></h3>
+		<script>
+			function check() {
+				var a = +document.getElementById("a").value;
+				var b = +document.getElementById("b").value;
+				var c = +document.getElementById("c").value;
+
+				if (a > 0 && b > 0 && c > 0 && a + b > c && b + c > a && a + c > b) {
+					document.getElementById("result").innerHTML = a + ", " + b + ", " + c + " là 3 cạnh của một tam giác.";
+				} else {
+					document.getElementById("result").innerHTML = a + ", " + b + ", " + c + " không phải là 3 cạnh của một tam giác.";
+				}
+			}
+		</script>
+	</body>
+</html>

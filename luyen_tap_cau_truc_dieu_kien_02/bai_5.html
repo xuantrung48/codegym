@@ -1,0 +1,19 @@
+<html>
+	<body>
+		<h1>Tính diện tích tam giác vuông</h1>
+		<p>Nhập vào chiều dài 2 cạnh góc vuông:</p>
+		<ul>
+			<li>Cạnh 1: <input type="number" id="a"></li>
+			<li>Cạnh 2: <input type="number" id="b"></li>
+		</ul>
+		<input type="button" onclick="calculate()" value="Tính diện tích">
+		<h2 id="result"></h2>
+		<script>
+			function calculate() {
+				var a = document.getElementById("a").value;
+				var b = document.getElementById("b").value;
+				document.getElementById("result").innerHTML = "Diện tích hình tam giác vuông là " + a * b / 2;
+			}
+		</script>
+	</body>
+</html>

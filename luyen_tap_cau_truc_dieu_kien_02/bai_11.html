@@ -1,0 +1,61 @@
+﻿<html>
+	<body>
+		<h1>Chương trình tính thuế thu nhập cá nhân</h1>
+		<table>
+			<tr>
+				<th>Bậc</th>
+				<th>Thu nhập tính thuế / tháng</th>
+				<th>Thuế suất</th>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td><=5 triệu đồng</td>
+				<td>5%</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>Trên 5tr đến 10tr</td>
+				<td>10%</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>Trên 10tr đến 18tr</td>
+				<td>15%</td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td>Trên 18tr đến 32tr</td>
+				<td>20%</td>
+			</tr>
+			<tr>
+				<td>5</td>
+				<td>Trên 32tr đến 52tr</td>
+				<td>25%</td>
+			</tr>
+			<tr>
+				<td>6</td>
+				<td>Trên 52tr đến 80tr</td>
+				<td>30%</td>
+			</tr>
+			<tr>
+				<td>7</td>
+				<td>Trên 80tr</td>
+				<td>35%</td>
+			</tr>
+		</table>
+
+		<p>Thu nhập tính thuế: <input type="number" id="thunhap"> (triệu đồng).</p>
+		<input type="button" onclick="calculate()" value="Tính thuế">
+		<h2 id="result"></h2>
+		<script>
+			function calculate() {
+				var thunhap = +document.getElementById("thunhap").value;
+				if (thunhap >= 0) {
+					document.getElementById("result").innerHTML = "Thuế thu nhập là: " + (thunhap <= 5 ? 0.05 : thunhap <= 10 ? 0.1 : thunhap <= 18 ? 0.15 : thunhap <= 32 ? 0.2 : thunhap <= 52 ? 0.25 : thunhap <= 80 ? 0.3 : 0.35) * thunhap + " triệu đồng.";
+				} else {
+					document.getElementById("result").innerHTML = "Hãy nhập lại đúng thu nhập tính thuế.";
+				}
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,18 @@
+﻿<html>
+	<body>
+		<h3>Kiểm tra một số là tuổi</h3>
+		<p>Nhập vào một số bất kỳ: <input type="number" id="n" value="0"></p>
+		<input type="button" onclick="check()" value="Kiểm tra">
+		<h3 id="result"></h3>
+		<script>
+			function check() {
+				var n = +document.getElementById("n").value;
+				if (n % 1 == 0 && n > 0 && n < 120) {
+					document.getElementById("result").innerHTML = n + " là tuổi của một người.";
+				} else {
+					document.getElementById("result").innerHTML = n + " không phải là tuổi của một người.";
+				}
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,14 @@
+<html>
+	<body>
+		<h1>Chuyển từ mét sang feet</h1>
+		<p><input type="number" id="m"> mét</p>
+		<input type="button" onclick="convert()" value="Chuyển">
+		<h2 id="result"></h2>
+		<script>
+			function convert() {
+				var m = +document.getElementById("m").value;
+				document.getElementById("result").innerHTML = "Kết quả: " + m * 3.2808 + " ft";
+			}
+		</script>
+	</body>
+</html>

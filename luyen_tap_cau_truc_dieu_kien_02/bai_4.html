@@ -1,0 +1,21 @@
+<html>
+	<body>
+		<h1>Tính diện tích hình chữ nhật</h1>
+		<p>Nhập vào chiều dài: <input type="number" id="d"></p>
+		<p>Nhập vào chiều rộng: <input type="number" id="r"></p>
+		<input type="button" onclick="calculate()" value="Tính diện tích">
+		<h2 id="result"></h2>
+		<script>
+			function calculate() {
+					var d = document.getElementById("d").value;
+					var r = document.getElementById("r").value;
+
+				if (d >=0 && r >= 0) {
+					document.getElementById("result").innerHTML = "Diện tích hình chữ nhật là " + d * r;
+				} else {
+					document.getElementById("result").innerHTML = "Hãy nhập đúng chiều dài và chiều rộng.";
+				}
+			}
+		</script>
+	</body>
+</html>
