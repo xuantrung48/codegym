@@ -1,0 +1,68 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<style>
+			html {
+				background-color: blue;
+			}
+
+			input {
+				background-color: yellow;
+				font-size: 50px;
+				padding: 15px;
+				border-radius: 25px;
+				display: block;
+				margin: 10% auto;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="button" onclick="play()" value="Chơi")>
+		<script>
+			function play() {
+				alert("Đây là trò chơi đoán số.");
+				var x = 2;
+				var y = 1;
+				
+				//Nhập khoảng số
+				var i=1;
+				while (i < 2) {
+					if (y < x) {
+						x = +prompt("Hãy nhập vào một khoảng số bắt đầu từ:");
+						y = +prompt("đến:");
+					} else {
+						i++;
+					}
+				}
+				
+				var a = Math.floor(Math.random() * (y - x + 1)) + x;
+
+				var n = null;
+				
+				alert("Bạn có 3 lần đoán.");
+				
+				//Đoán số
+				var j = 1;
+				while (j < 4) {
+					var n = +prompt("Số bạn đoán là:");
+					if (n > a) {
+						alert(n + " lớn hơn số của chúng tôi. Bạn còn " + (3 - j) + " lần đoán.");
+						j++;
+					} else if (n < a) {
+						alert(n + " nhỏ hơn số của chúng tôi. Bạn còn " + (3 - j) + " lần đoán.");
+						j++
+					} else {
+						j =+ 4;
+					}
+				}
+				
+				//in kết quả
+				if (n == a) {
+					alert("Chúc mừng bạn đã thắng cuộc! Đó là số " + a + ".");
+				} else {
+					alert("Bạn đã hết lượt đoán! Đó là số " + a + ".");
+				}
+			}
+		</script>
+	</body>
+</html>

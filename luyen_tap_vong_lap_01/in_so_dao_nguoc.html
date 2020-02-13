@@ -1,0 +1,23 @@
+<html>
+	<body>
+		<p>Nhập vào số nguyên: <input type="number" id="n"></p>
+		<input type="button" value="Đảo ngược" onclick="daoNguoc()">
+		<p id="result"></p>
+		<script>
+			function daoNguoc() {
+				var n = document.getElementById("n").value;
+				var j = n.length;
+				var m = 0;
+				var a;
+				var b;
+				for (var i = 1; i <= j; i++) {
+					a = n % 10;
+					b = a * Math.pow(10, j - i);
+					n = (n - a) / 10;
+					m += b;
+				}
+				document.getElementById("result").innerHTML = "Số đảo ngược là: " + m;
+			}
+		</script>
+	</body>
+</html>

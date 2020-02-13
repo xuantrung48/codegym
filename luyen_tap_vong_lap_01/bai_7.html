@@ -1,0 +1,20 @@
+<html>
+	<body>
+		<script>
+			var j;
+			var n;
+			for (var i = 1; i <= 100; i++) {
+				if (i % 3 ==0 && i % 5 == 0) {
+					n = "FizzBuzz";
+				} else if (i % 3 == 0) {
+					n = "Fizz";
+				} else if (i % 5 == 0) {
+					n = "Buzz";
+				} else {
+					n = i;
+				}
+				document.write(n + "<br>");
+			}
+		</script>
+	</body>
+</html>

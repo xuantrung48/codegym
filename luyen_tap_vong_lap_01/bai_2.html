@@ -1,0 +1,22 @@
+<html>
+	<body>
+		<script>
+			var c = prompt("Nhập vào nhiệt độ:");
+			if (c > 100) {
+				for (i = c; i >= 100; i--) {
+					alert("Giảm nhiệt độ: " + c + " độ C");
+					c--;
+				}
+				alert("Nhiệt độ OK");
+			} else if (c < 20) {
+				for (i = c; i <= 20; i++) {
+					alert("Tăng nhiệt độ: " + c + " độ C");
+					c++;
+				}
+				alert("Nhiệt độ OK");
+			} else {
+				alert("Nhiệt độ OK");
+			}
+		</script>
+	</body>
+</html>
