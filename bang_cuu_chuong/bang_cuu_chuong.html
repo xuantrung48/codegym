@@ -1,0 +1,23 @@
+﻿<html>
+	<head>
+		<style>
+			table, td {
+				border: 1px solid black;
+				border-collapse: collapse;
+			}
+		</style>
+	</head>
+	<body>
+		<script>
+			document.write("<table>");
+			for (var j = 1; j <= 9; j++) {
+				document.write("<tr>");
+				for (var i = 2; i <= 9; i++) {
+					document.write("<td>" + i + " x " + j + " = " + i * j + "</td>");
+				}
+				document.write("</tr>");
+			}
+			document.write("</table>");
+		</script>
+	</body>
+</html>
