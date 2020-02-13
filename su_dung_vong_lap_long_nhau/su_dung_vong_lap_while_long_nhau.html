@@ -1,0 +1,29 @@
+<html>
+	<head>
+		<style>
+			table, td {
+				border: 1px solid black;
+				border-collapse: collapse;
+				cellpadding: 30;
+			}
+		</style>
+	</head>
+	<body>
+		<script>
+			var i;
+			var j = 1;
+			document.write("<table>");
+			while (j <= 10) {
+				i = 1;
+				document.write("<tr>");
+					while (i <= 10) {
+						document.write("<td>" + i * j + "</td>");
+						i++;
+					}
+				document.write("</tr>");
+				j++;
+			}
+			document.write("</table>");
+		</script>
+	</body>
+</html>
