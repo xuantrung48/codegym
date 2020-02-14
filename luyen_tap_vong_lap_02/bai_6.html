@@ -1,0 +1,41 @@
+<html>
+	<body>
+		<script>
+			for (i = 2; i <= 4; i++) {
+				for (j = 0; j < 2; j++) {
+					for (k = 1; k <= (4 - i); k++) {
+						document.write("&nbsp; ");
+					}
+					
+					for (k = 0; k < i; k++) {
+						document.write("*");
+					}
+					
+					for (k = 0; k <= i; k++) {
+						document.write("*");
+					}
+
+					for (k = 0; k < (4 - i); k++){
+						document.write("&nbsp; ")
+					}
+				}
+				document.write("<br>");
+			}
+			for (i = 0; i <= 8; i++) {
+				for (k = 0; k < i; k++) {
+					document.write("&nbsp ");
+				}
+
+				for (k = 0; k <= (8 - i); k++) {
+					document.write("*");
+				}
+
+				for (k = 0; k <= (8 - i); k++) {
+					document.write("*");
+				}
+
+				document.write("<br>");
+			}
+		</script>
+	</body>
+</html>

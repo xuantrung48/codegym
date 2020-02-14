@@ -1,0 +1,29 @@
+<html>
+	<body>
+		<h1>Tính lãi kép</h1>
+		<table>
+			<tr>
+				<td>Số tiền vốn ban đầu:</td>
+				<td><input type="number" id="m"> (đồng).</td>
+			</tr>
+			<tr>
+				<td>Lãi suất hàng tháng:</td>
+				<td><input type="number" id="r"> (%).</td>
+			</tr>
+			<tr>
+				<td>Thời gian:</td>
+				<td><input type="number" id="t"> (tháng).</td>
+			</tr>
+		</table>
+		<input type="button" onclick="calculate()" value="Tính lãi">
+		<h2 id="result"></h2>
+		<script>
+			function calculate() {
+				var m = +document.getElementById("m").value;
+				var r = +document.getElementById("r").value;
+				var t = +document.getElementById("t").value;
+				document.getElementById("result").innerHTML = "Tổng tiền lãi là: " + Math.round((m * Math.pow((1 + r / 100), t) - m)) + " đồng."; 
+			}
+		</script>
+	</body>
+</html>

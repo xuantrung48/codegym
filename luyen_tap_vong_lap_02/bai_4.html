@@ -1,0 +1,23 @@
+<html>
+	<body>
+		<script>
+			var d = +prompt("Nhập vào chiều dài hình chữ nhật:");
+			var r = +prompt("Nhập vào chiều rộng hình chữ nhật:");
+
+			for (i = 0; i < r; i++) {
+				if (i == 0 || i == (r - 1)) {
+					for (j = 0; j < d; j++) {
+						document.write("*");
+					}
+				} else {
+					document.write("*");
+					for (j = 1; j < (d - 1); j++) {
+						document.write("&nbsp ");
+					}
+					document.write("*");
+				}
+				document.write("<br>");
+			}
+		</script>
+	</body>
+</html>

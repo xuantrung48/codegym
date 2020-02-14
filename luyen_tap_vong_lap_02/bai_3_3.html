@@ -1,0 +1,16 @@
+<html>
+	<body>
+		<script>
+			var n = +prompt("Nhập cạnh tam giác:");
+			for (var i = 1; i <= n; i++) {
+				for (var j = 1; j <= (n - i); j++) {
+					document.write("&nbsp; ");
+				}
+				for (var k = 0; k < i; k++) {
+					document.write("*");
+				}
+				document.write("<br>");
+			}
+		</script>
+	</body>
+</html>

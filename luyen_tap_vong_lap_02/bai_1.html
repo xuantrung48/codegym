@@ -1,0 +1,15 @@
+<html>
+	<body>
+		<script>
+			var n = +prompt("Nhập vào số lượng trong dãy Fibonacci cần hiển thị:");
+			var a = -1;
+			var b = 1;
+			for (var i = 1; i <= n; i++) {
+				var c = a + b;
+				document.write(c + "<br>");
+				a = b;
+				b = c;
+			}
+		</script>
+	</body>
+</html>
