@@ -1,0 +1,36 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+	</head>
+	<body>
+		<script>
+			let n = +prompt("Số lượng số nguyên tố cần hiển thị:")
+			
+			//Kiểm tra số nguyên tố
+			function kiemTra(n){
+				if (n < 2) {
+					return false;
+				}
+				if (n == 2) {
+					return true;
+				}
+				for (let i = 2; i < n - 1; i++){
+					if (n % i == 0){
+						return false;
+					}
+				}
+				return true;
+			}
+			
+			let j = 0;
+			let i = 0;
+			while (j < n){
+				if (kiemTra(i)) {
+					document.write(i + "<br>");
+					j++;
+				} 
+				i++;
+			}
+		</script>
+	</body>
+</html>

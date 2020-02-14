@@ -1,6 +1,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
+		<title>Trò chơi đoán số</title>
 		<style>
 			html {
 				background-color: blue;
@@ -8,16 +9,26 @@
 
 			input {
 				background-color: yellow;
-				font-size: 50px;
-				padding: 15px;
+				font-size: 40px;
+				padding: 35px;
 				border-radius: 25px;
 				display: block;
 				margin: 10% auto;
+				font-weight: bold;
+			}
+			
+			h1 {
+				text-align: center;
+				margin-top: 100px;
+				text-transform: uppercase;
+				font-size: 80px;
+				color: white;
 			}
 		</style>
 	</head>
 	<body>
-		<input type="button" onclick="play()" value="Chơi")>
+		<h1>Trò chơi đoán số</h1>
+		<input type="button" onclick="play()" value="Chơi ngay!")>
 		<script>
 			function play() {
 				alert("Đây là trò chơi đoán số.");
@@ -35,6 +46,7 @@
 					}
 				}
 				
+				//Chọn số ngẫu nhiên trong [x; y]
 				var a = Math.floor(Math.random() * (y - x + 1)) + x;
 
 				var n = null;
@@ -44,7 +56,7 @@
 				//Đoán số
 				var j = 1;
 				while (j < 4) {
-					var n = +prompt("Số bạn đoán là:");
+					var n = +prompt("Lần thứ " + j + ":");
 					if (n > a) {
 						alert(n + " lớn hơn số của chúng tôi. Bạn còn " + (3 - j) + " lần đoán.");
 						j++;
@@ -52,13 +64,14 @@
 						alert(n + " nhỏ hơn số của chúng tôi. Bạn còn " + (3 - j) + " lần đoán.");
 						j++
 					} else {
-						j =+ 4;
+						j += 3;
 					}
 				}
 				
 				//in kết quả
 				if (n == a) {
-					alert("Chúc mừng bạn đã thắng cuộc! Đó là số " + a + ".");
+					alert("Chúc mừng bạn đã đoán đúng! Đó là số " + a + ".");
+					alert("Hãy liên hệ tác giả để nhận phần thưởng.");
 				} else {
 					alert("Bạn đã hết lượt đoán! Đó là số " + a + ".");
 				}
