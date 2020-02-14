@@ -1,0 +1,24 @@
+<html>
+    <body>
+        <script>
+            var array = [-3, 5, 1, 3, 2, 10];
+            var x = prompt("Nhập số cần tìm trong mảng:");
+            function checkArray() {
+                for (i = 0; i < array.length; i++) {
+                    if (x == array[i]) {
+                        return true;
+                        break;
+                    } 
+                }
+                return false;
+            }
+            
+            if (checkArray()) {
+                alert(x + " có trong mảng, nó nằm ở vị trí array[" + i + "].");
+            } else {
+                alert(x + " không có trong mảng array.");
+            }
+
+        </script>
+    </body>
+</html>
