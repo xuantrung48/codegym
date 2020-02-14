@@ -1,0 +1,24 @@
+<html>
+	<body>
+		<input type="text" id="a"> <input type="button" onclick="add()" value="Add"> <input type="button" onclick="display()" value="Display">
+		<hr>
+		<p id="result"></p>
+		<script>
+			var arrayA=[];
+			var i = 0;
+			function add() {
+				arrayA[i] = document.getElementById("a").value;
+				i++;
+				document.getElementById("a").value = "";
+			}
+
+			function display() {
+				var x ="";
+				for (j = 0; j < arrayA.length; j++) {
+					x += "Element " + j + ": " + arrayA[j] + "<br>";
+				}
+				document.getElementById("result").innerHTML = x;
+			}
+		</script>
+	</body>
+</html>
