@@ -1,0 +1,15 @@
+<html>
+    <body>
+        <script>
+            var array = [-3,5,1,3,2,10];
+            document.write("Cho mảng array = [" + array + "]");
+
+            var newArray = [];
+            for (i = 0; i < array.length; i++) {
+                newArray[i] = array[array.length - 1 - i];
+            }
+
+            document.write("<br>Mảng đảo ngược newArray = [" + newArray + "]");
+        </script>
+    </body>
+</html>
