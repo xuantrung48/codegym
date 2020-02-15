@@ -1,0 +1,37 @@
+<html>
+	<body>
+		<h1>Ứng dụng từ điển</h1>
+		<p>Dữ liệu từ tiếng anh: school, teacher, student.</p>
+		<p>Nhập từ cần tra: <input type="text" id="en"> <input type="button" onclick="traTu()" value="Tra từ cách 1"> <input type="button" onclick="traTu2()" value="Tra từ cách 2"></p>
+		<p id = "vi"></p>
+		<p id = "vi2"></p>
+		<script>
+			//Dữ liệu từ điển
+			var enWords = ["school", "teacher", "student"];
+			var viWords = ["trường học", "thầy/cô giáo", "sinh viên, học sinh"];
+
+			//Cách 1:
+			function traTu() {
+				var x = document.getElementById("en").value;
+				for (i = 0; i < enWords.length; i++) {
+					if (x == enWords[i]) {
+						document.getElementById("vi").innerHTML = x + ": " + viWords[i] + ".";
+						break;
+					} else {
+						document.getElementById("vi").innerHTML = "Không tìm thấy.";
+					}
+				}
+			}
+
+			//Cách 2:
+			function traTu2() {
+				var y = document.getElementById("en").value;
+				if (enWords.indexOf(y) != -1) {
+					document.getElementById("vi2").innerHTML = y + ": " + viWords[enWords.indexOf(y)] + ".";
+				} else {
+					document.getElementById("vi2").innerHTML = "Không tìm thấy.";
+				}
+			}
+		</script>
+	<body>
+</html>
