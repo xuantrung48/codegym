@@ -1,0 +1,112 @@
+<html>
+	<head>
+		<style>
+			body {
+				background-color: #ebebeb;
+				text-align: center;
+			}
+			h1 {
+				color: blue;
+				margin-top: 150px;
+				text-transform: uppercase;
+				text-align: center;
+			}
+			input {
+				display: block;
+				margin: 30px auto;
+				padding: 10px;
+				border-radius: 20px;
+				background-color: yellow;
+				font-weight: bold;
+			}
+			#bancaro {
+				display: inline-block;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Bàn cờ caro đơn giản</h1>
+		<input type="button" onclick="danhCo()" value="Đánh cờ">
+		<div id="bancaro"></div>
+		<script>
+
+			//Nhập vào kích thước bàn cờ
+			var n, m;
+			if (isNaN(n) || isNaN(m)) {
+				while (isNaN(n) || isNaN(m)) {
+					var n = +prompt("Nhập vào chiều cao bàn cờ caro:");
+					var m = +prompt("Nhập vào chiều rộng bàn cờ caro:");
+				}
+			}
+
+			//Bàn cờ đã có kích thước n hàng và m cột
+			
+			//Khai báo mảng 2 chiều
+			var caro = [];
+			for (i = 1; i <= n; i++) {
+				caro[i] = [];
+			}
+			
+			//Gán giá trị vào các phần tử mảng 2 chiều
+			for (i = 1; i <= n; i++) {
+				for (j = 1; j <= m; j++) {
+					caro[i][j] = 0;
+				}
+			}
+			
+			//In ra bàn cờ
+			var board = "";
+			for (i = 1; i <= n; i++) {
+				for (j = 1; j <= m; j++) {
+					board += caro[i][j] + "&nbsp ";
+				}
+				board += "<br>"
+			}
+			document.getElementById("bancaro").innerHTML = board;
+			
+			//Đánh cờ
+			function danhCo() {
+			
+				//Buộc người dùng nhập vào vị trí có trên bàn cờ
+				var x = n + 1;
+				var y = n + 1;
+				while (x > n || y > m) {
+					x = +prompt("Hàng:");
+					y = +prompt("Cột:");
+					if (x > n || y > m) {
+						alert("Bàn cờ không có vị trí đó. Hãy đánh lại!");
+					}
+				}
+				
+				//Kiểm tra ô cờ đã được đánh hay chưa
+				if (caro[x][y] == "x") {
+					while (caro[x][y] == "x") {
+						alert("Vị trí đó đã được đánh. Hãy đánh lại!");
+						//Buộc người dùng nhập vào vị trí có trên bàn cờ
+						x = n + 1;
+						y = m + 1;
+						while (x > n || y > m) {
+							x = +prompt("Hàng:");
+							y = +prompt("Cột:");
+							if (x > n || y > m) {
+								alert("Bàn cờ không có vị trí đó. Hãy đánh lại!");
+							}
+						}
+					}
+				}
+				
+				caro[x][y] = "x";
+				
+				//In lại bàn cờ
+				board = ""
+				for (i = 1; i <= n; i++) {
+					for (j = 1; j <= m; j++) {
+						board += caro[i][j] + "&nbsp ";
+					}
+					board += "<br>"
+				}
+				document.getElementById("bancaro").innerHTML = board;
+			}
+		</script>
+	</body>
+</html>

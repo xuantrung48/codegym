@@ -3,10 +3,12 @@
 		<script>
 			var n = +prompt("Tính giai thừa của:");
 			var x = 1;
-			if (n != 0) {
+			if (n > 0) {
 				for (i = 1; i <=  n; i++) {
 					x =  x * i;
 				}
+			} else if (n < 0) {
+				x = "Error";
 			}
 			alert("Kết quả: " + x);
 		</script>

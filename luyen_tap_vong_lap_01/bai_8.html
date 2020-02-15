@@ -36,14 +36,9 @@
 				var y = 1;
 				
 				//Nhập khoảng số
-				var i=1;
-				while (i < 2) {
-					if (y < x) {
-						x = +prompt("Hãy nhập vào một khoảng số bắt đầu từ:");
-						y = +prompt("đến:");
-					} else {
-						i++;
-					}
+				while (y <= x) {
+					x = +prompt("Hãy nhập vào một khoảng số bắt đầu từ:");
+					y = +prompt("đến:");
 				}
 				
 				//Chọn số ngẫu nhiên trong [x; y]
@@ -54,17 +49,17 @@
 				alert("Bạn có 3 lần đoán.");
 				
 				//Đoán số
-				var j = 1;
-				while (j < 4) {
-					var n = +prompt("Lần thứ " + j + ":");
+				var i = 1;
+				while (i < 4) {
+					var n = +prompt("Lần thứ " + i + ":");
 					if (n > a) {
-						alert(n + " lớn hơn số của chúng tôi. Bạn còn " + (3 - j) + " lần đoán.");
-						j++;
+						alert(n + " lớn hơn số của chúng tôi. Bạn còn " + (3 - i) + " lần đoán.");
+						i++;
 					} else if (n < a) {
-						alert(n + " nhỏ hơn số của chúng tôi. Bạn còn " + (3 - j) + " lần đoán.");
-						j++
+						alert(n + " nhỏ hơn số của chúng tôi. Bạn còn " + (3 - i) + " lần đoán.");
+						i++
 					} else {
-						j += 3;
+						i += 3;
 					}
 				}
 				
