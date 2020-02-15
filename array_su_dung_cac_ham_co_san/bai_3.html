@@ -1,0 +1,23 @@
+<html>
+	<body>
+		<script>
+			var A = prompt("Nhập vào một chuỗi ký tự:");
+			var UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+			var LOWER = 'abcdefghijklmnopqrstuvwxyz';
+
+			document.write("Chuỗi vừa nhập:" + A + "<br>");
+
+			var x = [];
+			for (i = 0; i <A.length; i++) {
+				if (UPPER.indexOf(A[i]) != -1)  {
+					x += (A[i].toLowerCase());
+				} else if (LOWER.indexOf(A[i]) != -1) {
+					x += (A[i].toUpperCase());
+				} else {
+					x += A[i];
+				}
+			}
+			document.write("Kết quả: " + x);
+		</script>
+	</body>
+</html>

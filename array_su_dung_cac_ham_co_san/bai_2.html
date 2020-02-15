@@ -1,0 +1,31 @@
+<html>
+	<body>
+		<script>
+			var A = prompt("Nhập vào một dãy số bất kỳ:");
+
+			document.write("Số đã nhập:" + A + "<br>");
+
+			//Cách 1:
+			var x = [];
+			for (i = 0; i < A.length; i++) {
+				if (A[i] % 2 == 0 && A[i+1] % 2 == 0) {
+					x += A[i] + "-";
+				} else {
+					x += A[i];
+				}
+			}
+			document.write("Cách 1: " + x + "<br>");
+
+			//Cách 2:
+			var y = []
+			for (i = 0; i < A.length; i++) {
+				if (A[i] % 2 == 0 && A[i+1] % 2 == 0) {
+					y.push(A[i], "-");
+				} else {
+					y.push(A[i]);
+				}
+			}
+			document.write("Cách 2: " + y.join(""));
+		</script>
+	</body>
+</html>
