@@ -1,0 +1,31 @@
+<html>
+	<body>
+		<p id="arrayA"></p>
+		<p id="a"></p>
+		<p id="result"></p>
+		<script>
+			var numbers = [];
+			for (i = 0; i < 10; i++) {
+				numbers[i] = Math.floor(Math.random()* 10);
+			}
+			document.getElementById("arrayA").innerHTML = "Mảng số ngẫu nhiên: [" + numbers + "]";
+			
+			var a = Math.floor(Math.random() * 10);
+			document.getElementById("a").innerHTML = "Số ngẫu nhiên: " + a;
+			
+			function check () {
+				for (i = 0; i < numbers.length; i++) {
+					if (numbers[i] == a) {
+						return true;
+					}
+				}
+			}
+			if (check()) {
+				document.getElementById("result").innerHTML = a + " có trong mảng số.";
+			} else {
+				document.getElementById("result").innerHTML = a + " không có trong mảng số.";
+			}
+			
+		</script>
+	</body>
+</html>

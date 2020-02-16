@@ -9,14 +9,14 @@
 			}
 			h1 {
 				color: blue;
-				margin-top: 50px;
 				text-transform: uppercase;
 				text-align: center;
 			}
 			input {
+				font-size: 30px;
 				display: block;
 				margin: 30px auto;
-				padding: 10px;
+				padding: 20px;
 				border-radius: 20px;
 				background-color: yellow;
 				font-weight: bold;
@@ -36,12 +36,12 @@
 			}
 		</style>
 	</head>
-	<body onkeydown="danhCo()">
+	<body onkeydown="danhCo()" id="body">
 		<h1>Tic  Tac Toe</h1>
-		<p>Copyright © by <a href="https://www.facebook.com/XuanTrung">Trung Nguyen</a></p>
-		<input type="button" onclick="danhCo()" value="Đánh cờ">
+		<input type="button" onclick="danhCo()" value="Đánh cờ" id="playbutton">
 		<div id="win"></div>
 		<div id="bancaro"></div>
+		<p>Copyright © by <a href="https://www.facebook.com/XuanTrung">Trung Nguyen</a></p>
 		<script>
 			//Khai báo mảng 2 chiều
 			var caro = [];
@@ -161,6 +161,9 @@
 				if (win()) {
 					alert("Chiến thắng!");
 					document.getElementById("win").innerHTML = "Chiến thắng!";
+					document.getElementById("playbutton").setAttribute("onclick",  "window.location.reload()");
+					document.getElementById("playbutton").setAttribute("value",  "Chơi lại");
+					document.getElementById("body").setAttribute("onkeydown",  "");
 				}
 			}
 		</script>

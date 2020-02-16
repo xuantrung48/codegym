@@ -1,0 +1,22 @@
+<html>
+	<body>
+		<p id="arrayA"></p>
+		<p id="result"></p>
+		<script>
+			var numbers = [];
+			for (i = 0; i < 10; i++) {
+				numbers[i] = Math.floor(Math.random()* 20 - 10);
+			}
+			document.getElementById("arrayA").innerHTML = "Mảng số ngẫu nhiên: [" + numbers + "]";
+			var counter = 0;
+			var x = "<br>";
+			for (i = 0; i < numbers.length; i++) {
+				if (numbers[i] < 0) {
+					counter ++;
+					x += counter + ". " + numbers[i] + "<br>";
+				}
+			}
+			document.getElementById("result").innerHTML = "Có " + counter + " số lớn nguyên âm:" + x;
+		</script>
+	</body>
+</html>

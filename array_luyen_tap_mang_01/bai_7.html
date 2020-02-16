@@ -1,0 +1,36 @@
+<html>
+	<head>
+		<meta charset="utf8">
+	</head>
+	<body>
+		<p id="arrayA"></p>
+		<p id="a"></p>
+		<p id="newarrayA"></p>
+		<p id="result"></p>
+		<script>
+			//Tạo mảng ngẫu nhiên
+			var numbers = [];
+			for (i = 0; i < 10; i++) {
+				numbers[i] = Math.floor(Math.random()* 10);
+			}
+			document.getElementById("arrayA").innerHTML = "Mảng số ngẫu nhiên: [" + numbers + "]";
+			
+			//Tạo số ngẫu nhiên
+			var a = Math.floor(Math.random() * 10);
+			document.getElementById("a").innerHTML = "Số ngẫu nhiên: " + a;
+			
+			//Xóa số ngẫu nhiên nếu có trong mảng
+			for (i = 0; i < numbers.length; i++) {
+				if (numbers[i] == a) {
+					numbers.splice(i, 1);
+					document.getElementById("newarrayA").innerHTML = "Mảng sau khi xóa số " + a + ": [" + numbers + "]";
+					//Chèn vào số 0 cuối mảng
+					numbers.push(0);
+					document.getElementById("newarrayA").innerHTML = "Mảng sau khi thêm số 0 " + ": [" + numbers + "]";
+				}
+			}
+			
+			
+		</script>
+	</body>
+</html>

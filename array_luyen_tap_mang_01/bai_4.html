@@ -1,17 +1,20 @@
 <html>
+	<head>
+		<meta charset="UTF8">
+	</head>
 	<body>
-		<p>Nhập vào một dãy số bất kỳ: <input type="number" id="numbers"> <input type="button" onclick="reverse()" value="Đảo ngược"></p>
+		<p id="arrayA"></p>
 		<p id="result"></p>
 		<script>
-			function reverse() {
-				var numbers = document.getElementById("numbers").value;
-				numbers = numbers.toString();
-				var result = [];
-				for (i = 0; i < numbers.length; i++) {
-					result[i] = numbers[numbers.length - i];
-				}
-				document.getElementById("result").innerHTML = "Kết quả: " + result.join("");
+			var numbers = Math.floor(Math.random()* 1000000000);
+			document.getElementById("arrayA").innerHTML = "Số ngẫu nhiên: " + numbers;
+			
+			numbers = numbers.toString();
+			var result = [];
+			for (i = 0; i < numbers.length; i++) {
+				result[i] = numbers[numbers.length - 1 - i];
 			}
+			document.getElementById("result").innerHTML = "Số đảo ngược: " + result.join("");
 		</script>
 	</body>
 </html>
