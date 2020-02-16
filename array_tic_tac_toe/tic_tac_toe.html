@@ -94,46 +94,7 @@
 						}
 					}
 					caro[x][y] = "x";
-					//In lại bàn cờ
-					board = ""
-					for (i = 0; i < 3; i++) {
-						for (j = 0; j < 3; j++) {
-							board += caro[i][j] + "&nbsp&nbsp";
-						}
-						board += "<br>"
-					}
-					document.getElementById("bancaro").innerHTML = board;
 					
-					//Kiểm tra chiến thắng
-					function win() {
-						//Kiểm tra hàng
-						for (i = 0; i < 3; i++) {
-							if ((caro[i][0] == "x" && caro[i][1] == "x" && caro[i][2] == "x") || (caro[i][0] == "o" && caro[i][1] == "o" && caro[i][2] == "o")) {
-								return true;
-								break;
-							}
-						}
-						//Kiểm tra cột
-						for (j = 0; j < 3; j++) {
-							if ((caro[0][j] == "x" && caro[1][j] == "x" && caro[2][j] == "x") || (caro[0][j] == "o" && caro[1][j] == "o" && caro[2][j] == "o")) {
-								return true;
-								break;
-							}
-						}
-						//Kiểm tra đường chéo
-						if ((caro[0][0] == "x" && caro[1][1] == "x" && caro[2][2] == "x") || (caro[0][0] == "o" && caro[1][1] == "o" && caro[2][2] == "o")) {
-							return true;
-						}
-						if ((caro[2][0] == "x" && caro[1][1] == "x" && caro[0][2] == "x") || (caro[2][0] == "o" && caro[1][1] == "o" && caro[0][2] == "o")) {
-							return true;
-						}
-					}
-					
-					//Thông báo chiến thắng
-					if (win()) {
-						alert("Chiến thắng");
-						document.getElementById("win").innerHTML = "Chiến thắng!";
-					}
 				} else {
 									
 					//Buộc người dùng nhập vào vị trí có trên bàn cờ
@@ -163,46 +124,47 @@
 						}
 					}
 					caro[x][y] = "o";
-					//In lại bàn cờ
-					board = ""
+				}
+				
+				//In lại bàn cờ
+				board = ""
+				for (i = 0; i < 3; i++) {
+					for (j = 0; j < 3; j++) {
+						board += caro[i][j] + "&nbsp&nbsp";
+					}
+					board += "<br>"
+				}
+				document.getElementById("bancaro").innerHTML = board;
+				
+				//Kiểm tra chiến thắng
+				function win() {
+					//Kiểm tra hàng
 					for (i = 0; i < 3; i++) {
-						for (j = 0; j < 3; j++) {
-							board += caro[i][j] + "&nbsp&nbsp";
-						}
-						board += "<br>"
-					}
-					document.getElementById("bancaro").innerHTML = board;
-					
-					//Kiểm tra chiến thắng
-					function win() {
-						//Kiểm tra hàng
-						for (i = 0; i < 3; i++) {
-							if ((caro[i][0] == "x" && caro[i][1] == "x" && caro[i][2] == "x") || (caro[i][0] == "o" && caro[i][1] == "o" && caro[i][2] == "o")) {
-								return true;
-								break;
-							}
-						}
-						//Kiểm tra cột
-						for (j = 0; j < 3; j++) {
-							if ((caro[0][j] == "x" && caro[1][j] == "x" && caro[2][j] == "x") || (caro[0][j] == "o" && caro[1][j] == "o" && caro[2][j] == "o")) {
-								return true;
-								break;
-							}
-						}
-						//Kiểm tra đường chéo
-						if ((caro[0][0] == "x" && caro[1][1] == "x" && caro[2][2] == "x") || (caro[0][0] == "o" && caro[1][1] == "o" && caro[2][2] == "o")) {
+						if ((caro[i][0] == "x" && caro[i][1] == "x" && caro[i][2] == "x") || (caro[i][0] == "o" && caro[i][1] == "o" && caro[i][2] == "o")) {
 							return true;
+							break;
 						}
-						if ((caro[2][0] == "x" && caro[1][1] == "x" && caro[0][2] == "x") || (caro[2][0] == "o" && caro[1][1] == "o" && caro[0][2] == "o")) {
+					}
+					//Kiểm tra cột
+					for (j = 0; j < 3; j++) {
+						if ((caro[0][j] == "x" && caro[1][j] == "x" && caro[2][j] == "x") || (caro[0][j] == "o" && caro[1][j] == "o" && caro[2][j] == "o")) {
 							return true;
+							break;
 						}
 					}
-					
-					//Thông báo chiến thắng
-					if (win()) {
-						alert("Chiến thắng");
-						document.getElementById("win").innerHTML = "Chiến thắng!";
+					//Kiểm tra đường chéo
+					if ((caro[0][0] == "x" && caro[1][1] == "x" && caro[2][2] == "x") || (caro[0][0] == "o" && caro[1][1] == "o" && caro[2][2] == "o")) {
+						return true;
 					}
+					if ((caro[2][0] == "x" && caro[1][1] == "x" && caro[0][2] == "x") || (caro[2][0] == "o" && caro[1][1] == "o" && caro[0][2] == "o")) {
+						return true;
+					}
+				}
+				
+				//Thông báo chiến thắng
+				if (win()) {
+					alert("Chiến thắng");
+					document.getElementById("win").innerHTML = "Chiến thắng!";
 				}
 			}
 		</script>
