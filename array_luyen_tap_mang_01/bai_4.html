@@ -1,0 +1,17 @@
+<html>
+	<body>
+		<p>Nhập vào một dãy số bất kỳ: <input type="number" id="numbers"> <input type="button" onclick="reverse()" value="Đảo ngược"></p>
+		<p id="result"></p>
+		<script>
+			function reverse() {
+				var numbers = document.getElementById("numbers").value;
+				numbers = numbers.toString();
+				var result = [];
+				for (i = 0; i < numbers.length; i++) {
+					result[i] = numbers[numbers.length - i];
+				}
+				document.getElementById("result").innerHTML = "Kết quả: " + result.join("");
+			}
+		</script>
+	</body>
+</html>

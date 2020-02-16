@@ -68,29 +68,27 @@
 				counter ++;
 				if (counter % 2 != 0) {
 					//Buộc người dùng nhập vào vị trí có trên bàn cờ
-					var x = 3;
-					var y = 3;
-					while (x > 2 || y > 2) {
+					var x, y;
+					do {
 						x = +prompt("Hàng:") - 1;
 						y = +prompt("Cột:") - 1;
 						if (x > 2|| y > 2) {
 							alert("Bàn cờ không có vị trí đó. Hãy đánh lại!");
 						}
-					}
+					} while (x > 2 || y > 2)
+					
 					//Kiểm tra ô cờ đã được đánh hay chưa
 					if (caro[x][y] == "x" || caro[x][y] == "o") {
 						while (caro[x][y] == "x" || caro[x][y] == "o") {
 							alert("Vị trí đó đã được đánh. Hãy đánh lại!");
 							//Buộc người dùng nhập vào vị trí có trên bàn cờ
-							x = 3;
-							y = 3;
-							while (x > 2 || y > 2) {
+							do {
 								x = +prompt("Hàng:") - 1;
 								y = +prompt("Cột:") - 1;
-								if (x > 2 || y > 2) {
+								if (x > 2|| y > 2) {
 									alert("Bàn cờ không có vị trí đó. Hãy đánh lại!");
 								}
-							}
+							} while (x > 2 || y > 2)
 						}
 					}
 					caro[x][y] = "x";
@@ -98,29 +96,25 @@
 				} else {
 									
 					//Buộc người dùng nhập vào vị trí có trên bàn cờ
-					var x = 3;
-					var y = 3;
-					while (x > 2 || y > 2) {
+					do {
 						x = +prompt("Hàng:") - 1;
 						y = +prompt("Cột:") - 1;
 						if (x > 2|| y > 2) {
 							alert("Bàn cờ không có vị trí đó. Hãy đánh lại!");
 						}
-					}
+					} while (x > 2 || y > 2)
 					//Kiểm tra ô cờ đã được đánh hay chưa
 					if (caro[x][y] == "x" || caro[x][y] == "o") {
 						while (caro[x][y] == "x" || caro[x][y] == "o") {
 							alert("Vị trí đó đã được đánh. Hãy đánh lại!");
 							//Buộc người dùng nhập vào vị trí có trên bàn cờ
-							x = 3;
-							y = 3;
-							while (x > 2 || y > 2) {
+							do {
 								x = +prompt("Hàng:") - 1;
 								y = +prompt("Cột:") - 1;
-								if (x > 2 || y > 2) {
+								if (x > 2|| y > 2) {
 									alert("Bàn cờ không có vị trí đó. Hãy đánh lại!");
 								}
-							}
+							} while (x > 2 || y > 2)
 						}
 					}
 					caro[x][y] = "o";
