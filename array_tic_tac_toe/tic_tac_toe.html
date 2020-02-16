@@ -62,6 +62,7 @@
 				board += "<br>"
 			}
 			document.getElementById("bancaro").innerHTML = board;
+			
 			//Đánh cờ
 			counter = 0;
 			function danhCo() {
@@ -72,10 +73,10 @@
 					do {
 						x = +prompt("Hàng:") - 1;
 						y = +prompt("Cột:") - 1;
-						if (x > 2|| y > 2) {
+						if (x > 2 || y > 2 || x < 0 || y < 0 || isNaN(x) || isNaN(y)) {
 							alert("Bàn cờ không có vị trí đó. Hãy đánh lại!");
 						}
-					} while (x > 2 || y > 2)
+					} while (x > 2 || y > 2 || x < 0 || y < 0 || isNaN(x) || isNaN(y))
 					
 					//Kiểm tra ô cờ đã được đánh hay chưa
 					if (caro[x][y] == "x" || caro[x][y] == "o") {
@@ -85,10 +86,10 @@
 							do {
 								x = +prompt("Hàng:") - 1;
 								y = +prompt("Cột:") - 1;
-								if (x > 2|| y > 2) {
+								if (x > 2 || y > 2 || x < 0 || y < 0 || isNaN(x) || isNaN(y)) {
 									alert("Bàn cờ không có vị trí đó. Hãy đánh lại!");
 								}
-							} while (x > 2 || y > 2)
+							} while (x > 2 || y > 2 || x < 0 || y < 0 || isNaN(x) || isNaN(y))
 						}
 					}
 					caro[x][y] = "x";
@@ -99,10 +100,10 @@
 					do {
 						x = +prompt("Hàng:") - 1;
 						y = +prompt("Cột:") - 1;
-						if (x > 2|| y > 2) {
+						if (x > 2 || y > 2 || x < 0 || y < 0 || isNaN(x) || isNaN(y)) {
 							alert("Bàn cờ không có vị trí đó. Hãy đánh lại!");
 						}
-					} while (x > 2 || y > 2)
+					} while (x > 2 || y > 2 || x < 0 || y < 0 || isNaN(x) || isNaN(y))
 					//Kiểm tra ô cờ đã được đánh hay chưa
 					if (caro[x][y] == "x" || caro[x][y] == "o") {
 						while (caro[x][y] == "x" || caro[x][y] == "o") {
@@ -111,10 +112,10 @@
 							do {
 								x = +prompt("Hàng:") - 1;
 								y = +prompt("Cột:") - 1;
-								if (x > 2|| y > 2) {
+								if (x > 2 || y > 2 || x < 0 || y < 0 || isNaN(x) || isNaN(y)) {
 									alert("Bàn cờ không có vị trí đó. Hãy đánh lại!");
 								}
-							} while (x > 2 || y > 2)
+							} while (x > 2 || y > 2 || x < 0 || y < 0 || isNaN(x) || isNaN(y))
 						}
 					}
 					caro[x][y] = "o";

@@ -10,17 +10,15 @@
 		</form>
 		<p id="test"></p>
 		<script>
-			var a = "Tôi là một thằng đần. Không biết tôi đang gõ cái quái gì đây...";
+			var a = "Không biết mình <br> đang gõ cái quái gì đây...";
 			var n = "";
 			function typingText() {
 				var  t = document.f.txt.value;
-				if (t.length > 0) {
-					for (var i = 0 ; i < t.length; i++) {
-						n = n + a[i];
-						if (i == a.length) {
-							document.f.txt.value = "";
-							n = "";
-						}
+				for (var i = 0 ; i < t.length; i++) {
+					n += a[i];
+					if (i == a.length) {
+						document.f.txt.value = "";
+						n = "";
 					}
 				}
 				document.f.txt.value = n;
