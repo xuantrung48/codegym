@@ -1,0 +1,210 @@
+<html>
+	<head>
+		<title>Tic Tac Toe</title>
+		<style>
+			body {
+				background-color: #ebebeb;
+				text-align: center;
+			}
+			h1 {
+				color: blue;
+				margin-top: 50px;
+				text-transform: uppercase;
+				text-align: center;
+			}
+			input {
+				display: block;
+				margin: 30px auto;
+				padding: 10px;
+				border-radius: 20px;
+				background-color: yellow;
+				font-weight: bold;
+			}
+			#bancaro {
+				background-color: white;
+				display: inline-block;
+				padding: 0px;
+				font-size: 100;
+				letter-spacing: 20;
+			}
+			#win {
+				font-size: 40;
+				color: red;
+				text-transform: uppercase;
+				font-weight: bold;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Tic  Tac Toe</h1>
+		<p>Copyright © by <a href="https://www.facebook.com/XuanTrung">Trung Nguyen</a></p>
+		<input type="button" onclick="danhCo()" value="Đánh cờ">
+		<div id="win"></div>
+		<div id="bancaro"></div>
+		<script>
+			//Khai báo mảng 2 chiều
+			var caro = [];
+			for (i = 0; i < 3; i++) {
+				caro[i] = [];
+			}
+			//Gán giá trị vào các phần tử mảng 2 chiều
+			for (i = 0; i < 3; i++) {
+				for (j = 0; j < 3; j++) {
+					caro[i][j] = ".";
+				}
+			}
+			//In ra bàn cờ
+			var board = "";
+			for (i = 0; i < 3; i++) {
+				for (j = 0; j < 3; j++) {
+					board += caro[i][j] + "&nbsp&nbsp";
+				}
+				board += "<br>"
+			}
+			document.getElementById("bancaro").innerHTML = board;
+			//Đánh cờ
+			counter = 0;
+			function danhCo() {
+				counter ++;
+				if (counter % 2 != 0) {
+					//Buộc người dùng nhập vào vị trí có trên bàn cờ
+					var x = 3;
+					var y = 3;
+					while (x > 2 || y > 2) {
+						x = +prompt("Hàng:") - 1;
+						y = +prompt("Cột:") - 1;
+						if (x > 2|| y > 2) {
+							alert("Bàn cờ không có vị trí đó. Hãy đánh lại!");
+						}
+					}
+					//Kiểm tra ô cờ đã được đánh hay chưa
+					if (caro[x][y] == "x" || caro[x][y] == "o") {
+						while (caro[x][y] == "x" || caro[x][y] == "o") {
+							alert("Vị trí đó đã được đánh. Hãy đánh lại!");
+							//Buộc người dùng nhập vào vị trí có trên bàn cờ
+							x = 3;
+							y = 3;
+							while (x > 2 || y > 2) {
+								x = +prompt("Hàng:") - 1;
+								y = +prompt("Cột:") - 1;
+								if (x > 2 || y > 2) {
+									alert("Bàn cờ không có vị trí đó. Hãy đánh lại!");
+								}
+							}
+						}
+					}
+					caro[x][y] = "x";
+					//In lại bàn cờ
+					board = ""
+					for (i = 0; i < 3; i++) {
+						for (j = 0; j < 3; j++) {
+							board += caro[i][j] + "&nbsp&nbsp";
+						}
+						board += "<br>"
+					}
+					document.getElementById("bancaro").innerHTML = board;
+					
+					//Kiểm tra chiến thắng
+					function win() {
+						//Kiểm tra hàng
+						for (i = 0; i < 3; i++) {
+							if ((caro[i][0] == "x" && caro[i][1] == "x" && caro[i][2] == "x") || (caro[i][0] == "o" && caro[i][1] == "o" && caro[i][2] == "o")) {
+								return true;
+								break;
+							}
+						}
+						//Kiểm tra cột
+						for (j = 0; j < 3; j++) {
+							if ((caro[0][j] == "x" && caro[1][j] == "x" && caro[2][j] == "x") || (caro[0][j] == "o" && caro[1][j] == "o" && caro[2][j] == "o")) {
+								return true;
+								break;
+							}
+						}
+						//Kiểm tra đường chéo
+						if ((caro[0][0] == "x" && caro[1][1] == "x" && caro[2][2] == "x") || (caro[0][0] == "o" && caro[1][1] == "o" && caro[2][2] == "o")) {
+							return true;
+						}
+						if ((caro[2][0] == "x" && caro[1][1] == "x" && caro[0][2] == "x") || (caro[2][0] == "o" && caro[1][1] == "o" && caro[0][2] == "o")) {
+							return true;
+						}
+					}
+					
+					//Thông báo chiến thắng
+					if (win()) {
+						alert("Chiến thắng");
+						document.getElementById("win").innerHTML = "Chiến thắng!";
+					}
+				} else {
+									
+					//Buộc người dùng nhập vào vị trí có trên bàn cờ
+					var x = 3;
+					var y = 3;
+					while (x > 2 || y > 2) {
+						x = +prompt("Hàng:") - 1;
+						y = +prompt("Cột:") - 1;
+						if (x > 2|| y > 2) {
+							alert("Bàn cờ không có vị trí đó. Hãy đánh lại!");
+						}
+					}
+					//Kiểm tra ô cờ đã được đánh hay chưa
+					if (caro[x][y] == "x" || caro[x][y] == "o") {
+						while (caro[x][y] == "x" || caro[x][y] == "o") {
+							alert("Vị trí đó đã được đánh. Hãy đánh lại!");
+							//Buộc người dùng nhập vào vị trí có trên bàn cờ
+							x = 3;
+							y = 3;
+							while (x > 2 || y > 2) {
+								x = +prompt("Hàng:") - 1;
+								y = +prompt("Cột:") - 1;
+								if (x > 2 || y > 2) {
+									alert("Bàn cờ không có vị trí đó. Hãy đánh lại!");
+								}
+							}
+						}
+					}
+					caro[x][y] = "o";
+					//In lại bàn cờ
+					board = ""
+					for (i = 0; i < 3; i++) {
+						for (j = 0; j < 3; j++) {
+							board += caro[i][j] + "&nbsp&nbsp";
+						}
+						board += "<br>"
+					}
+					document.getElementById("bancaro").innerHTML = board;
+					
+					//Kiểm tra chiến thắng
+					function win() {
+						//Kiểm tra hàng
+						for (i = 0; i < 3; i++) {
+							if ((caro[i][0] == "x" && caro[i][1] == "x" && caro[i][2] == "x") || (caro[i][0] == "o" && caro[i][1] == "o" && caro[i][2] == "o")) {
+								return true;
+								break;
+							}
+						}
+						//Kiểm tra cột
+						for (j = 0; j < 3; j++) {
+							if ((caro[0][j] == "x" && caro[1][j] == "x" && caro[2][j] == "x") || (caro[0][j] == "o" && caro[1][j] == "o" && caro[2][j] == "o")) {
+								return true;
+								break;
+							}
+						}
+						//Kiểm tra đường chéo
+						if ((caro[0][0] == "x" && caro[1][1] == "x" && caro[2][2] == "x") || (caro[0][0] == "o" && caro[1][1] == "o" && caro[2][2] == "o")) {
+							return true;
+						}
+						if ((caro[2][0] == "x" && caro[1][1] == "x" && caro[0][2] == "x") || (caro[2][0] == "o" && caro[1][1] == "o" && caro[0][2] == "o")) {
+							return true;
+						}
+					}
+					
+					//Thông báo chiến thắng
+					if (win()) {
+						alert("Chiến thắng");
+						document.getElementById("win").innerHTML = "Chiến thắng!";
+					}
+				}
+			}
+		</script>
+	</body>
+</html>
