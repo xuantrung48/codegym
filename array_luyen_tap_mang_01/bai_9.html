@@ -1,0 +1,24 @@
+<html>
+	<body>
+		<p id="arrayA"></p>
+		<p id="arrayB"></p>
+		<p id="arrayC"></p>
+		
+		<script>
+			var numbersA = [];
+			for (i = 0; i < 10; i++) {
+				numbersA[i] = Math.floor(Math.random()* 20);
+			}
+			document.getElementById("arrayA").innerHTML = "Mảng số ngẫu nhiên A: " + numbersA;
+			
+			var numbersB = [];
+			for (i = 0; i < 10; i++) {
+				numbersB[i] = Math.floor(Math.random()* 20);
+			}
+			document.getElementById("arrayB").innerHTML = "Mảng số ngẫu nhiên B: " + numbersB;
+
+			var numbersC = numbersA.concat(numbersB); 
+			document.write("Mảng C = A + B: " + numbersC);
+		</script>
+	</body>
+</html>
