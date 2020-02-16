@@ -35,7 +35,7 @@
 			}
 		</style>
 	</head>
-	<body>
+	<body onkeydown="danhCo()">
 		<h1>Tic  Tac Toe</h1>
 		<p>Copyright © by <a href="https://www.facebook.com/XuanTrung">Trung Nguyen</a></p>
 		<input type="button" onclick="danhCo()" value="Đánh cờ">
@@ -57,7 +57,7 @@
 			var board = "";
 			for (i = 0; i < 3; i++) {
 				for (j = 0; j < 3; j++) {
-					board += caro[i][j] + "&nbsp&nbsp";
+					board += "&nbsp" + caro[i][j] + "&nbsp";
 				}
 				board += "<br>"
 			}
@@ -125,7 +125,7 @@
 				board = ""
 				for (i = 0; i < 3; i++) {
 					for (j = 0; j < 3; j++) {
-						board += caro[i][j] + "&nbsp&nbsp";
+						board += "&nbsp" + caro[i][j] + "&nbsp";
 					}
 					board += "<br>"
 				}
