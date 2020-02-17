@@ -1,0 +1,43 @@
+<html>
+	<head>
+		<style>
+			table {
+				font-size: 2em;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Good - Fast - Cheap</h1>
+		<table>
+			<tr>
+				<td><input type="checkbox" id="good" onclick="good()"></td>
+				<td>Good</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" id="fast" onclick="fast()"></td>
+				<td>Fast</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" id="cheap" onclick="cheap()"></td>
+				<td>Cheap</td>
+			</tr>
+		</table>
+		
+		<script>			
+			function good() {
+				document.getElementById("good").checked = true;
+				document.getElementById("fast").checked = false;
+			}
+			
+			function fast() {
+				document.getElementById("fast").checked = true;
+				document.getElementById("cheap").checked = false;
+			}
+			
+			function cheap() {
+				document.getElementById("cheap").checked = true;
+				document.getElementById("good").checked = false;
+			}
+		</script>
+	</body>
+</html>
