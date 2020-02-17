@@ -2,46 +2,41 @@
 	<body onload="docReady()">
 		<img src="https://james.codegym.vn/pluginfile.php/10805/mod_assign/intro/1.png" id="nobita" height="100" width="80" style="position: absolute; left: 500px; top: 300px;"/>
 		<script>
-			function upArrowPressed() {
-				let element = document.getElementById("nobita");
-				element.style.top = parseInt(element.style.top) - 5 + 'px';
+			function docReady() {
+				window.addEventListener('keydown', move);
 			}
 
-			function downArrowPressed() {
-				var element = document.getElementById("nobita");
-				element.style.top = parseInt(element.style.top) + 5 + 'px';
-			}
-
-			function leftArrowPressed() {
-				var element = document.getElementById("nobita");
-				element.style.left = parseInt(element.style.left) - 5 + 'px';
-			}
-
-			function rightArrowPressed() {
-				var element = document.getElementById("nobita");
-				element.style.left = parseInt(element.style.left) + 5 + 'px';
-
-			}
-
-			function moveSelection(evt) {
+			function move(evt) {
 				switch (evt.keyCode) {
 					case 37:
-						leftArrowPressed();
+						left();
 						break;
 					case 39:
-						rightArrowPressed();
+						right();
 						break;
 					case 38:
-						upArrowPressed();
+						up();
 						break;
 					case 40:
-						downArrowPressed();
+						down();
 						break;
 				}
 			}
+			
+			function up() {
+				nobita.style.top = parseInt(nobita.style.top) - 5 + 'px';
+			}
 
-			function docReady() {
-				window.addEventListener('keydown', moveSelection);
+			function down() {
+				nobita.style.top = parseInt(nobita.style.top) + 5 + 'px';
+			}
+
+			function left() {
+				nobita.style.left = parseInt(nobita.style.left) - 5 + 'px';
+			}
+
+			function right() {
+				nobita.style.left = parseInt(nobita.style.left) + 5 + 'px';
 			}
 		</script>
 	</body>
