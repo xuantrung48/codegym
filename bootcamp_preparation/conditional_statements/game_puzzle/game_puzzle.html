@@ -1,0 +1,107 @@
+<html>
+	<head>
+		<title>Game Puzzle</title>
+		<style>
+			img {
+				margin: 5px 10px;
+				box-shadow: 2px 2px ;
+				border-radius: 5px;
+			}
+		</style>
+	</head>
+	<body>
+		<img id="image1" src="https://demo.codegym.vn/8/puzzlegame/img/panda_swap_part1x1.jpg" width="500px" height="100px" onclick="changeImage1()"><br>
+		<img id="image2" src="https://demo.codegym.vn/8/puzzlegame/img/monkey_part2x1.jpg" width="500px"  height="100px" onclick="changeImage2()"><br>
+		<img id="image3" src="https://demo.codegym.vn/8/puzzlegame/img/monkey_part3x1.jpg" width="500px"  height="100px" onclick="changeImage3()"><br>
+		<img id="image4" src="https://demo.codegym.vn/8/puzzlegame/img/panda_swap_part4x1.jpg" width="500px"  height="100px" onclick="changeImage4()"><br>
+		<img id="image5" src="https://demo.codegym.vn/8/puzzlegame/img/funny-cat1_part5x1.jpg" width="500px"  height="100px" onclick="changeImage5()">
+
+		<script>
+			var i1 = 0;
+			var i2 = 0;
+			var i3 = 0;
+			var i4 = 0;
+			var i5 = 0;
+			function changeImage1() {
+				i1++;
+				if (i1 == 1) {	
+					document.getElementById("image1").src = "https://demo.codegym.vn/8/puzzlegame/img/monkey_part1x1.jpg";
+				} else if (i1 == 2) {
+					document.getElementById("image1").src = "https://demo.codegym.vn/8/puzzlegame/img/funny-cat1_part1x1.jpg";
+				} else {
+					document.getElementById("image1").src = "https://demo.codegym.vn/8/puzzlegame/img/panda_swap_part1x1.jpg";
+					i1 = 0;
+				}
+				check();
+			}
+
+			function changeImage2() {
+				i2++;
+				if (i2 == 1) {	
+					document.getElementById("image2").src = "https://demo.codegym.vn/8/puzzlegame/img/funny-cat1_part2x1.jpg";
+				} else if (i2 == 2) {
+					document.getElementById("image2").src = "https://demo.codegym.vn/8/puzzlegame/img/panda_swap_part2x1.jpg";
+				} else {
+					document.getElementById("image2").src = "https://demo.codegym.vn/8/puzzlegame/img/monkey_part2x1.jpg";
+					i2 = 0;
+				}
+				check();
+			}
+
+			function changeImage3() {
+				i3++;
+				if (i3 == 1) {	
+					document.getElementById("image3").src = "https://demo.codegym.vn/8/puzzlegame/img/funny-cat1_part3x1.jpg";
+				} else if (i3 == 2) {
+					document.getElementById("image3").src = "https://demo.codegym.vn/8/puzzlegame/img/panda_swap_part3x1.jpg";
+				} else {
+					document.getElementById("image3").src = "https://demo.codegym.vn/8/puzzlegame/img/monkey_part3x1.jpg";
+					i3 = 0;
+				}
+				check();
+			}
+
+			function changeImage4() {
+				i4++;
+				if (i4 == 1) {	
+					document.getElementById("image4").src = "https://demo.codegym.vn/8/puzzlegame/img/monkey_part4x1.jpg";
+				} else if (i4 == 2) {
+					document.getElementById("image4").src = "https://demo.codegym.vn/8/puzzlegame/img/funny-cat1_part4x1.jpg";
+				} else {
+					document.getElementById("image4").src = "https://demo.codegym.vn/8/puzzlegame/img/panda_swap_part4x1.jpg";
+					i4 = 0;
+				}
+				check();
+			}
+
+			function changeImage5() {
+				i5++;
+				if (i5 == 1) {	
+					document.getElementById("image5").src = "https://demo.codegym.vn/8/puzzlegame/img/panda_swap_part5x1.jpg";
+				} else if (i5 == 2) {
+					document.getElementById("image5").src = "https://demo.codegym.vn/8/puzzlegame/img/monkey_part5x1.jpg";
+				} else {
+					document.getElementById("image5").src = "https://demo.codegym.vn/8/puzzlegame/img/funny-cat1_part5x1.jpg";
+					i5 = 0;
+				}
+				check();
+			}
+
+			function check() {
+				if (i1 == 0 && i2 == 2 && i3 == 2 && i4 == 0 && i5 == 1 || i1 == 1 && i2 == 0 && i3 == 0 && i4 == 1 && i5 == 2 || i1 == 2 && i2 == 1 && i3 == 1 && i4 == 2 && i5 == 0) {
+					image1.style.boxShadow = "5px 5px 10px red";
+					image2.style.boxShadow = "5px 5px 10px red";
+					image3.style.boxShadow = "5px 5px 10px red";
+					image4.style.boxShadow = "5px 5px 10px red";
+					image5.style.boxShadow = "5px 5px 10px red";
+				} else {
+					image1.style.boxShadow = "";
+					image2.style.boxShadow = "";
+					image3.style.boxShadow = "";
+					image4.style.boxShadow = "";
+					image5.style.boxShadow = "";
+				}
+			}
+		</script>
+	</body>
+</html>
