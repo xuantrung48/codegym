@@ -1,0 +1,43 @@
+<html>
+	<head>
+		<title>Em có yêu anh không</title>
+		<style>
+			h2 {
+				font-size: 3em;
+			}
+			
+			input {
+				font-size: 2em;
+				padding: 20px;
+				font-weight: bold;
+				margin-left: 50px;
+			}
+			
+			#yes {
+				background-color: red;
+				color: white;
+				border-radius: 50px;
+			}
+			
+			#no {
+				background-color: #8a8a8a;
+				border-radius: 50px;
+			}
+		</style>
+	</head>
+	<body>
+		<h2>Em có yêu anh không?</h2>
+		<input type="button" value="   Có   " id="yes" onclick="alert('Anh biết ngay mà! Anh cũng yêu em! :))')">
+		<input type="button" value="Không" id="no" onmouseover="move()" style="position: absolute; top: 103px; left: 200px;">
+		<script>
+			var a = document.getElementById("no");
+			function move() {
+			
+				var x = Math.round(Math.random()*70);
+				var y = Math.round(Math.random()*70);
+				a.style.top = x + "%";
+				a.style.left = y + "%";
+			}
+		</script>
+	</body>
+</html>
