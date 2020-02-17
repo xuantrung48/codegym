@@ -1,13 +1,13 @@
 <html>
 	<body>
-		<p>Nhập vào chuỗi 1: <input type="text" id="text1" onkeydown="check()"></p>
-		<p>Nhập vào chuỗi 2: <input type="text" id="text2" onkeydown="check()"></p>
+		<p>Nhập vào chuỗi 1: <input type="text" id="text1"></p>
+		<p>Nhập vào chuỗi 2: <input type="text" id="text2"></p>
+		<input type="button" onclick="check()" value="Kiểm tra">
 		<p id="result"></p>
 		<script>
 			function check() {
 				var text1 = document.getElementById("text1").value;
 				var text2 = document.getElementById("text2").value;
-				
 				if (text1 == text2) {
 					document.getElementById("result").innerHTML = "Chuối 1 giống chuỗi 2.";
 				} else {

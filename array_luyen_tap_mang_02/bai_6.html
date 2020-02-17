@@ -1,0 +1,22 @@
+<html>
+	<body>
+		<p>Nhập vào mảng ký tự có chứa dấu "-": <input type="text" id="sam"></p>
+		<input type="button" onclick="change()" value="Đổi">
+		<p id="result"></p>
+		<script>
+			function change() {
+				var a = document.getElementById("sam").value;
+				var x = "";
+				for (i = 0; i < a.length; i++) {
+					if (a[i] == "-") {
+						x += "_"
+					} else {
+						x += a[i];
+					}
+				}
+				
+				document.getElementById("result").innerHTML = "Kết quả: " + x;
+			}
+		</script>
+	</body>
+</html>
