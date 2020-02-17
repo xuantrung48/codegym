@@ -1,0 +1,41 @@
+<html>
+	<body>
+		<p id="arrayA"></p>
+		<p id="result"></p>
+		<script>
+			var numbers = [];
+			
+			for (i = 0; i < 4; i++) {
+				numbers[i] = [];
+			}
+			
+			for (i = 0; i < 4; i++) {
+				for (j = 0; j < 4; j++) {
+					numbers[i][j] = Math.floor(Math.random()* 10);
+				}
+			}
+			
+			var x = ""
+			for (i = 0; i < 4; i++) {
+				for (j = 0; j < 4; j++) {
+					if (j < 3) {
+						x += numbers[i][j] + ",";
+					} else {
+						x += numbers[i][j];
+					}
+				}
+				x += "<br>";
+			}
+			document.getElementById("arrayA").innerHTML = "Mảng số 2 chiều ngẫu nhiên: <br>" + x;
+			
+			var y = "";
+			for (i = 0; i < 4; i++) {
+				y += '"row"' + i + "<br>";
+				for (j = 0; j < 4; j++) {
+					y += '" ' + numbers[i][j] + '"' + "<br>";
+				}
+			}
+			document.getElementById("result").innerHTML = "In ra kết quả: <br>" + y;
+		</script>
+	</body>
+</html>

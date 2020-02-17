@@ -1,0 +1,16 @@
+<html>
+	<body>
+		<p>"Viết một chương trình để đếm số từ trong một chuỗi"</p>
+		<p id="result"></p>
+		<script>
+			var A = "Viết một chương trình để đếm số từ trong một chuỗi";
+			var counter = 0;
+			for (i = 0; i < A.length; i++) {
+				if (A[i] == " ") {
+					counter++;
+				}
+			}
+			document.getElementById("result").innerHTML = "Câu trên có " + (counter + 1) + " từ.";
+		</script>
+	</body>
+</html>
