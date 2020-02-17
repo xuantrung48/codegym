@@ -1,0 +1,126 @@
+﻿<html>
+	<head>
+		<style>
+			button {
+				width: 80px;
+				height: 80px;
+				background-color: #b3d7ff;
+				border-radius: 10px;
+				margin: 5px;
+				font-size: 50px;
+			}
+			input {
+				height: 80px;
+				font-size: 70px;
+				width: 380px;
+				border-radius: 10px;
+				background-color: #d9d9d9;
+			}
+		</style>
+	</head>
+	<body>
+		<form>
+			<table style="border: 3px solid black">
+				<tr>
+					<td colspan="4"><input type="text" id="result"></td>
+				</tr>
+				<tr>
+					<td><button type="button" onclick="f1()">1</button></td>
+					<td><button type="button" onclick="f2()">2</button></td>
+					<td><button type="button" onclick="f3()">3</button></td>
+					<td><button type="button" onclick="fadd()">+</button></td>
+				</tr>
+				<tr>
+					<td><button type="button" onclick="f4()">4</button></td>
+					<td><button type="button" onclick="f5()">5</button></td>
+					<td><button type="button" onclick="f6()">6</button></td>
+					<td><button type="button" onclick="fsub()">-</button></td>
+				</tr>
+				<tr>
+					<td><button type="button" onclick="f7()">7</button></td>
+					<td><button type="button" onclick="f8()">8</button></td>
+					<td><button type="button" onclick="f9()">9</button></td>
+					<td><button type="button" onclick="fmul()">*</button></td>
+				</tr>
+				<tr>
+					<td><button type="reset">C</button></td>
+					<td><button type="button" onclick="f0()">0</button></td>
+					<td><button type="button" onclick="fequal()">=</button></td>
+					<td><button type="button" onclick="fdiv()">/</button></td>
+				</tr>
+			</table>
+		</form>
+		<script>
+			var a, b;
+			var x;
+			var result;
+			function f0() {
+				document.getElementById("result").value += "0";
+			}
+			function f1() {
+				document.getElementById("result").value += "1";
+			}
+			function f2() {
+				document.getElementById("result").value += "2";
+			}
+			function f3() {
+				document.getElementById("result").value += "3";
+			}
+			function f4() {
+				document.getElementById("result").value += "4";
+			}
+			function f5() {
+				document.getElementById("result").value += "5";
+			}
+			function f6() {
+				document.getElementById("result").value += "6";
+			}
+			function f7() {
+				document.getElementById("result").value += "7";
+			}
+			function f8() {
+				document.getElementById("result").value += "8";
+			}
+			function f9() {
+				document.getElementById("result").value += "9";
+			}
+			function fadd() {
+				a = +document.getElementById("result").value;
+				x = "add";
+				document.getElementById("result").value = ""
+			}
+			function fsub() {
+				a = +document.getElementById("result").value;
+				x = "sub";
+				document.getElementById("result").value = ""
+			}
+			function fmul() {
+				a = +document.getElementById("result").value;
+				x = "mul";
+				document.getElementById("result").value = ""
+			}
+			function fdiv() {
+				a = +document.getElementById("result").value;
+				x = "div";
+				document.getElementById("result").value = ""
+			}
+			function fequal() {
+				b = +document.getElementById("result").value;
+				if (x == "add") {
+					result = a + b;
+				} else if (x == "sub") {
+					result = a - b;
+				} else if (x == "mul") {
+					result = a * b;
+				} else {
+					if (b != 0) {
+						result = a / b;
+					} else {
+						result = "Error.";
+					}
+				}
+				document.getElementById("result").value = result;
+			}
+		</script>
+	</body>
+</html>
