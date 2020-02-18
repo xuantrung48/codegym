@@ -1,0 +1,33 @@
+<html>
+	<body>
+		<script>
+			function findMin(a, b, c) {
+				if (a > b) {
+					if (b > c) {
+						return c;
+					} else {
+						return b;
+					}
+				} else {
+					if (b < c) {
+						return a;
+					} else {
+						if (a < c) {
+							return a;
+						} else {
+
+							return c;
+						}
+					}
+				}
+			}
+
+			alert("Nhập vào 3 số nguyên:");
+			var a = +prompt("Số thứ nhất:");
+			var b = +prompt("Số thứ hai:");
+			var c = +prompt("Số thứ ba:");
+
+			alert("Số nhỏ nhất là " + findMin(a, b, c));
+		</script>
+	</body>
+</html>

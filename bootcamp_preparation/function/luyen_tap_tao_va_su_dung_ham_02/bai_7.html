@@ -1,0 +1,14 @@
+<html>
+	<body>
+		<input type="number" id="n1">
+		<input type="number" id="n2">
+		<input type="button" onclick="change()" value="Đổi vị trí">
+		<script>
+			function change() {
+				let x = document.getElementById("n1").value;
+				document.getElementById("n1").value = document.getElementById("n2").value;
+				document.getElementById("n2").value = x;
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,35 @@
+<html>
+	<body>
+		<table>
+			<tr>
+				<td>Nhập vào chuỗi ký tự:</td>
+				<td><input type="text" id="arr"></td>
+			</tr>
+			<tr>
+				<td>Nhập vào 1 ký tự bất kỳ:</td>
+				<td><input type="text" id="cha"></td>
+			</tr>
+		</table>
+		<input type="button" onclick="check()" value="Kiểm tra">
+		<p id="result"></p>
+		<script>
+			function findCha(x, A) {
+				let counter =  0;
+				for (let i = 0; i < A.length; i++) {
+					if (x == A[i]) {
+						counter++;
+					}
+				}
+				if (counter != 0) {
+					return counter;
+				} else {
+					return counter - 1;
+				}
+			}
+
+			function check() {
+				document.getElementById("result").innerHTML = "Kết quả: " + (findCha(document.getElementById("cha").value, document.getElementById("arr").value));
+			}
+		</script>
+	</body>
+</html>
