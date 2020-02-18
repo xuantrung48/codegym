@@ -1,0 +1,27 @@
+<html>
+	<head>
+		<meta charset="utf8">
+	</head>
+	<body>
+		<script>
+			var stars = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+			var constellations = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+			function findStar(x) {
+				var index = -1;
+				for (let i = 0; i < stars.length; i++) {
+					if (stars[i] == x) {
+						index = i;
+					}
+				}
+				return constellations[index];
+			}
+
+			var star = prompt("Nhập vào tên ngôi sao:");
+			if (findStar(star) == undefined) {
+				document.write("Không có chòm sao nào chứa " + star);
+			} else {
+				document.write("Tên của chòm sao là " + findStar(star));
+			}
+		</script>
+	</body>
+</html>
