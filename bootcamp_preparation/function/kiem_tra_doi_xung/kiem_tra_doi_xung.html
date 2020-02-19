@@ -1,0 +1,29 @@
+<html>
+	<body>
+		<p>Nhập vào một chuỗi: <input type="text" id="str"> <input type="button" onclick="check()" value="Kiểm tra"></p>
+		<p id="result"></p>
+		<script>
+			function isPalindrome(s) {
+				if (s.length == 1 || s.length == 0) {
+					return false;
+				}
+				
+				for (let i = 0; i < s.length; i++) {
+					if (s[i] != s[s.length - i -1]) {
+						return false;
+					}
+				}
+				
+				return true;
+			}
+			
+			function check() {
+				if (isPalindrome(document.getElementById("str").value)) {
+					document.getElementById("result").innerHTML = "Chuỗi trên đối xứng.";
+				} else {
+					document.getElementById("result").innerHTML = "Chuỗi trên không đối xứng.";
+				}
+			}
+		</script>
+	</body>
+</html>
