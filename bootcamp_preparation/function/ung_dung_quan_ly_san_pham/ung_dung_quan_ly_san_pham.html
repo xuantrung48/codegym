@@ -18,6 +18,12 @@
 			table tr:hover {
 				background-color: #ddd;
 			}
+			
+			input {
+				background-color: #bdd6ff;
+				border-radius: 15px;
+				padding: 8px;
+			}
 		</style>
 	</head>
 	<body>
@@ -29,25 +35,33 @@
 			var products = ["Sony Xperia", "Samsung Galaxy", "Nokia 6", "Xiaomi Redmi Note 4", "Apple iPhone 6S", "Xiaomi Mi 5s Plus", "Apple iPhone 8 Plus", "Fujitsu F-04E", "Oppo A71"];
 			
 			function displayProducts() {
-				let x = '<h2>Display All Product</h2><h3>Product Name</h3><table id="producttable"><tr><th>Products</th><th colspan="2">Action</th></tr>';
+				let x = '<h2>Display All Product</h2><h3>Product Name</h3><table><tr><th>Products</th><th colspan="2">Action</th></tr>';
 				for (let i = 0; i < products.length; i++) {
-					x += '<tr><td>' + products[i] + '</td><td><input type="button" id="p' + i + '" value="Edit" onclick="editProduct(' + i + ')"></td>' + '<td><input type="button" value="Delete" onclick="deleteProduct(' + i + ')"></td></tr>';
+					x += '<tr><td>' + products[i] + '</td><td><input type="button" value="Edit" onclick="editProduct(' + i + ')"></td>' + '<td><input type="button" value="Delete" onclick="deleteProduct(' + i + ')"></td></tr>';
 				}
 				x += '</table>';
 				return x;
 			}
 			
 			function addProduct() {
-				products.push(document.getElementById("newproduct").value);
+				if (document.getElementById("newproduct").value != "") {
+					products.push(document.getElementById("newproduct").value);
+					alert(document.getElementById("newproduct").value + " added!");
+				}
+				document.getElementById("newproduct").value = ""
 				document.getElementById("productlist").innerHTML = displayProducts();
-				alert(document.getElementById("newproduct").value + " added!");
 			}
 			
 			function editProduct(i) {
+				let a = products[i];
 				let x = prompt('Edit', products[i]);
-				products[i] = x;
+				if (x == null) {
+					product[i] = a;
+				} else {
+					products[i] = x;
+					alert("Edited!");
+				}
 				document.getElementById("productlist").innerHTML = displayProducts();
-				alert("Edited");
 			}
 			
 			function deleteProduct(i) {
