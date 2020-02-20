@@ -2,11 +2,9 @@
 	<body>
 		<script>
 			function isANumber(x) {
-				if (isNaN(x)) {
+				if (isNaN(x))
 					return false;
-				} else {
-					return true;
-				}
+				return true;
 			}
 
 			alert(isANumber(+prompt("Nhập vào một số hoặc chuỗi:")));
