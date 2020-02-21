@@ -1,0 +1,24 @@
+<html>
+	<body>
+		<script>
+			var Circle = function(radius, color) {
+				this.radius = radius;
+				this.color = color;
+				
+				this.getRadius = function() {
+					return this.radius;
+				}
+				
+				this.getArea = function() {
+					return Math.PI * Math.pow(radius, 2);
+				}
+			}
+			
+			let circle = new Circle(3, "red");
+			alert("Radius: " + circle.radius + ". Area: " + circle.getArea() + ". Color: " + circle.color);
+			
+			let circle2 = new Circle(prompt("Radius:"), prompt("Color:"));
+			alert("Radius: " + circle2.radius + ". Area: " + circle2.getArea() + ". Color: " + circle2.color);
+		</script>
+	</body>
+</html>
