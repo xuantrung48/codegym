@@ -1,0 +1,20 @@
+<html>
+	<body>
+		<script>
+			var Temperature = function(c) {
+				this.c = c;
+				
+				this.f = function() {
+					return c * 1.8 + 32;
+				}
+				
+				this.k = function() {
+					return c + 273.15;
+				}
+			}
+			
+			var tem = new Temperature(25);
+			document.write("Độ C: " + tem.c + " , độ F: " + tem.f() + " , độ Kenvin: " + tem.k());
+		</script>
+	</body>
+</html>
