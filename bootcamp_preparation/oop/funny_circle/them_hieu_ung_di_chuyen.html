@@ -1,0 +1,69 @@
+<html>
+	<body onload="docReady()">
+		<canvas id="myCanvas" width="800px" height="500px" style="border: 1px solid #d3d3d3;">
+		
+		<script>
+			function docReady() {
+				window.addEventListener('keydown', move);
+			}
+			
+			function createCircle(x, y){
+				var ctx = document.getElementById("myCanvas").getContext("2d");
+				ctx.clearRect(0,0,800,500);
+				ctx.beginPath();
+				ctx.arc(x, y, 10, 0, 2 * Math.PI);
+				ctx.fillStyle = "blue";
+				ctx.fill();
+			}
+			
+			function move(evt) {
+				switch (evt.keyCode) {
+					case 37:
+						left();
+						break;
+					case 39:
+						right();
+						break;
+					case 38:
+						up();
+						break;
+					case 40:
+						down();
+						break;
+				}
+			}
+			
+			var ngang = 400;
+			var doc = 250;
+			var circleX = createCircle(ngang, doc);
+			
+			function up() {
+				doc = doc - 5;
+				if (doc < 10) 
+					doc = 10;
+				circleX = createCircle(ngang, doc);
+			}
+
+			function down() {
+				doc = doc + 5;
+				if (doc > 490)
+					doc = 490;
+				circleX = createCircle(ngang, doc);
+			}
+
+			function left() {
+				ngang = ngang - 5;
+				if (ngang < 10)
+					ngang = 10;
+				circleX = createCircle(ngang, doc);
+			}
+
+			function right() {
+				ngang = ngang + 5;
+				if (ngang > 790)
+					ngang = 790;
+				circleX = createCircle(ngang, doc);
+			}
+		</script>
+	</body>
+</html>
