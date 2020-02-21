@@ -1,0 +1,193 @@
+<html>
+	<head>
+		<style>
+			table, td {
+				border: 1px solid black;
+				border-collapse: collapse;
+			}
+		</style>
+	</head>
+	<body>
+		<h2>Điện thoại NOKIA</h2>
+		<table>
+			<tr>
+				<td colspan="7" id="display" style="text-align: center;">NOKIA</td>
+			</tr>
+			<tr>
+				<td><input type="button" onclick="viewinbox1()" value="Xem hộp thư đến"></td>
+				<td><input type="button" onclick="viewsent1()" value="Thư đã gửi"></td>
+				<td><input type="button" onclick="viewdraft1()" value="Xem thư nháp"></td>
+				<td><input type="button" onclick="compose1()" value="Soạn tin nhắn"></td>
+				<td><input type="button" onclick="sendsms1()" value="Gửi tin nhắn"></td>
+				<td><input type="button" onclick="checkBattery1()" value="Kiểm tra pin"></td>
+				<td><input type="button" onclick="chargeBattery1()" value="Sạc pin"></td>
+			</tr>
+		</table>
+		
+		<h2>Điện thoại iPhone</h2>
+		<table>
+			<tr>
+				<td colspan="7" id="display2" style="text-align: center;">iPhone</td>
+			</tr>
+			<tr>
+				<td><input type="button" onclick="viewinbox2()" value="Xem hộp thư đến"></td>
+				<td><input type="button" onclick="viewsent2()" value="Thư đã gửi"></td>
+				<td><input type="button" onclick="viewdraft2()" value="Xem thư nháp"></td>
+				<td><input type="button" onclick="compose2()" value="Soạn tin nhắn"></td>
+				<td><input type="button" onclick="sendsms2()" value="Gửi tin nhắn"></td>
+				<td><input type="button" onclick="checkBattery2()" value="Kiểm tra pin"></td>
+				<td><input type="button" onclick="chargeBattery2()" value="Sạc pin"></td>
+			</tr>
+		</table>
+		<script>
+			//Sự kiện click chuột của điện thoại nokia
+			function sendsms1() {
+				let i = prompt("Bạn muốn gửi tin nhắn ở vị trí thứ mấy trong danh sách thư nháp:");
+				if (i <= nokia.draft.length && i > 0) {
+					iphone.receiveSMS(nokia.draft[i - 1]);
+					nokia.sendSMS(i - 1);
+					alert("Đã gửi!");
+					viewsent1();
+				} else {
+					alert("Không có!");
+				}
+			}
+			function viewsent1() {
+				document.getElementById("display").innerHTML = nokia.viewSent();
+			}
+			function viewdraft1() {
+				document.getElementById("display").innerHTML = nokia.viewDraft();
+			}
+			function compose1() {
+				let x = prompt("Nhập nội dung tin nhắn:");
+				if (x != null) {
+					nokia.composeSMS(x);
+					viewdraft1();
+				}
+			}
+			function viewinbox1() {
+				document.getElementById("display").innerHTML = nokia.viewInbox();
+			}
+			function chargeBattery1() {
+				let time = prompt("Nhập vào thời gian sạc (phút):");
+				nokia.chargingBattery(time);
+				document.getElementById("display").innerHTML = nokia.battery + "%";
+			}
+			function checkBattery1() {
+				document.getElementById("display").innerHTML = nokia.battery + "%";
+			}
+			
+			//Sự kiện click chuột của điện thoại iPhone
+			function sendsms2() {
+				let i = prompt("Bạn muốn gửi tin nhắn ở vị trí thứ mấy trong danh sách thư nháp:");
+				if (i <= iphone.draft.length && i > 0) {
+					nokia.receiveSMS(iphone.draft[i - 1]);
+					iphone.sendSMS(i - 1);
+					alert("Đã gửi!");
+					viewsent2();
+				} else {
+					alert("Không có!");
+				}
+			}
+			function viewsent2() {
+				document.getElementById("display2").innerHTML = iphone.viewSent();
+			}
+			function viewdraft2() {
+				document.getElementById("display2").innerHTML = iphone.viewDraft();
+			}
+			function compose2() {
+				let x = prompt("Nhập nội dung tin nhắn:");
+				if (x != null) {
+					iphone.composeSMS(x);
+					viewdraft2();
+				}
+			}
+			function viewinbox2() {
+				document.getElementById("display2").innerHTML = iphone.viewInbox();
+			}
+			function chargeBattery2() {
+				let time = prompt("Nhập vào thời gian sạc (phút):");
+				iphone.chargingBattery(time);
+				document.getElementById("display2").innerHTML = iphone.battery + "%";
+			}
+			function checkBattery2() {
+				document.getElementById("display2").innerHTML = iphone.battery + "%";
+			}
+			
+			//Mô tả lớp điện thoại
+			var Mobile = function(battery) {
+				//pin
+				this.battery = battery;
+				
+				//sạc pin
+				this.chargingBattery = function (time) {
+					battery += time / 60 * 50; //time: số phút sạc;
+					if (battery > 100)
+						battery = 100;
+					this.battery = Math.round(battery);
+				}
+				
+				//Sử dụng pin
+				this.useBattery = function() {
+					battery -= 1;
+					this.battery = battery;
+				}
+				
+				//Tin nhắn
+				this.draft = [];
+				this.inbox = [];
+				this.sent = [];
+				
+				//Xem tin nhắn
+				this.viewInbox = function() {
+					var inbox = "Hộp thư đến " + "(" + this.inbox.length + ")<br>";
+					for (let i = 0; i < this.inbox.length; i++) {
+						inbox += (i + 1) + ". " + this.inbox[i] + "<br>";
+					}
+					this.useBattery();
+					return inbox;
+				}
+				
+				this.viewSent = function() {
+					var sent = "Thư đã gửi " + "(" + this.sent.length + ")<br>";
+					for (let i = 0; i < this.sent.length; i++) {
+						sent += (i + 1) + ". " + this.sent[i] + "<br>";
+					}
+					this.useBattery();
+					return sent;
+				}
+				
+				this.viewDraft = function() {
+					var draft = "Thư nháp " + "(" + this.draft.length + ")<br>";
+					for (let i = 0; i < this.draft.length; i++) {
+						draft += (i + 1) + ". " + this.draft[i] + "<br>";
+					}
+					this.useBattery();
+					return draft;
+				}
+				
+				//Soạn tin nhắn
+				this.composeSMS = function(text) {
+					this.draft[this.draft.length] = text;
+					this.useBattery();
+				}
+				
+				//Gửi tin nhắn
+				this.sendSMS = function(i) {
+					this.sent.push(this.draft[i]);
+					this.draft.splice(i,1);
+					this.useBattery();
+				}
+				
+				//Nhận tin nhắn
+				this.receiveSMS = function(text) {
+					this.inbox.push(text);
+					this.useBattery();
+				}
+			}
+			
+			var nokia = new Mobile(49);
+			var iphone = new Mobile(72);
+		</script>
+	</body>
+</html>
