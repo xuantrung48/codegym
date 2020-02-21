@@ -1,0 +1,43 @@
+<html>
+	<body>
+		<script>
+			let MyDate = function(d, m, y) {
+				this.day = d;
+				this.month = m;
+				this.year = y;
+				
+				this.getDay = function() {
+					return this.day;
+				}
+				
+				this.getMonth = function() {
+					return this.month;
+				}
+				
+				this.getYear = function() {
+					return this.year;
+				}
+				
+				this.setDay = function(newDay) {
+					this.day = newDay;
+				}
+				
+				this.setMonth = function(newMonth) {
+					this.month = newMonth;
+				}
+				
+				this.setYear = function(newYear) {
+					this.year = newYear;
+				}
+			}
+			
+			let dayX = new MyDate(23, 11, 1989);
+			alert(dayX.getDay() + "/" + dayX.getMonth() + "/" + dayX.getYear());
+			
+			dayX.setDay(prompt("New day:"));
+			dayX.setMonth(prompt("New Month:"));
+			dayX.setYear(prompt("New Year:"));
+			alert(dayX.getDay() + "/" + dayX.getMonth() + "/" + dayX.getYear());
+		</script>
+	</body>
+</html>
