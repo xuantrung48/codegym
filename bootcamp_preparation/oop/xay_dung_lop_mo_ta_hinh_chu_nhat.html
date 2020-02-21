@@ -1,0 +1,44 @@
+<html>
+	<body>
+		<h1>Vẽ hình chữ nhật</h1>
+		<p>Chiều dài (<1000): <input type="number" id="dai"></p>
+		<p>Chiều rộng (<700): <input type="number" id="rong"></p>
+		<input type="button" onclick="veHinh()" value="Vẽ hình"><br>
+		<p id="rectangleInfo"></p>
+		<canvas id="myCanvas" width="0" height="0"></canvas>
+		<script>
+			function veHinh() {
+				var dai = +document.getElementById("dai").value;
+				var rong = +document.getElementById("rong").value;
+				var hinhChuNhat = document.getElementById("myCanvas").getContext("2d");
+				myCanvas.width = dai;
+				myCanvas.height = rong;
+				hinhChuNhat.clearRect(0, 0, dai, rong);
+				hinhChuNhat.beginPath();
+				hinhChuNhat.moveTo(0, 0);
+				hinhChuNhat.lineTo(dai, 0);
+				hinhChuNhat.lineTo(dai, rong);
+				hinhChuNhat.lineTo(0 , rong);
+				hinhChuNhat.lineTo(0, 0);
+				hinhChuNhat.stroke();
+				let rectangleX = new Rectangle(dai, rong);
+				document.getElementById("rectangleInfo").innerHTML = "Diện tích: " + rectangleX.area() + " , chu vi: " + rectangleX.circuit(dai, rong);
+			}
+			
+			var Rectangle = function(dai, rong) {
+				this.dai = dai;
+				this.rong = rong;
+				
+				this.area = function() {
+					return dai * rong;
+				}
+				
+				this.circuit = function() {
+					return (dai + rong) * 2;
+				}
+			}
+			
+			
+		</script>
+	</body>
+</html>
