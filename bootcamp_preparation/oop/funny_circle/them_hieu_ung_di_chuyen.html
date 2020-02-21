@@ -1,6 +1,6 @@
 <html>
 	<body onload="docReady()">
-		<canvas id="myCanvas" width="800px" height="500px" style="background-color: #ffea63;">
+		<canvas id="myCanvas" width="1000px" height="600px" style="background-color: #ffea63;">
 		
 		<script>
 			function docReady() {
@@ -9,7 +9,7 @@
 			
 			function createCircle(x, y){
 				var ctx = document.getElementById("myCanvas").getContext("2d");
-				ctx.clearRect(0,0,800,500);
+				ctx.clearRect(0,0,1000,600);
 				ctx.beginPath();
 				ctx.arc(x, y, 50, 0, 2 * Math.PI);
 				ctx.fillStyle = "blue";
@@ -33,8 +33,8 @@
 				}
 			}
 			
-			var ngang = 400;
-			var doc = 250;
+			var ngang = 500;
+			var doc = 300;
 			var circleX = createCircle(ngang, doc);
 			
 			function up() {
@@ -46,8 +46,8 @@
 
 			function down() {
 				doc += 10;
-				if (doc > 450)
-					doc = 450;
+				if (doc > 550)
+					doc = 550;
 				circleX = createCircle(ngang, doc);
 			}
 
@@ -60,8 +60,8 @@
 
 			function right() {
 				ngang += 10;
-				if (ngang > 750)
-					ngang = 750;
+				if (ngang > 950)
+					ngang = 950;
 				circleX = createCircle(ngang, doc);
 			}
 		</script>
