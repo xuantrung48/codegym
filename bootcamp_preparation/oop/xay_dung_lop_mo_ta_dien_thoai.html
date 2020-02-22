@@ -19,6 +19,10 @@
 				<td><input type="button" onclick="viewdraft1()" value="Xem thư nháp"></td>
 				<td><input type="button" onclick="compose1()" value="Soạn tin nhắn"></td>
 				<td><input type="button" onclick="sendsms1()" value="Gửi tin nhắn"></td>
+			</tr>
+			<tr>
+				<td colspan="2"><input type="button" onclick="checkStatus1()" value="Kiểm tra trạng thái bật/tắt"></td>
+				<td><input type="button" onclick="turnon()" value="Bật/tắt điện thoại"></td>
 				<td><input type="button" onclick="checkBattery1()" value="Kiểm tra pin"></td>
 				<td><input type="button" onclick="chargeBattery1()" value="Sạc pin"></td>
 			</tr>
@@ -35,11 +39,27 @@
 				<td><input type="button" onclick="viewdraft2()" value="Xem thư nháp"></td>
 				<td><input type="button" onclick="compose2()" value="Soạn tin nhắn"></td>
 				<td><input type="button" onclick="sendsms2()" value="Gửi tin nhắn"></td>
+			</tr>
+			<tr>
+				<td colspan="2"><input type="button" onclick="checkStatus2()" value="Kiểm tra trạng thái bật/tắt"></td>
+				<td><input type="button" onclick="turnon2()" value="Bật/tắt điện thoại"></td>
 				<td><input type="button" onclick="checkBattery2()" value="Kiểm tra pin"></td>
 				<td><input type="button" onclick="chargeBattery2()" value="Sạc pin"></td>
 			</tr>
 		</table>
 		<script>
+			//Bật/tắt điện thoại
+			function turnon() {
+				nokia.turnOn_Off();
+			}
+			//Kiểm tra trạng thái
+			function checkStatus1() {
+				if (nokia.statusOn == true) {
+					alert("Điện thoại đang bật");
+				} else {
+					alert("Điện thoại đang tắt. Hãy bật lên trước khi sử dụng.");
+				}
+			}
 			//Sự kiện click chuột của điện thoại nokia
 			function sendsms1() {
 				let i = prompt("Bạn muốn gửi tin nhắn ở vị trí thứ mấy trong danh sách thư nháp:");
@@ -47,7 +67,6 @@
 					iphone.receiveSMS(nokia.draft[i - 1]);
 					nokia.sendSMS(i - 1);
 					alert("Đã gửi!");
-					viewsent1();
 				} else {
 					alert("Không có!");
 				}
@@ -62,7 +81,6 @@
 				let x = prompt("Nhập nội dung tin nhắn:");
 				if (x != null) {
 					nokia.composeSMS(x);
-					viewdraft1();
 				}
 			}
 			function viewinbox1() {
@@ -70,21 +88,34 @@
 			}
 			function chargeBattery1() {
 				let time = prompt("Nhập vào thời gian sạc (phút):");
-				nokia.chargingBattery(time);
-				document.getElementById("display").innerHTML = nokia.battery + "%";
+				if (isNaN(time) == false) {
+					nokia.chargingBattery(time);
+					document.getElementById("display").innerHTML = nokia.battery + "%";
+				}
 			}
 			function checkBattery1() {
 				document.getElementById("display").innerHTML = nokia.battery + "%";
 			}
 			
 			//Sự kiện click chuột của điện thoại iPhone
+			//Bật/tắt điện thoại
+			function turnon2() {
+				iphone.turnOn_Off();
+			}
+			//Kiểm tra trạng thái
+			function checkStatus2() {
+				if (iphone.statusOn == true) {
+					alert("Điện thoại đang bật");
+				} else {
+					alert("Điện thoại đang tắt. Hãy bật lên trước khi sử dụng.");
+				}
+			}
 			function sendsms2() {
 				let i = prompt("Bạn muốn gửi tin nhắn ở vị trí thứ mấy trong danh sách thư nháp:");
 				if (i <= iphone.draft.length && i > 0) {
 					nokia.receiveSMS(iphone.draft[i - 1]);
 					iphone.sendSMS(i - 1);
 					alert("Đã gửi!");
-					viewsent2();
 				} else {
 					alert("Không có!");
 				}
@@ -99,7 +130,6 @@
 				let x = prompt("Nhập nội dung tin nhắn:");
 				if (x != null) {
 					iphone.composeSMS(x);
-					viewdraft2();
 				}
 			}
 			function viewinbox2() {
@@ -115,22 +145,44 @@
 			}
 			
 			//Mô tả lớp điện thoại
-			var Mobile = function(battery) {
+			var Mobile = function() {
+				//Trạng thái bật/tắt
+				this.statusOn;
+				
+				//Bật điện thoại
+				this.turnOn_Off = function() {
+					if (this.battery > 0) {
+						if (this.statusOn) {
+							this.statusOn = false;
+							alert("Điện thoại đã được tắt đi");
+						} else {
+							this.statusOn = true;
+							alert("Điện thoại đã được bật lên");
+						}
+					} else {
+						alert("Hãy sạc điện thoại");
+					}
+				}
 				//pin
-				this.battery = battery;
+				this.battery;
 				
 				//sạc pin
 				this.chargingBattery = function (time) {
-					battery += time / 60 * 50; //time: số phút sạc;
-					if (battery > 100)
-						battery = 100;
-					this.battery = Math.round(battery);
+					this.battery += time / 60 * 50; //time: số phút sạc;
+					if (this.battery > 100)
+						this.battery = 100;
+					this.battery = Math.round(this.battery);
 				}
 				
 				//Sử dụng pin
 				this.useBattery = function() {
-					battery -= 1;
-					this.battery = battery;
+					this.battery -= 1;
+					if (this.battery < 0)
+						this.battery = 0;
+					if (this.battery == 0) {
+						alert("Điện thoại hết pin và đã tắt. Hãy sạc pin trước khi dùng tiếp.");
+						this.statusOn = false;
+					}
 				}
 				
 				//Tin nhắn
@@ -140,43 +192,63 @@
 				
 				//Xem tin nhắn
 				this.viewInbox = function() {
-					var inbox = "Hộp thư đến " + "(" + this.inbox.length + ")<br>";
-					for (let i = 0; i < this.inbox.length; i++) {
-						inbox += (i + 1) + ". " + this.inbox[i] + "<br>";
+					if (this.statusOn) {
+						var inbox = "Hộp thư đến " + "(" + this.inbox.length + ")<br>";
+						for (let i = 0; i < this.inbox.length; i++) {
+							inbox += (i + 1) + ". " + this.inbox[i] + "<br>";
+						}
+						this.useBattery();
+						return inbox;
+					} else {
+						alert("Điện thoại đã tắt.");
 					}
-					this.useBattery();
-					return inbox;
 				}
 				
 				this.viewSent = function() {
-					var sent = "Thư đã gửi " + "(" + this.sent.length + ")<br>";
-					for (let i = 0; i < this.sent.length; i++) {
-						sent += (i + 1) + ". " + this.sent[i] + "<br>";
+					if (this.statusOn) {
+						var sent = "Thư đã gửi " + "(" + this.sent.length + ")<br>";
+						for (let i = 0; i < this.sent.length; i++) {
+							sent += (i + 1) + ". " + this.sent[i] + "<br>";
+						}
+						this.useBattery();
+						return sent;
+					} else {
+						alert("Điện thoại đã tắt.");
 					}
-					this.useBattery();
-					return sent;
 				}
 				
 				this.viewDraft = function() {
-					var draft = "Thư nháp " + "(" + this.draft.length + ")<br>";
-					for (let i = 0; i < this.draft.length; i++) {
-						draft += (i + 1) + ". " + this.draft[i] + "<br>";
+					if (this.statusOn) {
+						var draft = "Thư nháp " + "(" + this.draft.length + ")<br>";
+						for (let i = 0; i < this.draft.length; i++) {
+							draft += (i + 1) + ". " + this.draft[i] + "<br>";
+						}
+						this.useBattery();
+						return draft;
+					} else {
+						alert("Điện thoại đã tắt.");
 					}
-					this.useBattery();
-					return draft;
 				}
 				
 				//Soạn tin nhắn
 				this.composeSMS = function(text) {
-					this.draft[this.draft.length] = text;
-					this.useBattery();
+					if (this.statusOn) {
+						this.draft[this.draft.length] = text;
+						this.useBattery();
+					} else {
+						alert("Điện thoại đã tắt.");
+					}
 				}
 				
 				//Gửi tin nhắn
 				this.sendSMS = function(i) {
-					this.sent.push(this.draft[i]);
-					this.draft.splice(i,1);
-					this.useBattery();
+					if (this.statusOn) {
+						this.sent.push(this.draft[i]);
+						this.draft.splice(i,1);
+						this.useBattery();
+					} else {
+						alert("Điện thoại đã tắt.");
+					}
 				}
 				
 				//Nhận tin nhắn
@@ -186,8 +258,12 @@
 				}
 			}
 			
-			var nokia = new Mobile(49);
-			var iphone = new Mobile(72);
+			var nokia = new Mobile();
+			nokia.battery = 2;
+			nokia.statusOn = true;
+			var iphone = new Mobile();
+			iphone.battery = 54;
+			iphone.statusOn = false;
 		</script>
 	</body>
 </html>
