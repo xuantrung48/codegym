@@ -51,11 +51,10 @@
 				for (let i = 0; i < 20; i++) {
 					board += "<tr>";
 					for (let j = 0; j < 20; j++) {
-						board += '<td id="o' + i + '-' + j + '" onclick="play(' + i + ', ' + j + ')">' + cells[i][j] + '</td>';
+						board += '<td onclick="play(' + i + ', ' + j + ')">' + cells[i][j] + '</td>';
 					}
 					board += '</tr>';
 				}
-				
 				board += '</table>';
 				document.getElementById("board").innerHTML = board;
 			}
@@ -95,7 +94,6 @@
 						} 
 					}
 				}
-				
 				//Kiểm tra đường dọc
 				for (let i = 0; i <= 15; i++) {
 					for (let j = 0; j <= 19; j++) {
@@ -108,7 +106,6 @@
 						} 
 					}
 				}
-				
 				//Kiểm tra đường chéo (\)
 				for (i = 0; i <= 15; i++) {
 					for (j = 0; j <= 15; j++) {
@@ -121,7 +118,6 @@
 						}
 					}
 				}
-				
 				//Kiểm tra đường chéo (/)
 				for (i = 0; i <= 15; i++) {
 					for (j = 4; j <= 19; j++) {
