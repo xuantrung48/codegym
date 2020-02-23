@@ -1,0 +1,57 @@
+<html>
+	<head>
+		<meta charset="utf8">  	
+	</head>
+	<body>
+		<script>
+			var Apple = function() {
+				this.weight = 10;
+
+				this.weightDecrease = function() {
+					this.weight--;
+				}
+
+				this.getWeight = function() {
+					return this.weight;
+				}
+			}
+
+			var Human = function(name, gender, weight) {
+				this.name = name;
+				
+				this.gender = gender;
+				
+				this.weight = weight;
+				
+				this.say = function() {
+					return ("Hello! My name is " + this.name + ". I am a " + this.gender + ". I weigh " + this.weight);
+				}
+
+				this.eat = function(apple) {
+					if (apple.weight > 0) {
+						this.weight++;
+						apple.weightDecrease();
+					} else {
+						return ("No more apple.");
+					}
+				}
+
+				this.checkApple = function(apple) {
+					return apple.weight;
+				}
+
+				this.getName = function() {
+					return this.name;
+				}
+
+				this.getGender = function() {
+					return this.gender;
+				}
+
+				this.getWeight = function() {
+					return this.weight;
+				}
+			}
+		</script>
+	</body>
+</html>
