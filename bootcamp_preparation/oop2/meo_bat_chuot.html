@@ -1,0 +1,33 @@
+<html>
+	<body>
+		<script>
+			var Rat = function(name, weight, speed, status, sound) {
+				this.name = name;
+				this.weight = weight;
+				this.speed = speed;
+				this.status = status;
+				this.sound = sound;
+			}
+			
+			var Cat = function(name, weight, speed, status, sound) {
+				this.name = name;
+				this.weight = weight;
+				this.speed = speed;
+				this.status = status;
+				this.sound = sound;
+				this.catchRat = function(rat) {
+					if (this.speed > rat.speed) {
+						return true;
+					}
+					return false;
+				}
+				this.eatRat = function(rat) {
+					if (rat.status == true && this.catchRat() == true) {
+						this.weight += rat.weight;
+						rat.status == false;
+					}
+				}
+			}
+		</script>
+	</body>
+</html>

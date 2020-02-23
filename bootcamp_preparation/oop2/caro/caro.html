@@ -51,7 +51,7 @@
 				for (let i = 0; i < 20; i++) {
 					board += "<tr>";
 					for (let j = 0; j < 20; j++) {
-						board += '<td onclick="play(' + i + ', ' + j + ')">' + cells[i][j] + '</td>';
+						board += '<td id= "cell_' + i + '_' + j + '" onclick="play(' + i + ', ' + j + ')">' + cells[i][j] + '</td>';
 					}
 					board += '</tr>';
 				}
@@ -86,9 +86,11 @@
 				for (let i = 0; i <= 19; i++) {
 					for (let j = 0; j <= 15; j++) {
 						if (cells[i][j] == "O" && cells[i][j + 1] == "O" && cells[i][j + 2] == "O" && cells[i][j + 3] == "O" && cells[i][j + 4] == "O") {
+							changeColorRow(i, j);
 							alert('Player "O" won!');
 							return true;
 						} else if (cells[i][j] == "X" && cells[i][j + 1] == "X" && cells[i][j + 2] == "X" && cells[i][j + 3] == "X" && cells[i][j + 4] == "X") {
+							changeColorRow(i, j);
 							alert('Player "X" won!');
 							return true;
 						} 
@@ -98,9 +100,11 @@
 				for (let i = 0; i <= 15; i++) {
 					for (let j = 0; j <= 19; j++) {
 						if (cells[i][j] == "O" && cells[i + 1][j] == "O" && cells[i + 2][j] == "O" && cells[i + 3][j] == "O" && cells[i + 4][j] == "O") {
+							changeColorCol(i, j);
 							alert('Player "O" won!');
 							return true;
 						} else if (cells[i][j] == "X" && cells[i + 1][j] == "X" && cells[i + 2][j] == "X" && cells[i + 3][j] == "X" && cells[i + 4][j] == "X") {
+							changeColorCol(i, j);
 							alert('Player "X" won!');
 							return true;
 						} 
@@ -110,9 +114,11 @@
 				for (i = 0; i <= 15; i++) {
 					for (j = 0; j <= 15; j++) {
 						if (cells[i][j] == "O" && cells[i + 1][j + 1] == "O" && cells[i + 2][j + 2] == "O" && cells[i + 3][j + 3] == "O" && cells[i + 4][j + 4] == "O") {
+							changeColorDia1(i, j);
 							alert('Player "O" won!');
 							return true;
 						} else if (cells[i][j] == "X" && cells[i + 1][j + 1] == "X" && cells[i + 2][j + 2] == "X" && cells[i + 3][j + 3] == "X" && cells[i + 4][j + 4] == "X") {
+							changeColorDia1(i, j);
 							alert('Player "X" won!');
 							return true;
 						}
@@ -122,13 +128,39 @@
 				for (i = 0; i <= 15; i++) {
 					for (j = 4; j <= 19; j++) {
 						if (cells[i][j] == "O" && cells[i + 1][j - 1] == "O" && cells[i + 2][j - 2] == "O" && cells[i + 3][j - 3] == "O" && cells[i + 4][j - 4] == "O") {
+							changeColorDia2(i, j);
 							alert('Player "O" won!');
 							return true;
 						} else if (cells[i][j] == "X" && cells[i + 1][j - 1] == "X" && cells[i + 2][j - 2] == "X" && cells[i + 3][j - 3] == "X" && cells[i + 4][j - 4] == "X") {
+							changeColorDia2(i, j);
 							alert('Player "X" won!');
 							return true;
 						}
 					}
+				}
+			}
+			
+			function changeColorRow(i, j) {
+				for (let k = 0; k < 5; k ++) {
+					document.getElementById("cell_" + i + "_" + (j + k)).style.backgroundColor = "yellow";
+				}
+			}
+			
+			function changeColorCol(i, j) {
+				for (let k = 0; k < 5; k++) {
+					document.getElementById("cell_" + (i + k) + "_" + j).style.backgroundColor = "yellow";
+				}
+			}
+			
+			function changeColorDia1(i, j) {
+				for (let k = 0; k < 5; k++) {
+					document.getElementById("cell_" + (i + k) + "_" + (j + k)).style.backgroundColor = "yellow";
+				}
+			}
+			
+			function changeColorDia2(i, j) {
+				for (k = 0; k < 5; k++) {
+					document.getElementById("cell_" + (i + k) + "_" + (j - k)).style.backgroundColor = "yellow";
 				}
 			}
 		</script>
