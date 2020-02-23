@@ -1,0 +1,140 @@
+<html>
+	<head>
+		<title>Caro Game</title>
+		<meta charset="utf8">
+		<style>
+			html {
+				background-color: #b8b8b8;
+			}
+			
+			h1 {
+				text-align: center;
+				color: #1533ad;
+			}
+			
+			table td {
+				border: 1px solid black;
+			}
+			
+			table {
+				border-collapse: collapse;
+				background-color: white;
+				margin: 0 auto;
+			}
+			
+			td {
+				width: 25px;
+				height: 25px;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body onload="createBoard()">
+		<h1>CARO GAME</h1>
+		<p id="board"></p>
+		<p style="text-align: center;">Copyright © by <a href="https://www.facebook.com/XuanTrung">Trung Nguyen</a></p>
+		<script>
+			//Tạo mảng 2 chiều
+			var cells = [];
+			for (let i = 0; i < 20; i++) {
+				cells[i] = [];
+			}
+			for (let i = 0; i < 20; i++) {
+				for (let j = 0; j < 20; j++) {
+					cells[i][j] = "";
+				}
+			}
+			
+			//Vẽ bàn cờ
+			function createBoard() {
+				let board = '<table>';
+				for (let i = 0; i < 20; i++) {
+					board += "<tr>";
+					for (let j = 0; j < 20; j++) {
+						board += '<td id="o' + i + '-' + j + '" onclick="play(' + i + ', ' + j + ')">' + cells[i][j] + '</td>';
+					}
+					board += '</tr>';
+				}
+				
+				board += '</table>';
+				document.getElementById("board").innerHTML = board;
+			}
+			
+			//Đánh cờ
+			var counter = 1;
+			function play(i, j) {
+				if (checkWin() != true) {
+					if (counter % 2 != 0) {
+						if (cells[i][j] != "X" && cells[i][j] != "O") {
+							cells[i][j] = "X";
+							counter++;
+							createBoard();
+							checkWin();
+						}
+					} else {
+						if (cells[i][j] != "X" && cells[i][j] != "O") {
+							cells[i][j] = "O";
+							counter++;
+							createBoard();
+							checkWin();
+						}
+					}
+				}
+			}
+			
+			function checkWin() {
+				//Kiểm tra đường ngang
+				for (let i = 0; i <= 19; i++) {
+					for (let j = 0; j <= 15; j++) {
+						if (cells[i][j] == "O" && cells[i][j + 1] == "O" && cells[i][j + 2] == "O" && cells[i][j + 3] == "O" && cells[i][j + 4] == "O") {
+							alert('Player "O" won!');
+							return true;
+						} else if (cells[i][j] == "X" && cells[i][j + 1] == "X" && cells[i][j + 2] == "X" && cells[i][j + 3] == "X" && cells[i][j + 4] == "X") {
+							alert('Player "X" won!');
+							return true;
+						} 
+					}
+				}
+				
+				//Kiểm tra đường dọc
+				for (let i = 0; i <= 15; i++) {
+					for (let j = 0; j <= 19; j++) {
+						if (cells[i][j] == "O" && cells[i + 1][j] == "O" && cells[i + 2][j] == "O" && cells[i + 3][j] == "O" && cells[i + 4][j] == "O") {
+							alert('Player "O" won!');
+							return true;
+						} else if (cells[i][j] == "X" && cells[i + 1][j] == "X" && cells[i + 2][j] == "X" && cells[i + 3][j] == "X" && cells[i + 4][j] == "X") {
+							alert('Player "X" won!');
+							return true;
+						} 
+					}
+				}
+				
+				//Kiểm tra đường chéo (\)
+				for (i = 0; i <= 15; i++) {
+					for (j = 0; j <= 15; j++) {
+						if (cells[i][j] == "O" && cells[i + 1][j + 1] == "O" && cells[i + 2][j + 2] == "O" && cells[i + 3][j + 3] == "O" && cells[i + 4][j + 4] == "O") {
+							alert('Player "O" won!');
+							return true;
+						} else if (cells[i][j] == "X" && cells[i + 1][j + 1] == "X" && cells[i + 2][j + 2] == "X" && cells[i + 3][j + 3] == "X" && cells[i + 4][j + 4] == "X") {
+							alert('Player "X" won!');
+							return true;
+						}
+					}
+				}
+				
+				//Kiểm tra đường chéo (/)
+				for (i = 0; i <= 15; i++) {
+					for (j = 4; j <= 19; j++) {
+						if (cells[i][j] == "O" && cells[i + 1][j - 1] == "O" && cells[i + 2][j - 2] == "O" && cells[i + 3][j - 3] == "O" && cells[i + 4][j - 4] == "O") {
+							alert('Player "O" won!');
+							return true;
+						} else if (cells[i][j] == "X" && cells[i + 1][j - 1] == "X" && cells[i + 2][j - 2] == "X" && cells[i + 3][j - 3] == "X" && cells[i + 4][j - 4] == "X") {
+							alert('Player "X" won!');
+							return true;
+						}
+					}
+				}
+			}
+		</script>
+	</body>
+</html>
