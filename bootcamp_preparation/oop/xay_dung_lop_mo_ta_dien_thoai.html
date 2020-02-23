@@ -4,6 +4,15 @@
 			table, td {
 				border: 1px solid black;
 				border-collapse: collapse;
+				padding: 10px 20px;
+			}
+			input {
+				display: block;
+				margin: 0 auto;
+				padding: 15px;
+				background-color: #a65f00;
+				color: white;
+				border-radius: 10px;
 			}
 		</style>
 	</head>
@@ -14,9 +23,9 @@
 				<td colspan="7" id="display" style="text-align: center;">NOKIA</td>
 			</tr>
 			<tr>
-				<td><input type="button" onclick="viewinbox1()" value="Xem hộp thư đến"></td>
+				<td><input type="button" onclick="viewinbox1()" value="Hộp thư đến"></td>
 				<td><input type="button" onclick="viewsent1()" value="Thư đã gửi"></td>
-				<td><input type="button" onclick="viewdraft1()" value="Xem thư nháp"></td>
+				<td><input type="button" onclick="viewdraft1()" value="Thư nháp"></td>
 				<td><input type="button" onclick="compose1()" value="Soạn tin nhắn"></td>
 				<td><input type="button" onclick="sendsms1()" value="Gửi tin nhắn"></td>
 			</tr>
@@ -34,9 +43,9 @@
 				<td colspan="7" id="display2" style="text-align: center;">iPhone</td>
 			</tr>
 			<tr>
-				<td><input type="button" onclick="viewinbox2()" value="Xem hộp thư đến"></td>
+				<td><input type="button" onclick="viewinbox2()" value="Hộp thư đến"></td>
 				<td><input type="button" onclick="viewsent2()" value="Thư đã gửi"></td>
-				<td><input type="button" onclick="viewdraft2()" value="Xem thư nháp"></td>
+				<td><input type="button" onclick="viewdraft2()" value="Thư nháp"></td>
 				<td><input type="button" onclick="compose2()" value="Soạn tin nhắn"></td>
 				<td><input type="button" onclick="sendsms2()" value="Gửi tin nhắn"></td>
 			</tr>
@@ -259,11 +268,11 @@
 			}
 			
 			var nokia = new Mobile();
-			nokia.battery = 2;
+			nokia.battery = 10;
 			nokia.statusOn = true;
 			var iphone = new Mobile();
 			iphone.battery = 54;
-			iphone.statusOn = false;
+			iphone.statusOn = true;
 		</script>
 	</body>
 </html>

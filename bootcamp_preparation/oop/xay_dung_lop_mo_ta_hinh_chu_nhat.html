@@ -15,11 +15,8 @@
 				myCanvas.height = rong;
 				hinhChuNhat.clearRect(0, 0, dai, rong);
 				hinhChuNhat.beginPath();
-				hinhChuNhat.moveTo(0, 0);
-				hinhChuNhat.lineTo(dai, 0);
-				hinhChuNhat.lineTo(dai, rong);
-				hinhChuNhat.lineTo(0 , rong);
-				hinhChuNhat.lineTo(0, 0);
+				hinhChuNhat.fillStyle = "#ffbb00";
+				hinhChuNhat.fillRect(0, 0, dai, rong);
 				hinhChuNhat.stroke();
 				let rectangleX = new Rectangle(dai, rong);
 				document.getElementById("rectangleInfo").innerHTML = "Diện tích: " + rectangleX.area() + " , chu vi: " + rectangleX.circuit(dai, rong);
