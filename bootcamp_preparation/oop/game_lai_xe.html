@@ -1,6 +1,8 @@
 <html>
 	<head>
 		<link href="https://fonts.googleapis.com/css?family=Black+Ops+One&display=swap" rel="stylesheet">
+		<title>___Racing_Formula_1___</title>
+		<link rel="icon" href="https://i.ibb.co/1Rn44vv/car.png">
 		<style>
 			h1 {
 				font-family: 'Black Ops One' ;
@@ -16,18 +18,190 @@
 			}
 		</style>
 	</head>
-	<body onload="createCar(330, 200);">
+	<body onload="docReady()">
 		<h1>___Racing_Formula_1___</h1>
-		<img id="car" src="https://i.ibb.co/TqrBRwL/car.png" hidden>
+		<img id="carup" src="https://i.ibb.co/1Rn44vv/car.png" hidden>
+		<img id="carright" src="https://i.ibb.co/BqwJjqW/car.png" hidden>
+		<img id="cardown" src="https://i.ibb.co/znL3Lft/car.png" hidden>
+		<img id="carleft" src="https://i.ibb.co/9HTpChP/car.png" hidden>
+		<img id="stone1" src="https://i.ibb.co/chHxrrz/stone1.png" hidden>
+		<img id="stone2" src="https://i.ibb.co/YBPqqHc/stone2.png" hidden>
+		<img id="stone3" src="https://i.ibb.co/yWg4mFK/stone3.png" hidden>
+		<img id="coin" src="https://i.ibb.co/NVgpbpG/coin.png" hidden>
+
 		<canvas id="myCanvas" width="700" height="500"></canvas>
 		<script>
-			var createCar = function (x, y) {
-				var ctx = document.getElementById("myCanvas").getContext("2d");
-				var img = document.getElementById("car");
-				ctx.drawImage(img, x, y);
+			function docReady() {
+				createNewCoin();
+				createCarUp(x, y);
+				window.addEventListener('keydown', move);
 			}
 			
+			var x = 325;
+			var y = 225;
 			
+			var x1 = Math.floor(Math.random() * 650);
+			var y1 = Math.floor(Math.random() * 450);
+			var x2 = Math.floor(Math.random() * 650);
+			var y2 = Math.floor(Math.random() * 450);
+			var x3 = Math.floor(Math.random() * 650);
+			var y3 = Math.floor(Math.random() * 450);
+			
+			var xc, yc;
+			function createNewCoin(){
+				xc = Math.floor(Math.random() * 650);
+				yc = Math.floor(Math.random() * 450);
+			}
+			
+			var ctx = document.getElementById("myCanvas").getContext("2d");
+			var img;
+			//Hiển thị điểm
+			function point() {
+				ctx.font = "30px Black Ops One";
+				ctx.fillStyle = "#ffac30";
+				ctx.fillText("$" + coin, 10, 480);
+			}
+			//Tạo tiền thưởng
+			function createCoin(x, y) {
+				img = document.getElementById("coin");
+				ctx.drawImage(img, x, y);
+			}
+			//Tạo 3 chướng ngại vật
+			function createStone1(x, y) {
+				img = document.getElementById("stone1");
+				ctx.drawImage(img, x, y);
+			}
+			function createStone2(x, y) {
+				img = document.getElementById("stone2");
+				ctx.drawImage(img, x, y);
+			}
+			function createStone3(x, y) {
+				img = document.getElementById("stone3");
+				ctx.drawImage(img, x, y);
+			}
+
+			//Tạo canvas xe di chuyển
+			function createCarUp(x, y) {
+				ctx.clearRect(0,0,700,500);
+				img = document.getElementById("carup");
+				ctx.drawImage(img, x, y);
+				createStone1(x1, y1);
+				createStone2(x2, y2);
+				createStone3(x3, y3);
+				earnCoin();
+				createCoin(xc, yc);
+				point();
+			}
+			function createCarRight(x, y) {
+				ctx.clearRect(0,0,700,500);
+				img = document.getElementById("carright");
+				ctx.drawImage(img, x, y);
+				createStone1(x1, y1);
+				createStone2(x2, y2);
+				createStone3(x3, y3);
+				earnCoin();
+				createCoin(xc, yc);
+				point();
+			}
+			function createCarDown(x, y) {
+				ctx.clearRect(0,0,700,500);
+				img = document.getElementById("cardown");
+				ctx.drawImage(img, x, y);
+				createStone1(x1, y1);
+				createStone2(x2, y2);
+				createStone3(x3, y3);
+				earnCoin();
+				createCoin(xc, yc);
+				point();
+			}
+			function createCarLeft(x, y) {
+				ctx.clearRect(0,0,700,500);
+				img = document.getElementById("carleft");
+				ctx.drawImage(img, x, y);
+				createStone1(x1, y1);
+				createStone2(x2, y2);
+				createStone3(x3, y3);
+				earnCoin();
+				createCoin(xc, yc);
+				point();
+			}
+			
+			//Kiểm tra died
+			function checkDied() {
+				if ((x > (x1 - 50) && x < (x1 + 50)) && (y > (y1 - 50) && y < (y1 + 50)) || (x > (x2 - 50) && x < (x2 + 50)) && (y > (y2 - 50) && y < (y2 + 50)) || (x > (x3 - 50) && x < (x3 + 50)) && (y > (y3 - 50) && y < (y3 + 50))) {
+					return true;
+				}
+			}
+			
+			//Kiếm tiền thưởng
+			var coin = 0;
+			function earnCoin() {
+				if ((x > (xc - 50) && x < (xc + 50)) && (y > (yc - 50) && y < (yc + 50))) {
+					coin++;
+					createNewCoin();
+				}
+			}
+			
+			function move(evt) {
+				switch (evt.keyCode) {
+					case 37:
+						left();
+						break;
+					case 39:
+						right();
+						break;
+					case 38:
+						up();
+						break;
+					case 40:
+						down();
+						break;
+				}
+			}
+			
+			function up() {
+				if (checkDied()) {
+					alert("You died!");
+				} else {
+					y -= 4;
+					if (y < 0)
+						y = 0;
+					createCarUp(x, y);
+				}
+			}
+
+			function down() {
+				if (checkDied()) {
+					alert("You died!");
+				} else {
+					y += 4;
+					if (y > 450)
+						y = 450;
+					createCarDown(x, y);
+				}
+			}
+
+			function left() {
+				if (checkDied()) {
+					alert("You died!");
+				} else {
+					x -= 4;
+					if (x < 0)
+						x = 0;
+					createCarLeft(x, y);
+				}
+			}
+
+			function right() {
+				if (checkDied()) {
+					alert("You died!");
+				} else {
+					x += 4;
+					if (x > 650)
+						x = 650;
+					createCarRight(x, y);
+				}
+			}
 		</script>
 	</body>
 </html>
