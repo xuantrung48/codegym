@@ -2,55 +2,62 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
-		<title>Funny Cat move around screen</title>
+		<title>Funny Cat picture move around screen</title>
 	</head>
 	<body>
 		<div id="game"></div>
 		<script>
-			function Hero(image, top, left, size, speed){
+			function Img(image, top, left, size, speed){
 				this.image = image;
 				this.top = top;
 				this.left = left;
 				this.size = size;
 				this.speed = speed;
 
-				this.getHeroElement = function(){
+				this.getimgElement = function(){
 					return '<img width="'+ this.size + '"' + ' height="'+ this.size + '"' + ' src="' + this.image +'"' + ' style="top: '+this.top+'px; left:'+this.left+'px;position:absolute;" />';
 				}
-
-				this.moveRight = function(){
-					this.left += this.speed;
-				}
 				
-				this.moveDown = function(){
-					this.top += this.speed;
-				}
-				
-				this.moveLeft = function(){
-					this.left -= this.speed;
-				}
-				
-				this.moveUp = function(){
-					this.top -= this.speed;
+				this.move = function(dir) {
+					switch (dir) {
+						case "right":
+							this.left += this.speed;
+							break;
+						case "down":
+							this.top += this.speed;
+							break;
+						case "left":
+							this.left -= this.speed;
+							break;
+						case "up":
+							this.top -= this.speed;
+							break;
+					}
 				}
 
 			}
 
-			var hero = new Hero('https://becomeawag.com/wp-content/uploads/2019/09/coughing-cat-know-your-meme-6.png', 20, 20, 200, 1);
+			var img = new Img('https://becomeawag.com/wp-content/uploads/2019/09/coughing-cat-know-your-meme-6.png', 20, 20, 200, 1);
 
 			function start(){
-				if (hero.left < window.innerWidth - hero.size - 20 && hero.top == 20) {
-					hero.moveRight();
-				} else if (hero.left == window.innerWidth - hero.size - 20 && hero.top < window.innerHeight - hero.size - 20) {
-					hero.moveDown();
-				} else if (hero.left > 20 && hero.top == window.innerHeight - hero.size - 20) {
-					hero.moveLeft();
-				} else if (hero.left == 20 && hero.top > 20) {
-					hero.moveUp();
+				if (img.left < window.innerWidth - img.size - 20 && img.top == 20) {
+					img.move("right");
 				}
 				
-				document.getElementById('game').innerHTML = hero.getHeroElement();
-				setTimeout(start, 5)
+				if (img.left == window.innerWidth - img.size - 20 && img.top < window.innerHeight - img.size - 20) {
+					img.move("down");
+				}
+				
+				if (img.left > 20 && img.top == window.innerHeight - img.size - 20) {
+					img.move("left");
+				}
+				
+				if (img.left == 20 && img.top > 20) {
+					img.move("up");
+				}
+				
+				document.getElementById('game').innerHTML = img.getimgElement();
+				setTimeout(start, 1)
 			}
 
 			start();
