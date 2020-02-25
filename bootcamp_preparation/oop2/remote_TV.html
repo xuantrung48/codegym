@@ -1,0 +1,114 @@
+<html>
+	<body>
+		<script>
+			class Remote {
+				constructor(code) {
+					this.code = code;
+					
+					this.turnOnOffTV = function(tv) {
+						if (tv.status == false) {
+							tv.status = true;
+							return tv.status;
+						} else {
+							tv.status = false;
+							return tv.status;
+						}
+					}
+					
+					this.setChannelTV = function(newChannel, tv) {
+						if (tv.status == true) {
+							tv.channel = newChannel;
+							return tv.channelDisplay();
+						} else {
+							return "Please turn TV ON first!"
+						}
+					}
+					
+					this.volumeTVUp = function(tv) {
+						if (tv.status == true) {
+							tv.volume++;
+							return tv.volumeDisplay();
+						} else {
+							return "Please turn TV ON first!"
+						}
+					}
+					
+					this.volumeTVDown = function(tv) {
+						if (tv.status == true) {
+							tv.volume--;		
+							return tv.volumeDisplay();		
+						} else {
+							return "Please turn TV ON first!"
+						}
+					}
+				}
+			}
+			
+			class TV {
+				constructor(channel = 1, status = false, volume = 10) {
+					this.turnOnOff = function() {
+						if (this.status == false) {
+							this.status = true;
+							return this.status;
+						} else {
+							this.status = false;
+							return this.status;
+						}
+					}
+					
+					this.status = status;
+					
+					this.channel = channel;
+					
+					this.volume = volume;
+					
+					this.channelDisplay = function() {
+						if (tv.status == true) {
+							return "Channel: " + this.channel;		
+						} else {
+							return "Please turn TV ON first!"
+						}
+					}
+					
+					this.volumeDisplay = function() {
+						if (tv.status == true) {
+							return "Volume: " + this.volume;	
+						} else {
+							return "Please turn TV ON first!"
+						}
+					}
+					
+					this.setChannel = function(newChannel) {
+						if (tv.status == true) {
+							this.channel = newChannel;
+							return this.channelDisplay();		
+						} else {
+							return "Please turn TV ON first!"
+						}
+					}
+					
+					this.volumeUp = function() {
+						if (tv.status == true) {
+							this.volume++;
+							return this.channelDisplay();	
+						} else {
+							return "Please turn TV ON first!"
+						}
+					}
+					
+					this.volumeDown = function() {
+						if (tv.status == true) {
+							this.volume--;
+							return this.channelDisplay();	
+						} else {
+							return "Please turn TV ON first!"
+						}
+					}
+				}
+			}
+			
+			var remote = new Remote(758392453638);
+			var tv = new TV();
+		</script>
+	</body>
+</html>
