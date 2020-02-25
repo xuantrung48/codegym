@@ -6,13 +6,13 @@
 		<script>
 			var SwitchButton = function() {
 				this.switchOff = function(lamp) {
-					lamp.turnOn();
-					return lamp.status;
+					lamp.turnOff();
+					return "Đã tắt đèn";
 				}
 				
 				this.switchOn = function(lamp) {
-					lamp.turnOff;
-					return lamp.status;
+					lamp.turnOn(lamp);
+					return "Đã bật đèn";
 				}
 				
 			}

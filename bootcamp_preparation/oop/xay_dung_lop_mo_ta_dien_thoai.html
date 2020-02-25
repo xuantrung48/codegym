@@ -73,8 +73,7 @@
 			function sendsms1() {
 				let i = prompt("Bạn muốn gửi tin nhắn ở vị trí thứ mấy trong danh sách thư nháp:");
 				if (i <= nokia.draft.length && i > 0) {
-					iphone.receiveSMS(nokia.draft[i - 1]);
-					nokia.sendSMS(i - 1);
+					nokia.sendSMS(i - 1, iphone);
 					alert("Đã gửi!");
 				} else {
 					alert("Không có!");
@@ -122,8 +121,7 @@
 			function sendsms2() {
 				let i = prompt("Bạn muốn gửi tin nhắn ở vị trí thứ mấy trong danh sách thư nháp:");
 				if (i <= iphone.draft.length && i > 0) {
-					nokia.receiveSMS(iphone.draft[i - 1]);
-					iphone.sendSMS(i - 1);
+					iphone.sendSMS(i - 1, nokia);
 					alert("Đã gửi!");
 				} else {
 					alert("Không có!");
@@ -250,9 +248,10 @@
 				}
 				
 				//Gửi tin nhắn
-				this.sendSMS = function(i) {
+				this.sendSMS = function(i, phone) {
 					if (this.statusOn) {
 						this.sent.push(this.draft[i]);
+						phone.receiveSMS(this.draft[i]);
 						this.draft.splice(i,1);
 						this.useBattery();
 					} else {
