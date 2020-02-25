@@ -4,20 +4,42 @@
 	</head>
 	<body>
 		<script>
-			var SwitchButton = function() {
-				this.switchOff = function(lamp) {
-					lamp.turnOff();
-					return "Đã tắt đèn";
+			var SwitchButton = function(status = false) {
+				this.status = status;
+				this.lamp = null;
+				
+				this.connectToLamp = function(lamp) {
+					this.lamp = lamp;
 				}
 				
-				this.switchOn = function(lamp) {
-					lamp.turnOn(lamp);
-					return "Đã bật đèn";
+				
+				this.switchOff = function() {
+					if (this.lamp != null) {
+						this.lamp.turnOff();
+						return "Đã tắt";
+					} else {
+						return "Chưa kết nối đèn";
+					}
 				}
+				
+				this.switchOn = function() {
+					if (this.lamp != null) {
+						this.lamp.turnOn();
+						return "Đã bật";
+					} else {
+						return "Chưa kết nối đèn";
+					}
+				}
+				
+				
+				
+				
 				
 			}
 			
-			var  EletricLamp = function() {
+			var  EletricLamp = function(status = false) {
+				this.status = status;
+				
 				this.turnOn = function() {
 					this.status = true;
 				}
@@ -26,6 +48,9 @@
 					this.status = false;
 				}
 			}
+			
+			var lamp = new EletricLamp();
+			var button = new SwitchButton();
 		</script>
 	</body>
 </html>
