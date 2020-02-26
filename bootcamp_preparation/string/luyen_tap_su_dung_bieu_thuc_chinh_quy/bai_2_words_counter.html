@@ -1,0 +1,12 @@
+<html>
+	<body>
+		<script>
+			var x = prompt("Enter a sentence:");
+			alert("Number of words: " + wordsCounter(x));
+			function wordsCounter(sentence) {
+				var regexp = /\S+/g;
+				return sentence.match(regexp).length;
+			}
+		</script>
+	</body>
+</html>

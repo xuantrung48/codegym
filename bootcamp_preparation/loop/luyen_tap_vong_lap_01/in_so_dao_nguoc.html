@@ -1,10 +1,9 @@
 <html>
 	<body>
-		<p>Nhập vào số nguyên: <input type="number" id="n"></p>
-		<input type="button" value="Đảo ngược" onclick="daoNguoc()">
+		<p>Nhập vào số nguyên: <input type="number" id="n" oninput="reverse()"></p>
 		<p id="result"></p>
 		<script>
-			function daoNguoc() {
+			function reverse() {
 				var n = document.getElementById("n").value;
 				var j = n.length;
 				var m = 0;

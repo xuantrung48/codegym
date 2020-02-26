@@ -1,0 +1,20 @@
+<html>
+	<body>
+		<script>
+			var x = prompt("Enter a sentence:");
+			alert("Number of vowels: " + vowelsCounter(x));
+			alert("Number of consonant: " + consonantCounter(x));
+
+
+			function vowelsCounter(sentence) {
+				let regexp = /[aieou]/gi;
+				return sentence.match(regexp).length;
+			}
+
+			function consonantCounter(sentence) {
+				let regexp = /[bcdfghjklmnpqrstvwxyz]/gi;
+				return sentence.match(regexp).length;
+			}
+		</script>
+	</body>
+</html>
