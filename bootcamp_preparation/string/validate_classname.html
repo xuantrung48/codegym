@@ -4,7 +4,7 @@
 			var x = prompt("Enter a class name to validate:");
 			alert(validateClass(x));
 			function validateClass(str) {
-				var regexp = /^[CAP]{1}[0-9]{4}$/;
+				var regexp = /^[CAP]{1}[0-9]{4}[GHIKLM]{1}$/;
 				if (regexp.test(str)) {
 					return true;
 				}
