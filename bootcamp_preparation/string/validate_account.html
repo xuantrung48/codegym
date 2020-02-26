@@ -1,0 +1,15 @@
+<html>
+	<body>
+		<script>
+			var x = prompt("Enter an account to test:");
+			alert(validateAccount(x));
+			function validateAccount(account) {
+				var regexp = /^[_a-z0-9]{6,}$/;
+				if (regexp.test(account)) {
+					return true;
+				}
+				return false;
+			}
+		</script>
+	</body>
+</html>
