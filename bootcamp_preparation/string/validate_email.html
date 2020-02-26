@@ -1,0 +1,15 @@
+<html>
+	<body>
+		<script>
+			var x = prompt("Enter an email address to check:");
+			alert(validateEmail(x));
+			function validateEmail(email) {
+				var regexp = /^[A-Za-z0-9]+[A-Za-z0-9]*@[A-Za-z0-9]+(\.[A-Za-z0-9]+)$/;
+				if (regexp.test(email)) {
+					return true;
+				}
+				return false;
+			}
+		</script>
+	</body>
+</html>
