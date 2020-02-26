@@ -1,0 +1,14 @@
+<html>
+	<body>
+		<script>
+			var currentDay = new Date();
+			var birthday = new Date(1989, 11, 23);
+			document.write("Tôi đã sống " + Math.floor((currentDay - birthday) / (365 * 24 * 60 * 60 * 1000)) + " năm.<br>");
+			document.write("Tôi đã sống " + Math.floor((currentDay - birthday) * 12 / (365 * 24 * 60 * 60 * 1000)) + " tháng.<br>");
+			document.write("Tôi đã sống " + Math.floor((currentDay - birthday) / (24 * 60 * 60 * 1000)) + " ngày.<br>");
+			document.write("Tôi đã sống " + Math.floor((currentDay - birthday) / (60 * 60 * 1000)) + " giờ.<br>");
+			document.write("Tôi đã sống " + Math.floor((currentDay - birthday) / (60 * 1000)) + " phút.<br>");
+			document.write("Tôi đã sống " + Math.floor((currentDay - birthday) / 1000) + " giây.<br>");
+		</script>
+	</body>
+</html>

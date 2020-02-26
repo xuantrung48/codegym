@@ -1,0 +1,27 @@
+<html>
+	<head>
+		<meta charset="utf8">
+	</head>
+	<body>
+		<script>
+			var x = "Tôi yêu ngôn ngữ lập trình Javascript";
+			document.write('Số lần xuất hiện của chữ "a" trong chuỗi "Tôi yêu ngôn ngữ lập trình Javascript": ' + count_a(x) + "<br>");
+
+			var x2 = x.split(" ");
+			document.write(x2 + "<br>");
+			document.write("Số lượng từ có trong chuỗi: " + wordsCounter(x) + "<br>");
+			document.write(x.replace('Javascript', 'Typescript'));
+
+			function count_a(str) {
+				let regexp = /[a]/gi;
+				return str.match(regexp).length;
+			}
+
+			function wordsCounter(sentence) {
+				var regexp = /\S+/g;
+				return sentence.match(regexp).length;
+			}
+
+		</script>
+	</body>
+</html>
