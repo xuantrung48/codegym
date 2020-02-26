@@ -1,0 +1,15 @@
+<html>
+	<body>
+		<script>
+			var x = prompt("Enter a date to validate:");
+			alert(validateDate(x));
+			function validateDate(d) {
+				var regexp =/^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/;
+				if (regexp.test(d)) {
+					return true;
+				}
+				return false;
+			}
+		</script>
+	</body>
+</html>

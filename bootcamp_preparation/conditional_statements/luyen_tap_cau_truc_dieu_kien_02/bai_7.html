@@ -9,8 +9,7 @@
 	</head>
 	<body>
 		<h3>Chương trình giải phương trình bậc 2</h3>
-		<p><input type="number" id="a">x<sup>2</sup> + <input type="number" id="b">x + <input type="number" id="c"> = 0 (a ≠ 0)</p>
-		<input type="button" onclick="calculate()" value="Tìm x">
+		<p><input type="number" id="a" oninput="calculate()">x<sup>2</sup> + <input type="number" id="b" oninput="calculate()">x + <input type="number" id="c" oninput="calculate()"> = 0 (a ≠ 0)</p>
 		<h3 id="result"></h3>
 		<script>
 			function calculate() {
