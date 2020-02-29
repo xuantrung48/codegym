@@ -1,0 +1,76 @@
+<html>
+	<head>
+		<title>Products manager</title>
+		<style>
+			table {
+				border-collapse: collapse;
+				width: 400px;
+			}
+			
+			table th td {
+				border: 1px solid #ddd;
+			}
+			
+			table tr:nth-child(even){
+				background-color: #f2f2f2;
+			}
+			
+			table tr:hover {
+				background-color: #ddd;
+			}
+			
+			input {
+				background-color: #bdd6ff;
+				border-radius: 15px;
+				padding: 8px;
+			}
+		</style>
+	</head>
+	<body>
+		<h2>Add New Product</h2>
+		<input type="text" id="newproduct" placeholder="New Product"> <input type="button" onclick="addProduct()" value="Add">
+		<p id="products"></p>
+		<div id="productlist"></div>
+		<script>
+			var products = ["Sony Xperia", "Samsung Galaxy", "Nokia 6", "Xiaomi Redmi Note 4", "Apple iPhone 6S", "Xiaomi Mi 5s Plus", "Apple iPhone 8 Plus", "Fujitsu F-04E", "Oppo A71"];
+			
+			function displayProducts() {
+				let x = '<h2>Display All Product</h2><h3>Product Name</h3><table><tr><th>Products</th><th colspan="2">Action</th></tr>';
+				for (let i = 0; i < products.length; i++) {
+					x += '<tr><td>' + products[i] + '</td><td><input type="button" value="Edit" onclick="editProduct(' + i + ')"></td>' + '<td><input type="button" value="Delete" onclick="deleteProduct(' + i + ')"></td></tr>';
+				}
+				x += '</table>';
+				return x;
+			}
+			
+			function addProduct() {
+				if (document.getElementById("newproduct").value != "") {
+					products.push(document.getElementById("newproduct").value);
+					alert(document.getElementById("newproduct").value + " added!");
+				}
+				document.getElementById("newproduct").value = ""
+				document.getElementById("productlist").innerHTML = displayProducts();
+			}
+			
+			function editProduct(i) {
+				let a = products[i];
+				let x = prompt('Edit', products[i]);
+				if (x == null) {
+					product[i] = a;
+				} else {
+					products[i] = x;
+					alert("Edited!");
+				}
+				document.getElementById("productlist").innerHTML = displayProducts();
+			}
+			
+			function deleteProduct(i) {
+				alert(products[i] + " removed!");
+				products.splice(i, 1);
+				document.getElementById("productlist").innerHTML = displayProducts();
+			}
+			
+			document.getElementById("productlist").innerHTML = displayProducts();
+		</script>
+	</body>
+</html>
