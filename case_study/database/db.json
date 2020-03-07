@@ -1,0 +1,12 @@
+{
+    "Devices": [
+        {
+            "id": 1,
+            "Name": "Apple Iphone 6 32GB",
+            "Images": ["https://cdn.muabannhanh.com/asset/frontend/img/gallery/2016/12/27/58620b4361bb8_1482820419.jpg", "https://cdn.tgdd.vn/Products/Images/42/87842/iphone-6s-32gb-vang-dong-2-400x460.png", "https://www.quickdeal.se/wp-content/uploads/2019/02/iPhone-6S-Plus-16GB-Factory-Refurbished-Rose-Gold-05122017-01-p-600x600.jpg"],
+            "Brand": "Apple",
+            "Status": 98,
+            "Price": 2000000
+        }
+    ]
+}

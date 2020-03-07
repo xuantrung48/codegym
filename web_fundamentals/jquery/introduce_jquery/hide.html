@@ -1,0 +1,49 @@
+<html>
+	<head>
+		<meta charset="utf8">
+		<title>Hàm hide() trong JQuery</title>
+		<meta name="description" content="Các hàm thông dụng của JQuery">
+		<link rel="icon" href="https://i.ibb.co/0BqGFth/icon.png">
+		<link rel="stylesheet" href="css/style.css"/>
+		<script src="js/script.js"></script>
+		<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	</head>
+	<body>
+		<h1>Hàm hide()</h1>
+		<h2>Giới thiệu</h2>
+		<p>Dùng để ẩn 1 phần trang web.</p>
+		<p>Phần được chọn sẽ ẩn giống như được sử dụng style="display: none;".</p>
+		<h2>Cách sử dụng</h2>
+		<p>Cú pháp:</p>
+		<code>$(selector).hide(speed,easing,callback)</code>
+		<ul>
+			<li>
+				<p>speed: Không bắt buộc. Chỉ định tốc độ của hiệu ứng ẩn. Giá trị mặc định là 400 mili giây</p>
+				<p>Các giá trị có thể đặt cho speed: milliseconds, "slow", "fast"</p>
+			</li>
+			<li>
+				<p>easing: Không bắt buộc. Chỉ định tốc độ ẩn của phần tử trong các điểm khác nhau của hình ảnh động. Giá trị mặc định là "swing"</p>
+				<p>Các giá trị có thể đặt cho easing:</p>
+				<ul>
+					<li>"swing" - di chuyển chậm hơn ở đầu / cuối, nhưng nhanh hơn ở giữa.</li>
+					<li>"linear" - di chuyển với tốc độ không đổi</li>
+				</ul>
+			</li>
+			<li>callback: Không bắt buộc. Chứa hàm được thực thi sau khi phương thức hide() hoàn thành</li>
+		</ul>
+		<p>Ví dụ:</p>
+		<input type="button" class="button1" value="Hide">
+		<input type="button" class="button2" value="Show">
+		<script>
+			$(document).ready(function(){
+				$(".button1").click(function(){
+					$("li").hide(1000);
+				});
+				$(".button2").click(function() {
+					$("li").show(1000);
+				});
+			});
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,44 @@
+<html>
+	<head>
+		<meta charset="utf8">
+		<title>Hàm toggle() trong JQuery</title>
+		<meta name="description" content="Các hàm thông dụng của JQuery">
+		<link rel="icon" href="https://i.ibb.co/0BqGFth/icon.png">
+		<link rel="stylesheet" href="css/style.css"/>
+		<script src="js/script.js"></script>
+		<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	</head>
+	<body>
+		<h1>Hàm toggle()</h1>
+		<h2>Giới thiệu</h2>
+		<p>Phương thức toggle() chuyển đổi giữa hide() và show() cho các phần tử được chọn.</p>
+		<p>Phương thức này kiểm tra các phần tử được chọn cho khả năng hiển thị. show() được dùng nếu phần tử bị ẩn, và hide() được dùng khi phần tử đang được hiển thị.</p>
+		<h2>Cách sử dụng</h2>
+		<p>Cú pháp:</p>
+		<code> $(selector).toggle(speed,easing,callback)</code>
+		<ul>
+			<li>
+				<p>speed: Không bắt buộc. Chỉ định tốc độ của hiệu ứng ẩn/hiển thị. Giá trị mặc định là 400 mili giây</p>
+				<p>Các giá trị có thể đặt cho speed: milliseconds, "slow", "fast"</p>
+			</li>
+			<li>
+				<p>easing: Không bắt buộc. Chỉ định tốc độ ẩn/hiển thị của phần tử trong các điểm khác nhau của hình ảnh động. Giá trị mặc định là "swing"</p>
+				<p>Các giá trị có thể đặt cho easing:</p>
+				<ul>
+					<li>"swing" - di chuyển chậm hơn ở đầu / cuối, nhưng nhanh hơn ở giữa.</li>
+					<li>"linear" - di chuyển với tốc độ không đổi</li>
+				</ul>
+			</li>
+			<li>callback: Không bắt buộc. Chứa hàm được thực thi sau khi phương thức toggle() hoàn thành</li>
+		</ul>
+		<p>Ví dụ</p>
+		<input type="button" value="Ẩn/Hiện">
+		<script>
+			$(document).ready(function(){
+				$("input").click(function(){
+					$("ul").toggle(1000);
+				});
+			});
+		</script>
+	</body>
+</html>

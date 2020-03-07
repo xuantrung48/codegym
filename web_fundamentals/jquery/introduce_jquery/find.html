@@ -1,0 +1,35 @@
+<html>
+	<head>
+		<meta charset="utf8">
+		<title>Hàm find() trong JQuery</title>
+		<meta name="description" content="Các hàm thông dụng của JQuery">
+		<link rel="icon" href="https://i.ibb.co/0BqGFth/icon.png">
+		<link rel="stylesheet" href="css/style.css"/>
+		<script src="js/script.js"></script>
+		<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	</head>
+	<body>
+		<h1>Hàm find()</h1>
+		<h2>Giới thiệu</h2>
+		<p>Hàm find() trả về các phần tử con của phần tử cha được chọn.</p>
+		<p>Để trả về tất cả các phần tử con, <span>hãy sử dụng bộ chọn "*"</span>.</p>
+		<h2>Cách sử dụng</h2>
+		<p class="syntax">Cú pháp:</p>
+		<code>$(selector).find(filter)</code>
+		<p>Ví dụ 1: sử dụng cho thẻ span</p>
+		<code>$(document).ready(function(){<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;$("p").find("span").css({"color": "red", "background-color": "yellow"});<br>
+			});</code>
+		<p>Ví dụ 2: sử dụng cho class:</p>
+		<code>$(document).ready(function(){<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;$("body").find(".syntax").css({"color": "red", "background-color": "yellow"});<br>
+			});</code>
+		<script>
+			$(document).ready(function(){
+				$("p").find("span").css({"color": "red", "background-color": "yellow"});
+				$("body").find(".syntax").css({"color": "red", "background-color": "yellow", "border": "1px solid red"});
+			});
+			
+		</script>
+	</body>
+</html>
