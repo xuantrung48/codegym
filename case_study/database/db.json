@@ -1,14 +1,82 @@
 {
   "Devices": [
     {
-      "Name": "VSmart Live",
+      "id": 1,
+      "Name": "VSmart Live 6GB/64GB Trắng",
       "Images": [
-        "https://cdn.tgdd.vn/Products/Images/42/209553/vsmart-live-6gb-white-400x460.png"
+        "https://cdn.tgdd.vn/Products/Images/42/209553/vsmart-live-6gb-white-600x600.jpg",
+        "https://image.thanhnien.vn/660/uploaded/baont/2019_08_08/vsmartlivelifestyle19_vcql.jpg"
       ],
-      "Brand": "Vsmart",
-      "Status": "33",
-      "Price": "235",
-      "id": 1
+      "Brand": {
+        "id": "7",
+        "Name": "VSmart"
+      },
+      "Status": "99",
+      "Price": "2500000"
+    },
+    {
+      "Name": "iPhone 6 Plus 32GB Gold",
+      "Images": [
+        "https://img.sosanhgia.com/images/500x0/267c98666a184a9b8f8d7fc9916038b4/iphone-6s-plus-32gb.jpeg"
+      ],
+      "Brand": {
+        "id": "1",
+        "Name": "Apple"
+      },
+      "Status": "95",
+      "Price": "3000000",
+      "id": 2
+    },
+    {
+      "Name": "OPPO A91",
+      "Images": [
+        "https://cdn.tgdd.vn/2020/03/campaign/p-412x460.png"
+      ],
+      "Brand": {
+        "id": "4",
+        "Name": "Oppo"
+      },
+      "Status": "97",
+      "Price": "5000000",
+      "id": 3
+    }
+  ],
+  "Brands": [
+    {
+      "id": 1,
+      "Name": "Apple"
+    },
+    {
+      "id": 2,
+      "Name": "Samsung"
+    },
+    {
+      "id": 3,
+      "Name": "Sony"
+    },
+    {
+      "id": 4,
+      "Name": "Oppo"
+    },
+    {
+      "id": 5,
+      "Name": "Xiaomi"
+    },
+    {
+      "id": 6,
+      "Name": "Huawei"
+    },
+    {
+      "id": 7,
+      "Name": "VSmart"
+    },
+    {
+      "id": 8,
+      "Name": "BPhone"
+    },
+    {
+      "id": 9,
+      "Name": "Others"
     }
   ]
 }

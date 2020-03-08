@@ -3,7 +3,7 @@
 		<title>Devices Management</title>
 		<link rel="icon" href="../images/smartphone-icon.png">
 		<link rel="stylesheet" href="../css/bootstrap.min.css">
-		<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 		<link rel="stylesheet" href="css/style.css">
 	</head>
 	<body>
@@ -30,7 +30,7 @@
 		</div>
 		<!-- Modal -->
 		<div id="myModal" class="modal fade" role="dialog">
-			<div class="modal-dialog modal-dialog">
+			<div class="modal-dialog modal-dialog modal-lg">
 			<!-- Modal content-->
 				<div class="modal-content">
 					<div class="modal-header">
@@ -39,35 +39,47 @@
 					</div>
 					<div class="modal-body">
 						<form id="formAddEditDevice">
+							<input hidden name="id" id="id" value="0">
 							<div class="row form-group">
-								<div class="col-4">Device's Name:</div>
-								<div class="col-8"><input type="text" id="Name" class="form-control" data-rule-required="true"></div>
+								<div class="col-3">
+									<label>Device's Name:</label>
+								</div>
+								<div class="col-9"><input type="text" id="Name" class="form-control" data-rule-required="true"></div>
 							</div>
 							<div class="row form-group">
-								<div class="col-4">Image's URL:</div>
-								<div class="col-8"><input type="text" id="Images" class="form-control" data-rule-url="true"></div>
+								<div class="col-3">
+									<label>Image's URL:</label>
+								</div>
+								<div class="col-9"><input type="text" id="Images0" class="form-control" data-rule-url="true" placeholder="Image's URL 1"></div>
 							</div>
 							<div class="row form-group">
-								<div class="col-4">Brand:</div>
+								<div class="col-3">
+								</div>
+								<div class="col-9"><input type="text" id="Images1" class="form-control" data-rule-url="true" placeholder="Image's URL 2"></div>
+							</div>
+							<div class="row form-group">
+								<div class="col-3">
+								</div>
+								<div class="col-9"><input type="text" id="Images2" class="form-control" data-rule-url="true" placeholder="Image's URL 3"></div>
+							</div>
+							<div class="row form-group">
+								<div class="col-3">
+									<label>Brand:</label>
+								</div>
 								<div class="col-3 ">
-									<select id="Brand" class="form-control">
-										<option>Apple</option>
-										<option>Samsung</option>
-										<option>Sony</option>
-										<option>Oppo</option>
-										<option>Xiaomi</option>
-										<option>Huawei</option>
-										<option>Vsmart</option>
-										<option>BPhone</option>
-										<option>Others</option>
+									<select name="Brand" id="Brand" class="form-control">
 									</select>
 								</div>
-								<div class="col-3">Status (%):</div>
-								<div class="col-2"><input type="text" id="Status" class="form-control" data-rule-range="1,100"></div>
+								<div class="col-3">
+									<label>Status (%):</label>
+								</div>
+								<div class="col-3"><input type="text" id="Status" class="form-control" data-rule-range="1,100"></div>
 							</div>
 							<div class="row form-group">
-								<div class="col-4">Price (VND):</div>
-								<div class="col-8"><input type="text" id="Price" class="form-control" data-rule-number="true"></div>
+								<div class="col-3">
+									<label>Price (VND):</label>
+								</div>
+								<div class="col-9"><input type="text" id="Price" class="form-control" data-rule-number="true"></div>
 							</div>
 						</form>
 					</div>
