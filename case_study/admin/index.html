@@ -1,6 +1,7 @@
 <html>
 	<head>
 		<title>Devices Management</title>
+		<meta charset="utf8">
 		<link rel="icon" href="../images/smartphone-icon.png">
 		<link rel="stylesheet" href="../css/bootstrap.min.css">
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
@@ -9,7 +10,7 @@
 	<body>
 		<div class="container">
 			<h1>Devices Management</h1>
-			<a href="javascript:void(0);" class="btn btn-primary" onclick="devices.openModal()"><i class="fa fa-plus"></i> Add Device</a>
+			<a href="javascript:void(0);" class="btn btn-primary" onclick="device.openModal()"><i class="fa fa-plus"></i> Add Device</a>
 			<div class="row">
 				<table class="table table-hover mt-3">
 					<thead>
@@ -48,7 +49,7 @@
 							</div>
 							<div class="row form-group">
 								<div class="col-3">
-									<label>Image's URL:</label>
+									<label>Image's URLs:</label>
 								</div>
 								<div class="col-9"><input type="text" id="Images0" class="form-control" data-rule-url="true" placeholder="Image's URL 1"></div>
 							</div>
@@ -77,14 +78,14 @@
 							</div>
 							<div class="row form-group">
 								<div class="col-3">
-									<label>Price (VND):</label>
+									<label>Price (₫):</label>
 								</div>
 								<div class="col-9"><input type="text" id="Price" class="form-control" data-rule-number="true"></div>
 							</div>
 						</form>
 					</div>
 					<div class="modal-footer">
-						<a href="javascript:void(0);" class="btn btn-primary" onclick="devices.save()" id="addButton">Add</a>
+						<a href="javascript:void(0);" class="btn btn-primary" onclick="device.save()" id="addButton">Add</a>
 						<button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
 					</div>
 				</div>
@@ -95,6 +96,6 @@
 		<script src="../js/ekko-lightbox.min.js"></script>
 		<script src="../js/jquery.validate.min.js"></script>
 		<script src="../js/bootbox.min.js"></script>
-		<script src="js/devices.js"></script>
+		<script src="js/device.js"></script>
 	</body>
 </html>

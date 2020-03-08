@@ -1,15 +1,19 @@
-var devices = {} || devices;
+var device = {} || device;
 
 $(function(){
-	devices.init();
+	device.init();
 })
 
-devices.init = function() {
-	devices.drawTable();
-	devices.initBrand();
+device.displayPriceWithDot = function(price) {
+	return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 }
 
-devices.initBrand = function() {
+device.init = function() {
+	device.drawTable();
+	device.initBrand();
+}
+
+device.initBrand = function() {
 	$.ajax({
 		url: "http://localhost:3000/Brands",
 		method: "GET",
@@ -24,7 +28,7 @@ devices.initBrand = function() {
 	})
 }
 
-devices.save = function() {
+device.save = function() {
 	if($("#formAddEditDevice").valid()) {
 		if($("#id").val() == 0) {
 			var deviceObj		= {};
@@ -50,7 +54,7 @@ devices.save = function() {
 				data: JSON.stringify(deviceObj),
 				success: function(data) {
 					$('#myModal').modal('hide');
-					devices.drawTable();
+					device.drawTable();
 				}
 			});
 		} else {
@@ -78,7 +82,7 @@ devices.save = function() {
 				data: JSON.stringify(deviceObj),
 				success: function(data) {
 					$('#myModal').modal('hide');
-					devices.drawTable();
+					device.drawTable();
 				}
 			});
 		}
@@ -90,12 +94,12 @@ $(document).on("click", '[data-toggle="lightbox"]', function(event) {
 	$(this).ekkoLightbox();
 });
 
-devices.openModal = function() {
-	devices.reset();
+device.openModal = function() {
+	device.reset();
 	$('#myModal').modal('show');
 }
 
-devices.reset = function() {
+device.reset = function() {
 	$("#deviceModalTitle").text("Add new device:");
 	$("#addButton").text("Add");
 	$("#id").val('0');
@@ -110,7 +114,7 @@ devices.reset = function() {
 	validator.resetForm();
 }
 
-devices.drawTable = function() {
+device.drawTable = function() {
 	$.ajax({
 		url: "http://localhost:3000/Devices",
 		method: "GET",
@@ -120,17 +124,17 @@ devices.drawTable = function() {
 			$.each(data, function(i, v){
 				let imagesDevice = "";
 				for (let i = 0; i < v.Images.length; i++) {
-					imagesDevice += "<a href='" + v.Images[i] + "'data-toggle='lightbox' data-gallery='gallery'><img src='" + v.Images[i] + "' height='50'></a> ";
+					imagesDevice += "<a href='" + v.Images[i] + "'data-toggle='lightbox' data-gallery='gallery" + v.id + "'><img src='" + v.Images[i] + "' height='50'></a> ";
 				}
 				$("#tbDevices").append(
-					"<tr><td>" + v.id + "</td><td>" + v.Name + "</td><td>" + imagesDevice + "</td><td>" + v.Brand.Name + "</td><td>" + v.Status + " %</td><td>" + v.Price + " VND</td><td><a href='javascript:void(0);' onclick='devices.get(" + v.id + ")'><i class='fa fa-edit' title='Edit this device'></i></a> <a href='javascript:void(0);' onclick='devices.remove(" + v.id + ")'><i class='fa fa-trash' title='Remove this device'></i></a></td></tr>"
+					"<tr><td>" + v.id + "</td><td>" + v.Name + "</td><td>" + imagesDevice + "</td><td>" + v.Brand.Name + "</td><td>" + v.Status + " %</td><td>" + device.displayPriceWithDot(v.Price) + " ₫</td><td><a href='javascript:void(0);' onclick='device.get(" + v.id + ")'><i class='fa fa-edit' title='Edit this device'></i></a> <a href='javascript:void(0);' onclick='device.remove(" + v.id + ")'><i class='fa fa-trash' title='Remove this device'></i></a></td></tr>"
 				);
 			})
 		}
 	})
 }
 
-devices.get = function(id) {
+device.get = function(id) {
 	$.ajax({
 		url: "http://localhost:3000/Devices/" + id,
 		method: "GET",
@@ -153,7 +157,7 @@ devices.get = function(id) {
 	});
 }
 
-devices.remove = function(id) {
+device.remove = function(id) {
 	bootbox.confirm({
 		title: "Remove device?",
 		message: "Do you really want to remove this device? This cannot be undone.",
@@ -172,7 +176,7 @@ devices.remove = function(id) {
 					method: "DELETE",
 					dataType: "json",
 					success: function(data) {
-						devices.drawTable();
+						device.drawTable();
 					}
 				});
 			}
