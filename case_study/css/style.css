@@ -1,0 +1,14 @@
+body {
+  padding-top: 56px;
+}
+
+#logo {
+	font-family: 'Monoton', cursive;
+	font-size: 50px;
+}
+
+img{
+    width:100%;
+    max-height:300px;
+}
+
