@@ -11,23 +11,28 @@
 		<div class="container">
 			<h1>Devices Management</h1>
 			<a href="javascript:void(0);" class="btn btn-primary" onclick="device.openModal()"><i class="fa fa-plus"></i> Add Device</a>
-			<div class="row">
-				<table class="table table-hover mt-3">
-					<thead>
-						<tr class="thead-dark">
-							<th>ID</th>
-							<th>Device's Name</th>
-							<th>Images</th>
-							<th>Brand</th>
-							<th>Status</th>
-							<th>Price</th>
-							<th>Action</th>
-						</tr>
-					</thead>
-					<tbody id="tbDevices">
-					</tbody>
-				</table>
-			</div>
+			<table class="table table-hover mt-3 table-responsive table-bordered">
+				<thead>
+					<tr class="thead-dark">
+						<th>ID</th>
+						<th>Device's Name</th>
+						<th>Images</th>
+						<th>Brand</th>
+						<th>CPU</th>
+						<th>Screen</th>
+						<th>OS</th>
+						<th>Rear Camera</th>
+						<th>Front Camera</th>
+						<th>Ram</th>
+						<th>Rom</th>
+						<th>Status</th>
+						<th>Price</th>
+						<th>Action</th>
+					</tr>
+				</thead>
+				<tbody id="tbDevices">
+				</tbody>
+			</table>
 		</div>
 		<!-- Modal -->
 		<div id="myModal" class="modal fade" role="dialog">
@@ -42,15 +47,11 @@
 						<form id="formAddEditDevice">
 							<input hidden name="id" id="id" value="0">
 							<div class="row form-group">
-								<div class="col-3">
-									<label>Device's Name:</label>
-								</div>
+								<div class="col-3">Device's Name:</div>
 								<div class="col-9"><input type="text" id="Name" class="form-control" data-rule-required="true"></div>
 							</div>
 							<div class="row form-group">
-								<div class="col-3">
-									<label>Image's URLs:</label>
-								</div>
+								<div class="col-3">Image's URLs:</div>
 								<div class="col-9"><input type="text" id="Images0" class="form-control" data-rule-url="true" placeholder="Image's URL 1"></div>
 							</div>
 							<div class="row form-group">
@@ -64,23 +65,37 @@
 								<div class="col-9"><input type="text" id="Images2" class="form-control" data-rule-url="true" placeholder="Image's URL 3"></div>
 							</div>
 							<div class="row form-group">
-								<div class="col-3">
-									<label>Brand:</label>
-								</div>
+								<div class="col-3">Brand:</div>
 								<div class="col-3 ">
 									<select name="Brand" id="Brand" class="form-control">
 									</select>
 								</div>
-								<div class="col-3">
-									<label>Status (%):</label>
-								</div>
-								<div class="col-3"><input type="text" id="Status" class="form-control" data-rule-range="1,100"></div>
+								<div class="col-3">CPU:</div>
+								<div class="col-3"><input type="text" id="CPU" class="form-control"></div>
 							</div>
 							<div class="row form-group">
-								<div class="col-3">
-									<label>Price (₫):</label>
-								</div>
-								<div class="col-9"><input type="text" id="Price" class="form-control" data-rule-number="true"></div>
+								<div class="col-3">Screen:</div>
+								<div class="col-3"><input type="text" id="Screen" class="form-control"></div>
+								<div class="col-3">OS:</div>
+								<div class="col-3"><input type="text" id="OS" class="form-control"></div>
+							</div>
+							<div class="row form-group">
+								<div class="col-3">Rear Camera:</div>
+								<div class="col-3"><input type="text" id="RearCamera" class="form-control"></div>
+								<div class="col-3">Front Camera:</div>
+								<div class="col-3"><input type="text" id="FrontCamera" class="form-control"></div>
+							</div>
+							<div class="row form-group">
+								<div class="col-3">Ram (GB):</div>
+								<div class="col-3"><input type="text" id="Ram" class="form-control"></div>
+								<div class="col-3">Rom (GB):</div>
+								<div class="col-3"><input type="text" id="Rom" class="form-control"></div>
+							</div>
+							<div class="row form-group">
+								<div class="col-3">Status (%):</div>
+								<div class="col-3"><input type="text" id="Status" class="form-control" data-rule-range="1,100"></div>
+								<div class="col-3">Price (₫):</div>
+								<div class="col-3"><input type="text" id="Price" class="form-control" data-rule-number="true"></div>
 							</div>
 						</form>
 					</div>
