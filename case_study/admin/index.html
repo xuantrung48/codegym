@@ -83,7 +83,7 @@
 							<input hidden name="id" id="id" value="0">
 							<div class="row form-group">
 								<div class="col-3">Device's Name:</div>
-								<div class="col-9"><input type="text" id="Name" class="form-control" name="Name"></div>
+								<div class="col-9"><input type="text" id="Name" class="form-control" name="Name" data-rule-required="true"></div>
 							</div>
 							<div class="row form-group">
 								<div class="col-3">Image's URLs:</div>
@@ -102,7 +102,7 @@
 							<div class="row form-group">
 								<div class="col-3">Brand:</div>
 								<div class="col-3 ">
-									<select name="Brand" id="Brand" class="form-control" name="Brand">
+									<select name="Brand" id="Brand" class="form-control" name="Brand" data-rule-required="true">
 									</select>
 								</div>
 								<div class="col-3">CPU:</div>
@@ -130,7 +130,7 @@
 								<div class="col-3">Status (%):</div>
 								<div class="col-3"><input type="text" id="Status" class="form-control" data-rule-range="1,100"></div>
 								<div class="col-3">Price (₫):</div>
-								<div class="col-3"><input type="text" id="Price" class="form-control" name="Price"></div>
+								<div class="col-3"><input type="text" id="Price" class="form-control" name="Price" data-rule-required="true" data-rule-number="true"></div>
 							</div>
 						</form>
 					</div>
@@ -147,25 +147,8 @@
 		<script src="../js/bootstrap.min.js"></script>
 		<script src="../js/ekko-lightbox.min.js"></script>
 		<script src="../js/jquery.validate.min.js"></script>
-		<script src="../js/additional-methods.min.js"></script>
 		<script src="../js/bootbox.min.js"></script>
 		<script src="js/device.js"></script>
-		<script>
-			$('#formAddEditDevice').validate({
-				rules: {
-					Name: {
-						required: true
-					},
-					Brand: {
-						required: true
-					},
-					Price: {
-						required: true,
-						number: true
-					}
-				}
-			});
-		</script>
 		<script>
 			$("#menu-toggle").click(function(e) {
 				e.preventDefault();

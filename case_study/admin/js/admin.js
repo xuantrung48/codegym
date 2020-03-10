@@ -14,6 +14,7 @@ getAdminID = function() {
 }
 
 adminIdSave = function() {
+	if($('#formAdmin').valid()){
 		var adminObj		= {};
 		adminObj.id			= 1;
 		adminObj.Email		= $("#email").val();
@@ -28,4 +29,5 @@ adminIdSave = function() {
 				bootbox.alert("Profile updated!");
 			}
 		});
+	}
 }

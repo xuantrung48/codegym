@@ -22,12 +22,12 @@ function login() {
 		success: function(data){
 			email	= data.Email;
 			passwd	= data.Password;
+			if ($("#email").val() == email && $("#password").val() == passwd) {
+				$(location).attr('href', 'admin/index.html');
+			} else {
+				$("#wrong").html('<div class="alert alert-danger">Wrong Email or Password!</div>');
+			}
 		}
-	})
+	});
 	
-	if ($("#email").val() == email && $("#password").val() == passwd) {
-		$(location).attr('href', 'admin/index.html');
-	} else {
-		$("#wrong").html('<div class="alert alert-danger">Wrong Email or Password!</div>');
-	}
 }
