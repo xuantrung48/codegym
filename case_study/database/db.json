@@ -5,7 +5,8 @@
       "Name": "iPhone 6 Plus 32GB Gold",
       "Images": [
         "https://img.sosanhgia.com/images/500x0/267c98666a184a9b8f8d7fc9916038b4/iphone-6s-plus-32gb.jpeg",
-        "https://s4.nhattao.com/data/attachment-files/2019/12/14104342_75220802_2541397122760399_7044981031098646528_o.jpg"
+        "https://s4.nhattao.com/data/attachment-files/2019/12/14104342_75220802_2541397122760399_7044981031098646528_o.jpg",
+        "https://s4.nhattao.com/data/attachment-files/2018/07/10764095_ip-6-s.jpg"
       ],
       "Brand": {
         "id": "1",
@@ -14,7 +15,7 @@
       "Status": "95",
       "Price": "3000000",
       "CPU": "Apple A9 2 nhân",
-      "Screen": "\tLED-backlit IPS LCD, 5.5\", Retina HD",
+      "Screen": "LED-backlit IPS LCD, 5.5\", Retina HD",
       "OS": "iOS 12",
       "RearCamera": "12 MP",
       "FrontCamera": "5 MP",
@@ -30,38 +31,40 @@
         "https://vn-test-11.slatic.net/p/6954afe1a01692df9933c3b96b72d1b8.jpg_720x720q80.jpg_.webp"
       ],
       "Brand": {
-        "id": "2",
-        "Name": "Samsung"
+        "id": "7",
+        "Name": "VSmart"
       },
       "Status": "98",
       "Price": "2500000",
       "CPU": "Snapdragon 675 8 nhân",
       "Screen": "AMOLED, 6.2\", Full HD+",
       "OS": "Android 9.0 (Pie)",
-      "RearCamera": "Chính 48 MP & Phụ 8 MP, 5 MP",
+      "RearCamera": "48 MP & 8 MP, 5 MP",
       "FrontCamera": "20 MP",
       "Ram": "6",
       "Rom": "64"
     },
     {
+      "id": 3,
       "Name": "OPPO A91",
       "Images": [
-        "https://cdn.tgdd.vn/2020/03/campaign/p-412x460.png"
+        "https://cdn.tgdd.vn/2020/03/campaign/p-412x460.png",
+        "https://www.gizmochina.com/wp-content/uploads/2019/12/Oppo-A91.jpg",
+        "https://cdn.tgdd.vn/Files/2020/03/05/1240233/oppoa91_800x450.png"
       ],
       "Brand": {
-        "id": "4",
-        "Name": "Oppo"
+        "id": "3",
+        "Name": "Sony"
       },
       "Status": "99",
       "Price": "5000000",
-      "id": 3,
       "CPU": "MediaTek Helio P70 8 nhân",
       "Screen": "AMOLED, 6.4\", Full HD+",
       "OS": "ColorOS 6.1 (Android 9.0)",
-      "RearCamera": "Chính 48 MP & Phụ 8 MP, 2 MP, 2 MP",
+      "RearCamera": "48 MP & 8 MP, 2 MP, 2 MP",
       "FrontCamera": "16 MP",
-      "Ram": 8,
-      "Rom": 128
+      "Ram": "8",
+      "Rom": "128"
     }
   ],
   "Brands": [
@@ -100,6 +103,13 @@
     {
       "id": 9,
       "Name": "Others"
+    }
+  ],
+  "AdminID": [
+    {
+      "id": 1,
+      "Email": "xuantrung48@gmail.com",
+      "Password": "123456"
     }
   ]
 }
