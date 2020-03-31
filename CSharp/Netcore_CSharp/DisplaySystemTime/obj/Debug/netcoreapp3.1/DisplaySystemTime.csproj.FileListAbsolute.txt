@@ -1,0 +1,13 @@
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\DisplaySystemTime\bin\Debug\netcoreapp3.1\DisplaySystemTime.exe
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\DisplaySystemTime\bin\Debug\netcoreapp3.1\DisplaySystemTime.deps.json
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\DisplaySystemTime\bin\Debug\netcoreapp3.1\DisplaySystemTime.runtimeconfig.json
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\DisplaySystemTime\bin\Debug\netcoreapp3.1\DisplaySystemTime.runtimeconfig.dev.json
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\DisplaySystemTime\bin\Debug\netcoreapp3.1\DisplaySystemTime.dll
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\DisplaySystemTime\bin\Debug\netcoreapp3.1\DisplaySystemTime.pdb
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\DisplaySystemTime\obj\Debug\netcoreapp3.1\DisplaySystemTime.csprojAssemblyReference.cache
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\DisplaySystemTime\obj\Debug\netcoreapp3.1\DisplaySystemTime.csproj.CoreCompileInputs.cache
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\DisplaySystemTime\obj\Debug\netcoreapp3.1\DisplaySystemTime.AssemblyInfoInputs.cache
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\DisplaySystemTime\obj\Debug\netcoreapp3.1\DisplaySystemTime.AssemblyInfo.cs
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\DisplaySystemTime\obj\Debug\netcoreapp3.1\DisplaySystemTime.dll
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\DisplaySystemTime\obj\Debug\netcoreapp3.1\DisplaySystemTime.pdb
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\DisplaySystemTime\obj\Debug\netcoreapp3.1\DisplaySystemTime.genruntimeconfig.cache

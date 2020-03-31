@@ -6,7 +6,8 @@ namespace DisplaySystemTime
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            DateTime localDate = DateTime.Now;
+            System.Console.WriteLine("Datetime Now is :" + localDate);
         }
     }
 }
