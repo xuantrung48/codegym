@@ -1,0 +1,13 @@
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\ThietKeMenu\bin\Debug\netcoreapp3.1\ThietKeMenu.exe
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\ThietKeMenu\bin\Debug\netcoreapp3.1\ThietKeMenu.deps.json
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\ThietKeMenu\bin\Debug\netcoreapp3.1\ThietKeMenu.runtimeconfig.json
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\ThietKeMenu\bin\Debug\netcoreapp3.1\ThietKeMenu.runtimeconfig.dev.json
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\ThietKeMenu\bin\Debug\netcoreapp3.1\ThietKeMenu.dll
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\ThietKeMenu\bin\Debug\netcoreapp3.1\ThietKeMenu.pdb
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\ThietKeMenu\obj\Debug\netcoreapp3.1\ThietKeMenu.csprojAssemblyReference.cache
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\ThietKeMenu\obj\Debug\netcoreapp3.1\ThietKeMenu.csproj.CoreCompileInputs.cache
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\ThietKeMenu\obj\Debug\netcoreapp3.1\ThietKeMenu.AssemblyInfoInputs.cache
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\ThietKeMenu\obj\Debug\netcoreapp3.1\ThietKeMenu.AssemblyInfo.cs
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\ThietKeMenu\obj\Debug\netcoreapp3.1\ThietKeMenu.dll
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\ThietKeMenu\obj\Debug\netcoreapp3.1\ThietKeMenu.pdb
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\ThietKeMenu\obj\Debug\netcoreapp3.1\ThietKeMenu.genruntimeconfig.cache
