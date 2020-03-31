@@ -1,0 +1,13 @@
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\TinhBMI\bin\Debug\netcoreapp3.1\TinhBMI.exe
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\TinhBMI\bin\Debug\netcoreapp3.1\TinhBMI.deps.json
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\TinhBMI\bin\Debug\netcoreapp3.1\TinhBMI.runtimeconfig.json
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\TinhBMI\bin\Debug\netcoreapp3.1\TinhBMI.runtimeconfig.dev.json
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\TinhBMI\bin\Debug\netcoreapp3.1\TinhBMI.dll
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\TinhBMI\bin\Debug\netcoreapp3.1\TinhBMI.pdb
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\TinhBMI\obj\Debug\netcoreapp3.1\TinhBMI.csprojAssemblyReference.cache
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\TinhBMI\obj\Debug\netcoreapp3.1\TinhBMI.csproj.CoreCompileInputs.cache
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\TinhBMI\obj\Debug\netcoreapp3.1\TinhBMI.AssemblyInfoInputs.cache
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\TinhBMI\obj\Debug\netcoreapp3.1\TinhBMI.AssemblyInfo.cs
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\TinhBMI\obj\Debug\netcoreapp3.1\TinhBMI.dll
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\TinhBMI\obj\Debug\netcoreapp3.1\TinhBMI.pdb
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\TinhBMI\obj\Debug\netcoreapp3.1\TinhBMI.genruntimeconfig.cache
