@@ -1,0 +1,13 @@
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\TinhSoNgayTrongThang\bin\Debug\netcoreapp3.1\TinhSoNgayTrongThang.exe
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\TinhSoNgayTrongThang\bin\Debug\netcoreapp3.1\TinhSoNgayTrongThang.deps.json
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\TinhSoNgayTrongThang\bin\Debug\netcoreapp3.1\TinhSoNgayTrongThang.runtimeconfig.json
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\TinhSoNgayTrongThang\bin\Debug\netcoreapp3.1\TinhSoNgayTrongThang.runtimeconfig.dev.json
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\TinhSoNgayTrongThang\bin\Debug\netcoreapp3.1\TinhSoNgayTrongThang.dll
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\TinhSoNgayTrongThang\bin\Debug\netcoreapp3.1\TinhSoNgayTrongThang.pdb
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\TinhSoNgayTrongThang\obj\Debug\netcoreapp3.1\TinhSoNgayTrongThang.csprojAssemblyReference.cache
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\TinhSoNgayTrongThang\obj\Debug\netcoreapp3.1\TinhSoNgayTrongThang.csproj.CoreCompileInputs.cache
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\TinhSoNgayTrongThang\obj\Debug\netcoreapp3.1\TinhSoNgayTrongThang.AssemblyInfoInputs.cache
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\TinhSoNgayTrongThang\obj\Debug\netcoreapp3.1\TinhSoNgayTrongThang.AssemblyInfo.cs
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\TinhSoNgayTrongThang\obj\Debug\netcoreapp3.1\TinhSoNgayTrongThang.dll
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\TinhSoNgayTrongThang\obj\Debug\netcoreapp3.1\TinhSoNgayTrongThang.pdb
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\TinhSoNgayTrongThang\obj\Debug\netcoreapp3.1\TinhSoNgayTrongThang.genruntimeconfig.cache
