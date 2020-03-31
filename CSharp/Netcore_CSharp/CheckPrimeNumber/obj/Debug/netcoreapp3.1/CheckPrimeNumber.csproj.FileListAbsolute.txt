@@ -1,0 +1,13 @@
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\CheckPrimeNumber\bin\Debug\netcoreapp3.1\CheckPrimeNumber.exe
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\CheckPrimeNumber\bin\Debug\netcoreapp3.1\CheckPrimeNumber.deps.json
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\CheckPrimeNumber\bin\Debug\netcoreapp3.1\CheckPrimeNumber.runtimeconfig.json
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\CheckPrimeNumber\bin\Debug\netcoreapp3.1\CheckPrimeNumber.runtimeconfig.dev.json
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\CheckPrimeNumber\bin\Debug\netcoreapp3.1\CheckPrimeNumber.dll
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\CheckPrimeNumber\bin\Debug\netcoreapp3.1\CheckPrimeNumber.pdb
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\CheckPrimeNumber\obj\Debug\netcoreapp3.1\CheckPrimeNumber.csprojAssemblyReference.cache
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\CheckPrimeNumber\obj\Debug\netcoreapp3.1\CheckPrimeNumber.csproj.CoreCompileInputs.cache
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\CheckPrimeNumber\obj\Debug\netcoreapp3.1\CheckPrimeNumber.AssemblyInfoInputs.cache
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\CheckPrimeNumber\obj\Debug\netcoreapp3.1\CheckPrimeNumber.AssemblyInfo.cs
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\CheckPrimeNumber\obj\Debug\netcoreapp3.1\CheckPrimeNumber.dll
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\CheckPrimeNumber\obj\Debug\netcoreapp3.1\CheckPrimeNumber.pdb
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\CheckPrimeNumber\obj\Debug\netcoreapp3.1\CheckPrimeNumber.genruntimeconfig.cache
