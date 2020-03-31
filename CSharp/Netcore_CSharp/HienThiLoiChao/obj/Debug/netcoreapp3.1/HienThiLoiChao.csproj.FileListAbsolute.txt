@@ -1,0 +1,13 @@
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\HienThiLoiChao\bin\Debug\netcoreapp3.1\HienThiLoiChao.exe
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\HienThiLoiChao\bin\Debug\netcoreapp3.1\HienThiLoiChao.deps.json
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\HienThiLoiChao\bin\Debug\netcoreapp3.1\HienThiLoiChao.runtimeconfig.json
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\HienThiLoiChao\bin\Debug\netcoreapp3.1\HienThiLoiChao.runtimeconfig.dev.json
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\HienThiLoiChao\bin\Debug\netcoreapp3.1\HienThiLoiChao.dll
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\HienThiLoiChao\bin\Debug\netcoreapp3.1\HienThiLoiChao.pdb
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\HienThiLoiChao\obj\Debug\netcoreapp3.1\HienThiLoiChao.csprojAssemblyReference.cache
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\HienThiLoiChao\obj\Debug\netcoreapp3.1\HienThiLoiChao.csproj.CoreCompileInputs.cache
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\HienThiLoiChao\obj\Debug\netcoreapp3.1\HienThiLoiChao.AssemblyInfoInputs.cache
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\HienThiLoiChao\obj\Debug\netcoreapp3.1\HienThiLoiChao.AssemblyInfo.cs
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\HienThiLoiChao\obj\Debug\netcoreapp3.1\HienThiLoiChao.dll
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\HienThiLoiChao\obj\Debug\netcoreapp3.1\HienThiLoiChao.pdb
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\HienThiLoiChao\obj\Debug\netcoreapp3.1\HienThiLoiChao.genruntimeconfig.cache
