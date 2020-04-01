@@ -1,0 +1,13 @@
+D:\codegym\github\codegym\CSharp\Mang_va_PhuongThuc\ThaoTacVoiMang\bin\Debug\netcoreapp3.1\ThaoTacVoiMang.exe
+D:\codegym\github\codegym\CSharp\Mang_va_PhuongThuc\ThaoTacVoiMang\bin\Debug\netcoreapp3.1\ThaoTacVoiMang.deps.json
+D:\codegym\github\codegym\CSharp\Mang_va_PhuongThuc\ThaoTacVoiMang\bin\Debug\netcoreapp3.1\ThaoTacVoiMang.runtimeconfig.json
+D:\codegym\github\codegym\CSharp\Mang_va_PhuongThuc\ThaoTacVoiMang\bin\Debug\netcoreapp3.1\ThaoTacVoiMang.runtimeconfig.dev.json
+D:\codegym\github\codegym\CSharp\Mang_va_PhuongThuc\ThaoTacVoiMang\bin\Debug\netcoreapp3.1\ThaoTacVoiMang.dll
+D:\codegym\github\codegym\CSharp\Mang_va_PhuongThuc\ThaoTacVoiMang\bin\Debug\netcoreapp3.1\ThaoTacVoiMang.pdb
+D:\codegym\github\codegym\CSharp\Mang_va_PhuongThuc\ThaoTacVoiMang\obj\Debug\netcoreapp3.1\ThaoTacVoiMang.csprojAssemblyReference.cache
+D:\codegym\github\codegym\CSharp\Mang_va_PhuongThuc\ThaoTacVoiMang\obj\Debug\netcoreapp3.1\ThaoTacVoiMang.csproj.CoreCompileInputs.cache
+D:\codegym\github\codegym\CSharp\Mang_va_PhuongThuc\ThaoTacVoiMang\obj\Debug\netcoreapp3.1\ThaoTacVoiMang.AssemblyInfoInputs.cache
+D:\codegym\github\codegym\CSharp\Mang_va_PhuongThuc\ThaoTacVoiMang\obj\Debug\netcoreapp3.1\ThaoTacVoiMang.AssemblyInfo.cs
+D:\codegym\github\codegym\CSharp\Mang_va_PhuongThuc\ThaoTacVoiMang\obj\Debug\netcoreapp3.1\ThaoTacVoiMang.dll
+D:\codegym\github\codegym\CSharp\Mang_va_PhuongThuc\ThaoTacVoiMang\obj\Debug\netcoreapp3.1\ThaoTacVoiMang.pdb
+D:\codegym\github\codegym\CSharp\Mang_va_PhuongThuc\ThaoTacVoiMang\obj\Debug\netcoreapp3.1\ThaoTacVoiMang.genruntimeconfig.cache
