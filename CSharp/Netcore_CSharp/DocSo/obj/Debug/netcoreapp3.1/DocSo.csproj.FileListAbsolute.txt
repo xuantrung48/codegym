@@ -1,0 +1,13 @@
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\DocSo\bin\Debug\netcoreapp3.1\DocSo.exe
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\DocSo\bin\Debug\netcoreapp3.1\DocSo.deps.json
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\DocSo\bin\Debug\netcoreapp3.1\DocSo.runtimeconfig.json
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\DocSo\bin\Debug\netcoreapp3.1\DocSo.runtimeconfig.dev.json
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\DocSo\bin\Debug\netcoreapp3.1\DocSo.dll
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\DocSo\bin\Debug\netcoreapp3.1\DocSo.pdb
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\DocSo\obj\Debug\netcoreapp3.1\DocSo.csprojAssemblyReference.cache
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\DocSo\obj\Debug\netcoreapp3.1\DocSo.csproj.CoreCompileInputs.cache
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\DocSo\obj\Debug\netcoreapp3.1\DocSo.AssemblyInfoInputs.cache
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\DocSo\obj\Debug\netcoreapp3.1\DocSo.AssemblyInfo.cs
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\DocSo\obj\Debug\netcoreapp3.1\DocSo.dll
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\DocSo\obj\Debug\netcoreapp3.1\DocSo.pdb
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\DocSo\obj\Debug\netcoreapp3.1\DocSo.genruntimeconfig.cache
