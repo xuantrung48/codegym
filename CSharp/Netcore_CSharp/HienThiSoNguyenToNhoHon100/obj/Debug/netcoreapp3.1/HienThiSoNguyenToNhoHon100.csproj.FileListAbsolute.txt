@@ -1,0 +1,13 @@
+C:\Users\Nhung\source\repos\HienThiSoNguyenToNhoHon100\bin\Debug\netcoreapp3.1\HienThiSoNguyenToNhoHon100.exe
+C:\Users\Nhung\source\repos\HienThiSoNguyenToNhoHon100\bin\Debug\netcoreapp3.1\HienThiSoNguyenToNhoHon100.deps.json
+C:\Users\Nhung\source\repos\HienThiSoNguyenToNhoHon100\bin\Debug\netcoreapp3.1\HienThiSoNguyenToNhoHon100.runtimeconfig.json
+C:\Users\Nhung\source\repos\HienThiSoNguyenToNhoHon100\bin\Debug\netcoreapp3.1\HienThiSoNguyenToNhoHon100.runtimeconfig.dev.json
+C:\Users\Nhung\source\repos\HienThiSoNguyenToNhoHon100\bin\Debug\netcoreapp3.1\HienThiSoNguyenToNhoHon100.dll
+C:\Users\Nhung\source\repos\HienThiSoNguyenToNhoHon100\bin\Debug\netcoreapp3.1\HienThiSoNguyenToNhoHon100.pdb
+C:\Users\Nhung\source\repos\HienThiSoNguyenToNhoHon100\obj\Debug\netcoreapp3.1\HienThiSoNguyenToNhoHon100.csprojAssemblyReference.cache
+C:\Users\Nhung\source\repos\HienThiSoNguyenToNhoHon100\obj\Debug\netcoreapp3.1\HienThiSoNguyenToNhoHon100.csproj.CoreCompileInputs.cache
+C:\Users\Nhung\source\repos\HienThiSoNguyenToNhoHon100\obj\Debug\netcoreapp3.1\HienThiSoNguyenToNhoHon100.AssemblyInfoInputs.cache
+C:\Users\Nhung\source\repos\HienThiSoNguyenToNhoHon100\obj\Debug\netcoreapp3.1\HienThiSoNguyenToNhoHon100.AssemblyInfo.cs
+C:\Users\Nhung\source\repos\HienThiSoNguyenToNhoHon100\obj\Debug\netcoreapp3.1\HienThiSoNguyenToNhoHon100.dll
+C:\Users\Nhung\source\repos\HienThiSoNguyenToNhoHon100\obj\Debug\netcoreapp3.1\HienThiSoNguyenToNhoHon100.pdb
+C:\Users\Nhung\source\repos\HienThiSoNguyenToNhoHon100\obj\Debug\netcoreapp3.1\HienThiSoNguyenToNhoHon100.genruntimeconfig.cache
