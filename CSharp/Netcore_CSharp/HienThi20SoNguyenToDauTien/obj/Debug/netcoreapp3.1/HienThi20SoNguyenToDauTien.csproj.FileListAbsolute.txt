@@ -1,0 +1,12 @@
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\HienThi20SoNguyenToDauTien\bin\Debug\netcoreapp3.1\HienThi20SoNguyenToDauTien.exe
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\HienThi20SoNguyenToDauTien\bin\Debug\netcoreapp3.1\HienThi20SoNguyenToDauTien.deps.json
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\HienThi20SoNguyenToDauTien\bin\Debug\netcoreapp3.1\HienThi20SoNguyenToDauTien.runtimeconfig.json
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\HienThi20SoNguyenToDauTien\bin\Debug\netcoreapp3.1\HienThi20SoNguyenToDauTien.runtimeconfig.dev.json
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\HienThi20SoNguyenToDauTien\bin\Debug\netcoreapp3.1\HienThi20SoNguyenToDauTien.dll
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\HienThi20SoNguyenToDauTien\bin\Debug\netcoreapp3.1\HienThi20SoNguyenToDauTien.pdb
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\HienThi20SoNguyenToDauTien\obj\Debug\netcoreapp3.1\HienThi20SoNguyenToDauTien.csproj.CoreCompileInputs.cache
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\HienThi20SoNguyenToDauTien\obj\Debug\netcoreapp3.1\HienThi20SoNguyenToDauTien.AssemblyInfoInputs.cache
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\HienThi20SoNguyenToDauTien\obj\Debug\netcoreapp3.1\HienThi20SoNguyenToDauTien.AssemblyInfo.cs
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\HienThi20SoNguyenToDauTien\obj\Debug\netcoreapp3.1\HienThi20SoNguyenToDauTien.dll
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\HienThi20SoNguyenToDauTien\obj\Debug\netcoreapp3.1\HienThi20SoNguyenToDauTien.pdb
+D:\codegym\github\codegym\CSharp\Netcore_CSharp\HienThi20SoNguyenToDauTien\obj\Debug\netcoreapp3.1\HienThi20SoNguyenToDauTien.genruntimeconfig.cache
