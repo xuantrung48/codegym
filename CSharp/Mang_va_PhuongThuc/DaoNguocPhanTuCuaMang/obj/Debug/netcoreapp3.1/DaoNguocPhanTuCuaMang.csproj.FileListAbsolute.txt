@@ -1,0 +1,13 @@
+D:\codegym\github\codegym\CSharp\Mang_va_PhuongThuc\DaoNguocPhanTuCuaMang\bin\Debug\netcoreapp3.1\DaoNguocPhanTuCuaMang.exe
+D:\codegym\github\codegym\CSharp\Mang_va_PhuongThuc\DaoNguocPhanTuCuaMang\bin\Debug\netcoreapp3.1\DaoNguocPhanTuCuaMang.deps.json
+D:\codegym\github\codegym\CSharp\Mang_va_PhuongThuc\DaoNguocPhanTuCuaMang\bin\Debug\netcoreapp3.1\DaoNguocPhanTuCuaMang.runtimeconfig.json
+D:\codegym\github\codegym\CSharp\Mang_va_PhuongThuc\DaoNguocPhanTuCuaMang\bin\Debug\netcoreapp3.1\DaoNguocPhanTuCuaMang.runtimeconfig.dev.json
+D:\codegym\github\codegym\CSharp\Mang_va_PhuongThuc\DaoNguocPhanTuCuaMang\bin\Debug\netcoreapp3.1\DaoNguocPhanTuCuaMang.dll
+D:\codegym\github\codegym\CSharp\Mang_va_PhuongThuc\DaoNguocPhanTuCuaMang\bin\Debug\netcoreapp3.1\DaoNguocPhanTuCuaMang.pdb
+D:\codegym\github\codegym\CSharp\Mang_va_PhuongThuc\DaoNguocPhanTuCuaMang\obj\Debug\netcoreapp3.1\DaoNguocPhanTuCuaMang.csprojAssemblyReference.cache
+D:\codegym\github\codegym\CSharp\Mang_va_PhuongThuc\DaoNguocPhanTuCuaMang\obj\Debug\netcoreapp3.1\DaoNguocPhanTuCuaMang.csproj.CoreCompileInputs.cache
+D:\codegym\github\codegym\CSharp\Mang_va_PhuongThuc\DaoNguocPhanTuCuaMang\obj\Debug\netcoreapp3.1\DaoNguocPhanTuCuaMang.AssemblyInfoInputs.cache
+D:\codegym\github\codegym\CSharp\Mang_va_PhuongThuc\DaoNguocPhanTuCuaMang\obj\Debug\netcoreapp3.1\DaoNguocPhanTuCuaMang.AssemblyInfo.cs
+D:\codegym\github\codegym\CSharp\Mang_va_PhuongThuc\DaoNguocPhanTuCuaMang\obj\Debug\netcoreapp3.1\DaoNguocPhanTuCuaMang.dll
+D:\codegym\github\codegym\CSharp\Mang_va_PhuongThuc\DaoNguocPhanTuCuaMang\obj\Debug\netcoreapp3.1\DaoNguocPhanTuCuaMang.pdb
+D:\codegym\github\codegym\CSharp\Mang_va_PhuongThuc\DaoNguocPhanTuCuaMang\obj\Debug\netcoreapp3.1\DaoNguocPhanTuCuaMang.genruntimeconfig.cache
