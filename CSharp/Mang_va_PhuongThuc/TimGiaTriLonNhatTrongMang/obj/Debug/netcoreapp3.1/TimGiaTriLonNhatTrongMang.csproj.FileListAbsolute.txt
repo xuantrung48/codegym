@@ -1,0 +1,13 @@
+D:\codegym\github\codegym\CSharp\Mang_va_PhuongThuc\TimGiaTriLonNhatTrongMang\bin\Debug\netcoreapp3.1\TimGiaTriLonNhatTrongMang.exe
+D:\codegym\github\codegym\CSharp\Mang_va_PhuongThuc\TimGiaTriLonNhatTrongMang\bin\Debug\netcoreapp3.1\TimGiaTriLonNhatTrongMang.deps.json
+D:\codegym\github\codegym\CSharp\Mang_va_PhuongThuc\TimGiaTriLonNhatTrongMang\bin\Debug\netcoreapp3.1\TimGiaTriLonNhatTrongMang.runtimeconfig.json
+D:\codegym\github\codegym\CSharp\Mang_va_PhuongThuc\TimGiaTriLonNhatTrongMang\bin\Debug\netcoreapp3.1\TimGiaTriLonNhatTrongMang.runtimeconfig.dev.json
+D:\codegym\github\codegym\CSharp\Mang_va_PhuongThuc\TimGiaTriLonNhatTrongMang\bin\Debug\netcoreapp3.1\TimGiaTriLonNhatTrongMang.dll
+D:\codegym\github\codegym\CSharp\Mang_va_PhuongThuc\TimGiaTriLonNhatTrongMang\bin\Debug\netcoreapp3.1\TimGiaTriLonNhatTrongMang.pdb
+D:\codegym\github\codegym\CSharp\Mang_va_PhuongThuc\TimGiaTriLonNhatTrongMang\obj\Debug\netcoreapp3.1\TimGiaTriLonNhatTrongMang.csprojAssemblyReference.cache
+D:\codegym\github\codegym\CSharp\Mang_va_PhuongThuc\TimGiaTriLonNhatTrongMang\obj\Debug\netcoreapp3.1\TimGiaTriLonNhatTrongMang.csproj.CoreCompileInputs.cache
+D:\codegym\github\codegym\CSharp\Mang_va_PhuongThuc\TimGiaTriLonNhatTrongMang\obj\Debug\netcoreapp3.1\TimGiaTriLonNhatTrongMang.AssemblyInfoInputs.cache
+D:\codegym\github\codegym\CSharp\Mang_va_PhuongThuc\TimGiaTriLonNhatTrongMang\obj\Debug\netcoreapp3.1\TimGiaTriLonNhatTrongMang.AssemblyInfo.cs
+D:\codegym\github\codegym\CSharp\Mang_va_PhuongThuc\TimGiaTriLonNhatTrongMang\obj\Debug\netcoreapp3.1\TimGiaTriLonNhatTrongMang.dll
+D:\codegym\github\codegym\CSharp\Mang_va_PhuongThuc\TimGiaTriLonNhatTrongMang\obj\Debug\netcoreapp3.1\TimGiaTriLonNhatTrongMang.pdb
+D:\codegym\github\codegym\CSharp\Mang_va_PhuongThuc\TimGiaTriLonNhatTrongMang\obj\Debug\netcoreapp3.1\TimGiaTriLonNhatTrongMang.genruntimeconfig.cache
