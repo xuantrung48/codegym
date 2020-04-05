@@ -1,0 +1,13 @@
+D:\codegym\github\codegym\CSharp\Mang_va_PhuongThuc\BanDoMineSweeper\bin\Debug\netcoreapp3.1\BanDoMineSweeper.exe
+D:\codegym\github\codegym\CSharp\Mang_va_PhuongThuc\BanDoMineSweeper\bin\Debug\netcoreapp3.1\BanDoMineSweeper.deps.json
+D:\codegym\github\codegym\CSharp\Mang_va_PhuongThuc\BanDoMineSweeper\bin\Debug\netcoreapp3.1\BanDoMineSweeper.runtimeconfig.json
+D:\codegym\github\codegym\CSharp\Mang_va_PhuongThuc\BanDoMineSweeper\bin\Debug\netcoreapp3.1\BanDoMineSweeper.runtimeconfig.dev.json
+D:\codegym\github\codegym\CSharp\Mang_va_PhuongThuc\BanDoMineSweeper\bin\Debug\netcoreapp3.1\BanDoMineSweeper.dll
+D:\codegym\github\codegym\CSharp\Mang_va_PhuongThuc\BanDoMineSweeper\bin\Debug\netcoreapp3.1\BanDoMineSweeper.pdb
+D:\codegym\github\codegym\CSharp\Mang_va_PhuongThuc\BanDoMineSweeper\obj\Debug\netcoreapp3.1\BanDoMineSweeper.csprojAssemblyReference.cache
+D:\codegym\github\codegym\CSharp\Mang_va_PhuongThuc\BanDoMineSweeper\obj\Debug\netcoreapp3.1\BanDoMineSweeper.csproj.CoreCompileInputs.cache
+D:\codegym\github\codegym\CSharp\Mang_va_PhuongThuc\BanDoMineSweeper\obj\Debug\netcoreapp3.1\BanDoMineSweeper.AssemblyInfoInputs.cache
+D:\codegym\github\codegym\CSharp\Mang_va_PhuongThuc\BanDoMineSweeper\obj\Debug\netcoreapp3.1\BanDoMineSweeper.AssemblyInfo.cs
+D:\codegym\github\codegym\CSharp\Mang_va_PhuongThuc\BanDoMineSweeper\obj\Debug\netcoreapp3.1\BanDoMineSweeper.dll
+D:\codegym\github\codegym\CSharp\Mang_va_PhuongThuc\BanDoMineSweeper\obj\Debug\netcoreapp3.1\BanDoMineSweeper.pdb
+D:\codegym\github\codegym\CSharp\Mang_va_PhuongThuc\BanDoMineSweeper\obj\Debug\netcoreapp3.1\BanDoMineSweeper.genruntimeconfig.cache
