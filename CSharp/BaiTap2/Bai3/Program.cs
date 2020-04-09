@@ -51,11 +51,14 @@ namespace Bai3
                 case 2:
                     int v = 0;
                     int[,] newArr = new int[intArr.GetLength(0), intArr.GetLength(1)];
-                    Console.Write("Nhap vao gia tri de hien thi ma tran: ");
-                    if (Int32.TryParse(Console.ReadLine(), out int n))
+                    do
                     {
-                        v = n;
-                    }
+                        Console.Write("Nhap vao gia tri de hien thi ma tran (tu 20 den 60): ");
+                        if (Int32.TryParse(Console.ReadLine(), out int n))
+                        {
+                            v = n;
+                        }
+                    } while (v < 20 || v > 60);
                     for (int i = 0; i < newArr.GetLength(0); i++)
                     {
                         for (int j = 0; j < newArr.GetLength(1); j++)
