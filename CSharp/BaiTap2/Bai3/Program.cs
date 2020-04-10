@@ -49,8 +49,15 @@ namespace Bai3
                     printArray(intArr);
                     break;
                 case 2:
-                    Console.Write("Nhap vao gia tri de hien thi ma tran: ");
-                    if (Int32.TryParse(Console.ReadLine(), out int v))
+                    int v = 0;
+                    do
+                    {
+                        Console.Write("Nhap vao gia tri de hien thi ma tran 20 <= v <= 60: ");
+                        if (Int32.TryParse(Console.ReadLine(), out int n))
+                        {
+                            v = n;
+                        }
+                    } while (v < 20 || v > 60);
                     for (int i = 0; i < intArr.GetLength(0); i++)
                     {
                         for (int j = 0; j < intArr.GetLength(1); j++)
