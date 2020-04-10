@@ -49,24 +49,19 @@ namespace Bai3
                     printArray(intArr);
                     break;
                 case 2:
-                    int v = 0;
-                    int[,] newArr = new int[intArr.GetLength(0), intArr.GetLength(1)];
-                    do
+                    Console.Write("Nhap vao gia tri de hien thi ma tran: ");
+                    if (Int32.TryParse(Console.ReadLine(), out int v))
+                    for (int i = 0; i < intArr.GetLength(0); i++)
                     {
-                        Console.Write("Nhap vao gia tri de hien thi ma tran (tu 20 den 60): ");
-                        if (Int32.TryParse(Console.ReadLine(), out int n))
+                        for (int j = 0; j < intArr.GetLength(1); j++)
                         {
-                            v = n;
+                            if (intArr[i, j] == v)
+                                Console.Write(intArr[i, j] + " ");
+                            else
+                                Console.Write(".  ");
                         }
-                    } while (v < 20 || v > 60);
-                    for (int i = 0; i < newArr.GetLength(0); i++)
-                    {
-                        for (int j = 0; j < newArr.GetLength(1); j++)
-                        {
-                            newArr[i, j] = v;
-                        }
+                        Console.WriteLine();
                     }
-                    printArray(newArr);
                     break;
                 case 3:
                     printArray5(intArr);
