@@ -93,7 +93,6 @@ namespace BaiTapOOP
             DateTime.TryParse(Console.ReadLine(), out DateTime dob);
             Console.Write("Address: ");
             string address = Console.ReadLine();
-            string nameToLower = name.ToLower();
             Employee newEmployee = new Employee(name, email, dob, address);
             return newEmployee;
         }

@@ -1,0 +1,12 @@
+D:\codegym\github\codegym\CSharp\LopVaDoiTuong\StopWatch\bin\Debug\netcoreapp3.1\StopWatch.exe
+D:\codegym\github\codegym\CSharp\LopVaDoiTuong\StopWatch\bin\Debug\netcoreapp3.1\StopWatch.deps.json
+D:\codegym\github\codegym\CSharp\LopVaDoiTuong\StopWatch\bin\Debug\netcoreapp3.1\StopWatch.runtimeconfig.json
+D:\codegym\github\codegym\CSharp\LopVaDoiTuong\StopWatch\bin\Debug\netcoreapp3.1\StopWatch.runtimeconfig.dev.json
+D:\codegym\github\codegym\CSharp\LopVaDoiTuong\StopWatch\bin\Debug\netcoreapp3.1\StopWatch.dll
+D:\codegym\github\codegym\CSharp\LopVaDoiTuong\StopWatch\bin\Debug\netcoreapp3.1\StopWatch.pdb
+D:\codegym\github\codegym\CSharp\LopVaDoiTuong\StopWatch\obj\Debug\netcoreapp3.1\StopWatch.csproj.CoreCompileInputs.cache
+D:\codegym\github\codegym\CSharp\LopVaDoiTuong\StopWatch\obj\Debug\netcoreapp3.1\StopWatch.AssemblyInfoInputs.cache
+D:\codegym\github\codegym\CSharp\LopVaDoiTuong\StopWatch\obj\Debug\netcoreapp3.1\StopWatch.AssemblyInfo.cs
+D:\codegym\github\codegym\CSharp\LopVaDoiTuong\StopWatch\obj\Debug\netcoreapp3.1\StopWatch.dll
+D:\codegym\github\codegym\CSharp\LopVaDoiTuong\StopWatch\obj\Debug\netcoreapp3.1\StopWatch.pdb
+D:\codegym\github\codegym\CSharp\LopVaDoiTuong\StopWatch\obj\Debug\netcoreapp3.1\StopWatch.genruntimeconfig.cache
