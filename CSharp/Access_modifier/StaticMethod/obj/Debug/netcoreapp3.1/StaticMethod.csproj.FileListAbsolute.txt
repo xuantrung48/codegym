@@ -1,0 +1,13 @@
+D:\codegym\github\codegym\CSharp\Access_modifier\StaticMethod\bin\Debug\netcoreapp3.1\StaticMethod.exe
+D:\codegym\github\codegym\CSharp\Access_modifier\StaticMethod\bin\Debug\netcoreapp3.1\StaticMethod.deps.json
+D:\codegym\github\codegym\CSharp\Access_modifier\StaticMethod\bin\Debug\netcoreapp3.1\StaticMethod.runtimeconfig.json
+D:\codegym\github\codegym\CSharp\Access_modifier\StaticMethod\bin\Debug\netcoreapp3.1\StaticMethod.runtimeconfig.dev.json
+D:\codegym\github\codegym\CSharp\Access_modifier\StaticMethod\bin\Debug\netcoreapp3.1\StaticMethod.dll
+D:\codegym\github\codegym\CSharp\Access_modifier\StaticMethod\bin\Debug\netcoreapp3.1\StaticMethod.pdb
+D:\codegym\github\codegym\CSharp\Access_modifier\StaticMethod\obj\Debug\netcoreapp3.1\StaticMethod.csprojAssemblyReference.cache
+D:\codegym\github\codegym\CSharp\Access_modifier\StaticMethod\obj\Debug\netcoreapp3.1\StaticMethod.csproj.CoreCompileInputs.cache
+D:\codegym\github\codegym\CSharp\Access_modifier\StaticMethod\obj\Debug\netcoreapp3.1\StaticMethod.AssemblyInfoInputs.cache
+D:\codegym\github\codegym\CSharp\Access_modifier\StaticMethod\obj\Debug\netcoreapp3.1\StaticMethod.AssemblyInfo.cs
+D:\codegym\github\codegym\CSharp\Access_modifier\StaticMethod\obj\Debug\netcoreapp3.1\StaticMethod.dll
+D:\codegym\github\codegym\CSharp\Access_modifier\StaticMethod\obj\Debug\netcoreapp3.1\StaticMethod.pdb
+D:\codegym\github\codegym\CSharp\Access_modifier\StaticMethod\obj\Debug\netcoreapp3.1\StaticMethod.genruntimeconfig.cache

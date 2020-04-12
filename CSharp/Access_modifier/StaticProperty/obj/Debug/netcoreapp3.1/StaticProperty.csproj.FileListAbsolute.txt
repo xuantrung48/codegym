@@ -1,0 +1,13 @@
+D:\codegym\github\codegym\CSharp\Access_modifier\StaticProperty\bin\Debug\netcoreapp3.1\StaticProperty.exe
+D:\codegym\github\codegym\CSharp\Access_modifier\StaticProperty\bin\Debug\netcoreapp3.1\StaticProperty.deps.json
+D:\codegym\github\codegym\CSharp\Access_modifier\StaticProperty\bin\Debug\netcoreapp3.1\StaticProperty.runtimeconfig.json
+D:\codegym\github\codegym\CSharp\Access_modifier\StaticProperty\bin\Debug\netcoreapp3.1\StaticProperty.runtimeconfig.dev.json
+D:\codegym\github\codegym\CSharp\Access_modifier\StaticProperty\bin\Debug\netcoreapp3.1\StaticProperty.dll
+D:\codegym\github\codegym\CSharp\Access_modifier\StaticProperty\bin\Debug\netcoreapp3.1\StaticProperty.pdb
+D:\codegym\github\codegym\CSharp\Access_modifier\StaticProperty\obj\Debug\netcoreapp3.1\StaticProperty.csprojAssemblyReference.cache
+D:\codegym\github\codegym\CSharp\Access_modifier\StaticProperty\obj\Debug\netcoreapp3.1\StaticProperty.csproj.CoreCompileInputs.cache
+D:\codegym\github\codegym\CSharp\Access_modifier\StaticProperty\obj\Debug\netcoreapp3.1\StaticProperty.AssemblyInfoInputs.cache
+D:\codegym\github\codegym\CSharp\Access_modifier\StaticProperty\obj\Debug\netcoreapp3.1\StaticProperty.AssemblyInfo.cs
+D:\codegym\github\codegym\CSharp\Access_modifier\StaticProperty\obj\Debug\netcoreapp3.1\StaticProperty.dll
+D:\codegym\github\codegym\CSharp\Access_modifier\StaticProperty\obj\Debug\netcoreapp3.1\StaticProperty.pdb
+D:\codegym\github\codegym\CSharp\Access_modifier\StaticProperty\obj\Debug\netcoreapp3.1\StaticProperty.genruntimeconfig.cache
