@@ -2,7 +2,7 @@
 {
     class Contact
     {
-        public string Name { get; set; }
+        public string Name { get; }
         public int PhoneNumber { get; set; }
         public Contact(string name, int phoneNumber)
         {
