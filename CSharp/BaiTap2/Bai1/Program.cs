@@ -14,7 +14,7 @@ namespace Bai1
                 length = n;
             }
 
-            int[,] intArr = taoMangNgaunhien(length);
+            int[,] intArr = TaoMangNgaunhien(length);
 
             int option = 0;
             do
@@ -36,38 +36,38 @@ namespace Bai1
                     option = num;
                 }
                 Console.Clear();
-                process(option, intArr);
+                Process(option, intArr);
             } while (option != 8);
             
         }
-        static void process(int n, int[,] intArr)
+        static void Process(int n, int[,] intArr)
         {
             switch (n)
             {
                 case 1:
-                    Console.WriteLine("Tong cac so chan trong mang: " + tongSoChan(intArr));
+                    Console.WriteLine("Tong cac so chan trong mang: " + TongSoChan(intArr));
                     break;
                 case 2:
-                    Console.WriteLine("Tong cac so tren duong cheo chinh: " + tongCheoChinh(intArr));
+                    Console.WriteLine("Tong cac so tren duong cheo chinh: " + TongCheoChinh(intArr));
                     break;
                 case 3:
-                    Console.WriteLine("Tong cac so tren duong cheo phu: " + tongCheoPhu(intArr));
+                    Console.WriteLine("Tong cac so tren duong cheo phu: " + TongCheoPhu(intArr));
                     break;
                 case 4:
-                    Console.WriteLine("Tong cac so tren 4 duong bien: " + tongDuongBien(intArr));
+                    Console.WriteLine("Tong cac so tren 4 duong bien: " + TongDuongBien(intArr));
                     break;
                 case 5:
-                    inMang(intArr); ;
+                    InMang(intArr); ;
                     break;
                 case 6:
-                    inMaTranTamGiacDuoi(intArr);
+                    InMaTranTamGiacDuoi(intArr);
                     break;
                 case 7:
-                    inMaTranTamGiacTren(intArr);
+                    InMaTranTamGiacTren(intArr);
                     break;
             }
         }
-        static int[,] taoMangNgaunhien(int length)
+        static int[,] TaoMangNgaunhien(int length)
         {
             int[,] intArr = new int[length, length];
 
@@ -82,7 +82,7 @@ namespace Bai1
             }
             return intArr;
         }
-        static void inMaTranTamGiacTren(int[,] arr)
+        static void InMaTranTamGiacTren(int[,] arr)
         {
             Console.WriteLine("In ma tran tam giac tren: ");
             for (int i = 0; i < arr.GetLength(0); i++)
@@ -98,7 +98,7 @@ namespace Bai1
                 Console.WriteLine();
             }
         }
-        static void inMaTranTamGiacDuoi(int[,] arr)
+        static void InMaTranTamGiacDuoi(int[,] arr)
         {
             Console.WriteLine("In ma tran tam giac duoi: ");
             for (int i = 0; i < arr.GetLength(0); i++)
@@ -110,7 +110,7 @@ namespace Bai1
                 Console.WriteLine();
             }
         }
-        static void inMang(int[,] arr)
+        static void InMang(int[,] arr)
         {
             Console.WriteLine("In mang: ");
             for (int i = 0; i < arr.GetLength(0); i++)
@@ -122,7 +122,7 @@ namespace Bai1
                 Console.WriteLine();
             }
         }
-        static int tongDuongBien(int[,] arr)
+        static int TongDuongBien(int[,] arr)
         {
             int sum = 0;
             for (int i = 0; i < arr.GetLength(0); i++)
@@ -140,7 +140,7 @@ namespace Bai1
             }
             return sum;
         }
-        static int tongSoChan(int[,] arr)
+        static int TongSoChan(int[,] arr)
         {
             int sum = 0;
             for (int i = 0; i < arr.GetLength(0); i++)
@@ -152,7 +152,7 @@ namespace Bai1
             }
             return sum;
         }
-        static int tongCheoChinh(int[,] arr)
+        static int TongCheoChinh(int[,] arr)
         {
             int sum = 0;
             for (int i = 0; i < arr.GetLength(0); i++)
@@ -161,7 +161,7 @@ namespace Bai1
             }
             return sum;
         }
-        static int tongCheoPhu(int[,] arr)
+        static int TongCheoPhu(int[,] arr)
         {
             int sum = 0;
             for (int i = 0; i < arr.GetLength(0); i++)

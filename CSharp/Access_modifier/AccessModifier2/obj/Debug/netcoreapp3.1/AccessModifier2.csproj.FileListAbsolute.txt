@@ -1,0 +1,13 @@
+D:\codegym\github\codegym\CSharp\Access_modifier\AccessModifier2\bin\Debug\netcoreapp3.1\AccessModifier2.exe
+D:\codegym\github\codegym\CSharp\Access_modifier\AccessModifier2\bin\Debug\netcoreapp3.1\AccessModifier2.deps.json
+D:\codegym\github\codegym\CSharp\Access_modifier\AccessModifier2\bin\Debug\netcoreapp3.1\AccessModifier2.runtimeconfig.json
+D:\codegym\github\codegym\CSharp\Access_modifier\AccessModifier2\bin\Debug\netcoreapp3.1\AccessModifier2.runtimeconfig.dev.json
+D:\codegym\github\codegym\CSharp\Access_modifier\AccessModifier2\bin\Debug\netcoreapp3.1\AccessModifier2.dll
+D:\codegym\github\codegym\CSharp\Access_modifier\AccessModifier2\bin\Debug\netcoreapp3.1\AccessModifier2.pdb
+D:\codegym\github\codegym\CSharp\Access_modifier\AccessModifier2\obj\Debug\netcoreapp3.1\AccessModifier2.csprojAssemblyReference.cache
+D:\codegym\github\codegym\CSharp\Access_modifier\AccessModifier2\obj\Debug\netcoreapp3.1\AccessModifier2.csproj.CoreCompileInputs.cache
+D:\codegym\github\codegym\CSharp\Access_modifier\AccessModifier2\obj\Debug\netcoreapp3.1\AccessModifier2.AssemblyInfoInputs.cache
+D:\codegym\github\codegym\CSharp\Access_modifier\AccessModifier2\obj\Debug\netcoreapp3.1\AccessModifier2.AssemblyInfo.cs
+D:\codegym\github\codegym\CSharp\Access_modifier\AccessModifier2\obj\Debug\netcoreapp3.1\AccessModifier2.dll
+D:\codegym\github\codegym\CSharp\Access_modifier\AccessModifier2\obj\Debug\netcoreapp3.1\AccessModifier2.pdb
+D:\codegym\github\codegym\CSharp\Access_modifier\AccessModifier2\obj\Debug\netcoreapp3.1\AccessModifier2.genruntimeconfig.cache

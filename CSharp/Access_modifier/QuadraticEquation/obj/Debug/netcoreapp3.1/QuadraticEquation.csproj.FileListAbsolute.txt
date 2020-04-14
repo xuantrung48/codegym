@@ -1,0 +1,13 @@
+D:\codegym\github\codegym\CSharp\Access_modifier\QuadraticEquation\bin\Debug\netcoreapp3.1\QuadraticEquation.exe
+D:\codegym\github\codegym\CSharp\Access_modifier\QuadraticEquation\bin\Debug\netcoreapp3.1\QuadraticEquation.deps.json
+D:\codegym\github\codegym\CSharp\Access_modifier\QuadraticEquation\bin\Debug\netcoreapp3.1\QuadraticEquation.runtimeconfig.json
+D:\codegym\github\codegym\CSharp\Access_modifier\QuadraticEquation\bin\Debug\netcoreapp3.1\QuadraticEquation.runtimeconfig.dev.json
+D:\codegym\github\codegym\CSharp\Access_modifier\QuadraticEquation\bin\Debug\netcoreapp3.1\QuadraticEquation.dll
+D:\codegym\github\codegym\CSharp\Access_modifier\QuadraticEquation\bin\Debug\netcoreapp3.1\QuadraticEquation.pdb
+D:\codegym\github\codegym\CSharp\Access_modifier\QuadraticEquation\obj\Debug\netcoreapp3.1\QuadraticEquation.csprojAssemblyReference.cache
+D:\codegym\github\codegym\CSharp\Access_modifier\QuadraticEquation\obj\Debug\netcoreapp3.1\QuadraticEquation.csproj.CoreCompileInputs.cache
+D:\codegym\github\codegym\CSharp\Access_modifier\QuadraticEquation\obj\Debug\netcoreapp3.1\QuadraticEquation.AssemblyInfoInputs.cache
+D:\codegym\github\codegym\CSharp\Access_modifier\QuadraticEquation\obj\Debug\netcoreapp3.1\QuadraticEquation.AssemblyInfo.cs
+D:\codegym\github\codegym\CSharp\Access_modifier\QuadraticEquation\obj\Debug\netcoreapp3.1\QuadraticEquation.dll
+D:\codegym\github\codegym\CSharp\Access_modifier\QuadraticEquation\obj\Debug\netcoreapp3.1\QuadraticEquation.pdb
+D:\codegym\github\codegym\CSharp\Access_modifier\QuadraticEquation\obj\Debug\netcoreapp3.1\QuadraticEquation.genruntimeconfig.cache

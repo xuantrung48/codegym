@@ -6,10 +6,30 @@ namespace BaiTapOOP
 {
     class Employee
     {
-        public string Name { get; set; }
-        public string Email { get; set; }
-        public DateTime DoB { get; set; }
-        public string Address { get; set; }
+        private string name;
+        private string email;
+        private DateTime dob;
+        private string address;
+        public string Name
+        {
+            get => name;
+            set => name = value;
+        }
+        public string Email
+        {
+            get => email;
+            set => email = value;
+        }
+        public DateTime DoB
+        {
+            get => dob;
+            set => dob = value;
+        }
+        public string Address
+        {
+            get => address;
+            set => address = value;
+        }
 
         public Employee(string name, string email, DateTime dob, string address)
         {
@@ -17,7 +37,6 @@ namespace BaiTapOOP
             this.Email = email;
             this.DoB = dob;
             this.Address = address;
-            Console.WriteLine("_______________________________");
         }
         public int GetAge()
         {
@@ -25,13 +44,9 @@ namespace BaiTapOOP
             return DateTime.Now.Year - this.DoB.Year;
         }
 
-        public void ShowInfo()
+        public string ShowInfo()
         {
-            Console.WriteLine("Name: " + this.Name);
-            Console.WriteLine("Email: " + this.Email);
-            Console.WriteLine("Date of Birth: " + this.DoB);
-            Console.WriteLine("Age: " + this.GetAge());
-            Console.WriteLine("Address: " + this.Address);
+            return "Name: " + this.Name + " |Email: " + this.Email + " |Date of Birth: " + this.DoB.ToString("dd/MM/yyyy") + " |Age: " + this.GetAge() + " |Address: " + this.Address;
         }
     }
 }

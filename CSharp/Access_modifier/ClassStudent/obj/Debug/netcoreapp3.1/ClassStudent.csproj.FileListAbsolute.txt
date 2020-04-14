@@ -1,0 +1,12 @@
+D:\codegym\github\codegym\CSharp\Access_modifier\ClassStudent\bin\Debug\netcoreapp3.1\ClassStudent.exe
+D:\codegym\github\codegym\CSharp\Access_modifier\ClassStudent\bin\Debug\netcoreapp3.1\ClassStudent.deps.json
+D:\codegym\github\codegym\CSharp\Access_modifier\ClassStudent\bin\Debug\netcoreapp3.1\ClassStudent.runtimeconfig.json
+D:\codegym\github\codegym\CSharp\Access_modifier\ClassStudent\bin\Debug\netcoreapp3.1\ClassStudent.runtimeconfig.dev.json
+D:\codegym\github\codegym\CSharp\Access_modifier\ClassStudent\bin\Debug\netcoreapp3.1\ClassStudent.dll
+D:\codegym\github\codegym\CSharp\Access_modifier\ClassStudent\bin\Debug\netcoreapp3.1\ClassStudent.pdb
+D:\codegym\github\codegym\CSharp\Access_modifier\ClassStudent\obj\Debug\netcoreapp3.1\ClassStudent.csproj.CoreCompileInputs.cache
+D:\codegym\github\codegym\CSharp\Access_modifier\ClassStudent\obj\Debug\netcoreapp3.1\ClassStudent.AssemblyInfoInputs.cache
+D:\codegym\github\codegym\CSharp\Access_modifier\ClassStudent\obj\Debug\netcoreapp3.1\ClassStudent.AssemblyInfo.cs
+D:\codegym\github\codegym\CSharp\Access_modifier\ClassStudent\obj\Debug\netcoreapp3.1\ClassStudent.dll
+D:\codegym\github\codegym\CSharp\Access_modifier\ClassStudent\obj\Debug\netcoreapp3.1\ClassStudent.pdb
+D:\codegym\github\codegym\CSharp\Access_modifier\ClassStudent\obj\Debug\netcoreapp3.1\ClassStudent.genruntimeconfig.cache

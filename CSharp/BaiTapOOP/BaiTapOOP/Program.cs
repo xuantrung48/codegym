@@ -45,14 +45,13 @@ namespace BaiTapOOP
             Console.Write("Enter the name to search: ");
             string nameToSearch = Console.ReadLine();
             Console.WriteLine();
-            Console.WriteLine("No\tName\tEmail\tDoB\tAddress");
             int counter = 0;
             for (int i = 0; i < employees.Length; i++)
             {
                 if (employees[i].Name.ToLower().Contains(nameToSearch.ToLower()))
                 {
                     counter++;
-                    Console.WriteLine(counter + ".\t" + employees[i].Name + "\t" + employees[i].Email + "\t" + employees[i].DoB.ToString("dd/MM/yyyy") + "\t" + employees[i].Address);
+                    Console.WriteLine(counter + ". " + employees[i].ShowInfo());
                 }
             }
             if (counter == 0)
@@ -61,10 +60,9 @@ namespace BaiTapOOP
         static void ShowEmployees(Employee[] employees)
         {
             Console.WriteLine("Employees list: ");
-            Console.WriteLine("No\tName\tEmail\tDoB\tAddress");
             for (int i = 0; i < employees.Length; i++)
             {
-                Console.WriteLine(i + 1 + ".\t" + employees[i].Name + "\t" + employees[i].Email + "\t" + employees[i].DoB.ToString("dd/MM/yyyy") + "\t" + employees[i].Address);
+                Console.WriteLine(i + 1 + ". " + employees[i].ShowInfo());
             }
         }
         static void CreateEmployeeArray(ref Employee[] employees)

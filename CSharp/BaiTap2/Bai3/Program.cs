@@ -18,7 +18,7 @@ namespace Bai3
                 m = num;
             }
 
-            int[,] intArr = taoMangngauNhien(n, m);
+            int[,] intArr = TaoMangngauNhien(n, m);
 
             int option = 0;
             do
@@ -37,16 +37,16 @@ namespace Bai3
                     option = num;
                 }
                 Console.Clear();
-                process(option, intArr);
+                Process(option, intArr);
             }
             while (option != 5);
         }
-        static void process(int option, int[,] intArr)
+        static void Process(int option, int[,] intArr)
         {
             switch (option)
             {
                 case 1:
-                    printArray(intArr);
+                    PrintArray(intArr);
                     break;
                 case 2:
                     int v = 0;
@@ -71,15 +71,15 @@ namespace Bai3
                     }
                     break;
                 case 3:
-                    printArray5(intArr);
+                    PrintArray5(intArr);
                     break;
                 case 4:
-                    int[,] newArr2 = reverseArray(intArr);
-                    printArray(newArr2);
+                    int[,] newArr2 = ReverseArray(intArr);
+                    PrintArray(newArr2);
                     break;
             }
         }
-        static int[,] taoMangngauNhien(int height, int width)
+        static int[,] TaoMangngauNhien(int height, int width)
         {
             int[,] intArr = new int[height, width];
             Random rnd = new Random();
@@ -92,7 +92,7 @@ namespace Bai3
             }
             return intArr;
         }
-        static void printArray(int[,] arr)
+        static void PrintArray(int[,] arr)
         {
             Console.WriteLine("In ma tran: ");
             for (int i = 0; i < arr.GetLength(0); i++)
@@ -104,7 +104,7 @@ namespace Bai3
                 Console.WriteLine();
             }
         }
-        static void printArray5(int[,] arr)
+        static void PrintArray5(int[,] arr)
         {
             Console.WriteLine("Ma tran so chia het cho 5: ");
             for (int i = 0; i < arr.GetLength(0); i++) 
@@ -119,7 +119,7 @@ namespace Bai3
                 Console.WriteLine();
             }
         }
-        static int[,] reverseArray(int[,] arr)
+        static int[,] ReverseArray(int[,] arr)
         {
             int[,] newArr = new int[arr.GetLength(1), arr.GetLength(0)];
 

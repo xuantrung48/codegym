@@ -34,20 +34,20 @@ namespace BaiTap
             switch (option)
             {
                 case 1:
-                    intArr = creatIntArr();
+                    intArr = CreatIntArr();
                     break;
                 case 2:
-                    showIntArr(intArr);
+                    ShowIntArr(intArr);
                     break;
                 case 3:
-                    Console.WriteLine("Tong cac gia tri trong mang: " + sumArr(intArr));
+                    Console.WriteLine("Tong cac gia tri trong mang: " + SumArr(intArr));
                     break;
                 case 4:
-                    displayEven(intArr);
+                    DisplayEven(intArr);
                     break;
             }
         }
-        static int[] creatIntArr()
+        static int[] CreatIntArr()
         {
             int[] intArr = new int[20];
             Random rnd = new Random();
@@ -57,7 +57,7 @@ namespace BaiTap
             }
             return intArr;
         }
-        static void showIntArr(int[] arr)
+        static void ShowIntArr(int[] arr)
         {
             Console.WriteLine();
             string result = "";
@@ -68,7 +68,7 @@ namespace BaiTap
             Console.Write("Mang so nguyen: " + result);
         }
 
-        static int sumArr(int[] arr)
+        static int SumArr(int[] arr)
         {
             int sum = 0;
             for (int i = 0; i < arr.Length; i++)
@@ -78,7 +78,7 @@ namespace BaiTap
             return sum;
         }
 
-        static void displayEven(int[] arr)
+        static void DisplayEven(int[] arr)
         {
             Console.WriteLine();
             Console.Write("Cac so chan co trong mang: ");

@@ -13,8 +13,8 @@ namespace Bai2
                 length = n;
             }
 
-            int[,] intArr1 = taoMangNgaunhien(length);
-            int[,] intArr2 = taoMangNgaunhien(length);
+            int[,] intArr1 = TaoMangNgaunhien(length);
+            int[,] intArr2 = TaoMangNgaunhien(length);
 
             int option = 0;
             do
@@ -32,35 +32,35 @@ namespace Bai2
                     option = num;
                 }
                 Console.Clear();
-                process(option, intArr1, intArr2);
+                Process(option, intArr1, intArr2);
             }
             while (option != 4);
         }
-        static void process(int option, int[,] arr1, int[,] arr2)
+        static void Process(int option, int[,] arr1, int[,] arr2)
         {
             switch (option)
             {
                 case 1:
                     Console.WriteLine("Mang 1: ");
-                    printArray(arr1);
+                    PrintArray(arr1);
                     Console.WriteLine("Mang 2: ");
-                    printArray(arr2);
+                    PrintArray(arr2);
                     break;
                 case 2:
                     int[,] maTranTong = new int[arr1.GetLength(0), arr1.GetLength(1)];
                     maTranTong = TinhMaTranTong(arr1, arr2);
                     Console.WriteLine("Ma tran tong cua 2 ma tran: ");
-                    printArray(maTranTong);
+                    PrintArray(maTranTong);
                     break;
                 case 3:
                     int[,] maTranTich = new int[arr1.GetLength(0), arr1.GetLength(1)];
                     maTranTich = TinhMaTranTich(arr1, arr2);
                     Console.WriteLine("Ma tran tich cua 2 ma tran: ");
-                    printArray(maTranTich);
+                    PrintArray(maTranTich);
                     break;
             }    
         }
-        static int[,] taoMangNgaunhien(int length)
+        static int[,] TaoMangNgaunhien(int length)
         {
             int[,] intArr = new int[length, length];
             Random rnd = new Random();
@@ -73,7 +73,7 @@ namespace Bai2
             }
             return intArr;
         }
-        static void printArray(int[,] arr)
+        static void PrintArray(int[,] arr)
         {
             for (int i = 0; i < arr.GetLength(0); i++)
             {
