@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ConsoleApp1
+namespace BaiTapOOP2
 {
     class PhoneBook
     {
@@ -39,7 +39,7 @@ namespace ConsoleApp1
                     found = true;
                     for (int j = i; j < ContactList.Length - 1; j++)
                     {
-                        ContactList[i] = ContactList[i + 1];
+                        ContactList[j] = ContactList[j + 1];
                     }
                 }
             }

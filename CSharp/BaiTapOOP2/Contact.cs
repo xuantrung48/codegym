@@ -1,4 +1,4 @@
-﻿namespace ConsoleApp1
+﻿namespace BaiTapOOP2
 {
     class Contact
     {
