@@ -1,0 +1,13 @@
+D:\codegym\github\codegym\CSharp\BaiTapOOP2\ConsoleApp1\bin\Debug\netcoreapp3.1\ConsoleApp1.exe
+D:\codegym\github\codegym\CSharp\BaiTapOOP2\ConsoleApp1\bin\Debug\netcoreapp3.1\ConsoleApp1.deps.json
+D:\codegym\github\codegym\CSharp\BaiTapOOP2\ConsoleApp1\bin\Debug\netcoreapp3.1\ConsoleApp1.runtimeconfig.json
+D:\codegym\github\codegym\CSharp\BaiTapOOP2\ConsoleApp1\bin\Debug\netcoreapp3.1\ConsoleApp1.runtimeconfig.dev.json
+D:\codegym\github\codegym\CSharp\BaiTapOOP2\ConsoleApp1\bin\Debug\netcoreapp3.1\ConsoleApp1.dll
+D:\codegym\github\codegym\CSharp\BaiTapOOP2\ConsoleApp1\bin\Debug\netcoreapp3.1\ConsoleApp1.pdb
+D:\codegym\github\codegym\CSharp\BaiTapOOP2\ConsoleApp1\obj\Debug\netcoreapp3.1\ConsoleApp1.csprojAssemblyReference.cache
+D:\codegym\github\codegym\CSharp\BaiTapOOP2\ConsoleApp1\obj\Debug\netcoreapp3.1\ConsoleApp1.csproj.CoreCompileInputs.cache
+D:\codegym\github\codegym\CSharp\BaiTapOOP2\ConsoleApp1\obj\Debug\netcoreapp3.1\ConsoleApp1.AssemblyInfoInputs.cache
+D:\codegym\github\codegym\CSharp\BaiTapOOP2\ConsoleApp1\obj\Debug\netcoreapp3.1\ConsoleApp1.AssemblyInfo.cs
+D:\codegym\github\codegym\CSharp\BaiTapOOP2\ConsoleApp1\obj\Debug\netcoreapp3.1\ConsoleApp1.dll
+D:\codegym\github\codegym\CSharp\BaiTapOOP2\ConsoleApp1\obj\Debug\netcoreapp3.1\ConsoleApp1.pdb
+D:\codegym\github\codegym\CSharp\BaiTapOOP2\ConsoleApp1\obj\Debug\netcoreapp3.1\ConsoleApp1.genruntimeconfig.cache

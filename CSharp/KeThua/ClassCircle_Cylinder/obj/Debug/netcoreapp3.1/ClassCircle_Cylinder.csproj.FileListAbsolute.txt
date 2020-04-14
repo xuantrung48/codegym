@@ -1,0 +1,13 @@
+D:\codegym\github\codegym\CSharp\KeThua\ClassCircle_Cylinder\bin\Debug\netcoreapp3.1\ClassCircle_Cylinder.exe
+D:\codegym\github\codegym\CSharp\KeThua\ClassCircle_Cylinder\bin\Debug\netcoreapp3.1\ClassCircle_Cylinder.deps.json
+D:\codegym\github\codegym\CSharp\KeThua\ClassCircle_Cylinder\bin\Debug\netcoreapp3.1\ClassCircle_Cylinder.runtimeconfig.json
+D:\codegym\github\codegym\CSharp\KeThua\ClassCircle_Cylinder\bin\Debug\netcoreapp3.1\ClassCircle_Cylinder.runtimeconfig.dev.json
+D:\codegym\github\codegym\CSharp\KeThua\ClassCircle_Cylinder\bin\Debug\netcoreapp3.1\ClassCircle_Cylinder.dll
+D:\codegym\github\codegym\CSharp\KeThua\ClassCircle_Cylinder\bin\Debug\netcoreapp3.1\ClassCircle_Cylinder.pdb
+D:\codegym\github\codegym\CSharp\KeThua\ClassCircle_Cylinder\obj\Debug\netcoreapp3.1\ClassCircle_Cylinder.csprojAssemblyReference.cache
+D:\codegym\github\codegym\CSharp\KeThua\ClassCircle_Cylinder\obj\Debug\netcoreapp3.1\ClassCircle_Cylinder.csproj.CoreCompileInputs.cache
+D:\codegym\github\codegym\CSharp\KeThua\ClassCircle_Cylinder\obj\Debug\netcoreapp3.1\ClassCircle_Cylinder.AssemblyInfoInputs.cache
+D:\codegym\github\codegym\CSharp\KeThua\ClassCircle_Cylinder\obj\Debug\netcoreapp3.1\ClassCircle_Cylinder.AssemblyInfo.cs
+D:\codegym\github\codegym\CSharp\KeThua\ClassCircle_Cylinder\obj\Debug\netcoreapp3.1\ClassCircle_Cylinder.dll
+D:\codegym\github\codegym\CSharp\KeThua\ClassCircle_Cylinder\obj\Debug\netcoreapp3.1\ClassCircle_Cylinder.pdb
+D:\codegym\github\codegym\CSharp\KeThua\ClassCircle_Cylinder\obj\Debug\netcoreapp3.1\ClassCircle_Cylinder.genruntimeconfig.cache
