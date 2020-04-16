@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace BaiTapOOP2
 {
@@ -10,41 +11,44 @@ namespace BaiTapOOP2
             Array.Resize(ref ContactList, ContactList.Length + 1);
             ContactList[ContactList.Length - 1] = contact;
         }
-        public bool Check(string name)
+        public bool Check(string name, out int index)
         {
             for (int i = 0; i < ContactList.Length; i++)
             {
                 if (ContactList[i].Name == name)
+                {
+                    index = i;
                     return true;
+                }
             }
+            index = -1;
             return false;
         }
         public void Update(string name, int newphone)
         {
-            foreach (var contact in ContactList)
+            if (Check(name, out int index))
             {
-                if (contact.Name == name)
-                {
-                    contact.PhoneNumber = newphone;
-                }
+                ContactList[index].PhoneNumber = newphone;
+                Console.WriteLine("Contact updated!");
+            }
+            else
+            {
+                Console.WriteLine("Contact does not exist!");
             }
         }
         public void Remove(string name)
         {
-            bool found = false;
-            for (int i = 0; i < ContactList.Length; i++)
+            if (Check(name, out int index))
             {
-                if (ContactList[i].Name == name)
-                {
-                    found = true;
-                    for (int j = i; j < ContactList.Length - 1; j++)
-                    {
-                        ContactList[j] = ContactList[j + 1];
-                    }
-                }
+                List<Contact> contactList = new List<Contact>(ContactList);
+                contactList.RemoveAt(index);
+                ContactList = contactList.ToArray();
+                Console.WriteLine("Contact removed!");
             }
-            if (found == true)
-                Array.Resize(ref ContactList, ContactList.Length - 1);
+            else
+            {
+                Console.WriteLine("Contact does not exist!");
+            }
         }
         public string Search(string name)
         {
