@@ -1,0 +1,13 @@
+D:\codegym\github\codegym\CSharp\AbstractClassInterface\classAnimal_interfaceEdible\bin\Debug\netcoreapp3.1\classAnimal_interfaceEdible.exe
+D:\codegym\github\codegym\CSharp\AbstractClassInterface\classAnimal_interfaceEdible\bin\Debug\netcoreapp3.1\classAnimal_interfaceEdible.deps.json
+D:\codegym\github\codegym\CSharp\AbstractClassInterface\classAnimal_interfaceEdible\bin\Debug\netcoreapp3.1\classAnimal_interfaceEdible.runtimeconfig.json
+D:\codegym\github\codegym\CSharp\AbstractClassInterface\classAnimal_interfaceEdible\bin\Debug\netcoreapp3.1\classAnimal_interfaceEdible.runtimeconfig.dev.json
+D:\codegym\github\codegym\CSharp\AbstractClassInterface\classAnimal_interfaceEdible\bin\Debug\netcoreapp3.1\classAnimal_interfaceEdible.dll
+D:\codegym\github\codegym\CSharp\AbstractClassInterface\classAnimal_interfaceEdible\bin\Debug\netcoreapp3.1\classAnimal_interfaceEdible.pdb
+D:\codegym\github\codegym\CSharp\AbstractClassInterface\classAnimal_interfaceEdible\obj\Debug\netcoreapp3.1\classAnimal_interfaceEdible.csprojAssemblyReference.cache
+D:\codegym\github\codegym\CSharp\AbstractClassInterface\classAnimal_interfaceEdible\obj\Debug\netcoreapp3.1\classAnimal_interfaceEdible.csproj.CoreCompileInputs.cache
+D:\codegym\github\codegym\CSharp\AbstractClassInterface\classAnimal_interfaceEdible\obj\Debug\netcoreapp3.1\classAnimal_interfaceEdible.AssemblyInfoInputs.cache
+D:\codegym\github\codegym\CSharp\AbstractClassInterface\classAnimal_interfaceEdible\obj\Debug\netcoreapp3.1\classAnimal_interfaceEdible.AssemblyInfo.cs
+D:\codegym\github\codegym\CSharp\AbstractClassInterface\classAnimal_interfaceEdible\obj\Debug\netcoreapp3.1\classAnimal_interfaceEdible.dll
+D:\codegym\github\codegym\CSharp\AbstractClassInterface\classAnimal_interfaceEdible\obj\Debug\netcoreapp3.1\classAnimal_interfaceEdible.pdb
+D:\codegym\github\codegym\CSharp\AbstractClassInterface\classAnimal_interfaceEdible\obj\Debug\netcoreapp3.1\classAnimal_interfaceEdible.genruntimeconfig.cache
