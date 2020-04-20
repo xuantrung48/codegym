@@ -1,0 +1,13 @@
+D:\codegym\github\codegym\CSharp\AbstractClassInterface\Resizeable\bin\Debug\netcoreapp3.1\Shape.exe
+D:\codegym\github\codegym\CSharp\AbstractClassInterface\Resizeable\bin\Debug\netcoreapp3.1\Shape.deps.json
+D:\codegym\github\codegym\CSharp\AbstractClassInterface\Resizeable\bin\Debug\netcoreapp3.1\Shape.runtimeconfig.json
+D:\codegym\github\codegym\CSharp\AbstractClassInterface\Resizeable\bin\Debug\netcoreapp3.1\Shape.runtimeconfig.dev.json
+D:\codegym\github\codegym\CSharp\AbstractClassInterface\Resizeable\bin\Debug\netcoreapp3.1\Shape.dll
+D:\codegym\github\codegym\CSharp\AbstractClassInterface\Resizeable\bin\Debug\netcoreapp3.1\Shape.pdb
+D:\codegym\github\codegym\CSharp\AbstractClassInterface\Resizeable\obj\Debug\netcoreapp3.1\Shape.csprojAssemblyReference.cache
+D:\codegym\github\codegym\CSharp\AbstractClassInterface\Resizeable\obj\Debug\netcoreapp3.1\Shape.csproj.CoreCompileInputs.cache
+D:\codegym\github\codegym\CSharp\AbstractClassInterface\Resizeable\obj\Debug\netcoreapp3.1\Shape.AssemblyInfoInputs.cache
+D:\codegym\github\codegym\CSharp\AbstractClassInterface\Resizeable\obj\Debug\netcoreapp3.1\Shape.AssemblyInfo.cs
+D:\codegym\github\codegym\CSharp\AbstractClassInterface\Resizeable\obj\Debug\netcoreapp3.1\Shape.dll
+D:\codegym\github\codegym\CSharp\AbstractClassInterface\Resizeable\obj\Debug\netcoreapp3.1\Shape.pdb
+D:\codegym\github\codegym\CSharp\AbstractClassInterface\Resizeable\obj\Debug\netcoreapp3.1\Shape.genruntimeconfig.cache

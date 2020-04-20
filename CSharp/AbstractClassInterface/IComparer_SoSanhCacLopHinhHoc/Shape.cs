@@ -1,46 +1,43 @@
 namespace Shape
 {
-  public class Shape
-  {
-    private string color = "green";
-    private bool filled = true;
-
-    public Shape()
+    public class Shape
     {
-    }
+        private string color = "green";
+        private bool filled = true;
 
-    public Shape(string color, bool filled)
-    {
-      this.color = color;
-      this.filled = filled;
-    }
+        public Shape()
+        {
+        }
 
-    public string getColor()
-    {
-      return color;
-    }
+        public Shape(string color, bool filled)
+        {
+            this.color = color;
+            this.filled = filled;
+        }
 
-    public void setColor(string color)
-    {
-      this.color = color;
-    }
+        public string getColor()
+        {
+            return color;
+        }
 
-    public bool isFilled()
-    {
-      return filled;
-    }
+        public void setColor(string color)
+        {
+            this.color = color;
+        }
 
-    public void setFilled(bool filled)
-    {
-      this.filled = filled;
-    }
+        public bool isFilled()
+        {
+            return filled;
+        }
 
-    public override string ToString()
-    {
-      return "A Shape with color of "
-              + getColor()
-              + " and "
-              + (isFilled() ? "filled" : "not filled");
+        public void setFilled(bool filled)
+        {
+            this.filled = filled;
+        }
+
+        public override string ToString()
+        {
+            return $"A Shape with color of {getColor()} and {(isFilled() ? "filled" : "not filled")}";
+        }
     }
-  }
 }
