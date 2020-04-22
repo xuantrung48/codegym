@@ -4,8 +4,8 @@ namespace BaiTapOOP3
 {
     class So
     {
-        public string GiaTri { get; set; }
-        public string HeCoSo { get; set; }
+        public string GiaTri { get; }
+        public string HeCoSo { get; }
         public So(string giaTri, string heCoSo)
         {
             GiaTri = giaTri;
@@ -42,19 +42,16 @@ namespace BaiTapOOP3
             }
             return result.ToString();
         }
-        public bool CheckValidNumber()
+        public bool ValidateNumber()
         {
             bool numberIsValid = true;
-
-            char[] BinNumber = { '0', '1' };
-            char[] OctaNumber = { '0', '1', '2', '3', '4', '5', '6', '7' };
-            char[] HexaNumber = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f' };
-
-            char[] checkNums = (HeCoSo == "2") ? BinNumber : (HeCoSo == "8") ? OctaNumber : HexaNumber;
-
+            string BinNumbers = "01";
+            string OctaNumbers = "01234567";
+            string HexaNumbers = "0123456789abcdef";
+            string checkNums = (HeCoSo == "2") ? BinNumbers : (HeCoSo == "8") ? OctaNumbers : HexaNumbers;
             for (int i = 0; i < GiaTri.Length; i++)
             {
-                if (!Array.Exists(checkNums, element => element == GiaTri[i]))
+                if (!checkNums.Contains(GiaTri[i]))
                 {
                     numberIsValid = false;
                     break;

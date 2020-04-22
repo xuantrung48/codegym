@@ -24,16 +24,13 @@ namespace BaiTapOOP3
                     Console.Write("\nHệ cơ số (2/8/16): ");
                     heCoSo = Console.ReadLine();
                 } while (heCoSo != "2" && heCoSo != "8" && heCoSo != "16");
-
-                bool NumberIsNotValid;
                 So numberObj;
                 do
                 {
                     numberObj = CreateNewNumber(heCoSo);
-                    NumberIsNotValid = !numberObj.CheckValidNumber();
-                    if (NumberIsNotValid)
+                    if (!numberObj.ValidateNumber())
                         Console.WriteLine($"{numberObj.GiaTri} không phải là số với hệ cơ số {numberObj.HeCoSo}");
-                } while (NumberIsNotValid);
+                } while (!numberObj.ValidateNumber());
 
                 Console.WriteLine("_____________________");
                 Console.WriteLine($"Kết quả: {numberObj.ChuyenVeHCS10()}");
