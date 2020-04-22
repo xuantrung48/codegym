@@ -46,15 +46,15 @@ namespace BaiTapOOP3
         {
             bool numberIsValid = true;
 
-            string[] BinNumber = { "0", "1" };
-            string[] OctaNumber = { "0", "1", "2", "3", "4", "5", "6", "7" };
-            string[] HexaNumber = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f" };
+            char[] BinNumber = { '0', '1' };
+            char[] OctaNumber = { '0', '1', '2', '3', '4', '5', '6', '7' };
+            char[] HexaNumber = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f' };
 
-            string[] checkNums = (HeCoSo == "2") ? BinNumber : (HeCoSo == "8") ? OctaNumber : HexaNumber;
+            char[] checkNums = (HeCoSo == "2") ? BinNumber : (HeCoSo == "8") ? OctaNumber : HexaNumber;
 
             for (int i = 0; i < GiaTri.Length; i++)
             {
-                if (!Array.Exists(checkNums, element => element == GiaTri[i].ToString()))
+                if (!Array.Exists(checkNums, element => element == GiaTri[i]))
                 {
                     numberIsValid = false;
                     break;
