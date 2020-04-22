@@ -2,21 +2,21 @@
 
 namespace BaiTapOOP3
 {
-    class So
+    class Number
     {
-        public string GiaTri { get; }
-        public string HeCoSo { get; }
-        public So(string giaTri, string heCoSo)
+        public string NumberValue { get; }
+        public string NumberSystem { get; }
+        public Number(string numberValue, string numberSystem)
         {
-            GiaTri = giaTri;
-            HeCoSo = heCoSo;
+            NumberValue = numberValue;
+            NumberSystem = numberSystem;
         }
-        public string ChuyenVeHCS10()
+        public string ConvertToDecimal()
         {
             double result = 0;
-            for (int i = 0; i < GiaTri.Length; i++)
+            for (int i = 0; i < NumberValue.Length; i++)
             {
-                string valueAtIndex = GiaTri[i].ToString().ToLower();
+                string valueAtIndex = NumberValue[i].ToString().ToLower();
                 switch (valueAtIndex)
                 {
                     case "a":
@@ -38,7 +38,7 @@ namespace BaiTapOOP3
                         valueAtIndex = "15";
                         break;
                 }
-                result += Convert.ToDouble(valueAtIndex) * Math.Pow(Convert.ToDouble(HeCoSo), GiaTri.Length - 1 - i);
+                result += Convert.ToDouble(valueAtIndex) * Math.Pow(Convert.ToDouble(NumberSystem), NumberValue.Length - 1 - i);
             }
             return result.ToString();
         }
@@ -48,10 +48,10 @@ namespace BaiTapOOP3
             string BinNumbers = "01";
             string OctaNumbers = "01234567";
             string HexaNumbers = "0123456789abcdef";
-            string checkNums = (HeCoSo == "2") ? BinNumbers : (HeCoSo == "8") ? OctaNumbers : HexaNumbers;
-            for (int i = 0; i < GiaTri.Length; i++)
+            string checkNums = (NumberSystem == "2") ? BinNumbers : (NumberSystem == "8") ? OctaNumbers : HexaNumbers;
+            for (int i = 0; i < NumberValue.Length; i++)
             {
-                if (!checkNums.Contains(GiaTri[i]))
+                if (!checkNums.Contains(NumberValue[i]))
                 {
                     numberIsValid = false;
                     break;
