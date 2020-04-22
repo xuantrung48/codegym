@@ -14,44 +14,31 @@ namespace BaiTapOOP3
         public string ChuyenVeHCS10()
         {
             double result = 0;
-            switch (HeCoSo)
+            for (int i = 0; i < GiaTri.Length; i++)
             {
-                case "2":
-                case "8":
-                    for (int i = 0; i < GiaTri.Length; i++)
-                    {
-                        double valueAtIndex = Char.GetNumericValue(GiaTri[i]);
-                        result += valueAtIndex * Math.Pow(Convert.ToDouble(HeCoSo), GiaTri.Length - 1 - i);
-                    }
-                    break;
-                case "16":
-                    for (int i = 0; i < GiaTri.Length; i++)
-                    {
-                        string valueAtIndex = GiaTri[i].ToString().ToLower();
-                        switch (valueAtIndex)
-                        {
-                            case "a":
-                                valueAtIndex = "10";
-                                break;
-                            case "b":
-                                valueAtIndex = "11";
-                                break;
-                            case "c":
-                                valueAtIndex = "12";
-                                break;
-                            case "d":
-                                valueAtIndex = "13";
-                                break;
-                            case "e":
-                                valueAtIndex = "14";
-                                break;
-                            case "f":
-                                valueAtIndex = "15";
-                                break;
-                        }
-                        result += Convert.ToDouble(valueAtIndex) * Math.Pow(16, GiaTri.Length - 1 - i);
-                    }
-                    break;
+                string valueAtIndex = GiaTri[i].ToString().ToLower();
+                switch (valueAtIndex)
+                {
+                    case "a":
+                        valueAtIndex = "10";
+                        break;
+                    case "b":
+                        valueAtIndex = "11";
+                        break;
+                    case "c":
+                        valueAtIndex = "12";
+                        break;
+                    case "d":
+                        valueAtIndex = "13";
+                        break;
+                    case "e":
+                        valueAtIndex = "14";
+                        break;
+                    case "f":
+                        valueAtIndex = "15";
+                        break;
+                }
+                result += Convert.ToDouble(valueAtIndex) * Math.Pow(Convert.ToDouble(HeCoSo), GiaTri.Length - 1 - i);
             }
             return result.ToString();
         }
