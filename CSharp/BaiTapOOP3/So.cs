@@ -42,12 +42,12 @@ namespace BaiTapOOP3
                 var result = "";
                 do
                 {
-                    result += (num % heCoSo < 10) ? (num % heCoSo).ToString() : 
-                              (num % heCoSo == 10) ? "A" : 
-                              (num % heCoSo == 11) ? "B" : 
-                              (num % heCoSo == 12) ? "C" : 
-                              (num % heCoSo == 13) ? "D" : 
-                              (num % heCoSo == 14) ? "E" : "F";
+                    result += (num % heCoSo == 10) ? "A" :
+                              (num % heCoSo == 11) ? "B" :
+                              (num % heCoSo == 12) ? "C" :
+                              (num % heCoSo == 13) ? "D" :
+                              (num % heCoSo == 14) ? "E" :
+                              (num % heCoSo == 15) ? "F" : (num % heCoSo).ToString();
                     num /= heCoSo;
                 } while (num != 0);
                 char[] resultChar = result.ToCharArray();
@@ -58,13 +58,13 @@ namespace BaiTapOOP3
         }
         public bool ValidateNumber()
         {
-            string BinNumbers = "01";
+            string BinaNumbers = "01";
             string OctaNumbers = "01234567";
-            string DecimalNumbers = "0123456789";
+            string DeciNumbers = "0123456789";
             string HexaNumbers = "0123456789abcdef";
-            string checkNums = (NumberSystem == "2") ? BinNumbers : 
+            string checkNums = (NumberSystem == "2") ? BinaNumbers : 
                                (NumberSystem == "8") ? OctaNumbers :
-                               (NumberSystem == "10") ? DecimalNumbers : HexaNumbers;
+                               (NumberSystem == "10") ? DeciNumbers : HexaNumbers;
             for (int i = 0; i < NumberValue.Length; i++)
             {
                 if (!checkNums.Contains(NumberValue[i]))
