@@ -21,9 +21,9 @@ namespace BaiTapOOP3
             {
                 do
                 {
-                    Console.Write("\nHệ cơ số (2/8/16): ");
+                    Console.Write("\nNhâp vào hệ cơ số của số cần chuyển (2/8/10/16): ");
                     numberSystem = Console.ReadLine();
-                } while (numberSystem != "2" && numberSystem != "8" && numberSystem != "16");
+                } while (numberSystem != "2" && numberSystem != "8" && numberSystem != "10" && numberSystem != "16");
                 Number numberObj;
                 do
                 {
@@ -32,8 +32,11 @@ namespace BaiTapOOP3
                         Console.WriteLine($"{numberObj.NumberValue} không phải là số với hệ cơ số {numberObj.NumberSystem}");
                 } while (!numberObj.ValidateNumber());
 
-                Console.WriteLine("_____________________");
-                Console.WriteLine($"Kết quả: {numberObj.ConvertToDecimal()}");
+                Console.WriteLine("_____________________\nKết quả:");
+                Console.WriteLine($"Cơ số 2: {numberObj.ConvertTo(2)}");
+                Console.WriteLine($"Cơ số 8: {numberObj.ConvertTo(8)}");
+                Console.WriteLine($"Cơ số 10: {numberObj.ConvertToDecimal()}");
+                Console.WriteLine($"Cơ số 16: {numberObj.ConvertTo(16)}");
             }
         }
     }
