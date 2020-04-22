@@ -11,53 +11,35 @@ namespace BaiTapOOP3
             NumberValue = numberValue;
             NumberSystem = numberSystem;
         }
-        public string ConvertToDecimal()
+        public double ConvertToDecimal()
         {
             double result = 0;
             for (int i = 0; i < NumberValue.Length; i++)
             {
                 string valueAtIndex = NumberValue[i].ToString().ToLower();
-                switch (valueAtIndex)
-                {
-                    case "a":
-                        valueAtIndex = "10";
-                        break;
-                    case "b":
-                        valueAtIndex = "11";
-                        break;
-                    case "c":
-                        valueAtIndex = "12";
-                        break;
-                    case "d":
-                        valueAtIndex = "13";
-                        break;
-                    case "e":
-                        valueAtIndex = "14";
-                        break;
-                    case "f":
-                        valueAtIndex = "15";
-                        break;
-                }
+                valueAtIndex = (valueAtIndex == "a") ? "10" :
+                               (valueAtIndex == "b") ? "11" :
+                               (valueAtIndex == "c") ? "12" :
+                               (valueAtIndex == "d") ? "13" :
+                               (valueAtIndex == "e") ? "14" :
+                               (valueAtIndex == "f") ? "15" : valueAtIndex;
                 result += Convert.ToDouble(valueAtIndex) * Math.Pow(Convert.ToDouble(NumberSystem), NumberValue.Length - 1 - i);
             }
-            return result.ToString();
+            return result;
         }
         public bool ValidateNumber()
         {
-            bool numberIsValid = true;
             string BinNumbers = "01";
             string OctaNumbers = "01234567";
             string HexaNumbers = "0123456789abcdef";
-            string checkNums = (NumberSystem == "2") ? BinNumbers : (NumberSystem == "8") ? OctaNumbers : HexaNumbers;
+            string checkNums = (NumberSystem == "2") ? BinNumbers : 
+                               (NumberSystem == "8") ? OctaNumbers : HexaNumbers;
             for (int i = 0; i < NumberValue.Length; i++)
             {
                 if (!checkNums.Contains(NumberValue[i]))
-                {
-                    numberIsValid = false;
-                    break;
-                }
+                    return false;
             }
-            return numberIsValid;
+            return true;
         }
     }
 }
