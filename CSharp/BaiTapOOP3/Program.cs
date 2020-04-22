@@ -31,6 +31,8 @@ namespace BaiTapOOP3
                 {
                     numberObj = CreateNewNumber(heCoSo);
                     NumberIsNotValid = !numberObj.CheckValidNumber();
+                    if (NumberIsNotValid)
+                        Console.WriteLine($"{numberObj.GiaTri} không phải là số với hệ cơ số {numberObj.HeCoSo}");
                 } while (NumberIsNotValid);
 
                 Console.WriteLine("_____________________");
