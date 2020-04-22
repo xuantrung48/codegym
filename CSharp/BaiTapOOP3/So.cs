@@ -45,44 +45,31 @@ namespace BaiTapOOP3
         public bool CheckValidNumber()
         {
             bool numberIsValid = false;
-            switch (HeCoSo)
+            string[] BinNumber = { "0", "1" };
+            string[] OctaNumber = { "0", "1", "2", "3", "4", "5", "6", "7" };
+            string[] HexaNumber = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f" };
+            for (int i = 0; i < GiaTri.Length; i++)
             {
-                case "2":
-                    for (int i = 0; i < GiaTri.Length; i++)
-                    {
-                        if (GiaTri[i] == '0' || GiaTri[i] == '1')
-                            numberIsValid = true;
-                        else
-                        {
-                            numberIsValid = false;
-                            break;
-                        }
-                    }
+                string[] checkNums = { };
+                switch (HeCoSo)
+                {
+                    case "2":
+                        checkNums = BinNumber;
+                        break;
+                    case "8":
+                        checkNums = OctaNumber;
+                        break;
+                    case "16":
+                        checkNums = HexaNumber;
+                        break;
+                }
+                if (Array.Exists(checkNums, element => element == GiaTri[i].ToString()))
+                    numberIsValid = true;
+                else
+                {
+                    numberIsValid = false;
                     break;
-                case "8":
-                    for (int i = 0; i < GiaTri.Length; i++)
-                    {
-                        if (GiaTri[i] == '0' || GiaTri[i] == '1' || GiaTri[i] == '2' || GiaTri[i] == '3' || GiaTri[i] == '4' || GiaTri[i] == '5' || GiaTri[i] == '6' || GiaTri[i] == '7')
-                            numberIsValid = true;
-                        else
-                        {
-                            numberIsValid = false;
-                            break;
-                        }
-                    }
-                    break;
-                case "16":
-                    for (int i = 0; i < GiaTri.Length; i++)
-                    {
-                        if (GiaTri[i] == '0' || GiaTri[i] == '1' || GiaTri[i] == '2' || GiaTri[i] == '3' || GiaTri[i] == '4' || GiaTri[i] == '5' || GiaTri[i] == '6' || GiaTri[i] == '7' || GiaTri[i] == '8' || GiaTri[i] == '9' || GiaTri[i] == 'a' || GiaTri[i] == 'b' || GiaTri[i] == 'c' || GiaTri[i] == 'd' || GiaTri[i] == 'e' || GiaTri[i] == 'f')
-                            numberIsValid = true;
-                        else
-                        {
-                            numberIsValid = false;
-                            break;
-                        }
-                    }
-                    break;
+                }
             }
             return numberIsValid;
         }
