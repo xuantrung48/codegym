@@ -33,8 +33,8 @@ namespace BaiTapOOP3
                 } while (!numberObj.ValidateNumber());
 
                 Console.WriteLine("_____________________\nKết quả:");
-                Console.WriteLine($"Cơ số 2: {numberObj.ConvertTo(2)}");
-                Console.WriteLine($"Cơ số 8: {numberObj.ConvertTo(8)}");
+                Console.WriteLine($"Cơ số 2:  {numberObj.ConvertTo(2)}");
+                Console.WriteLine($"Cơ số 8:  {numberObj.ConvertTo(8)}");
                 Console.WriteLine($"Cơ số 10: {numberObj.ConvertToDecimal()}");
                 Console.WriteLine($"Cơ số 16: {numberObj.ConvertTo(16)}");
             }

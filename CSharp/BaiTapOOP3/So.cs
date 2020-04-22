@@ -32,23 +32,31 @@ namespace BaiTapOOP3
                 return result.ToString();
             }
         }
-        public string ConvertTo(int heCoSo)
+        public string ConvertTo(ulong numberSystem)
         {
-            if (NumberSystem == heCoSo.ToString())
+            if (NumberSystem == numberSystem.ToString())
                 return NumberValue;
             else
             {
-                int num = Convert.ToInt32(ConvertToDecimal());
+                ulong num = 0;
+                try
+                {
+                    num = ulong.Parse(ConvertToDecimal());
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
                 var result = "";
                 do
                 {
-                    result += (num % heCoSo == 10) ? "A" :
-                              (num % heCoSo == 11) ? "B" :
-                              (num % heCoSo == 12) ? "C" :
-                              (num % heCoSo == 13) ? "D" :
-                              (num % heCoSo == 14) ? "E" :
-                              (num % heCoSo == 15) ? "F" : (num % heCoSo).ToString();
-                    num /= heCoSo;
+                    result += (num % numberSystem == 10) ? "A" :
+                              (num % numberSystem == 11) ? "B" :
+                              (num % numberSystem == 12) ? "C" :
+                              (num % numberSystem == 13) ? "D" :
+                              (num % numberSystem == 14) ? "E" :
+                              (num % numberSystem == 15) ? "F" : (num % numberSystem).ToString();
+                    num /= numberSystem;
                 } while (num != 0);
                 char[] resultChar = result.ToCharArray();
                 Array.Reverse(resultChar);
@@ -58,16 +66,12 @@ namespace BaiTapOOP3
         }
         public bool ValidateNumber()
         {
-            string BinaNumbers = "01";
-            string OctaNumbers = "01234567";
-            string DeciNumbers = "0123456789";
-            string HexaNumbers = "0123456789abcdef";
-            string checkNums = (NumberSystem == "2") ? BinaNumbers : 
-                               (NumberSystem == "8") ? OctaNumbers :
-                               (NumberSystem == "10") ? DeciNumbers : HexaNumbers;
+            string validNums = (NumberSystem ==  "2") ? "01" : 
+                               (NumberSystem ==  "8") ? "01234567" :
+                               (NumberSystem == "10") ? "0123456789" : "0123456789abcdef";
             for (int i = 0; i < NumberValue.Length; i++)
             {
-                if (!checkNums.Contains(NumberValue[i]))
+                if (!validNums.Contains(NumberValue[i]))
                     return false;
             }
             return true;
