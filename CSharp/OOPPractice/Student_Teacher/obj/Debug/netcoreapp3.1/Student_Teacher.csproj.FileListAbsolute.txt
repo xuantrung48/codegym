@@ -1,0 +1,13 @@
+D:\codegym\github\codegym\CSharp\OOPPractice\Student_Teacher\bin\Debug\netcoreapp3.1\Student_Teacher.exe
+D:\codegym\github\codegym\CSharp\OOPPractice\Student_Teacher\bin\Debug\netcoreapp3.1\Student_Teacher.deps.json
+D:\codegym\github\codegym\CSharp\OOPPractice\Student_Teacher\bin\Debug\netcoreapp3.1\Student_Teacher.runtimeconfig.json
+D:\codegym\github\codegym\CSharp\OOPPractice\Student_Teacher\bin\Debug\netcoreapp3.1\Student_Teacher.runtimeconfig.dev.json
+D:\codegym\github\codegym\CSharp\OOPPractice\Student_Teacher\bin\Debug\netcoreapp3.1\Student_Teacher.dll
+D:\codegym\github\codegym\CSharp\OOPPractice\Student_Teacher\bin\Debug\netcoreapp3.1\Student_Teacher.pdb
+D:\codegym\github\codegym\CSharp\OOPPractice\Student_Teacher\obj\Debug\netcoreapp3.1\Student_Teacher.csprojAssemblyReference.cache
+D:\codegym\github\codegym\CSharp\OOPPractice\Student_Teacher\obj\Debug\netcoreapp3.1\Student_Teacher.csproj.CoreCompileInputs.cache
+D:\codegym\github\codegym\CSharp\OOPPractice\Student_Teacher\obj\Debug\netcoreapp3.1\Student_Teacher.AssemblyInfoInputs.cache
+D:\codegym\github\codegym\CSharp\OOPPractice\Student_Teacher\obj\Debug\netcoreapp3.1\Student_Teacher.AssemblyInfo.cs
+D:\codegym\github\codegym\CSharp\OOPPractice\Student_Teacher\obj\Debug\netcoreapp3.1\Student_Teacher.dll
+D:\codegym\github\codegym\CSharp\OOPPractice\Student_Teacher\obj\Debug\netcoreapp3.1\Student_Teacher.pdb
+D:\codegym\github\codegym\CSharp\OOPPractice\Student_Teacher\obj\Debug\netcoreapp3.1\Student_Teacher.genruntimeconfig.cache

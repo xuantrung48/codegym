@@ -1,0 +1,13 @@
+D:\codegym\github\codegym\CSharp\OOPPractice\PhotoAlbumTarea\bin\Debug\netcoreapp3.1\PhotoAlbumTarea.exe
+D:\codegym\github\codegym\CSharp\OOPPractice\PhotoAlbumTarea\bin\Debug\netcoreapp3.1\PhotoAlbumTarea.deps.json
+D:\codegym\github\codegym\CSharp\OOPPractice\PhotoAlbumTarea\bin\Debug\netcoreapp3.1\PhotoAlbumTarea.runtimeconfig.json
+D:\codegym\github\codegym\CSharp\OOPPractice\PhotoAlbumTarea\bin\Debug\netcoreapp3.1\PhotoAlbumTarea.runtimeconfig.dev.json
+D:\codegym\github\codegym\CSharp\OOPPractice\PhotoAlbumTarea\bin\Debug\netcoreapp3.1\PhotoAlbumTarea.dll
+D:\codegym\github\codegym\CSharp\OOPPractice\PhotoAlbumTarea\bin\Debug\netcoreapp3.1\PhotoAlbumTarea.pdb
+D:\codegym\github\codegym\CSharp\OOPPractice\PhotoAlbumTarea\obj\Debug\netcoreapp3.1\PhotoAlbumTarea.csprojAssemblyReference.cache
+D:\codegym\github\codegym\CSharp\OOPPractice\PhotoAlbumTarea\obj\Debug\netcoreapp3.1\PhotoAlbumTarea.csproj.CoreCompileInputs.cache
+D:\codegym\github\codegym\CSharp\OOPPractice\PhotoAlbumTarea\obj\Debug\netcoreapp3.1\PhotoAlbumTarea.AssemblyInfoInputs.cache
+D:\codegym\github\codegym\CSharp\OOPPractice\PhotoAlbumTarea\obj\Debug\netcoreapp3.1\PhotoAlbumTarea.AssemblyInfo.cs
+D:\codegym\github\codegym\CSharp\OOPPractice\PhotoAlbumTarea\obj\Debug\netcoreapp3.1\PhotoAlbumTarea.dll
+D:\codegym\github\codegym\CSharp\OOPPractice\PhotoAlbumTarea\obj\Debug\netcoreapp3.1\PhotoAlbumTarea.pdb
+D:\codegym\github\codegym\CSharp\OOPPractice\PhotoAlbumTarea\obj\Debug\netcoreapp3.1\PhotoAlbumTarea.genruntimeconfig.cache

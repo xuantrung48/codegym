@@ -32,7 +32,7 @@ namespace BaiTapOOP3
                 return result.ToString();
             }
         }
-        public string ConvertTo(ulong numberSystem)
+        public string ConvertToNumberSystem(ulong numberSystem)
         {
             if (NumberSystem == numberSystem.ToString())
                 return NumberValue;
@@ -64,7 +64,7 @@ namespace BaiTapOOP3
                 return result;
             }
         }
-        public bool ValidateNumber()
+        public bool Validate()
         {
             string validNums = (NumberSystem ==  "2") ? "01" : 
                                (NumberSystem ==  "8") ? "01234567" :
