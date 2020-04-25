@@ -1,0 +1,24 @@
+/Users/nguyenkhanhtung/Documents/NET 2020/Clean Code/cleancode-refactoring-exercise/bin/Debug/netcoreapp3.1/cleancode-refactoring-exercise
+/Users/nguyenkhanhtung/Documents/NET 2020/Clean Code/cleancode-refactoring-exercise/bin/Debug/netcoreapp3.1/cleancode-refactoring-exercise.deps.json
+/Users/nguyenkhanhtung/Documents/NET 2020/Clean Code/cleancode-refactoring-exercise/bin/Debug/netcoreapp3.1/cleancode-refactoring-exercise.runtimeconfig.json
+/Users/nguyenkhanhtung/Documents/NET 2020/Clean Code/cleancode-refactoring-exercise/bin/Debug/netcoreapp3.1/cleancode-refactoring-exercise.runtimeconfig.dev.json
+/Users/nguyenkhanhtung/Documents/NET 2020/Clean Code/cleancode-refactoring-exercise/bin/Debug/netcoreapp3.1/cleancode-refactoring-exercise.dll
+/Users/nguyenkhanhtung/Documents/NET 2020/Clean Code/cleancode-refactoring-exercise/bin/Debug/netcoreapp3.1/cleancode-refactoring-exercise.pdb
+/Users/nguyenkhanhtung/Documents/NET 2020/Clean Code/cleancode-refactoring-exercise/obj/Debug/netcoreapp3.1/cleancode-refactoring-exercise.csprojAssemblyReference.cache
+/Users/nguyenkhanhtung/Documents/NET 2020/Clean Code/cleancode-refactoring-exercise/obj/Debug/netcoreapp3.1/cleancode-refactoring-exercise.AssemblyInfoInputs.cache
+/Users/nguyenkhanhtung/Documents/NET 2020/Clean Code/cleancode-refactoring-exercise/obj/Debug/netcoreapp3.1/cleancode-refactoring-exercise.AssemblyInfo.cs
+/Users/nguyenkhanhtung/Documents/NET 2020/Clean Code/cleancode-refactoring-exercise/obj/Debug/netcoreapp3.1/cleancode-refactoring-exercise.dll
+/Users/nguyenkhanhtung/Documents/NET 2020/Clean Code/cleancode-refactoring-exercise/obj/Debug/netcoreapp3.1/cleancode-refactoring-exercise.pdb
+D:\codegym\github\codegym\CSharp\CleanCode\dotnet-cleancode_refactoring_exercise\bin\Debug\netcoreapp3.1\cleancode-refactoring-exercise.exe
+D:\codegym\github\codegym\CSharp\CleanCode\dotnet-cleancode_refactoring_exercise\bin\Debug\netcoreapp3.1\cleancode-refactoring-exercise.deps.json
+D:\codegym\github\codegym\CSharp\CleanCode\dotnet-cleancode_refactoring_exercise\bin\Debug\netcoreapp3.1\cleancode-refactoring-exercise.runtimeconfig.json
+D:\codegym\github\codegym\CSharp\CleanCode\dotnet-cleancode_refactoring_exercise\bin\Debug\netcoreapp3.1\cleancode-refactoring-exercise.runtimeconfig.dev.json
+D:\codegym\github\codegym\CSharp\CleanCode\dotnet-cleancode_refactoring_exercise\bin\Debug\netcoreapp3.1\cleancode-refactoring-exercise.dll
+D:\codegym\github\codegym\CSharp\CleanCode\dotnet-cleancode_refactoring_exercise\bin\Debug\netcoreapp3.1\cleancode-refactoring-exercise.pdb
+D:\codegym\github\codegym\CSharp\CleanCode\dotnet-cleancode_refactoring_exercise\obj\Debug\netcoreapp3.1\cleancode-refactoring-exercise.csprojAssemblyReference.cache
+D:\codegym\github\codegym\CSharp\CleanCode\dotnet-cleancode_refactoring_exercise\obj\Debug\netcoreapp3.1\cleancode-refactoring-exercise.csproj.CoreCompileInputs.cache
+D:\codegym\github\codegym\CSharp\CleanCode\dotnet-cleancode_refactoring_exercise\obj\Debug\netcoreapp3.1\cleancode-refactoring-exercise.AssemblyInfoInputs.cache
+D:\codegym\github\codegym\CSharp\CleanCode\dotnet-cleancode_refactoring_exercise\obj\Debug\netcoreapp3.1\cleancode-refactoring-exercise.AssemblyInfo.cs
+D:\codegym\github\codegym\CSharp\CleanCode\dotnet-cleancode_refactoring_exercise\obj\Debug\netcoreapp3.1\cleancode-refactoring-exercise.dll
+D:\codegym\github\codegym\CSharp\CleanCode\dotnet-cleancode_refactoring_exercise\obj\Debug\netcoreapp3.1\cleancode-refactoring-exercise.pdb
+D:\codegym\github\codegym\CSharp\CleanCode\dotnet-cleancode_refactoring_exercise\obj\Debug\netcoreapp3.1\cleancode-refactoring-exercise.genruntimeconfig.cache

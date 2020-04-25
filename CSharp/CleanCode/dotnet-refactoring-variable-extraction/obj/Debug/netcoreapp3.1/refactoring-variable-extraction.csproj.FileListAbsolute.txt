@@ -1,0 +1,11 @@
+/Users/nguyenkhanhtung/Documents/NET 2020/Clean Code/refactoring-variable-extraction/bin/Debug/netcoreapp3.1/refactoring-variable-extraction
+/Users/nguyenkhanhtung/Documents/NET 2020/Clean Code/refactoring-variable-extraction/bin/Debug/netcoreapp3.1/refactoring-variable-extraction.deps.json
+/Users/nguyenkhanhtung/Documents/NET 2020/Clean Code/refactoring-variable-extraction/bin/Debug/netcoreapp3.1/refactoring-variable-extraction.runtimeconfig.json
+/Users/nguyenkhanhtung/Documents/NET 2020/Clean Code/refactoring-variable-extraction/bin/Debug/netcoreapp3.1/refactoring-variable-extraction.runtimeconfig.dev.json
+/Users/nguyenkhanhtung/Documents/NET 2020/Clean Code/refactoring-variable-extraction/bin/Debug/netcoreapp3.1/refactoring-variable-extraction.dll
+/Users/nguyenkhanhtung/Documents/NET 2020/Clean Code/refactoring-variable-extraction/bin/Debug/netcoreapp3.1/refactoring-variable-extraction.pdb
+/Users/nguyenkhanhtung/Documents/NET 2020/Clean Code/refactoring-variable-extraction/obj/Debug/netcoreapp3.1/refactoring-variable-extraction.csprojAssemblyReference.cache
+/Users/nguyenkhanhtung/Documents/NET 2020/Clean Code/refactoring-variable-extraction/obj/Debug/netcoreapp3.1/refactoring-variable-extraction.AssemblyInfoInputs.cache
+/Users/nguyenkhanhtung/Documents/NET 2020/Clean Code/refactoring-variable-extraction/obj/Debug/netcoreapp3.1/refactoring-variable-extraction.AssemblyInfo.cs
+/Users/nguyenkhanhtung/Documents/NET 2020/Clean Code/refactoring-variable-extraction/obj/Debug/netcoreapp3.1/refactoring-variable-extraction.dll
+/Users/nguyenkhanhtung/Documents/NET 2020/Clean Code/refactoring-variable-extraction/obj/Debug/netcoreapp3.1/refactoring-variable-extraction.pdb
