@@ -8,7 +8,7 @@ namespace BaiTapOOP3
         public string NumberSystem { get; }
         public Number(string numberValue, string numberSystem)
         {
-            NumberValue = numberValue;
+            NumberValue = numberValue.ToUpper();
             NumberSystem = numberSystem;
         }
         public string ConvertToDecimal()
@@ -20,14 +20,14 @@ namespace BaiTapOOP3
                 double result = 0;
                 for (int i = 0; i < NumberValue.Length; i++)
                 {
-                    string valueAtIndex = NumberValue[i].ToString().ToLower();
-                    valueAtIndex = (valueAtIndex == "a") ? "10" :
-                                   (valueAtIndex == "b") ? "11" :
-                                   (valueAtIndex == "c") ? "12" :
-                                   (valueAtIndex == "d") ? "13" :
-                                   (valueAtIndex == "e") ? "14" :
-                                   (valueAtIndex == "f") ? "15" : valueAtIndex;
-                    result += Convert.ToDouble(valueAtIndex) * Math.Pow(Convert.ToDouble(NumberSystem), NumberValue.Length - 1 - i);
+                    string charInNumber = NumberValue[i].ToString();
+                    charInNumber = (charInNumber == "A") ? "10" :
+                                   (charInNumber == "B") ? "11" :
+                                   (charInNumber == "C") ? "12" :
+                                   (charInNumber == "D") ? "13" :
+                                   (charInNumber == "E") ? "14" :
+                                   (charInNumber == "F") ? "15" : charInNumber;
+                    result += Convert.ToDouble(charInNumber) * Math.Pow(Convert.ToDouble(NumberSystem), NumberValue.Length - 1 - i);
                 }
                 return result.ToString();
             }
@@ -68,10 +68,10 @@ namespace BaiTapOOP3
         {
             string validNums = (NumberSystem ==  "2") ? "01" : 
                                (NumberSystem ==  "8") ? "01234567" :
-                               (NumberSystem == "10") ? "0123456789" : "0123456789abcdef";
-            for (int i = 0; i < NumberValue.Length; i++)
+                               (NumberSystem == "10") ? "0123456789" : "0123456789ABCDEF";
+            foreach (var charInNumber in NumberValue)
             {
-                if (!validNums.Contains(NumberValue[i]))
+                if (!validNums.Contains(charInNumber))
                     return false;
             }
             return true;
