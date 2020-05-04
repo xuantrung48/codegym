@@ -60,48 +60,48 @@
 			}
 			
 			//Đánh cờ
-			var counter = 1;
+			var switchPlayer = 0;
 			function play(i, j) {
-				if (checkWin() != true) {
-					if (counter % 2 != 0) {
-						if (cells[i][j] != "X" && cells[i][j] != "O") {
+				if (!checkWin()) {
+					if (switchPlayer % 2 == 0) {
+						if (cells[i][j] == "") {
 							cells[i][j] = "X";
-							counter++;
+							switchPlayer++;
 							createBoard();
 							checkWin();
 						}
 					} else {
-						if (cells[i][j] != "X" && cells[i][j] != "O") {
+						if (cells[i][j] == "") {
 							cells[i][j] = "O";
-							counter++;
+							switchPlayer++;
 							createBoard();
 							checkWin();
 						}
 					}
 				}
 			}
-			var result;
 			function checkWin() {
+				let flaggedWinCells;
 				//Kiểm tra đường ngang
 				for (let i = 0; i <= 19; i++) {
 					for (let j = 0; j <= 15; j++) {
-						result = 0;
+						flaggedWinCells = 0;
 						for (let k = 0; k < 5; k++) {
 							if (cells[i][j + k] == "O") {
-								result++;
+								flaggedWinCells++;
 							}
-							if (result == 5) {
+							if (flaggedWinCells == 5) {
 								changeColorRow(i, j);
 								alert('Player "O" won!');
 								return true;
 							}
 						}
-						result = 0;
+						flaggedWinCells = 0;
 						for (let k = 0; k < 5; k++) {
 							if (cells[i][j + k] == "X") {
-								result++;
+								flaggedWinCells++;
 							}
-							if (result == 5) {
+							if (flaggedWinCells == 5) {
 								changeColorRow(i, j);
 								alert('Player "X" won!');
 								return true;
@@ -112,24 +112,24 @@
 				//Kiểm tra đường dọc
 				for (let i = 0; i <= 15; i++) {
 					for (let j = 0; j <= 19; j++) {
-						result = 0;
+						flaggedWinCells = 0;
 						for (let k = 0; k < 5; k++) {
 							if (cells[i + k][j] == "O") {
-								result++;
+								flaggedWinCells++;
 							}
-							if (result == 5) {
+							if (flaggedWinCells == 5) {
 								changeColorCol(i, j);
 								alert('Player "O" won!');
 								return true;
 							}
 						}
 						
-						result = 0;
+						flaggedWinCells = 0;
 						for (let k = 0; k < 5; k++) {
 							if (cells[i + k][j] == "X") {
-								result++;
+								flaggedWinCells++;
 							}
-							if (result == 5) {
+							if (flaggedWinCells == 5) {
 								changeColorCol(i, j);
 								alert('Player "X" won!');
 								return true;
@@ -140,23 +140,23 @@
 				//Kiểm tra đường chéo (\)
 				for (i = 0; i <= 15; i++) {
 					for (j = 0; j <= 15; j++) {
-						result = 0;
+						flaggedWinCells = 0;
 						for (let k = 0; k < 5; k++) {
 							if (cells[i + k][j + k] == "O") {
-								result++;
+								flaggedWinCells++;
 							}
-							if (result == 5) {
+							if (flaggedWinCells == 5) {
 								changeColorDia1(i, j);
 								alert('Player "O" won!');
 								return true;
 							}
 						}
-						result = 0;
+						flaggedWinCells = 0;
 						for (let k = 0; k < 5; k++) {
 							if (cells[i + k][j + k] == "X") {
-								result++;
+								flaggedWinCells++;
 							}
-							if (result == 5) {
+							if (flaggedWinCells == 5) {
 								changeColorDia1(i, j);
 								alert('Player "X" won!');
 								return true;
@@ -167,23 +167,23 @@
 				//Kiểm tra đường chéo (/)
 				for (i = 0; i <= 15; i++) {
 					for (j = 4; j <= 19; j++) {
-						result = 0;
+						flaggedWinCells = 0;
 						for (let k = 0; k < 5; k++) {
 							if (cells[i + k][j - k] == "O") {
-								result++;
+								flaggedWinCells++;
 							}
-							if (result == 5) {
+							if (flaggedWinCells == 5) {
 								changeColorDia2(i, j);
 								alert('Player "O" won!');
 								return true;
 							}
 						}
-						result = 0;
+						flaggedWinCells = 0;
 						for (let k = 0; k < 5; k++) {
 							if (cells[i + k][j - k] == "X") {
-								result++;
+								flaggedWinCells++;
 							}
-							if (result == 5) {
+							if (flaggedWinCells == 5) {
 								changeColorDia2(i, j);
 								alert('Player "X" won!');
 								return true;

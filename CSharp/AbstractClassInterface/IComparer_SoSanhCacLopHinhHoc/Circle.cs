@@ -20,29 +20,29 @@ namespace Shape
             this.radius = radius;
         }
 
-        public double getRadius()
+        public double GetRadius()
         {
             return radius;
         }
 
-        public void setRadius(double radius)
+        public void SetRadius(double radius)
         {
             this.radius = radius;
         }
 
-        public double getArea()
+        public double GetArea()
         {
             return radius * radius * Math.PI;
         }
 
-        public double getPerimeter()
+        public double GetPerimeter()
         {
             return 2 * radius * Math.PI;
         }
 
         public override string ToString()
         {
-            return $"A Circle with radius = {getRadius()}, which is a subclass of {base.ToString()}";
+            return $"A Circle with radius = {GetRadius()}, which is a subclass of {base.ToString()}";
         }
     }
 }

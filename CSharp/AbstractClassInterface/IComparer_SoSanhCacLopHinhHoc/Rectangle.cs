@@ -21,39 +21,39 @@ namespace Shape
             this.length = length;
         }
 
-        public double getWidth()
+        public double GetWidth()
         {
             return width;
         }
 
-        public virtual void setWidth(double width)
+        public virtual void SetWidth(double width)
         {
             this.width = width;
         }
 
-        public double getLength()
+        public double GetLength()
         {
             return length;
         }
 
-        public virtual void setLength(double length)
+        public virtual void SetLength(double length)
         {
             this.length = length;
         }
 
-        public double getArea()
+        public double GetArea()
         {
             return width * this.length;
         }
 
-        public double getPerimeter()
+        public double GetPerimeter()
         {
             return 2 * (width + this.length);
         }
 
         public override string ToString()
         {
-            return $"A Rectangle with width = {getWidth()} and length = {getLength()}, which is a subclass of {base.ToString()}";
+            return $"A Rectangle with width = {GetWidth()} and length = {GetLength()}, which is a subclass of {base.ToString()}";
         }
     }
 }

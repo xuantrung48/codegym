@@ -15,29 +15,29 @@ namespace Shape
             this.filled = filled;
         }
 
-        public string getColor()
+        public string GetColor()
         {
             return color;
         }
 
-        public void setColor(string color)
+        public void SetColor(string color)
         {
             this.color = color;
         }
 
-        public bool isFilled()
+        public bool IsFilled()
         {
             return filled;
         }
 
-        public void setFilled(bool filled)
+        public void SetFilled(bool filled)
         {
             this.filled = filled;
         }
 
         public override string ToString()
         {
-            return $"A Shape with color of {getColor()} and {(isFilled() ? "filled" : "not filled")}";
+            return $"A Shape with color of {GetColor()} and {(IsFilled() ? "filled" : "not filled")}";
         }
     }
 }

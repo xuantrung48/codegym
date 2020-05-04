@@ -14,29 +14,29 @@ namespace Shape
         {
         }
 
-        public double getSide()
+        public double GetSide()
         {
-            return getWidth();
+            return GetWidth();
         }
 
-        public void setSide(double side)
+        public void SetSide(double side)
         {
-            base.setWidth(side);
-            base.setLength(side);
+            base.SetWidth(side);
+            base.SetLength(side);
         }
-        public override void setWidth(double width)
+        public override void SetWidth(double width)
         {
-            setSide(width);
+            SetSide(width);
         }
 
-        public override void setLength(double length)
+        public override void SetLength(double length)
         {
-            setSide(length);
+            SetSide(length);
         }
 
         public override string ToString()
         {
-            return $"A Square with side = {getSide()}, which is a subclass of {base.ToString()}";
+            return $"A Square with side = {GetSide()}, which is a subclass of {base.ToString()}";
         }
     }
 }

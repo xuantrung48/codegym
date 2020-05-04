@@ -11,8 +11,8 @@ namespace Shape
 
         public int CompareTo(ComperableCircle o)
         {
-            if (getRadius() > o.getRadius()) return 1;
-            else if (getRadius() < o.getRadius()) return -1;
+            if (GetRadius() > o.GetRadius()) return 1;
+            else if (GetRadius() < o.GetRadius()) return -1;
             else return 1;
         }
     }
