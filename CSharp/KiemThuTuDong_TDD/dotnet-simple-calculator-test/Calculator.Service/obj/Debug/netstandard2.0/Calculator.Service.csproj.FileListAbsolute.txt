@@ -1,0 +1,17 @@
+/Users/nguyenkhanhtung/Documents/NET 2020/TDD/simple-calculator-test/Calculator.Service/bin/Debug/netstandard2.0/Calculator.Service.deps.json
+/Users/nguyenkhanhtung/Documents/NET 2020/TDD/simple-calculator-test/Calculator.Service/bin/Debug/netstandard2.0/Calculator.Service.dll
+/Users/nguyenkhanhtung/Documents/NET 2020/TDD/simple-calculator-test/Calculator.Service/bin/Debug/netstandard2.0/Calculator.Service.pdb
+/Users/nguyenkhanhtung/Documents/NET 2020/TDD/simple-calculator-test/Calculator.Service/obj/Debug/netstandard2.0/Calculator.Service.csprojAssemblyReference.cache
+/Users/nguyenkhanhtung/Documents/NET 2020/TDD/simple-calculator-test/Calculator.Service/obj/Debug/netstandard2.0/Calculator.Service.AssemblyInfoInputs.cache
+/Users/nguyenkhanhtung/Documents/NET 2020/TDD/simple-calculator-test/Calculator.Service/obj/Debug/netstandard2.0/Calculator.Service.AssemblyInfo.cs
+/Users/nguyenkhanhtung/Documents/NET 2020/TDD/simple-calculator-test/Calculator.Service/obj/Debug/netstandard2.0/Calculator.Service.dll
+/Users/nguyenkhanhtung/Documents/NET 2020/TDD/simple-calculator-test/Calculator.Service/obj/Debug/netstandard2.0/Calculator.Service.pdb
+D:\codegym\github\codegym\CSharp\KiemThuTuDong_TDD\dotnet-simple-calculator-test\Calculator.Service\bin\Debug\netstandard2.0\Calculator.Service.deps.json
+D:\codegym\github\codegym\CSharp\KiemThuTuDong_TDD\dotnet-simple-calculator-test\Calculator.Service\bin\Debug\netstandard2.0\Calculator.Service.dll
+D:\codegym\github\codegym\CSharp\KiemThuTuDong_TDD\dotnet-simple-calculator-test\Calculator.Service\bin\Debug\netstandard2.0\Calculator.Service.pdb
+D:\codegym\github\codegym\CSharp\KiemThuTuDong_TDD\dotnet-simple-calculator-test\Calculator.Service\obj\Debug\netstandard2.0\Calculator.Service.csprojAssemblyReference.cache
+D:\codegym\github\codegym\CSharp\KiemThuTuDong_TDD\dotnet-simple-calculator-test\Calculator.Service\obj\Debug\netstandard2.0\Calculator.Service.csproj.CoreCompileInputs.cache
+D:\codegym\github\codegym\CSharp\KiemThuTuDong_TDD\dotnet-simple-calculator-test\Calculator.Service\obj\Debug\netstandard2.0\Calculator.Service.AssemblyInfoInputs.cache
+D:\codegym\github\codegym\CSharp\KiemThuTuDong_TDD\dotnet-simple-calculator-test\Calculator.Service\obj\Debug\netstandard2.0\Calculator.Service.AssemblyInfo.cs
+D:\codegym\github\codegym\CSharp\KiemThuTuDong_TDD\dotnet-simple-calculator-test\Calculator.Service\obj\Debug\netstandard2.0\Calculator.Service.dll
+D:\codegym\github\codegym\CSharp\KiemThuTuDong_TDD\dotnet-simple-calculator-test\Calculator.Service\obj\Debug\netstandard2.0\Calculator.Service.pdb

@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "58xX2DnNRoHqAtmy54AMlZgm7baiwRCCLuwuyOlwnQ+KThfYPP9rUOslf8LhFtD/HJeoxp1iBG7t+jqTqbBzVA==",
+  "success": true,
+  "projectFilePath": "D:\\codegym\\github\\codegym\\CSharp\\KiemThuTuDong_TDD\\dotnet-simple-calculator-test\\Calculator.Service\\Calculator.Service.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Nhung\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\Nhung\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
