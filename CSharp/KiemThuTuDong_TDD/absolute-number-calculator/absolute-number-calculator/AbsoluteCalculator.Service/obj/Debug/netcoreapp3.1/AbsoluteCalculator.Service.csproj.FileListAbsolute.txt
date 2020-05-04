@@ -1,0 +1,13 @@
+D:\codegym\github\codegym\CSharp\KiemThuTuDong_TDD\absolute-number-calculator\absolute-number-calculator\AbsoluteCalculator.Service\bin\Debug\netcoreapp3.1\AbsoluteCalculator.Service.exe
+D:\codegym\github\codegym\CSharp\KiemThuTuDong_TDD\absolute-number-calculator\absolute-number-calculator\AbsoluteCalculator.Service\bin\Debug\netcoreapp3.1\AbsoluteCalculator.Service.deps.json
+D:\codegym\github\codegym\CSharp\KiemThuTuDong_TDD\absolute-number-calculator\absolute-number-calculator\AbsoluteCalculator.Service\bin\Debug\netcoreapp3.1\AbsoluteCalculator.Service.runtimeconfig.json
+D:\codegym\github\codegym\CSharp\KiemThuTuDong_TDD\absolute-number-calculator\absolute-number-calculator\AbsoluteCalculator.Service\bin\Debug\netcoreapp3.1\AbsoluteCalculator.Service.runtimeconfig.dev.json
+D:\codegym\github\codegym\CSharp\KiemThuTuDong_TDD\absolute-number-calculator\absolute-number-calculator\AbsoluteCalculator.Service\bin\Debug\netcoreapp3.1\AbsoluteCalculator.Service.dll
+D:\codegym\github\codegym\CSharp\KiemThuTuDong_TDD\absolute-number-calculator\absolute-number-calculator\AbsoluteCalculator.Service\bin\Debug\netcoreapp3.1\AbsoluteCalculator.Service.pdb
+D:\codegym\github\codegym\CSharp\KiemThuTuDong_TDD\absolute-number-calculator\absolute-number-calculator\AbsoluteCalculator.Service\obj\Debug\netcoreapp3.1\AbsoluteCalculator.Service.csprojAssemblyReference.cache
+D:\codegym\github\codegym\CSharp\KiemThuTuDong_TDD\absolute-number-calculator\absolute-number-calculator\AbsoluteCalculator.Service\obj\Debug\netcoreapp3.1\AbsoluteCalculator.Service.csproj.CoreCompileInputs.cache
+D:\codegym\github\codegym\CSharp\KiemThuTuDong_TDD\absolute-number-calculator\absolute-number-calculator\AbsoluteCalculator.Service\obj\Debug\netcoreapp3.1\AbsoluteCalculator.Service.AssemblyInfoInputs.cache
+D:\codegym\github\codegym\CSharp\KiemThuTuDong_TDD\absolute-number-calculator\absolute-number-calculator\AbsoluteCalculator.Service\obj\Debug\netcoreapp3.1\AbsoluteCalculator.Service.AssemblyInfo.cs
+D:\codegym\github\codegym\CSharp\KiemThuTuDong_TDD\absolute-number-calculator\absolute-number-calculator\AbsoluteCalculator.Service\obj\Debug\netcoreapp3.1\AbsoluteCalculator.Service.dll
+D:\codegym\github\codegym\CSharp\KiemThuTuDong_TDD\absolute-number-calculator\absolute-number-calculator\AbsoluteCalculator.Service\obj\Debug\netcoreapp3.1\AbsoluteCalculator.Service.pdb
+D:\codegym\github\codegym\CSharp\KiemThuTuDong_TDD\absolute-number-calculator\absolute-number-calculator\AbsoluteCalculator.Service\obj\Debug\netcoreapp3.1\AbsoluteCalculator.Service.genruntimeconfig.cache
