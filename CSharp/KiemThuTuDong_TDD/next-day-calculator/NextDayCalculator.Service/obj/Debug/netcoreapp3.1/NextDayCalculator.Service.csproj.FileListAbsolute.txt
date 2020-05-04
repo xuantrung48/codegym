@@ -1,0 +1,13 @@
+D:\codegym\github\codegym\CSharp\KiemThuTuDong_TDD\next-day-calculator\NextDayCalculator.Service\bin\Debug\netcoreapp3.1\NextDayCalculator.Service.exe
+D:\codegym\github\codegym\CSharp\KiemThuTuDong_TDD\next-day-calculator\NextDayCalculator.Service\bin\Debug\netcoreapp3.1\NextDayCalculator.Service.deps.json
+D:\codegym\github\codegym\CSharp\KiemThuTuDong_TDD\next-day-calculator\NextDayCalculator.Service\bin\Debug\netcoreapp3.1\NextDayCalculator.Service.runtimeconfig.json
+D:\codegym\github\codegym\CSharp\KiemThuTuDong_TDD\next-day-calculator\NextDayCalculator.Service\bin\Debug\netcoreapp3.1\NextDayCalculator.Service.runtimeconfig.dev.json
+D:\codegym\github\codegym\CSharp\KiemThuTuDong_TDD\next-day-calculator\NextDayCalculator.Service\bin\Debug\netcoreapp3.1\NextDayCalculator.Service.dll
+D:\codegym\github\codegym\CSharp\KiemThuTuDong_TDD\next-day-calculator\NextDayCalculator.Service\bin\Debug\netcoreapp3.1\NextDayCalculator.Service.pdb
+D:\codegym\github\codegym\CSharp\KiemThuTuDong_TDD\next-day-calculator\NextDayCalculator.Service\obj\Debug\netcoreapp3.1\NextDayCalculator.Service.csprojAssemblyReference.cache
+D:\codegym\github\codegym\CSharp\KiemThuTuDong_TDD\next-day-calculator\NextDayCalculator.Service\obj\Debug\netcoreapp3.1\NextDayCalculator.Service.csproj.CoreCompileInputs.cache
+D:\codegym\github\codegym\CSharp\KiemThuTuDong_TDD\next-day-calculator\NextDayCalculator.Service\obj\Debug\netcoreapp3.1\NextDayCalculator.Service.AssemblyInfoInputs.cache
+D:\codegym\github\codegym\CSharp\KiemThuTuDong_TDD\next-day-calculator\NextDayCalculator.Service\obj\Debug\netcoreapp3.1\NextDayCalculator.Service.AssemblyInfo.cs
+D:\codegym\github\codegym\CSharp\KiemThuTuDong_TDD\next-day-calculator\NextDayCalculator.Service\obj\Debug\netcoreapp3.1\NextDayCalculator.Service.dll
+D:\codegym\github\codegym\CSharp\KiemThuTuDong_TDD\next-day-calculator\NextDayCalculator.Service\obj\Debug\netcoreapp3.1\NextDayCalculator.Service.pdb
+D:\codegym\github\codegym\CSharp\KiemThuTuDong_TDD\next-day-calculator\NextDayCalculator.Service\obj\Debug\netcoreapp3.1\NextDayCalculator.Service.genruntimeconfig.cache
