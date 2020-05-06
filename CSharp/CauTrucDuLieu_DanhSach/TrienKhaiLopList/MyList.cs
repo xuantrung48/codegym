@@ -5,11 +5,12 @@ namespace TrienKhaiLopList
     class MyList<T>
     {
         private int Capacity { get; set; }
-        private object[] Items;
+        private T[] Items;
         public MyList()
         {
-            Items = new object[10];
+            Items = new T[10];
         }
+
         private void EnsureCapacity()
         {
             int newSize = Items.Length * 2;
@@ -31,7 +32,7 @@ namespace TrienKhaiLopList
                 throw new IndexOutOfRangeException("Index: " + idx + ", Capacity: " + Capacity);
             }
 
-            return (T)Items[idx];
+            return Items[idx];
         }
     }
 }
