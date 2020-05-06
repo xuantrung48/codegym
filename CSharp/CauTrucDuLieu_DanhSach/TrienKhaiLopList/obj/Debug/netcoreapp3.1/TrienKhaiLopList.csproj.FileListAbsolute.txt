@@ -1,0 +1,13 @@
+D:\codegym\github\codegym\CSharp\CauTrucDuLieu_DanhSach\TrienKhaiLopList\bin\Debug\netcoreapp3.1\TrienKhaiLopList.exe
+D:\codegym\github\codegym\CSharp\CauTrucDuLieu_DanhSach\TrienKhaiLopList\bin\Debug\netcoreapp3.1\TrienKhaiLopList.deps.json
+D:\codegym\github\codegym\CSharp\CauTrucDuLieu_DanhSach\TrienKhaiLopList\bin\Debug\netcoreapp3.1\TrienKhaiLopList.runtimeconfig.json
+D:\codegym\github\codegym\CSharp\CauTrucDuLieu_DanhSach\TrienKhaiLopList\bin\Debug\netcoreapp3.1\TrienKhaiLopList.runtimeconfig.dev.json
+D:\codegym\github\codegym\CSharp\CauTrucDuLieu_DanhSach\TrienKhaiLopList\bin\Debug\netcoreapp3.1\TrienKhaiLopList.dll
+D:\codegym\github\codegym\CSharp\CauTrucDuLieu_DanhSach\TrienKhaiLopList\bin\Debug\netcoreapp3.1\TrienKhaiLopList.pdb
+D:\codegym\github\codegym\CSharp\CauTrucDuLieu_DanhSach\TrienKhaiLopList\obj\Debug\netcoreapp3.1\TrienKhaiLopList.csprojAssemblyReference.cache
+D:\codegym\github\codegym\CSharp\CauTrucDuLieu_DanhSach\TrienKhaiLopList\obj\Debug\netcoreapp3.1\TrienKhaiLopList.csproj.CoreCompileInputs.cache
+D:\codegym\github\codegym\CSharp\CauTrucDuLieu_DanhSach\TrienKhaiLopList\obj\Debug\netcoreapp3.1\TrienKhaiLopList.AssemblyInfoInputs.cache
+D:\codegym\github\codegym\CSharp\CauTrucDuLieu_DanhSach\TrienKhaiLopList\obj\Debug\netcoreapp3.1\TrienKhaiLopList.AssemblyInfo.cs
+D:\codegym\github\codegym\CSharp\CauTrucDuLieu_DanhSach\TrienKhaiLopList\obj\Debug\netcoreapp3.1\TrienKhaiLopList.dll
+D:\codegym\github\codegym\CSharp\CauTrucDuLieu_DanhSach\TrienKhaiLopList\obj\Debug\netcoreapp3.1\TrienKhaiLopList.pdb
+D:\codegym\github\codegym\CSharp\CauTrucDuLieu_DanhSach\TrienKhaiLopList\obj\Debug\netcoreapp3.1\TrienKhaiLopList.genruntimeconfig.cache

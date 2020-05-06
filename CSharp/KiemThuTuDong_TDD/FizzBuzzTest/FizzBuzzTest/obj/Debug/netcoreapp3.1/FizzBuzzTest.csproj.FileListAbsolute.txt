@@ -1,0 +1,13 @@
+D:\codegym\github\codegym\CSharp\KiemThuTuDong_TDD\FizzBuzzTest\FizzBuzzTest\bin\Debug\netcoreapp3.1\FizzBuzzTest.exe
+D:\codegym\github\codegym\CSharp\KiemThuTuDong_TDD\FizzBuzzTest\FizzBuzzTest\bin\Debug\netcoreapp3.1\FizzBuzzTest.deps.json
+D:\codegym\github\codegym\CSharp\KiemThuTuDong_TDD\FizzBuzzTest\FizzBuzzTest\bin\Debug\netcoreapp3.1\FizzBuzzTest.runtimeconfig.json
+D:\codegym\github\codegym\CSharp\KiemThuTuDong_TDD\FizzBuzzTest\FizzBuzzTest\bin\Debug\netcoreapp3.1\FizzBuzzTest.runtimeconfig.dev.json
+D:\codegym\github\codegym\CSharp\KiemThuTuDong_TDD\FizzBuzzTest\FizzBuzzTest\bin\Debug\netcoreapp3.1\FizzBuzzTest.dll
+D:\codegym\github\codegym\CSharp\KiemThuTuDong_TDD\FizzBuzzTest\FizzBuzzTest\bin\Debug\netcoreapp3.1\FizzBuzzTest.pdb
+D:\codegym\github\codegym\CSharp\KiemThuTuDong_TDD\FizzBuzzTest\FizzBuzzTest\obj\Debug\netcoreapp3.1\FizzBuzzTest.csprojAssemblyReference.cache
+D:\codegym\github\codegym\CSharp\KiemThuTuDong_TDD\FizzBuzzTest\FizzBuzzTest\obj\Debug\netcoreapp3.1\FizzBuzzTest.csproj.CoreCompileInputs.cache
+D:\codegym\github\codegym\CSharp\KiemThuTuDong_TDD\FizzBuzzTest\FizzBuzzTest\obj\Debug\netcoreapp3.1\FizzBuzzTest.AssemblyInfoInputs.cache
+D:\codegym\github\codegym\CSharp\KiemThuTuDong_TDD\FizzBuzzTest\FizzBuzzTest\obj\Debug\netcoreapp3.1\FizzBuzzTest.AssemblyInfo.cs
+D:\codegym\github\codegym\CSharp\KiemThuTuDong_TDD\FizzBuzzTest\FizzBuzzTest\obj\Debug\netcoreapp3.1\FizzBuzzTest.dll
+D:\codegym\github\codegym\CSharp\KiemThuTuDong_TDD\FizzBuzzTest\FizzBuzzTest\obj\Debug\netcoreapp3.1\FizzBuzzTest.pdb
+D:\codegym\github\codegym\CSharp\KiemThuTuDong_TDD\FizzBuzzTest\FizzBuzzTest\obj\Debug\netcoreapp3.1\FizzBuzzTest.genruntimeconfig.cache
