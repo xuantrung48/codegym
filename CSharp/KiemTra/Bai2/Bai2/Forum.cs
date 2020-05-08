@@ -5,7 +5,7 @@ namespace Bai2
 {
     class Forum
     {
-        public SortedList<int, Post> Posts= new SortedList<int, Post>();
+        public SortedList<int, Post> Posts = new SortedList<int, Post>();
         public void Add(int key, Post newPost)
         {
             Posts.Add(key, newPost);

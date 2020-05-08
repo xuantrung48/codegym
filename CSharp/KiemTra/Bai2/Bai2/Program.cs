@@ -68,42 +68,42 @@ namespace Bai2
             Post newPost = new Post(title, content, author, rates);
             forum.Add(newPost.Id, newPost);
         }
+        static bool CheckExist(int id, out int key)
+        {
+            key = -1;
+            foreach(var item in forum.Posts)
+            {
+                if (item.Value.Id == id)
+                {
+                    key = item.Key;
+                    return true;
+                }
+            }
+            return false;
+        }
         static void UpdatePost()
         {
             Console.Write("ID: ");
             int.TryParse(Console.ReadLine(), out int id);
-            bool postIsExists = false;
-            foreach (var item in forum.Posts)
+            if (CheckExist(id, out int key))
             {
-                if (item.Value.Id == id)
-                {
-                    Console.Write("Content: ");
-                    string content = Console.ReadLine();
-                    postIsExists = true;
-                    forum.Update(id, content);
-                    Console.WriteLine("Post updated!");
-                    break;
-                }
+                Console.Write("Content: ");
+                forum.Posts[key].Content = Console.ReadLine();
+                Console.WriteLine("Post updated!");
             }
-            if (postIsExists == false)
+            else
                 Console.WriteLine("Post is not exists!");
         }
         static void RemovePost()
         {
             Console.Write("ID: ");
             int.TryParse(Console.ReadLine(), out int id);
-            bool postIsExists = false;
-            foreach (var item in forum.Posts)
+            if (CheckExist(id, out _))
             {
-                if (item.Value.Id == id)
-                {
-                    postIsExists = true;
-                    forum.Remove(id);
-                    Console.WriteLine("Post removed!");
-                    break;
-                }
+                forum.Remove(id);
+                Console.WriteLine("Post removed!");
             }
-            if (postIsExists == false)
+            else
                 Console.WriteLine("Post is not exists!");
         }
         static void ShowPosts()
