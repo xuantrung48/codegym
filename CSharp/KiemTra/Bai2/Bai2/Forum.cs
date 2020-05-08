@@ -25,20 +25,18 @@ namespace Bai2
         }
         public void Remove(int id)
         {
-            foreach(var item in Posts)
-            {
-                if (id == item.Value.Id)
-                {
-                    Posts.Remove(id);
-                    break;
-                }
-            }
+            Posts.Remove(id);
         }
         public void Show()
         {
-            foreach(var item in Posts)
+            if (Posts.Count == 0)
+                Console.WriteLine("No posts!");
+            else
             {
-                item.Value.Display();
+                foreach (var item in Posts)
+                {
+                    item.Value.Display();
+                }
             }
         }
     }

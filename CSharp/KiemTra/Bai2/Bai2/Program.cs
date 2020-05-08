@@ -11,9 +11,7 @@ namespace Bai2
             string option;
             do
             {
-                Console.WriteLine("POSTS MANAGEMENT SYSTEM");
-                Console.WriteLine("Menu: ");
-                Console.WriteLine("1. Create Post\n2. Update Post\n3. Remove Post\n4. Show Posts\n5. Exit");
+                Console.WriteLine("_______________________\nPOSTS MANAGEMENT SYSTEM\nMenu:\n1. Create Post\n2. Update Post\n3. Remove Post\n4. Show Posts\n5. Exit");
                 Console.Write("Your option: ");
                 option = Console.ReadLine();
                 Process(option, ref forum);
