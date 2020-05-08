@@ -73,17 +73,39 @@ namespace Bai2
         {
             Console.Write("ID: ");
             int.TryParse(Console.ReadLine(), out int id);
-            Console.Write("Content: ");
-            string content = Console.ReadLine();
-            forum.Update(id, content);
-            Console.WriteLine("Post updated!");
+            bool postIsExists = false;
+            foreach (var item in forum.Posts)
+            {
+                if (item.Value.Id == id)
+                {
+                    Console.Write("Content: ");
+                    string content = Console.ReadLine();
+                    postIsExists = true;
+                    forum.Update(id, content);
+                    Console.WriteLine("Post updated!");
+                    break;
+                }
+            }
+            if (postIsExists == false)
+                Console.WriteLine("Post is not exists!");
         }
         static void RemovePost()
         {
             Console.Write("ID: ");
             int.TryParse(Console.ReadLine(), out int id);
-            forum.Remove(id);
-            Console.WriteLine("Post removed!");
+            bool postIsExists = false;
+            foreach (var item in forum.Posts)
+            {
+                if (item.Value.Id == id)
+                {
+                    postIsExists = true;
+                    forum.Remove(id);
+                    Console.WriteLine("Post removed!");
+                    break;
+                }
+            }
+            if (postIsExists == false)
+                Console.WriteLine("Post is not exists!");
         }
         static void ShowPosts()
         {
