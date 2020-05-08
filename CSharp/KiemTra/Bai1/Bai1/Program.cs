@@ -6,18 +6,12 @@ namespace Bai1
     {
         static void Main(string[] args)
         {
-            int[,] a = CreateMatrix(5,3);
-            Console.WriteLine("Matrix: ");
-            for (int i = 0; i < a.GetLength(0); i++)
-            {
-                for (int j = 0; j < a.GetLength(1); j++)
-                {
-                    Console.Write(a[i, j] + " ");
-                }
-                Console.WriteLine();
-            }
-
-            ShowMaxRow(a);
+            int[,] matrix = CreateMatrix(5,3);
+            Console.WriteLine("Matrix:");
+            ShowMatrix(matrix);
+            Console.WriteLine("Max row:");
+            ShowArray(ShowMaxRow(matrix, out int pos));
+            Console.WriteLine($"Max row position: {pos + 1}");
         }
         static int[,] CreateMatrix(int n, int m)
         {
@@ -50,24 +44,31 @@ namespace Bai1
             }
             return array;
         }
-        static void ShowMaxRow(int[,] matrix)
+        static int[] ShowMaxRow(int[,] matrix, out int pos)
         {
-            Console.Write("Max row: ");
+            pos = 0;
             int[] maxArr = GetRow(matrix, 0);
-            int maxRow = 0;
             for (int i = 1; i < matrix.GetLength(0); i++)
             {
                 if (Sum(maxArr) < Sum(GetRow(matrix, i)))
                 {
                     maxArr = GetRow(matrix, i);
-                    maxRow = i;
+                    pos = i;
                 }
             }
-            for (int i = 0; i < maxArr.Length; i++)
-            {
-                Console.Write(maxArr[i] + " ");
-            }
-            Console.WriteLine($"(Row: {maxRow + 1})");
+            return maxArr;
+
+        }
+        static void ShowArray(int[] array)
+        {
+            foreach (var item in array)
+                Console.Write(item + " ");
+            Console.WriteLine();
+        }
+        static void ShowMatrix(int[,] matrix)
+        {
+            for (int i = 0; i < matrix.GetLength(0); i++)
+                ShowArray(GetRow(matrix, i));
         }
     }
 }
