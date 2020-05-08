@@ -25,9 +25,7 @@ namespace Bai2
         {
             int sumRates = 0;
             for (int i = 0; i < Rates.Length; i++)
-            {
                 sumRates += Rates[i];
-            }
             Average = (float)sumRates / Rates.Length;
         }
 

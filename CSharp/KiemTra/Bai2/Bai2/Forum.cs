@@ -13,12 +13,8 @@ namespace Bai2
         public void Update(int id, string content)
         {
             foreach(var item in Posts)
-            {
                 if (id == item.Value.Id)
-                {
                     item.Value.Content = content;
-                }
-            }
         }
         public void Remove(int id)
         {
@@ -29,12 +25,8 @@ namespace Bai2
             if (Posts.Count == 0)
                 Console.WriteLine("No posts!");
             else
-            {
                 foreach (var item in Posts)
-                {
                     item.Value.Display();
-                }
-            }
         }
     }
 }

@@ -55,15 +55,14 @@ namespace Bai2
             Console.Write("Author: ");
             string author = Console.ReadLine();
             int[] rates = new int[3];
-            for (int i = 0; i < rates.Length; i++) {
+            for (int i = 0; i < rates.Length; i++) 
+            {
                 int rate;
                 do
                 {
                     Console.Write($"Rates {i}: ");
                     if (int.TryParse(Console.ReadLine(), out rate))
-                    {
                         rates[i] = rate;
-                    }
                 } while (rate < 0 || rate > 5);
             }
             Post newPost = new Post(title, content, author, rates);
