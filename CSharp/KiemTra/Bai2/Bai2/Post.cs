@@ -15,10 +15,10 @@ namespace Bai2
         public Post(string title, string content, string author, int[] rates)
         {
             Id = ++counter;
-            this.Title = title;
-            this.Content = content;
-            this.Author = author;
-            this.Rates = rates;
+            Title = title;
+            Content = content;
+            Author = author;
+            Rates = rates;
             CalculatorRate();
         }
         public void CalculatorRate()
