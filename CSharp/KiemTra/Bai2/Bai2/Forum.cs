@@ -1,17 +1,14 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Bai2
 {
     class Forum
     {
         public SortedList<int, Post> Posts= new SortedList<int, Post>();
-        public static int Id = 1;
-        public void Add(Post newPost)
+        public void Add(int key, Post newPost)
         {
-            Posts.Add(Id++, newPost);
+            Posts.Add(key, newPost);
         }
         public void Update(int id, string content)
         {

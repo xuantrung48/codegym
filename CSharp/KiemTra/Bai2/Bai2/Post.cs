@@ -1,43 +1,26 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics.Tracing;
-using System.Text;
 
 namespace Bai2
 {
     class Post : IPost
     {
+        public int Id { get; set; }
+        public string Title { get; set; }
+        public string Content { get; set; }
+        public string Author { get; set; }
+        public float Average { get; private set; }
+        public int[] Rates;
+
         static int counter = 0;
-        private int id = ++counter;
-        private string title;
-        private string content;
-        private string author;
-        private float average;
-        public int Id
+        public Post(string title, string content, string author, int[] rates)
         {
-            get => id;
-            set => id = value;
+            Id = ++counter;
+            this.Title = title;
+            this.Content = content;
+            this.Author = author;
+            this.Rates = rates;
+            CalculatorRate();
         }
-        public string Title
-        {
-            get => title;
-            set => title = value;
-        }
-        public string Content
-        {
-            get => content;
-            set => content = value;
-        }
-        public string Author
-        {
-            get => author;
-            set => author = value;
-        }
-        public float Average
-        {
-            get => average;
-        }
-        public int[] Rates = new int[3];
         public void CalculatorRate()
         {
             int sumRates = 0;
@@ -45,7 +28,7 @@ namespace Bai2
             {
                 sumRates += Rates[i];
             }
-            average = (float)sumRates / Rates.Length;
+            Average = (float)sumRates / Rates.Length;
         }
 
         public void Display()

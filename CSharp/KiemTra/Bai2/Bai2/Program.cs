@@ -1,71 +1,75 @@
 ﻿using System;
-using System.Net.Mime;
 
 namespace Bai2
 {
     class Program
     {
+        private static readonly Forum forum = new Forum();
         static void Main(string[] args)
         {
-            Forum forum = new Forum();
             string option;
             do
             {
-                Console.WriteLine("_______________________\nPOSTS MANAGEMENT SYSTEM\nMenu:\n1. Create Post\n2. Update Post\n3. Remove Post\n4. Show Posts\n5. Exit");
+                Console.WriteLine("_______________________\n" +
+                                  "FORUM MANAGEMENT SYSTEM\n" +
+                                  "Menu:\n" +
+                                  "1. Create Post\n" +
+                                  "2. Update Post\n" +
+                                  "3. Remove Post\n" +
+                                  "4. Show Posts\n" +
+                                  "5. Exit");
                 Console.Write("Your option: ");
                 option = Console.ReadLine();
-                Process(option, ref forum);
+                Process(option);
             } while (option != "5");
         }
-        static void Process(string option, ref Forum forum)
+        static void Process(string option)
         {
             switch (option)
             {
                 case "1":
                     Console.Clear();
-                    CreatePost(ref forum);
+                    CreatePost();
                     break;
                 case "2":
                     Console.Clear();
-                    UpdatePost(ref forum);
+                    UpdatePost();
                     break;
                 case "3":
                     Console.Clear();
-                    RemovePost(ref forum);
+                    RemovePost();
                     break;
                 case "4":
                     Console.Clear();
-                    ShowPosts(ref forum);
+                    ShowPosts();
                     break;
             }
         }
-        static void CreatePost(ref Forum forum)
+        static void CreatePost()
         {
-            Post newPost = new Post();
             Console.WriteLine("Create new post:");
             Console.Write("Title: ");
-            newPost.Title = Console.ReadLine();
+            string title = Console.ReadLine();
             Console.Write("Content: ");
-            newPost.Content = Console.ReadLine();
+            string content = Console.ReadLine();
             Console.Write("Author: ");
-            newPost.Author = Console.ReadLine();
-
-            for (int i = 0; i < newPost.Rates.Length; i++) {
-                int rate = 0;
+            string author = Console.ReadLine();
+            int[] rates = new int[3];
+            for (int i = 0; i < rates.Length; i++) {
+                int rate;
                 do
                 {
                     Console.Write($"Rates {i}: ");
                     if (int.TryParse(Console.ReadLine(), out rate))
                     {
-                        newPost.Rates[i] = rate;
+                        rates[i] = rate;
                     }
                 } while (rate < 0 || rate > 5);
             }
-
-            newPost.CalculatorRate();
-            forum.Add(newPost);
+            Post newPost = new Post(title, content, author, rates);
+            forum.Add(newPost.Id, newPost);
         }
-        static void UpdatePost(ref Forum forum)
+        static void UpdatePost()
         {
             Console.Write("ID: ");
             int.TryParse(Console.ReadLine(), out int id);
@@ -74,14 +78,14 @@ namespace Bai2
             forum.Update(id, content);
             Console.WriteLine("Post updated!");
         }
-        static void RemovePost(ref Forum forum)
+        static void RemovePost()
         {
             Console.Write("ID: ");
             int.TryParse(Console.ReadLine(), out int id);
             forum.Remove(id);
             Console.WriteLine("Post removed!");
         }
-        static void ShowPosts(ref Forum forum)
+        static void ShowPosts()
         {
             forum.Show();
         }
