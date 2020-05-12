@@ -1,0 +1,13 @@
+D:\codegym\github\codegym\CSharp\ThuatToanSapXep\ASP_bubble_sort\obj\Debug\netcoreapp3.1\ASP_bubble_sort.csprojAssemblyReference.cache
+D:\codegym\github\codegym\CSharp\ThuatToanSapXep\ASP_bubble_sort\obj\Debug\netcoreapp3.1\ASP_bubble_sort.csproj.CoreCompileInputs.cache
+D:\codegym\github\codegym\CSharp\ThuatToanSapXep\ASP_bubble_sort\obj\Debug\netcoreapp3.1\ASP_bubble_sort.AssemblyInfoInputs.cache
+D:\codegym\github\codegym\CSharp\ThuatToanSapXep\ASP_bubble_sort\obj\Debug\netcoreapp3.1\ASP_bubble_sort.AssemblyInfo.cs
+D:\codegym\github\codegym\CSharp\ThuatToanSapXep\ASP_bubble_sort\bin\Debug\netcoreapp3.1\ASP_bubble_sort.exe
+D:\codegym\github\codegym\CSharp\ThuatToanSapXep\ASP_bubble_sort\bin\Debug\netcoreapp3.1\ASP_bubble_sort.deps.json
+D:\codegym\github\codegym\CSharp\ThuatToanSapXep\ASP_bubble_sort\bin\Debug\netcoreapp3.1\ASP_bubble_sort.runtimeconfig.json
+D:\codegym\github\codegym\CSharp\ThuatToanSapXep\ASP_bubble_sort\bin\Debug\netcoreapp3.1\ASP_bubble_sort.runtimeconfig.dev.json
+D:\codegym\github\codegym\CSharp\ThuatToanSapXep\ASP_bubble_sort\bin\Debug\netcoreapp3.1\ASP_bubble_sort.dll
+D:\codegym\github\codegym\CSharp\ThuatToanSapXep\ASP_bubble_sort\bin\Debug\netcoreapp3.1\ASP_bubble_sort.pdb
+D:\codegym\github\codegym\CSharp\ThuatToanSapXep\ASP_bubble_sort\obj\Debug\netcoreapp3.1\ASP_bubble_sort.dll
+D:\codegym\github\codegym\CSharp\ThuatToanSapXep\ASP_bubble_sort\obj\Debug\netcoreapp3.1\ASP_bubble_sort.pdb
+D:\codegym\github\codegym\CSharp\ThuatToanSapXep\ASP_bubble_sort\obj\Debug\netcoreapp3.1\ASP_bubble_sort.genruntimeconfig.cache
