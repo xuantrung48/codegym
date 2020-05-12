@@ -1,0 +1,12 @@
+D:\codegym\github\codegym\CSharp\ThuatToanSapXep\ASP_selection_sort\bin\Debug\netcoreapp3.1\ASP_selection_sort.exe
+D:\codegym\github\codegym\CSharp\ThuatToanSapXep\ASP_selection_sort\bin\Debug\netcoreapp3.1\ASP_selection_sort.deps.json
+D:\codegym\github\codegym\CSharp\ThuatToanSapXep\ASP_selection_sort\bin\Debug\netcoreapp3.1\ASP_selection_sort.runtimeconfig.json
+D:\codegym\github\codegym\CSharp\ThuatToanSapXep\ASP_selection_sort\bin\Debug\netcoreapp3.1\ASP_selection_sort.runtimeconfig.dev.json
+D:\codegym\github\codegym\CSharp\ThuatToanSapXep\ASP_selection_sort\bin\Debug\netcoreapp3.1\ASP_selection_sort.dll
+D:\codegym\github\codegym\CSharp\ThuatToanSapXep\ASP_selection_sort\bin\Debug\netcoreapp3.1\ASP_selection_sort.pdb
+D:\codegym\github\codegym\CSharp\ThuatToanSapXep\ASP_selection_sort\obj\Debug\netcoreapp3.1\ASP_selection_sort.csproj.CoreCompileInputs.cache
+D:\codegym\github\codegym\CSharp\ThuatToanSapXep\ASP_selection_sort\obj\Debug\netcoreapp3.1\ASP_selection_sort.AssemblyInfoInputs.cache
+D:\codegym\github\codegym\CSharp\ThuatToanSapXep\ASP_selection_sort\obj\Debug\netcoreapp3.1\ASP_selection_sort.AssemblyInfo.cs
+D:\codegym\github\codegym\CSharp\ThuatToanSapXep\ASP_selection_sort\obj\Debug\netcoreapp3.1\ASP_selection_sort.dll
+D:\codegym\github\codegym\CSharp\ThuatToanSapXep\ASP_selection_sort\obj\Debug\netcoreapp3.1\ASP_selection_sort.pdb
+D:\codegym\github\codegym\CSharp\ThuatToanSapXep\ASP_selection_sort\obj\Debug\netcoreapp3.1\ASP_selection_sort.genruntimeconfig.cache
