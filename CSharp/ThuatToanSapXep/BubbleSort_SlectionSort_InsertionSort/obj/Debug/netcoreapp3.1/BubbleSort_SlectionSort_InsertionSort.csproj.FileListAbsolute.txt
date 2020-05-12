@@ -1,0 +1,13 @@
+D:\codegym\github\codegym\CSharp\ThuatToanSapXep\BubbleSort_SlectionSort_InsertionSort\bin\Debug\netcoreapp3.1\BubbleSort_SlectionSort_InsertionSort.exe
+D:\codegym\github\codegym\CSharp\ThuatToanSapXep\BubbleSort_SlectionSort_InsertionSort\bin\Debug\netcoreapp3.1\BubbleSort_SlectionSort_InsertionSort.deps.json
+D:\codegym\github\codegym\CSharp\ThuatToanSapXep\BubbleSort_SlectionSort_InsertionSort\bin\Debug\netcoreapp3.1\BubbleSort_SlectionSort_InsertionSort.runtimeconfig.json
+D:\codegym\github\codegym\CSharp\ThuatToanSapXep\BubbleSort_SlectionSort_InsertionSort\bin\Debug\netcoreapp3.1\BubbleSort_SlectionSort_InsertionSort.runtimeconfig.dev.json
+D:\codegym\github\codegym\CSharp\ThuatToanSapXep\BubbleSort_SlectionSort_InsertionSort\bin\Debug\netcoreapp3.1\BubbleSort_SlectionSort_InsertionSort.dll
+D:\codegym\github\codegym\CSharp\ThuatToanSapXep\BubbleSort_SlectionSort_InsertionSort\bin\Debug\netcoreapp3.1\BubbleSort_SlectionSort_InsertionSort.pdb
+D:\codegym\github\codegym\CSharp\ThuatToanSapXep\BubbleSort_SlectionSort_InsertionSort\obj\Debug\netcoreapp3.1\BubbleSort_SlectionSort_InsertionSort.csprojAssemblyReference.cache
+D:\codegym\github\codegym\CSharp\ThuatToanSapXep\BubbleSort_SlectionSort_InsertionSort\obj\Debug\netcoreapp3.1\BubbleSort_SlectionSort_InsertionSort.csproj.CoreCompileInputs.cache
+D:\codegym\github\codegym\CSharp\ThuatToanSapXep\BubbleSort_SlectionSort_InsertionSort\obj\Debug\netcoreapp3.1\BubbleSort_SlectionSort_InsertionSort.AssemblyInfoInputs.cache
+D:\codegym\github\codegym\CSharp\ThuatToanSapXep\BubbleSort_SlectionSort_InsertionSort\obj\Debug\netcoreapp3.1\BubbleSort_SlectionSort_InsertionSort.AssemblyInfo.cs
+D:\codegym\github\codegym\CSharp\ThuatToanSapXep\BubbleSort_SlectionSort_InsertionSort\obj\Debug\netcoreapp3.1\BubbleSort_SlectionSort_InsertionSort.dll
+D:\codegym\github\codegym\CSharp\ThuatToanSapXep\BubbleSort_SlectionSort_InsertionSort\obj\Debug\netcoreapp3.1\BubbleSort_SlectionSort_InsertionSort.pdb
+D:\codegym\github\codegym\CSharp\ThuatToanSapXep\BubbleSort_SlectionSort_InsertionSort\obj\Debug\netcoreapp3.1\BubbleSort_SlectionSort_InsertionSort.genruntimeconfig.cache
