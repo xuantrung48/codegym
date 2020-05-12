@@ -1,0 +1,12 @@
+D:\codegym\github\codegym\CSharp\ThuatToanSapXep\BubbleSort\bin\Debug\netcoreapp3.1\BubbleSort.exe
+D:\codegym\github\codegym\CSharp\ThuatToanSapXep\BubbleSort\bin\Debug\netcoreapp3.1\BubbleSort.deps.json
+D:\codegym\github\codegym\CSharp\ThuatToanSapXep\BubbleSort\bin\Debug\netcoreapp3.1\BubbleSort.runtimeconfig.json
+D:\codegym\github\codegym\CSharp\ThuatToanSapXep\BubbleSort\bin\Debug\netcoreapp3.1\BubbleSort.runtimeconfig.dev.json
+D:\codegym\github\codegym\CSharp\ThuatToanSapXep\BubbleSort\bin\Debug\netcoreapp3.1\BubbleSort.dll
+D:\codegym\github\codegym\CSharp\ThuatToanSapXep\BubbleSort\bin\Debug\netcoreapp3.1\BubbleSort.pdb
+D:\codegym\github\codegym\CSharp\ThuatToanSapXep\BubbleSort\obj\Debug\netcoreapp3.1\BubbleSort.csproj.CoreCompileInputs.cache
+D:\codegym\github\codegym\CSharp\ThuatToanSapXep\BubbleSort\obj\Debug\netcoreapp3.1\BubbleSort.AssemblyInfoInputs.cache
+D:\codegym\github\codegym\CSharp\ThuatToanSapXep\BubbleSort\obj\Debug\netcoreapp3.1\BubbleSort.AssemblyInfo.cs
+D:\codegym\github\codegym\CSharp\ThuatToanSapXep\BubbleSort\obj\Debug\netcoreapp3.1\BubbleSort.dll
+D:\codegym\github\codegym\CSharp\ThuatToanSapXep\BubbleSort\obj\Debug\netcoreapp3.1\BubbleSort.pdb
+D:\codegym\github\codegym\CSharp\ThuatToanSapXep\BubbleSort\obj\Debug\netcoreapp3.1\BubbleSort.genruntimeconfig.cache
