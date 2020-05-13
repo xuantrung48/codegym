@@ -1,0 +1,12 @@
+D:\codegym\github\codegym\CSharp\ThuatToanSapXep\SelectionSort\bin\Debug\netcoreapp3.1\SelectionSort.exe
+D:\codegym\github\codegym\CSharp\ThuatToanSapXep\SelectionSort\bin\Debug\netcoreapp3.1\SelectionSort.deps.json
+D:\codegym\github\codegym\CSharp\ThuatToanSapXep\SelectionSort\bin\Debug\netcoreapp3.1\SelectionSort.runtimeconfig.json
+D:\codegym\github\codegym\CSharp\ThuatToanSapXep\SelectionSort\bin\Debug\netcoreapp3.1\SelectionSort.runtimeconfig.dev.json
+D:\codegym\github\codegym\CSharp\ThuatToanSapXep\SelectionSort\bin\Debug\netcoreapp3.1\SelectionSort.dll
+D:\codegym\github\codegym\CSharp\ThuatToanSapXep\SelectionSort\bin\Debug\netcoreapp3.1\SelectionSort.pdb
+D:\codegym\github\codegym\CSharp\ThuatToanSapXep\SelectionSort\obj\Debug\netcoreapp3.1\SelectionSort.csproj.CoreCompileInputs.cache
+D:\codegym\github\codegym\CSharp\ThuatToanSapXep\SelectionSort\obj\Debug\netcoreapp3.1\SelectionSort.AssemblyInfoInputs.cache
+D:\codegym\github\codegym\CSharp\ThuatToanSapXep\SelectionSort\obj\Debug\netcoreapp3.1\SelectionSort.AssemblyInfo.cs
+D:\codegym\github\codegym\CSharp\ThuatToanSapXep\SelectionSort\obj\Debug\netcoreapp3.1\SelectionSort.dll
+D:\codegym\github\codegym\CSharp\ThuatToanSapXep\SelectionSort\obj\Debug\netcoreapp3.1\SelectionSort.pdb
+D:\codegym\github\codegym\CSharp\ThuatToanSapXep\SelectionSort\obj\Debug\netcoreapp3.1\SelectionSort.genruntimeconfig.cache
