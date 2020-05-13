@@ -1,0 +1,13 @@
+D:\codegym\github\codegym\CSharp\ThuatToanSapXep\InsertionSort\bin\Debug\netcoreapp3.1\InsertionSort.exe
+D:\codegym\github\codegym\CSharp\ThuatToanSapXep\InsertionSort\bin\Debug\netcoreapp3.1\InsertionSort.deps.json
+D:\codegym\github\codegym\CSharp\ThuatToanSapXep\InsertionSort\bin\Debug\netcoreapp3.1\InsertionSort.runtimeconfig.json
+D:\codegym\github\codegym\CSharp\ThuatToanSapXep\InsertionSort\bin\Debug\netcoreapp3.1\InsertionSort.runtimeconfig.dev.json
+D:\codegym\github\codegym\CSharp\ThuatToanSapXep\InsertionSort\bin\Debug\netcoreapp3.1\InsertionSort.dll
+D:\codegym\github\codegym\CSharp\ThuatToanSapXep\InsertionSort\bin\Debug\netcoreapp3.1\InsertionSort.pdb
+D:\codegym\github\codegym\CSharp\ThuatToanSapXep\InsertionSort\obj\Debug\netcoreapp3.1\InsertionSort.csprojAssemblyReference.cache
+D:\codegym\github\codegym\CSharp\ThuatToanSapXep\InsertionSort\obj\Debug\netcoreapp3.1\InsertionSort.csproj.CoreCompileInputs.cache
+D:\codegym\github\codegym\CSharp\ThuatToanSapXep\InsertionSort\obj\Debug\netcoreapp3.1\InsertionSort.AssemblyInfoInputs.cache
+D:\codegym\github\codegym\CSharp\ThuatToanSapXep\InsertionSort\obj\Debug\netcoreapp3.1\InsertionSort.AssemblyInfo.cs
+D:\codegym\github\codegym\CSharp\ThuatToanSapXep\InsertionSort\obj\Debug\netcoreapp3.1\InsertionSort.dll
+D:\codegym\github\codegym\CSharp\ThuatToanSapXep\InsertionSort\obj\Debug\netcoreapp3.1\InsertionSort.pdb
+D:\codegym\github\codegym\CSharp\ThuatToanSapXep\InsertionSort\obj\Debug\netcoreapp3.1\InsertionSort.genruntimeconfig.cache
