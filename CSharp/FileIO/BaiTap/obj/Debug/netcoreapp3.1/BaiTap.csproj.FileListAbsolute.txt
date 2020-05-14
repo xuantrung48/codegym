@@ -1,0 +1,13 @@
+D:\codegym\github\codegym\CSharp\FileIO\BaiTap\bin\Debug\netcoreapp3.1\BaiTap.exe
+D:\codegym\github\codegym\CSharp\FileIO\BaiTap\bin\Debug\netcoreapp3.1\BaiTap.deps.json
+D:\codegym\github\codegym\CSharp\FileIO\BaiTap\bin\Debug\netcoreapp3.1\BaiTap.runtimeconfig.json
+D:\codegym\github\codegym\CSharp\FileIO\BaiTap\bin\Debug\netcoreapp3.1\BaiTap.runtimeconfig.dev.json
+D:\codegym\github\codegym\CSharp\FileIO\BaiTap\bin\Debug\netcoreapp3.1\BaiTap.dll
+D:\codegym\github\codegym\CSharp\FileIO\BaiTap\bin\Debug\netcoreapp3.1\BaiTap.pdb
+D:\codegym\github\codegym\CSharp\FileIO\BaiTap\obj\Debug\netcoreapp3.1\BaiTap.csprojAssemblyReference.cache
+D:\codegym\github\codegym\CSharp\FileIO\BaiTap\obj\Debug\netcoreapp3.1\BaiTap.csproj.CoreCompileInputs.cache
+D:\codegym\github\codegym\CSharp\FileIO\BaiTap\obj\Debug\netcoreapp3.1\BaiTap.AssemblyInfoInputs.cache
+D:\codegym\github\codegym\CSharp\FileIO\BaiTap\obj\Debug\netcoreapp3.1\BaiTap.AssemblyInfo.cs
+D:\codegym\github\codegym\CSharp\FileIO\BaiTap\obj\Debug\netcoreapp3.1\BaiTap.dll
+D:\codegym\github\codegym\CSharp\FileIO\BaiTap\obj\Debug\netcoreapp3.1\BaiTap.pdb
+D:\codegym\github\codegym\CSharp\FileIO\BaiTap\obj\Debug\netcoreapp3.1\BaiTap.genruntimeconfig.cache
