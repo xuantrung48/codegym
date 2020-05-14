@@ -1,8 +1,10 @@
-Tong gia tri trong ma tran: 51
-So luong nguyen to trong ma tran: 9
-So luong so le trong ma tran: 7
-Tong duong bien trong ma tran: 42
-Ma tran sau khi cac gia tri x 3: 
-6 9 15 9 
-6 18 9 18 
-9 9 21 24 
+Tổng giá trị trong ma trận: 173
+Số lượng số nguyên tố trong ma trận: 26
+Số lượng số lẻ trong ma trận: 19
+Tổng giá trị các đường biên: 92
+Ma trận với các giá trị * 3: 
+9	9	21	12	24	27	6	
+9	21	12	24	27	0	3	
+6	21	15	18	27	9	12	
+12	21	12	27	0	9	3	
+9	21	12	24	18	27	12	
