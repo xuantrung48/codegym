@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace JSON
+﻿namespace JSON
 {
     class Program
     {

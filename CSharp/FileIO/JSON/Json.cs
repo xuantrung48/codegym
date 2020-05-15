@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using Newtonsoft.Json;
 
@@ -18,17 +17,15 @@ namespace JSON
             inputJsonFile = inputJsonFilename;
             output1JsonFile = output1JsonFilename;
             output2JsonFile = output2JsonFilename;
-            Read();
+            ReadJsonFile();
             WriteToOutput1();
             WriteToOutput2();
         }
-        public void Read()
+        public void ReadJsonFile()
         {
             using StreamReader sr = File.OpenText(path + inputJsonFile);
             var data = sr.ReadToEnd();
             json = JsonConvert.DeserializeObject<NumbersList>(data);
-            foreach (var item in json.Numbers)
-                Console.WriteLine(item);
         }
         public void WriteToOutput1()
         {
