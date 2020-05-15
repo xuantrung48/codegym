@@ -1,5 +1,5 @@
 Tổng giá trị trong ma trận: 173
-Số lượng số nguyên tố trong ma trận: 26
+Số lượng số nguyên tố trong ma trận: 14
 Số lượng số lẻ trong ma trận: 19
 Tổng giá trị các đường biên: 92
 Ma trận với các giá trị * 3: 

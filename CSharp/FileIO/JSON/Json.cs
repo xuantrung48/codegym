@@ -34,24 +34,9 @@ namespace JSON
             {
                 Numbers = new List<Numbers>()
                 {
-                    new Numbers()
-                    {
-                        a = json.Numbers[0].a * 2,
-                        b = json.Numbers[0].b * 2,
-                        c = json.Numbers[0].c * 2
-                    },
-                    new Numbers()
-                    {
-                        a = json.Numbers[1].a * 2,
-                        b = json.Numbers[1].b * 2,
-                        c = json.Numbers[1].c * 2
-                    },
-                    new Numbers()
-                    {
-                        a = json.Numbers[2].a * 2,
-                        b = json.Numbers[2].b * 2,
-                        c = json.Numbers[2].c * 2
-                    }
+                    json.Numbers[0].MultiWith(2),
+                    json.Numbers[1].MultiWith(2),
+                    json.Numbers[2].MultiWith(2)
                 },
 
             };

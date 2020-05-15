@@ -15,6 +15,7 @@ namespace FileIO
             this.inputFileName = inputFileName;
             this.outputFileName = outputFileName;
             ReadInputFile();
+            WriteOutputFile();
         }
         public void ReadInputFile()
         {

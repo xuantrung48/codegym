@@ -7,7 +7,16 @@
         public int c { get; set; }
         public override string ToString()
         {
-            return $"a: {a}, b: {b}, c{c}";
+            return $"{{a: {a}, b: {b}, c: {c}}},";
+        }
+        public Numbers MultiWith(int number)
+        {
+            return new Numbers()
+            {
+                a = a * number,
+                b = b * number,
+                c = c * number
+            };
         }
     }
 }
