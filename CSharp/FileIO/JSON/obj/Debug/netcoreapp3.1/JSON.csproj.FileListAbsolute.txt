@@ -1,0 +1,15 @@
+D:\codegym\github\codegym\CSharp\FileIO\JSON\bin\Debug\netcoreapp3.1\JSON.exe
+D:\codegym\github\codegym\CSharp\FileIO\JSON\obj\Debug\netcoreapp3.1\JSON.csprojAssemblyReference.cache
+D:\codegym\github\codegym\CSharp\FileIO\JSON\obj\Debug\netcoreapp3.1\JSON.AssemblyInfoInputs.cache
+D:\codegym\github\codegym\CSharp\FileIO\JSON\obj\Debug\netcoreapp3.1\JSON.AssemblyInfo.cs
+D:\codegym\github\codegym\CSharp\FileIO\JSON\bin\Debug\netcoreapp3.1\JSON.deps.json
+D:\codegym\github\codegym\CSharp\FileIO\JSON\bin\Debug\netcoreapp3.1\JSON.runtimeconfig.json
+D:\codegym\github\codegym\CSharp\FileIO\JSON\bin\Debug\netcoreapp3.1\JSON.runtimeconfig.dev.json
+D:\codegym\github\codegym\CSharp\FileIO\JSON\bin\Debug\netcoreapp3.1\JSON.dll
+D:\codegym\github\codegym\CSharp\FileIO\JSON\bin\Debug\netcoreapp3.1\JSON.pdb
+D:\codegym\github\codegym\CSharp\FileIO\JSON\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+D:\codegym\github\codegym\CSharp\FileIO\JSON\obj\Debug\netcoreapp3.1\JSON.csproj.CoreCompileInputs.cache
+D:\codegym\github\codegym\CSharp\FileIO\JSON\obj\Debug\netcoreapp3.1\JSON.csproj.CopyComplete
+D:\codegym\github\codegym\CSharp\FileIO\JSON\obj\Debug\netcoreapp3.1\JSON.dll
+D:\codegym\github\codegym\CSharp\FileIO\JSON\obj\Debug\netcoreapp3.1\JSON.pdb
+D:\codegym\github\codegym\CSharp\FileIO\JSON\obj\Debug\netcoreapp3.1\JSON.genruntimeconfig.cache
