@@ -19,8 +19,8 @@ namespace JSON
             output1JsonFile = output1JsonFilename;
             output2JsonFile = output2JsonFilename;
             Read();
-            Write1();
-            Write2();
+            WriteToOutput1();
+            WriteToOutput2();
         }
         public void Read()
         {
@@ -30,14 +30,14 @@ namespace JSON
             foreach (var item in json.Numbers)
                 Console.WriteLine(item);
         }
-        public void Write1()
+        public void WriteToOutput1()
         {
             using StreamWriter sw = File.CreateText(path + output1JsonFile);
             TotalNumbers payload2 = new TotalNumbers(json);
             var obj = JsonConvert.SerializeObject((object)payload2);
             sw.WriteLine(obj);
         }
-        public void Write2()
+        public void WriteToOutput2()
         {
             using StreamWriter sw = File.CreateText(path + output2JsonFile);
             NumbersList payload1 = new NumbersList()
