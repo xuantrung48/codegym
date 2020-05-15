@@ -9,28 +9,38 @@ namespace JSON
     {
         public string path;
         public string inputJsonFile;
-        public string outputJsonFile;
-        public Payload json;
-        public Json(string pathToFolder, string inputJsonFilename, string outputJsonFilename)
+        public string output1JsonFile;
+        public string output2JsonFile;
+        public NumbersList json;
+        public Json(string pathToFolder, string inputJsonFilename, string output1JsonFilename, string output2JsonFilename)
         {
             path = pathToFolder;
             inputJsonFile = inputJsonFilename;
-            outputJsonFile = outputJsonFilename;
+            output1JsonFile = output1JsonFilename;
+            output2JsonFile = output2JsonFilename;
             Read();
-            Write();
+            Write1();
+            Write2();
         }
         public void Read()
         {
             using StreamReader sr = File.OpenText(path + inputJsonFile);
             var data = sr.ReadToEnd();
-            json = JsonConvert.DeserializeObject<Payload>(data);
+            json = JsonConvert.DeserializeObject<NumbersList>(data);
             foreach (var item in json.Numbers)
                 Console.WriteLine(item);
         }
-        public void Write()
+        public void Write1()
         {
-            using StreamWriter sw = File.CreateText(path + outputJsonFile);
-            Payload newPayload = new Payload()
+            using StreamWriter sw = File.CreateText(path + output1JsonFile);
+            TotalNumbers payload2 = new TotalNumbers(json);
+            var obj = JsonConvert.SerializeObject((object)payload2);
+            sw.WriteLine(obj);
+        }
+        public void Write2()
+        {
+            using StreamWriter sw = File.CreateText(path + output2JsonFile);
+            NumbersList payload1 = new NumbersList()
             {
                 Numbers = new List<Numbers>()
                 {
@@ -40,7 +50,7 @@ namespace JSON
                 },
 
             };
-            var obj = JsonConvert.SerializeObject((object)newPayload);
+            var obj = JsonConvert.SerializeObject((object)payload1);
             sw.WriteLine(obj);
         }
     }

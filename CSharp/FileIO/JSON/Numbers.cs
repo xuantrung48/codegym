@@ -18,5 +18,9 @@
                 c = c * number
             };
         }
+        public int Total()
+        {
+            return a + b + c;
+        }
     }
 }

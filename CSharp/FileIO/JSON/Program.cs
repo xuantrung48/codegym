@@ -6,7 +6,7 @@ namespace JSON
     {
         static void Main(string[] args)
         {
-            Json json = new Json(@"D:\codegym\github\codegym\CSharp\FileIO\JSON\Files\", "input.json", "output.json");
+            Json json = new Json(@"D:\codegym\github\codegym\CSharp\FileIO\JSON\Files\", "input.json", "output1.json", "output2.json");
         }
     }
 }

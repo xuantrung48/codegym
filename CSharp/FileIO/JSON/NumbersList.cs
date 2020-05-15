@@ -2,7 +2,7 @@
 
 namespace JSON
 {
-    class Payload
+    class NumbersList
     {
         public List<Numbers> Numbers { get; set; }
     }
