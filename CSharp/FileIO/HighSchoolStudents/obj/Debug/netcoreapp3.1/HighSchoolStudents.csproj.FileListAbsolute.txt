@@ -1,0 +1,15 @@
+D:\codegym\github\codegym\CSharp\FileIO\HighSchoolStudents\bin\Debug\netcoreapp3.1\HighSchoolStudents.exe
+D:\codegym\github\codegym\CSharp\FileIO\HighSchoolStudents\bin\Debug\netcoreapp3.1\HighSchoolStudents.deps.json
+D:\codegym\github\codegym\CSharp\FileIO\HighSchoolStudents\bin\Debug\netcoreapp3.1\HighSchoolStudents.runtimeconfig.json
+D:\codegym\github\codegym\CSharp\FileIO\HighSchoolStudents\bin\Debug\netcoreapp3.1\HighSchoolStudents.runtimeconfig.dev.json
+D:\codegym\github\codegym\CSharp\FileIO\HighSchoolStudents\bin\Debug\netcoreapp3.1\HighSchoolStudents.dll
+D:\codegym\github\codegym\CSharp\FileIO\HighSchoolStudents\bin\Debug\netcoreapp3.1\HighSchoolStudents.pdb
+D:\codegym\github\codegym\CSharp\FileIO\HighSchoolStudents\obj\Debug\netcoreapp3.1\HighSchoolStudents.AssemblyInfoInputs.cache
+D:\codegym\github\codegym\CSharp\FileIO\HighSchoolStudents\obj\Debug\netcoreapp3.1\HighSchoolStudents.AssemblyInfo.cs
+D:\codegym\github\codegym\CSharp\FileIO\HighSchoolStudents\obj\Debug\netcoreapp3.1\HighSchoolStudents.dll
+D:\codegym\github\codegym\CSharp\FileIO\HighSchoolStudents\obj\Debug\netcoreapp3.1\HighSchoolStudents.pdb
+D:\codegym\github\codegym\CSharp\FileIO\HighSchoolStudents\obj\Debug\netcoreapp3.1\HighSchoolStudents.genruntimeconfig.cache
+D:\codegym\github\codegym\CSharp\FileIO\HighSchoolStudents\obj\Debug\netcoreapp3.1\HighSchoolStudents.csprojAssemblyReference.cache
+D:\codegym\github\codegym\CSharp\FileIO\HighSchoolStudents\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+D:\codegym\github\codegym\CSharp\FileIO\HighSchoolStudents\obj\Debug\netcoreapp3.1\HighSchoolStudents.csproj.CoreCompileInputs.cache
+D:\codegym\github\codegym\CSharp\FileIO\HighSchoolStudents\obj\Debug\netcoreapp3.1\HighSchoolStudents.csproj.CopyComplete

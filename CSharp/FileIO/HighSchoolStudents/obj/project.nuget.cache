@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "MBHQt4UOF+tPWwPKSmfg0xcGmwr2G+i90fXXwqxoikPRP3meNmcpT/OVxMxcecry1hbHxx73J6R6436C+XahtQ==",
+  "success": true,
+  "projectFilePath": "D:\\codegym\\github\\codegym\\CSharp\\FileIO\\HighSchoolStudents\\HighSchoolStudents.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Nhung\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

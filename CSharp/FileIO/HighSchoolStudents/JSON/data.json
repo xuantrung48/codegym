@@ -1,0 +1,44 @@
+﻿{
+  "DanhSachHocSinh": [
+    {
+      "MaHS": 1,
+      "HoTen": "A",
+      "GioiTinh": true,
+      "Lop": "10A",
+      "CacMonHoc": [
+        {
+          "TenMonHoc": "Toán",
+          "DiemThi": 7.5
+        },
+        {
+          "TenMonHoc": "Lý",
+          "DiemThi": 7.5
+        },
+        {
+          "TenMonHoc": "Hóa",
+          "DiemThi": 7.6
+        }
+      ]
+    },
+    {
+      "MaHS": 2,
+      "HoTen": "B",
+      "GioiTinh": false,
+      "Lop": "10A",
+      "CacMonHoc": [
+        {
+          "TenMonHoc": "Toán",
+          "DiemThi": 8.5
+        },
+        {
+          "TenMonHoc": "Lý",
+          "DiemThi": 8.6
+        },
+        {
+          "TenMonHoc": "Hóa",
+          "DiemThi": 8.8
+        }
+      ]
+    }
+  ]
+}
