@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace HighSchoolStudents.Models
+﻿namespace HighSchoolStudents.Models
 {
     class KetQuaDuLieuHocSinh
     {

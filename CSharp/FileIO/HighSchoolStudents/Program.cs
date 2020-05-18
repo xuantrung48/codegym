@@ -18,7 +18,7 @@ namespace HighSchoolStudents
             {
                 Console.Write($"MENU:\n" +
                     $"1. Thêm học sinh\n" +
-                    $"2. Tạo file danh sách học sinh đã xếp hạng\n" +
+                    $"2. Tạo file JSON chứa danh sách học sinh đã xếp hạng\n" +
                     $"3. Thoát\n" +
                     $"____________________________________\n" +
                     $"Lựa chọn của bạn: ");
@@ -37,6 +37,7 @@ namespace HighSchoolStudents
                 case "2":
                     jsonService.WriteJson();
                     Console.WriteLine("Đã tạo!");
+                    Console.WriteLine("____________________________________");
                     break;
             }
         }

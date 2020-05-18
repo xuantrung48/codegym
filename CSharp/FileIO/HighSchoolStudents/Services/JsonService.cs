@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.IO;
-using System.Text.Json.Serialization;
 using Newtonsoft.Json;
 using HighSchoolStudents.Models;
 using HighSchoolStudents.Utilities;
@@ -38,16 +35,15 @@ namespace HighSchoolStudents
 
             foreach (var item in json.danhSachHocSinh)
             {
-                var hocSinh = new KetQuaDuLieuHocSinh();
-                hocSinh.MaHS = item.MaHS;
-                hocSinh.HoTen = item.HoTen;
-                if (item.GioiTinh == true)
-                    hocSinh.GioiTinh = "nam";
-                else
-                    hocSinh.GioiTinh = "nữ";
-                hocSinh.Lop = item.Lop;
-                hocSinh.DiemTrungBinh = item.DiemTrungBinh;
-                hocSinh.HocLuc = item.HocLuc;
+                var hocSinh = new KetQuaDuLieuHocSinh()
+                {
+                    MaHS = item.MaHS,
+                    HoTen = item.HoTen,
+                    GioiTinh = item.GioiTinh ? "nam" : "nữ",
+                    Lop = item.Lop,
+                    DiemTrungBinh = item.DiemTrungBinh,
+                    HocLuc = item.HocLuc
+                };
                 danhSachXepHangHocSinh.DanhSachXepHangHocSinh.Add(hocSinh);
             }
             danhSachXepHangHocSinh.DanhSachXepHangHocSinh.Sort(new CustomSort());
