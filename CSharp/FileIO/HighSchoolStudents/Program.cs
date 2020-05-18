@@ -16,15 +16,18 @@ namespace HighSchoolStudents
             string option = "";
             do
             {
-                Console.Write($"MENU:\n" +
+                Console.Write($"____________________________________\n"+
+                    $"MENU:\n" +
                     $"1. Thêm học sinh\n" +
                     $"2. Tạo file JSON chứa danh sách học sinh đã xếp hạng\n" +
-                    $"3. Thoát\n" +
+                    $"3. Hiển thị danh sách học sinh\n" +
+                    $"4. Hiển thị danh sách học sinh theo xếp hạng điểm TB\n" +
+                    $"5. Thoát\n" +
                     $"____________________________________\n" +
                     $"Lựa chọn của bạn: ");
                 option = Console.ReadLine();
                 Process(option);
-            } while (option != "3");
+            } while (option != "5");
         }
         static void Process(string option)
         {
@@ -35,9 +38,17 @@ namespace HighSchoolStudents
                     AddStudent();
                     break;
                 case "2":
+                    Console.Clear();
                     jsonService.WriteJson();
                     Console.WriteLine("Đã tạo!");
-                    Console.WriteLine("____________________________________");
+                    break;
+                case "3":
+                    Console.Clear();
+                    jsonService.ShowJsonInput();
+                    break;
+                case "4":
+                    Console.Clear();
+                    jsonService.ShowJsonOutput();
                     break;
             }
         }
@@ -47,16 +58,26 @@ namespace HighSchoolStudents
             string hoTen = Console.ReadLine();
 
             bool gioiTinh = true;
-            string gioiTinhString = "";
+            string gioiTinhString;
+            bool gioiTinhIsNotValid = false;
             do
             {
+                if (gioiTinhIsNotValid)
+                    Console.WriteLine("Bạn đã nhập không đúng giới tính. Xin nhập lại!");
+                gioiTinhIsNotValid = true;
                 Console.Write("Giới tính (nam/nữ): ");
                 gioiTinhString = Console.ReadLine();
                 if (gioiTinhString == "nam" || gioiTinhString == "Nam")
+                {
                     gioiTinh = true;
+                    gioiTinhIsNotValid = false;
+                }
                 if (gioiTinhString == "Nữ" || gioiTinhString == "nữ" || gioiTinhString == "Nu" || gioiTinhString == "nu")
+                {
                     gioiTinh = false;
-            } while (gioiTinhString != "nam" && gioiTinhString != "Nam" && gioiTinhString != "Nữ" && gioiTinhString != "nữ" && gioiTinhString != "Nu" && gioiTinhString != "nu");
+                    gioiTinhIsNotValid = false;
+                }
+            } while (gioiTinhIsNotValid);
             Console.Write("Lớp: ");
             string lop = Console.ReadLine();
             Console.Write("Điểm toán: ");
@@ -98,6 +119,15 @@ namespace HighSchoolStudents
             };
             HocSinh hocSinh = new HocSinh(hoTen, gioiTinh, lop, cacMonHoc);
             jsonService.json.danhSachHocSinh.Add(hocSinh);
+            jsonService.JsonXepHangHocSinh.DanhSachXepHangHocSinh.Add(new KetQuaDuLieuHocSinh()
+            {
+                MaHS = hocSinh.MaHS,
+                HoTen = hocSinh.HoTen,
+                Lop = hocSinh.Lop,
+                GioiTinh = hocSinh.GioiTinh ? "nam" : "nữ",
+                DiemTrungBinh = hocSinh.DiemTrungBinh,
+                HocLuc = hocSinh.HocLuc
+            });
         }
     }
 }
