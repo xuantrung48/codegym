@@ -32,20 +32,24 @@ namespace HighSchoolStudents
         public void WriteJson()
         {
             using StreamWriter sw = File.CreateText(path + outputFile);
-            List<DuLieuHocSinhDauRa> danhSachHocSinhTheoThuHang = new List<DuLieuHocSinhDauRa>();
+            XepHangHocSinh danhSachXepHangHocSinh = new XepHangHocSinh()
+            {
+                DanhSachXepHangHocSinh = new List<KetQuaDuLieuHocSinh>()
+            };
+
             foreach (var item in json.danhSachHocSinh)
             {
-                var hocSinh = new DuLieuHocSinhDauRa();
+                var hocSinh = new KetQuaDuLieuHocSinh();
                 hocSinh.MaHS = item.MaHS;
                 hocSinh.HoTen = item.HoTen;
-                hocSinh.Lop = item.Lop;
                 hocSinh.GioiTinh = item.GioiTinh;
+                hocSinh.Lop = item.Lop;
                 hocSinh.DiemTrungBinh = item.DiemTrungBinh;
                 hocSinh.HocLuc = item.HocLuc;
-                danhSachHocSinhTheoThuHang.Add(hocSinh);
+                danhSachXepHangHocSinh.DanhSachXepHangHocSinh.Add(hocSinh);
             }
-            danhSachHocSinhTheoThuHang.Sort(new CustomSort());
-            var data = JsonConvert.SerializeObject(danhSachHocSinhTheoThuHang);
+            danhSachXepHangHocSinh.DanhSachXepHangHocSinh.Sort(new CustomSort());
+            var data = JsonConvert.SerializeObject(danhSachXepHangHocSinh);
             sw.WriteLine(data);
         }
     }

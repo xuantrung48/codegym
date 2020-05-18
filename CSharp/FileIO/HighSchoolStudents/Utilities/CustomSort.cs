@@ -6,9 +6,9 @@ using System.Text;
 
 namespace HighSchoolStudents.Utilities
 {
-    class CustomSort : IComparer<DuLieuHocSinhDauRa>
+    class CustomSort : IComparer<KetQuaDuLieuHocSinh>
     {
-        public int Compare([AllowNull] DuLieuHocSinhDauRa x, [AllowNull] DuLieuHocSinhDauRa y)
+        public int Compare([AllowNull] KetQuaDuLieuHocSinh x, [AllowNull] KetQuaDuLieuHocSinh y)
         {
             if (x.DiemTrungBinh < y.DiemTrungBinh)
                 return 1;

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace HighSchoolStudents.Models
 {
-    class DuLieuHocSinhDauRa
+    class KetQuaDuLieuHocSinh
     {
         public int MaHS { get; set; }
         public string HoTen { get; set; }
