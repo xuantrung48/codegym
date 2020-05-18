@@ -21,7 +21,6 @@ namespace HighSchoolStudents
             inputFile = inputFileName;
             outputFile = outputFileName;
             ReadJson();
-            WriteJson();
         }
         public void ReadJson()
         {
@@ -42,7 +41,10 @@ namespace HighSchoolStudents
                 var hocSinh = new KetQuaDuLieuHocSinh();
                 hocSinh.MaHS = item.MaHS;
                 hocSinh.HoTen = item.HoTen;
-                hocSinh.GioiTinh = item.GioiTinh;
+                if (item.GioiTinh == true)
+                    hocSinh.GioiTinh = "nam";
+                else
+                    hocSinh.GioiTinh = "nữ";
                 hocSinh.Lop = item.Lop;
                 hocSinh.DiemTrungBinh = item.DiemTrungBinh;
                 hocSinh.HocLuc = item.HocLuc;

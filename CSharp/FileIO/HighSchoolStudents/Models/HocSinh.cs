@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using HighSchoolStudents;
 
 namespace HighSchoolStudents.Models
 {
@@ -16,7 +17,17 @@ namespace HighSchoolStudents.Models
         public double DiemTrungBinh;
         public HocSinh(string hoTen, bool gioiTinh, string lop, List<MonHoc> cacMonHoc)
         {
-            MaHS = ++counter;
+            bool MaHSExists;
+            do
+            {
+                MaHSExists = false;
+                ++counter;
+                if (Program.jsonService != null)
+                    foreach(var item in Program.jsonService.json.danhSachHocSinh)
+                        if (counter == item.MaHS)
+                            MaHSExists = true;
+            } while (MaHSExists);
+            MaHS = counter;
             HoTen = hoTen;
             GioiTinh = gioiTinh;
             Lop = lop;

@@ -1,7 +1,7 @@
 ﻿{
   "DanhSachHocSinh": [
     {
-      "MaHS": 1,
+      "MaHS": 2,
       "HoTen": "A",
       "GioiTinh": true,
       "Lop": "10A",
@@ -21,7 +21,7 @@
       ]
     },
     {
-      "MaHS": 2,
+      "MaHS": 3,
       "HoTen": "B",
       "GioiTinh": false,
       "Lop": "10A",
