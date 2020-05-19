@@ -1,0 +1,23 @@
+{
+  "table": "2",
+  "timeIn": "19/05/2020 07:17 CH",
+  "timeOut": "19/05/2020 07:19 CH",
+  "orderDetails": [
+    {
+      "drinkName": "Milk Coffee",
+      "price": 20000,
+      "amount": 3
+    },
+    {
+      "drinkName": "Espresso",
+      "price": 25000,
+      "amount": 4
+    },
+    {
+      "drinkName": "Cappuccino",
+      "price": 25000,
+      "amount": 2
+    }
+  ],
+  "Total": 210000
+}

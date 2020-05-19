@@ -1,5 +1,4 @@
-﻿
-namespace QuanLyQuanCaPhe.Models
+﻿namespace QuanLyQuanCaPhe.Models
 {
     class orderDrink
     {

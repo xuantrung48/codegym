@@ -2,28 +2,48 @@
 using QuanLyQuanCaPhe.Services;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Text;
 
 namespace QuanLyQuanCaPhe
 {
     class Program
     {
-        static string tableId;
+        static string table;
         static BillingService orders;
         static void Main(string[] args)
         {
-            orders = new BillingService(@"D:\codegym\github\codegym\CSharp\FileIO\QuanLyQuanCaPhe\Json\", "customers.json", "Menu.json", @"D:\codegym\github\codegym\CSharp\FileIO\QuanLyQuanCaPhe\JsonBills\");
+            orders = new BillingService(@"D:\codegym\github\codegym\CSharp\FileIO\QuanLyQuanCaPhe\Json\", "customers.json", "Menu.json", "JsonBills");
             Console.OutputEncoding = Encoding.UTF8;
             Console.InputEncoding = Encoding.UTF8;
+            string option = "";
             do
             {
                 Console.Write("COFFEE SHOP MANAGEMENT\n" +
-                              "Nhập số bàn: ");
-                tableId = Console.ReadLine();
-                ProcessTable();
+                                 "Menu:\n" +
+                                 "1. Hiển thị các bàn có khách\n" +
+                                 "2. Order mới/Thanh toán\n" +
+                                 "3. Thoát\n" +
+                                 "___________________________\n" +
+                                 "Lựa chọn của bạn: ");
+                option = Console.ReadLine();
+                Process(option);
+            } while (option != "3");
+        }
+        static void Process(string option)
+        {
+            switch (option)
+            {
+                case "1":
+                    Console.WriteLine("Thông tin các bàn:");
+                    for(int i = 0; i < orders.customers.customers.Count; i++)
+                        ShowCustomerDetails(i);
+                    break;
+                case "2":
+                    Console.Write("Nhập số bàn: ");
+                    table = Console.ReadLine();
+                    ProcessTable();
+                    break;
             }
-            while (true);
         }
         static void ProcessTable()
         {
@@ -83,6 +103,7 @@ namespace QuanLyQuanCaPhe
             orders.WriteJsonBill(newCheckOut);
             Console.WriteLine("Đã tạo bill!");
             orders.customers.customers.RemoveAt(tablePosition);
+            orders.WriteJson();
         }
         static int TotalCheckOut(int tablePosition)
         {
@@ -105,7 +126,7 @@ namespace QuanLyQuanCaPhe
             {
                 orderDetails += $"{item.drinkId}({item.amount})\t";
             }
-            string result = $"Table: {customer.table}\tGiờ vào: {customer.timeIn}\t{orderDetails}\tTotal: {TotalCheckOut(tablePosition)}";
+            string result = $"Bàn: {customer.table}\tGiờ vào: {customer.timeIn}\t{orderDetails}\tTổng cộng: {TotalCheckOut(tablePosition)}";
             Console.WriteLine(result);
         }
         static void AddDrinkToCurrentCustomer(int tablePosition)
@@ -125,6 +146,8 @@ namespace QuanLyQuanCaPhe
                 });
             else
                 customer.orderDetails[drinkPos].amount += drinkAmount;
+
+            orders.WriteJson();
         }
         static void AddDrinkToTable(out string drinkId, out uint drinkAmount)
         {
@@ -150,7 +173,7 @@ namespace QuanLyQuanCaPhe
         }
         static void CreateNewCustomer()
         {
-            Console.WriteLine($"TẠO BÀN MỚI: {tableId}");
+            Console.WriteLine($"TẠO BÀN MỚI: {table}");
             var drinksOrder = new List<orderDrink>();
             string option;
             do
@@ -178,31 +201,25 @@ namespace QuanLyQuanCaPhe
                         });
                     else
                         drinksOrder[inndexOfDrink].amount += drinkAmount;
-                    
                 }
             }
             while (option != "2");
-
             var customer = new Customer
             {
-                table = tableId,
+                table = table,
                 timeIn = DateTime.Now.ToString("dd/MM/yyyy hh:mm tt"),
 
                 orderDetails = drinksOrder
             };
             orders.customers.customers.Add(customer);
-        }
-        static void ShowTableDetails()
-        {
-
+            orders.WriteJson();
         }
         static int FindUsingTable()
         {
             for (int i = 0; i < orders.customers.customers.Count; i++)
-                if (tableId == orders.customers.customers[i].table)
+                if (table == orders.customers.customers[i].table)
                     return i;
             return -1;
         }
-
     }
 }

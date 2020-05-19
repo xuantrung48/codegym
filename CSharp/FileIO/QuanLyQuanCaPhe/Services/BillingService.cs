@@ -19,20 +19,30 @@ namespace QuanLyQuanCaPhe.Services
             customersJsonFile = customersJsonFileName;
             menuJsonFile = menuJsonFileName;
             this.billJsonFolder = billJsonFolder;
-            ReadJson();
+            ReadJsonCustomers();
+            ReadJsonMenu();
         }
-        public void ReadJson()
+        public void ReadJsonCustomers()
         {
             using StreamReader sr = File.OpenText(path + customersJsonFile);
             var data = sr.ReadToEnd();
             customers = JsonConvert.DeserializeObject<Customers>(data);
+        }
+        public void ReadJsonMenu()
+        {
             StreamReader mn = File.OpenText(path + menuJsonFile);
             var dataMenu = mn.ReadToEnd();
             menu = JsonConvert.DeserializeObject<Menu>(dataMenu);
         }
+        public void WriteJson()
+        {
+            using StreamWriter sw = File.CreateText(path + customersJsonFile);
+            var data = JsonConvert.SerializeObject(customers);
+            sw.Write(data);
+        }
         public void WriteJsonBill(CheckOutCustomer customer)
         {
-            using StreamWriter sw = File.CreateText(billJsonFolder + $"Bill_{DateTime.Now.ToString("dd_MM_yyyy_hh_mm")}.json");
+            using StreamWriter sw = File.CreateText($"{path}{billJsonFolder}\\Bill_{DateTime.Now.ToString("dd_MM_yyyy_hh_mm")}.json");
             var dataCustomer = JsonConvert.SerializeObject(customer);
             sw.Write(dataCustomer);
         }

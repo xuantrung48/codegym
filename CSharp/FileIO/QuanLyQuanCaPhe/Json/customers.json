@@ -1,3 +1,1 @@
-{
-  "customers": []
-}
+{"customers":[{"table":"1","timeIn":"19/05/2020 07:16 CH","orderDetails":[{"drinkId":"cf0","amount":3}]},{"table":"3","timeIn":"19/05/2020 07:17 CH","orderDetails":[{"drinkId":"cf2","amount":5}]}]}
