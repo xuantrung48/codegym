@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace QuanLyQuanCaPhe.Models
 {
     class Menu
     {
-        public List<Drink> menu;
+        public List<Drink> drinks;
     }
 }

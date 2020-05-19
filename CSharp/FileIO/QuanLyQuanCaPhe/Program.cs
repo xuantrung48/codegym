@@ -64,7 +64,7 @@ namespace QuanLyQuanCaPhe
             var customer = orders.customers.customers[tablePosition];
             var checkoutDrinks = new List<CheckOutDrink>();
             foreach(var item in customer.orderDetails)
-                foreach(var drink in orders.menu.menu)
+                foreach(var drink in orders.menu.drinks)
                     if (item.drinkId == drink.id)
                         checkoutDrinks.Add(new CheckOutDrink()
                             {
@@ -74,7 +74,7 @@ namespace QuanLyQuanCaPhe
                             });
             var newCheckOut = new CheckOutCustomer()
             {
-                table = customer.table.id,
+                table = customer.table,
                 timeIn = customer.timeIn,
                 timeOut = DateTime.Now.ToString("dd/MM/yyyy hh:mm tt"),
                 orderDetails = checkoutDrinks,
@@ -89,7 +89,7 @@ namespace QuanLyQuanCaPhe
             int total = 0;
             foreach(var order in orders.customers.customers[tablePosition].orderDetails)
             {
-                foreach(var item in orders.menu.menu)
+                foreach(var item in orders.menu.drinks)
                 {
                     if (order.drinkId == item.id)
                         total += (int)order.amount * item.price;
@@ -105,7 +105,7 @@ namespace QuanLyQuanCaPhe
             {
                 orderDetails += $"{item.drinkId}({item.amount})\t";
             }
-            string result = $"Table: {customer.table.id}\tGiờ vào: {customer.timeIn}\t{orderDetails}\tTotal: {TotalCheckOut(tablePosition)}";
+            string result = $"Table: {customer.table}\tGiờ vào: {customer.timeIn}\t{orderDetails}\tTotal: {TotalCheckOut(tablePosition)}";
             Console.WriteLine(result);
         }
         static void AddDrinkToCurrentCustomer(int tablePosition)
@@ -138,7 +138,7 @@ namespace QuanLyQuanCaPhe
                 drinkIsNotValid = true;
                 Console.Write("Nhập ID thức uống: ");
                 drinkId = Console.ReadLine();
-                foreach (var item in orders.menu.menu)
+                foreach (var item in orders.menu.drinks)
                     if (drinkId == item.id)
                     {
                         drinkIsNotValid = false;
@@ -185,11 +185,7 @@ namespace QuanLyQuanCaPhe
 
             var customer = new Customer
             {
-                table = new Table()
-                {
-                    id = tableId,
-                    available = false
-                },
+                table = tableId,
                 timeIn = DateTime.Now.ToString("dd/MM/yyyy hh:mm tt"),
 
                 orderDetails = drinksOrder
@@ -203,7 +199,7 @@ namespace QuanLyQuanCaPhe
         static int FindUsingTable()
         {
             for (int i = 0; i < orders.customers.customers.Count; i++)
-                if (tableId == orders.customers.customers[i].table.id)
+                if (tableId == orders.customers.customers[i].table)
                     return i;
             return -1;
         }
