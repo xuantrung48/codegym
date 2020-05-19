@@ -1,0 +1,13 @@
+{
+  "table": "1",
+  "timeIn": "19/05/2020 04:02 CH",
+  "timeOut": "19/05/2020 04:02 CH",
+  "orderDetails": [
+    {
+      "drinkName": "Black Coffee",
+      "price": 15000,
+      "amount": 4
+    }
+  ],
+  "Total": 60000
+}

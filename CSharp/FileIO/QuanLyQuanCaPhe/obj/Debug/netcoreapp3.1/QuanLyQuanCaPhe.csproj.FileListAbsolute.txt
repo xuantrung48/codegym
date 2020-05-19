@@ -1,0 +1,15 @@
+D:\codegym\github\codegym\CSharp\FileIO\QuanLyQuanCaPhe\obj\Debug\netcoreapp3.1\QuanLyQuanCaPhe.csprojAssemblyReference.cache
+D:\codegym\github\codegym\CSharp\FileIO\QuanLyQuanCaPhe\obj\Debug\netcoreapp3.1\QuanLyQuanCaPhe.AssemblyInfoInputs.cache
+D:\codegym\github\codegym\CSharp\FileIO\QuanLyQuanCaPhe\obj\Debug\netcoreapp3.1\QuanLyQuanCaPhe.AssemblyInfo.cs
+D:\codegym\github\codegym\CSharp\FileIO\QuanLyQuanCaPhe\bin\Debug\netcoreapp3.1\QuanLyQuanCaPhe.exe
+D:\codegym\github\codegym\CSharp\FileIO\QuanLyQuanCaPhe\bin\Debug\netcoreapp3.1\QuanLyQuanCaPhe.deps.json
+D:\codegym\github\codegym\CSharp\FileIO\QuanLyQuanCaPhe\bin\Debug\netcoreapp3.1\QuanLyQuanCaPhe.runtimeconfig.json
+D:\codegym\github\codegym\CSharp\FileIO\QuanLyQuanCaPhe\bin\Debug\netcoreapp3.1\QuanLyQuanCaPhe.runtimeconfig.dev.json
+D:\codegym\github\codegym\CSharp\FileIO\QuanLyQuanCaPhe\bin\Debug\netcoreapp3.1\QuanLyQuanCaPhe.dll
+D:\codegym\github\codegym\CSharp\FileIO\QuanLyQuanCaPhe\bin\Debug\netcoreapp3.1\QuanLyQuanCaPhe.pdb
+D:\codegym\github\codegym\CSharp\FileIO\QuanLyQuanCaPhe\obj\Debug\netcoreapp3.1\QuanLyQuanCaPhe.dll
+D:\codegym\github\codegym\CSharp\FileIO\QuanLyQuanCaPhe\obj\Debug\netcoreapp3.1\QuanLyQuanCaPhe.pdb
+D:\codegym\github\codegym\CSharp\FileIO\QuanLyQuanCaPhe\obj\Debug\netcoreapp3.1\QuanLyQuanCaPhe.genruntimeconfig.cache
+D:\codegym\github\codegym\CSharp\FileIO\QuanLyQuanCaPhe\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+D:\codegym\github\codegym\CSharp\FileIO\QuanLyQuanCaPhe\obj\Debug\netcoreapp3.1\QuanLyQuanCaPhe.csproj.CoreCompileInputs.cache
+D:\codegym\github\codegym\CSharp\FileIO\QuanLyQuanCaPhe\obj\Debug\netcoreapp3.1\QuanLyQuanCaPhe.csproj.CopyComplete

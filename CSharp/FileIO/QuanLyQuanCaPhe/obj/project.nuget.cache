@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "JvZ4odj1YMCIQSusqXWkvflspLA0H4CjogGvpOWIAurPN40L0HUb0A4DLHWxSQB3J8KPBGbdV/pqgzHoQVESjA==",
+  "success": true,
+  "projectFilePath": "D:\\codegym\\github\\codegym\\CSharp\\FileIO\\QuanLyQuanCaPhe\\QuanLyQuanCaPhe.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Nhung\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
