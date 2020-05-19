@@ -8,7 +8,6 @@ namespace QuanLyQuanCaPhe
 {
     class Program
     {
-        static string table;
         static BillingService orders;
         static void Main(string[] args)
         {
@@ -34,28 +33,30 @@ namespace QuanLyQuanCaPhe
             switch (option)
             {
                 case "1":
+                    Console.Clear();
                     Console.WriteLine("Thông tin các bàn:");
                     for(int i = 0; i < orders.customers.customers.Count; i++)
                         ShowCustomerDetails(i);
                     break;
                 case "2":
                     Console.Write("Nhập số bàn: ");
-                    table = Console.ReadLine();
-                    ProcessTable();
+                    string table = Console.ReadLine();
+                    ProcessTable(table);
                     break;
             }
         }
-        static void ProcessTable()
+        static void ProcessTable(string table)
         {
-            int tablePos = FindUsingTable();
+            int tablePos = FindUsingTable(table);
             if (tablePos == -1)
-                CreateNewCustomer();
+                CreateNewCustomer(table);
             else
             {
                 string option;
                 do
                 {
-                    Console.Write("1. Order đồ uống\n" +
+                    Console.Write($"Bàn {table}\n" +
+                        $"1. Order đồ uống\n" +
                         "2. Hiển thị chi tiết\n" +
                         "3. Thanh toán\n" +
                         "4. Thoát\n" +
@@ -65,12 +66,16 @@ namespace QuanLyQuanCaPhe
                     switch (option)
                     {
                         case "1":
+                            Console.Clear();
+                            Console.WriteLine($"Bàn {table}:");
                             AddDrinkToCurrentCustomer(tablePos);
                             break;
                         case "2":
+                            Console.Clear();
                             ShowCustomerDetails(tablePos);
                             break;
                         case "3":
+                            Console.Clear();
                             CheckOut(tablePos);
                             option = "4";
                             break;
@@ -171,7 +176,7 @@ namespace QuanLyQuanCaPhe
                 uint.TryParse(Console.ReadLine(), out drinkAmount);
             } while (drinkIsNotValid);
         }
-        static void CreateNewCustomer()
+        static void CreateNewCustomer(string table)
         {
             Console.WriteLine($"TẠO BÀN MỚI: {table}");
             var drinksOrder = new List<orderDrink>();
@@ -214,7 +219,7 @@ namespace QuanLyQuanCaPhe
             orders.customers.customers.Add(customer);
             orders.WriteJson();
         }
-        static int FindUsingTable()
+        static int FindUsingTable(string table)
         {
             for (int i = 0; i < orders.customers.customers.Count; i++)
                 if (table == orders.customers.customers[i].table)
