@@ -16,6 +16,7 @@ namespace TMDT
         };
         static void Main(string[] args)
         {
+            json.ReadJsonData();
             Console.OutputEncoding = Encoding.UTF8;
             Console.InputEncoding = Encoding.UTF8;
             string option = "";
@@ -121,6 +122,7 @@ namespace TMDT
         }
         static void CheckOut()
         {
+            json.ReadJsonData();
             bool canCheckOut = true;
             foreach(var item in cart.items)
                 if (item.quantity > json.products.products[IndexOfProductInProducts(item.id)].remain)

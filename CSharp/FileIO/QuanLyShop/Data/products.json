@@ -1,1 +1,22 @@
-{"products":[{"id":"ip6","name":"IPhone 6","price":1500000,"remain":18},{"id":"ip8","name":"IPhone 8","price":2500000,"remain":11},{"id":"s20","name":"SamSung S20","price":1800000,"remain":19}]}
+{
+  "products": [
+    {
+      "id": "ip6",
+      "name": "IPhone 6",
+      "price": 1500000,
+      "remain": 26
+    },
+    {
+      "id": "ip8",
+      "name": "IPhone 8",
+      "price": 2500000,
+      "remain": 27
+    },
+    {
+      "id": "s20",
+      "name": "SamSung S20",
+      "price": 1800000,
+      "remain": 43
+    }
+  ]
+}

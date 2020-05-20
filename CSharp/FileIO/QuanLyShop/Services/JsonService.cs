@@ -19,7 +19,6 @@ namespace TMDT.Services
             path = pathToFolder;
             this.productsJsonFile = productsJsonFile;
             this.outputBillsFolder = outputBillsFolder;
-            ReadJsonData();
         }
         public void ReadJsonData()
         {
