@@ -19,7 +19,7 @@ namespace TMDT
             json.ReadJsonData();
             Console.OutputEncoding = Encoding.UTF8;
             Console.InputEncoding = Encoding.UTF8;
-            string option = "";
+            string option;
             do
             {
                 Console.Write("______COCO STORE_______\n" +
