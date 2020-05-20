@@ -1,0 +1,15 @@
+D:\codegym\github\codegym\CSharp\FileIO\QuanLyShop\bin\Debug\netcoreapp3.1\QuanLyShop.exe
+D:\codegym\github\codegym\CSharp\FileIO\QuanLyShop\bin\Debug\netcoreapp3.1\QuanLyShop.deps.json
+D:\codegym\github\codegym\CSharp\FileIO\QuanLyShop\bin\Debug\netcoreapp3.1\QuanLyShop.runtimeconfig.json
+D:\codegym\github\codegym\CSharp\FileIO\QuanLyShop\bin\Debug\netcoreapp3.1\QuanLyShop.runtimeconfig.dev.json
+D:\codegym\github\codegym\CSharp\FileIO\QuanLyShop\bin\Debug\netcoreapp3.1\QuanLyShop.dll
+D:\codegym\github\codegym\CSharp\FileIO\QuanLyShop\bin\Debug\netcoreapp3.1\QuanLyShop.pdb
+D:\codegym\github\codegym\CSharp\FileIO\QuanLyShop\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+D:\codegym\github\codegym\CSharp\FileIO\QuanLyShop\obj\Debug\netcoreapp3.1\QuanLyShop.csprojAssemblyReference.cache
+D:\codegym\github\codegym\CSharp\FileIO\QuanLyShop\obj\Debug\netcoreapp3.1\QuanLyShop.csproj.CoreCompileInputs.cache
+D:\codegym\github\codegym\CSharp\FileIO\QuanLyShop\obj\Debug\netcoreapp3.1\QuanLyShop.AssemblyInfoInputs.cache
+D:\codegym\github\codegym\CSharp\FileIO\QuanLyShop\obj\Debug\netcoreapp3.1\QuanLyShop.AssemblyInfo.cs
+D:\codegym\github\codegym\CSharp\FileIO\QuanLyShop\obj\Debug\netcoreapp3.1\QuanLyShop.csproj.CopyComplete
+D:\codegym\github\codegym\CSharp\FileIO\QuanLyShop\obj\Debug\netcoreapp3.1\QuanLyShop.dll
+D:\codegym\github\codegym\CSharp\FileIO\QuanLyShop\obj\Debug\netcoreapp3.1\QuanLyShop.pdb
+D:\codegym\github\codegym\CSharp\FileIO\QuanLyShop\obj\Debug\netcoreapp3.1\QuanLyShop.genruntimeconfig.cache
