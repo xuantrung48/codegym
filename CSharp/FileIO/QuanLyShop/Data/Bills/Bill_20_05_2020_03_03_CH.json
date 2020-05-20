@@ -1,24 +1,27 @@
 {
-  "time": "20_05_2020 02:36 CH",
+  "time": "20_05_2020 03:03 CH",
   "items": [
     {
       "id": "ip6",
       "name": "IPhone 6",
       "price": 1500000,
-      "quantity": 1
+      "quantity": 1,
+      "itemAmount": 1500000
     },
     {
       "id": "ip8",
       "name": "IPhone 8",
       "price": 2500000,
-      "quantity": 2
+      "quantity": 2,
+      "itemAmount": 5000000
     },
     {
       "id": "s20",
       "name": "SamSung S20",
       "price": 1800000,
-      "quantity": 3
+      "quantity": 3,
+      "itemAmount": 5400000
     }
   ],
-  "total": 11900000
+  "totalAmount": 11900000
 }

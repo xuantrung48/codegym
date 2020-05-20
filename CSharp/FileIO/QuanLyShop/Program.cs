@@ -3,12 +3,13 @@ using TMDT.Services;
 using System;
 using System.Text;
 using System.Collections.Generic;
+using QuanLyShop.Models;
 
 namespace TMDT
 {
     class Program
     {
-        static JsonService json = new JsonService(@"D:\codegym\github\codegym\CSharp\FileIO\TMDT\Data\", "products.json", "Bills");
+        static JsonService json = new JsonService(@"D:\codegym\github\codegym\CSharp\FileIO\QuanLyShop\Data\", "products.json", "Bills");
         static Cart cart = new Cart()
         {
             items = new List<CartProduct>()
@@ -56,12 +57,20 @@ namespace TMDT
                 result += $"ID: {product.id}\tTên SP: {product.name}\tGiá: {product.price}\tSố lượng: {product.remain}\n";
             Console.WriteLine(result);
         }
+        static int CalculateItemAmount(string productID)
+        {
+            var result = 0;
+            foreach(var item in cart.items)
+                if (item.id == productID)
+                    result += item.quantity * item.price;
+            return result;
+        }
         static void ShowCart()
         {
             Console.Clear();
             string result = "Giỏ hàng:\n";
             foreach (var product in cart.items)
-                result += $"Sản phẩm: {product.name}\tGiá SP: {product.price}\tSố lượng: {product.quantity}\n";
+                result += $"Sản phẩm: {product.name}\tGiá SP: {product.price}\tSố lượng: {product.quantity}\tThành tiền: {CalculateItemAmount(product.id)}\n";
             result += $"_______________________Total: {cart.Total}_______________________";
             Console.WriteLine(result);
             string option;
@@ -122,11 +131,21 @@ namespace TMDT
                 }
             if (canCheckOut)
             {
+                var productList = new List<BillProduct>();
+                foreach(var item in cart.items)
+                    productList.Add(new BillProduct()
+                    {
+                        id = item.id,
+                        name = item.name,
+                        price = item.price,
+                        quantity = item.quantity,
+                        itemAmount = item.price * item.quantity
+                    });
                 var bill = new Bill()
                 {
                     time = DateTime.Now.ToString("dd_MM_yyyy hh:mm tt"),
-                    items = cart.items,
-                    total = CalculateTotalInCart()
+                    items = productList,
+                    totalAmount = CalculateTotalInCart()
                 };
                 json.WriteJsonBill(bill);
                 foreach (var item in bill.items)
