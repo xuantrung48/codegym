@@ -1,0 +1,13 @@
+D:\codegym\github\codegym\CSharp\Threading\HienThiSoChanLe\bin\Debug\netcoreapp3.1\HienThiSoChanLe.exe
+D:\codegym\github\codegym\CSharp\Threading\HienThiSoChanLe\bin\Debug\netcoreapp3.1\HienThiSoChanLe.deps.json
+D:\codegym\github\codegym\CSharp\Threading\HienThiSoChanLe\bin\Debug\netcoreapp3.1\HienThiSoChanLe.runtimeconfig.json
+D:\codegym\github\codegym\CSharp\Threading\HienThiSoChanLe\bin\Debug\netcoreapp3.1\HienThiSoChanLe.runtimeconfig.dev.json
+D:\codegym\github\codegym\CSharp\Threading\HienThiSoChanLe\bin\Debug\netcoreapp3.1\HienThiSoChanLe.dll
+D:\codegym\github\codegym\CSharp\Threading\HienThiSoChanLe\bin\Debug\netcoreapp3.1\HienThiSoChanLe.pdb
+D:\codegym\github\codegym\CSharp\Threading\HienThiSoChanLe\obj\Debug\netcoreapp3.1\HienThiSoChanLe.csprojAssemblyReference.cache
+D:\codegym\github\codegym\CSharp\Threading\HienThiSoChanLe\obj\Debug\netcoreapp3.1\HienThiSoChanLe.csproj.CoreCompileInputs.cache
+D:\codegym\github\codegym\CSharp\Threading\HienThiSoChanLe\obj\Debug\netcoreapp3.1\HienThiSoChanLe.AssemblyInfoInputs.cache
+D:\codegym\github\codegym\CSharp\Threading\HienThiSoChanLe\obj\Debug\netcoreapp3.1\HienThiSoChanLe.AssemblyInfo.cs
+D:\codegym\github\codegym\CSharp\Threading\HienThiSoChanLe\obj\Debug\netcoreapp3.1\HienThiSoChanLe.dll
+D:\codegym\github\codegym\CSharp\Threading\HienThiSoChanLe\obj\Debug\netcoreapp3.1\HienThiSoChanLe.pdb
+D:\codegym\github\codegym\CSharp\Threading\HienThiSoChanLe\obj\Debug\netcoreapp3.1\HienThiSoChanLe.genruntimeconfig.cache

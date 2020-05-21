@@ -1,0 +1,13 @@
+D:\codegym\github\codegym\CSharp\Threading\ThreadDonGian\bin\Debug\netcoreapp3.1\ThreadDonGian.exe
+D:\codegym\github\codegym\CSharp\Threading\ThreadDonGian\bin\Debug\netcoreapp3.1\ThreadDonGian.deps.json
+D:\codegym\github\codegym\CSharp\Threading\ThreadDonGian\bin\Debug\netcoreapp3.1\ThreadDonGian.runtimeconfig.json
+D:\codegym\github\codegym\CSharp\Threading\ThreadDonGian\bin\Debug\netcoreapp3.1\ThreadDonGian.runtimeconfig.dev.json
+D:\codegym\github\codegym\CSharp\Threading\ThreadDonGian\bin\Debug\netcoreapp3.1\ThreadDonGian.dll
+D:\codegym\github\codegym\CSharp\Threading\ThreadDonGian\bin\Debug\netcoreapp3.1\ThreadDonGian.pdb
+D:\codegym\github\codegym\CSharp\Threading\ThreadDonGian\obj\Debug\netcoreapp3.1\ThreadDonGian.csproj.CoreCompileInputs.cache
+D:\codegym\github\codegym\CSharp\Threading\ThreadDonGian\obj\Debug\netcoreapp3.1\ThreadDonGian.AssemblyInfoInputs.cache
+D:\codegym\github\codegym\CSharp\Threading\ThreadDonGian\obj\Debug\netcoreapp3.1\ThreadDonGian.AssemblyInfo.cs
+D:\codegym\github\codegym\CSharp\Threading\ThreadDonGian\obj\Debug\netcoreapp3.1\ThreadDonGian.dll
+D:\codegym\github\codegym\CSharp\Threading\ThreadDonGian\obj\Debug\netcoreapp3.1\ThreadDonGian.pdb
+D:\codegym\github\codegym\CSharp\Threading\ThreadDonGian\obj\Debug\netcoreapp3.1\ThreadDonGian.genruntimeconfig.cache
+D:\codegym\github\codegym\CSharp\Threading\ThreadDonGian\obj\Debug\netcoreapp3.1\ThreadDonGian.csprojAssemblyReference.cache
