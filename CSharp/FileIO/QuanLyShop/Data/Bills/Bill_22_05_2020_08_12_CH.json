@@ -1,5 +1,10 @@
 {
-  "time": "20_05_2020 03:34 CH",
+  "time": "22_05_2020 08:12 CH",
+  "customerDetails": {
+    "name": "Nguyen Xuan Trung",
+    "phoneNumber": "0702004004",
+    "address": "39/33 Dao Duy Anh, Hue"
+  },
   "items": [
     {
       "id": "ip6",

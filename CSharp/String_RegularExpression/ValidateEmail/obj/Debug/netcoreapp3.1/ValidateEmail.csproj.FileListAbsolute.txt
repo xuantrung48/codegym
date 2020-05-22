@@ -1,0 +1,13 @@
+D:\codegym\github\codegym\CSharp\String_RegularExpression\ValidateEmail\bin\Debug\netcoreapp3.1\ValidateEmail.exe
+D:\codegym\github\codegym\CSharp\String_RegularExpression\ValidateEmail\bin\Debug\netcoreapp3.1\ValidateEmail.deps.json
+D:\codegym\github\codegym\CSharp\String_RegularExpression\ValidateEmail\bin\Debug\netcoreapp3.1\ValidateEmail.runtimeconfig.json
+D:\codegym\github\codegym\CSharp\String_RegularExpression\ValidateEmail\bin\Debug\netcoreapp3.1\ValidateEmail.runtimeconfig.dev.json
+D:\codegym\github\codegym\CSharp\String_RegularExpression\ValidateEmail\bin\Debug\netcoreapp3.1\ValidateEmail.dll
+D:\codegym\github\codegym\CSharp\String_RegularExpression\ValidateEmail\bin\Debug\netcoreapp3.1\ValidateEmail.pdb
+D:\codegym\github\codegym\CSharp\String_RegularExpression\ValidateEmail\obj\Debug\netcoreapp3.1\ValidateEmail.csprojAssemblyReference.cache
+D:\codegym\github\codegym\CSharp\String_RegularExpression\ValidateEmail\obj\Debug\netcoreapp3.1\ValidateEmail.csproj.CoreCompileInputs.cache
+D:\codegym\github\codegym\CSharp\String_RegularExpression\ValidateEmail\obj\Debug\netcoreapp3.1\ValidateEmail.AssemblyInfoInputs.cache
+D:\codegym\github\codegym\CSharp\String_RegularExpression\ValidateEmail\obj\Debug\netcoreapp3.1\ValidateEmail.AssemblyInfo.cs
+D:\codegym\github\codegym\CSharp\String_RegularExpression\ValidateEmail\obj\Debug\netcoreapp3.1\ValidateEmail.dll
+D:\codegym\github\codegym\CSharp\String_RegularExpression\ValidateEmail\obj\Debug\netcoreapp3.1\ValidateEmail.pdb
+D:\codegym\github\codegym\CSharp\String_RegularExpression\ValidateEmail\obj\Debug\netcoreapp3.1\ValidateEmail.genruntimeconfig.cache

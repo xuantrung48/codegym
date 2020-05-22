@@ -4,6 +4,8 @@ using System;
 using System.Text;
 using System.Collections.Generic;
 using QuanLyShop.Models;
+using QuanLyShop;
+using System.Text.RegularExpressions;
 
 namespace TMDT
 {
@@ -14,6 +16,7 @@ namespace TMDT
         {
             items = new List<CartProduct>()
         };
+        static Customer customer;
         static void Main(string[] args)
         {
             json.ReadJsonData();
@@ -71,8 +74,8 @@ namespace TMDT
             Console.Clear();
             string result = "Giỏ hàng:\n";
             foreach (var product in cart.items)
-                result += $"Sản phẩm: {product.name}\tGiá SP: {product.price}\tSố lượng: {product.quantity}\tThành tiền: {CalculateItemAmount(product.id)}\n";
-            result += $"_______________________Total: {cart.Total}_______________________";
+                result += $"Sản phẩm: {product.name}\tGiá SP: {product.price}VND\tSố lượng: {product.quantity}\tThành tiền: {CalculateItemAmount(product.id)}VND\n";
+            result += $"_______________________Total: {cart.Total}VND_______________________";
             Console.WriteLine(result);
             string option;
             do
@@ -122,6 +125,33 @@ namespace TMDT
         }
         static void CheckOut()
         {
+            if (customer == null)
+            {
+                Console.Write("Nhập vào thông tin của bạn:\n" +
+                    "Tên: ");
+                string customerName = Console.ReadLine();
+                Console.Write("Địa chỉ: ");
+                string customerAddress = Console.ReadLine();
+                string customerPhoneNumber;
+                bool phoneNumberIsNotValid = false;
+                do
+                {
+                    if (phoneNumberIsNotValid)
+                        Console.WriteLine("Bạn hãy nhập đúng số điện thoại!");
+                    Console.Write("Số điện thoại: ");
+                    customerPhoneNumber = Console.ReadLine();
+                    phoneNumberIsNotValid = true;
+                    string regex = "^(0[3|5|7|8|9])+([0-9]{8})$";
+                    if (Regex.IsMatch(customerPhoneNumber, regex))
+                        phoneNumberIsNotValid = false;
+                } while (phoneNumberIsNotValid);
+                customer = new Customer()
+                {
+                    name = customerName,
+                    address = customerAddress,
+                    phoneNumber = customerPhoneNumber
+                };
+            }
             json.ReadJsonData();
             bool canCheckOut = true;
             foreach(var item in cart.items)
@@ -146,6 +176,7 @@ namespace TMDT
                 var bill = new Bill()
                 {
                     time = DateTime.Now.ToString("dd_MM_yyyy hh:mm tt"),
+                    customerDetails = customer,
                     items = productList,
                     totalAmount = CalculateTotalInCart()
                 };
@@ -158,7 +189,16 @@ namespace TMDT
                     items = new List<CartProduct>()
                 };
                 Console.Clear();
-                Console.WriteLine("Đã tạo bill!");
+                string productDetails = "";
+                foreach (var item in bill.items)
+                    productDetails += $"Tên sản phẩm: {item.name}\tSố lượng: {item.quantity}\tGiá: {item.price}VND\tThành tiền: {item.itemAmount}VND\n";
+                productDetails += $"Tổng cộng: {bill.totalAmount}VND";
+                Console.WriteLine($"Thông tin đơn hàng:\n" +
+                    $"Thời gian: {bill.time}\n" +
+                    $"Thông tin khách hàng: \n" +
+                    $"Tên: {bill.customerDetails.name}\tĐịa chỉ: {bill.customerDetails.address}\tSĐT: {bill.customerDetails.phoneNumber}\n" +
+                    $"Sản phẩm: {productDetails}\n" +
+                    $"CẢM ƠN QUÝ KHÁCH ĐÃ ĐẶT HÀNG!");
             }
         }
         static void EnterValidQuantity(out int number, string productID, bool updateCart)
