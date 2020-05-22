@@ -1,0 +1,12 @@
+﻿{
+  "coupons": [
+    {
+      "name": "TEN",
+      "percent": 10
+    },
+    {
+      "name": "HUNDRED",
+      "percent": 100
+    }
+  ]
+}

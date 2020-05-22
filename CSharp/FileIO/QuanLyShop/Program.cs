@@ -11,7 +11,7 @@ namespace TMDT
 {
     class Program
     {
-        static JsonService json = new JsonService(@"D:\codegym\github\codegym\CSharp\FileIO\QuanLyShop\Data\", "products.json", "Bills");
+        static JsonService json = new JsonService(@"D:\codegym\github\codegym\CSharp\FileIO\QuanLyShop\Data\","products.json", "Coupon.json", "Bills");
         static Cart cart = new Cart()
         {
             items = new List<CartProduct>()
@@ -134,6 +134,7 @@ namespace TMDT
                 string customerAddress = Console.ReadLine();
                 string customerPhoneNumber;
                 bool phoneNumberIsNotValid = false;
+                string regex = "^(0[3|5|7|8|9])+([0-9]{8})$";
                 do
                 {
                     if (phoneNumberIsNotValid)
@@ -141,7 +142,6 @@ namespace TMDT
                     Console.Write("Số điện thoại: ");
                     customerPhoneNumber = Console.ReadLine();
                     phoneNumberIsNotValid = true;
-                    string regex = "^(0[3|5|7|8|9])+([0-9]{8})$";
                     if (Regex.IsMatch(customerPhoneNumber, regex))
                         phoneNumberIsNotValid = false;
                 } while (phoneNumberIsNotValid);
@@ -152,6 +152,18 @@ namespace TMDT
                     phoneNumber = customerPhoneNumber
                 };
             }
+            Console.Write("Nhập vào mã giảm giá (nếu có): ");
+            string coupon = Console.ReadLine();
+            Coupon validCoupon = new Coupon()
+            {
+                percent = 0
+            };
+            foreach (var item in json.coupons.coupons)
+                if (coupon == item.name)
+                {
+                    validCoupon.name = coupon;
+                    validCoupon.percent = item.percent;
+                }
             json.ReadJsonData();
             bool canCheckOut = true;
             foreach(var item in cart.items)
@@ -178,7 +190,8 @@ namespace TMDT
                     time = DateTime.Now.ToString("dd_MM_yyyy hh:mm tt"),
                     customerDetails = customer,
                     items = productList,
-                    totalAmount = CalculateTotalInCart()
+                    coupon = validCoupon,
+                    totalAmount = CalculateTotalInCart() * (100 - validCoupon.percent) / 100
                 };
                 json.WriteJsonBill(bill);
                 foreach (var item in bill.items)
@@ -192,7 +205,9 @@ namespace TMDT
                 string productDetails = "";
                 foreach (var item in bill.items)
                     productDetails += $"Tên sản phẩm: {item.name}\tSố lượng: {item.quantity}\tGiá: {item.price}VND\tThành tiền: {item.itemAmount}VND\n";
-                productDetails += $"Tổng cộng: {bill.totalAmount}VND";
+                productDetails += $"Tổng cộng: {bill.totalAmount * 100 / (100 - validCoupon.percent)}VND";
+                if (validCoupon.percent != 0)
+                    productDetails += $"\nMã giảm giá: {coupon}\nTổng cộng sau khi áp dụng mã giảm giá: {bill.totalAmount}VND";
                 Console.WriteLine($"Thông tin đơn hàng:\n" +
                     $"Thời gian: {bill.time}\n" +
                     $"Thông tin khách hàng: \n" +

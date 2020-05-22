@@ -11,6 +11,7 @@ namespace TMDT.Models
         public string time;
         public Customer customerDetails;
         public List<BillProduct> items;
+        public Coupon coupon;
         public int totalAmount;
     }
 }

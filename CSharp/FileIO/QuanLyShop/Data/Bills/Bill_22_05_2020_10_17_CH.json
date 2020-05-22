@@ -1,17 +1,17 @@
 {
-  "time": "22_05_2020 08:12 CH",
+  "time": "22_05_2020 10:17 CH",
   "customerDetails": {
-    "name": "Nguyen Xuan Trung",
+    "name": "Trung",
     "phoneNumber": "0702004004",
-    "address": "39/33 Dao Duy Anh, Hue"
+    "address": "28 Nguyen Tri Phuong, Hue"
   },
   "items": [
     {
       "id": "ip6",
       "name": "IPhone 6",
       "price": 1500000,
-      "quantity": 1,
-      "itemAmount": 1500000
+      "quantity": 3,
+      "itemAmount": 4500000
     },
     {
       "id": "ip8",
@@ -24,9 +24,13 @@
       "id": "s20",
       "name": "SamSung S20",
       "price": 1800000,
-      "quantity": 3,
-      "itemAmount": 5400000
+      "quantity": 1,
+      "itemAmount": 1800000
     }
   ],
-  "totalAmount": 11900000
+  "coupon": {
+    "name": "TEN",
+    "percent": 10
+  },
+  "totalAmount": 10170000
 }
