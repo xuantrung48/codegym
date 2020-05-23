@@ -1,0 +1,28 @@
+{
+  "cashiers": [
+    {
+      "id": "c1",
+      "name": "Trung",
+      "workingTimes": [
+        {
+          "startTime": "23/05/2020 04:49 CH",
+          "endTime": "23/05/2020 04:51 CH"
+        },
+        {
+          "startTime": "23/05/2020 04:51 CH",
+          "endTime": null
+        }
+      ]
+    },
+    {
+      "id": "c2",
+      "name": "Khoa",
+      "workingTimes": [
+        {
+          "startTime": "23/05/2020 04:51 CH",
+          "endTime": "23/05/2020 04:51 CH"
+        }
+      ]
+    }
+  ]
+}

@@ -5,6 +5,6 @@ namespace QuanLyQuanCaPhe.Models
     {
         public string table;
         public string timeIn;
-        public List<orderDrink> orderDetails;
+        public List<OrderDrink> orderDetails;
     }
 }

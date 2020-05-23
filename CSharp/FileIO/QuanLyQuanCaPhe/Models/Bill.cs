@@ -2,12 +2,13 @@
 
 namespace QuanLyQuanCaPhe.Models
 {
-    class CheckOutCustomer
+    class Bill
     {
         public string table;
         public string timeIn;
         public string timeOut;
         public List<CheckOutDrink> orderDetails;
+        public CashierInBill cashier;
         public int Total;
     }
 }
