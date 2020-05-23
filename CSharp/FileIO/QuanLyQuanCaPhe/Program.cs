@@ -1,4 +1,5 @@
-﻿using QuanLyQuanCaPhe.Models;
+﻿using Newtonsoft.Json;
+using QuanLyQuanCaPhe.Models;
 using QuanLyQuanCaPhe.Services;
 using System;
 using System.Collections.Generic;
@@ -26,13 +27,15 @@ namespace QuanLyQuanCaPhe
                                  "2. Hiển thị bàn trống\n" +
                                  "3. Order đồ uống/Thanh toán\n" +
                                  "4. Chỉnh sửa thực đơn\n" +
-                                 "5. Cập nhật thu ngân vào nhận ca\n" +
-                                 "6. Thoát\n" +
+                                 "5. Quản lý bàn\n" +
+                                 "6. Cập nhật thu ngân vào nhận ca\n" +
+                                 "7. Kết thúc ngày làm việc\n" +
+                                 "8. Thoát\n" +
                                  "___________________________\n" +
                                  "Lựa chọn của bạn: ");
                 option = Console.ReadLine();
                 Process(option);
-            } while (option != "6");
+            } while (option != "8");
         }
         static void Process(string option)
         {
@@ -53,15 +56,115 @@ namespace QuanLyQuanCaPhe
                     Console.WriteLine(emptyTables);
                     break;
                 case "3":
-                    Console.Write("Nhập số bàn: ");
-                    ProcessTable(Console.ReadLine());
+                    if (json.currentCashier == null)
+                        Console.WriteLine("Hãy cập nhật thông tin thu ngân trước khi xử lý");
+                    else
+                    {
+                        Console.Write("Nhập số bàn: ");
+                        ProcessTable(Console.ReadLine());
+                    }
                     break;
                 case "4":
                     EditMenu();
                     break;
                 case "5":
+                    ManageTables();
+                    break;
+                case "6":
                     UpdateCashier();
                     break;
+                case "7":
+                    End();
+                    break;
+            }
+        }
+        static void ManageTables()
+        {
+            string option;
+            do
+            {
+                Console.Write("Quản lý bàn:\n" +
+                    "1. Thêm bàn\n" +
+                    "2. Sửa ID bàn\n" +
+                    "3. Xóa bàn\n" +
+                    "4. Thoát\n" +
+                    "_____________________\n" +
+                    "Lựa chọn của bạn: ");
+                option = Console.ReadLine();
+                string tableID = "";
+                if (option == "1" || option == "2" || option == "3")
+                {
+                    Console.Write("Nhập vào ID bàn: ");
+                    tableID = Console.ReadLine();
+                }
+                switch (option)
+                {
+                    case "1":
+                        if (IndexOfTable(tableID) == -1)
+                            CreateNewTable(tableID);
+                        else
+                            Console.WriteLine($"Bàn {tableID} đã có trên hệ thống.");
+                        break;
+                    case "2":
+                        if (IndexOfTable(tableID) != -1)
+                            EditTableID(tableID);
+                        else
+                            Console.WriteLine($"Bàn {tableID} không có trên hệ thống.");
+                        break;
+                    case "3":
+                        if (IndexOfTable(tableID) != -1)
+                            RemoveTable(tableID);
+                        else
+                            Console.WriteLine($"Bàn {tableID} không có trên hệ thống.");
+                        break;
+                }
+            } while (option != "4");
+
+        }
+        static void EditTableID(string tableID)
+        {
+            int indexOfNewTable = -1;
+            string newTableID = "";
+            do
+            {
+                indexOfNewTable = IndexOfTable(newTableID);
+                if (indexOfNewTable != -1)
+                    Console.WriteLine($"Đã có bàn {newTableID}!");
+                Console.Write("Nhập vào ID mới: ");
+                newTableID = Console.ReadLine();
+            } while (indexOfNewTable != -1);
+            json.tables.tables[IndexOfTable(tableID)].id = newTableID;
+            json.WriteJsonTables();
+            Console.WriteLine($"Đã đổi bàn thành {newTableID}!");
+        }
+        static void RemoveTable(string tableID)
+        {
+            json.tables.tables.RemoveAt(IndexOfTable(tableID));
+            json.WriteJsonTables();
+            Console.WriteLine($"Đã xóa bàn {tableID}!");
+        }
+        static void End()
+        {
+            if (json.customers.customers.Count != 0)
+                Console.WriteLine("Vẫn còn bàn chưa thanh toán. Bạn không thể kết thúc ngày.");
+            else
+            {
+                Console.Write("Bạn có chắc kết thúc ngày làm việc không?\n" +
+                    "1. Có\n" +
+                    "2. Không\n" +
+                    "____________\n" +
+                    "Lựa chọn của bạn: ");
+                if (Console.ReadLine() == "1")
+                {
+                    string endTime = DateTime.Now.ToString("dd/MM/yyyy hh:mm tt");
+                    if (json.currentCashier != null)
+                    {
+                        string cashierID = json.currentCashier.id;
+                        json.cashiers.cashiers[IndexOfCashier(json.currentCashier.id)].workingTimes[json.currentCashier.workingTimes.Count - 1].endTime = endTime;
+                        json.currentCashier = null;
+                        json.WriteJsonCashier();
+                    }
+                }
             }
         }
         static int IndexOfTable(string tableID)
@@ -233,6 +336,7 @@ namespace QuanLyQuanCaPhe
                     available = true
                 });
                 json.WriteJsonTables();
+                Console.WriteLine($"Đã thêm bàn {tableId}");
                 return true;
             }
             return false;
@@ -243,39 +347,43 @@ namespace QuanLyQuanCaPhe
                 if (CreateNewTable(tableId))
                     CreateNewCustomer(tableId);
             int tablePos = FindUsingTable(tableId);
-            if (json.tables.tables[IndexOfTable(tableId)].available == true)
-                CreateNewCustomer(tableId);
-            else
+            int indexOfTable = IndexOfTable(tableId);
+            if (indexOfTable != -1)
             {
-                string option;
-                do
+                if (json.tables.tables[indexOfTable].available == true)
+                    CreateNewCustomer(tableId);
+                else
                 {
-                    Console.Write($"Bàn {tableId}\n" +
-                        $"1. Order đồ uống\n" +
-                        "2. Hiển thị chi tiết\n" +
-                        "3. Thanh toán\n" +
-                        "4. Thoát\n" +
-                        "_____________________\n" +
-                        "Lựa chọn của bạn: ");
-                    option = Console.ReadLine();
-                    switch (option)
+                    string option;
+                    do
                     {
-                        case "1":
-                            Console.Clear();
-                            Console.WriteLine($"Bàn {tableId}:");
-                            AddDrinkToCurrentCustomer(tablePos);
-                            break;
-                        case "2":
-                            Console.Clear();
-                            ShowCustomerDetails(tablePos);
-                            break;
-                        case "3":
-                            Console.Clear();
-                            CheckOut(tablePos);
-                            option = "4";
-                            break;
-                    }
-                } while (option != "4");
+                        Console.Write($"Bàn {tableId}\n" +
+                            $"1. Order đồ uống\n" +
+                            "2. Hiển thị chi tiết\n" +
+                            "3. Thanh toán\n" +
+                            "4. Thoát\n" +
+                            "_____________________\n" +
+                            "Lựa chọn của bạn: ");
+                        option = Console.ReadLine();
+                        switch (option)
+                        {
+                            case "1":
+                                Console.Clear();
+                                Console.WriteLine($"Bàn {tableId}:");
+                                AddDrinkToCurrentCustomer(tablePos);
+                                break;
+                            case "2":
+                                Console.Clear();
+                                ShowCustomerDetails(tablePos);
+                                break;
+                            case "3":
+                                Console.Clear();
+                                CheckOut(tablePos);
+                                option = "4";
+                                break;
+                        }
+                    } while (option != "4");
+                }
             }
         }
         static void CheckOut(int tablePosition)

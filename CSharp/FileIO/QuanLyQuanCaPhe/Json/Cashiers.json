@@ -10,7 +10,15 @@
         },
         {
           "startTime": "23/05/2020 04:51 CH",
-          "endTime": null
+          "endTime": "23/05/2020 05:07 CH"
+        },
+        {
+          "startTime": "23/05/2020 05:07 CH",
+          "endTime": "23/05/2020 05:10 CH"
+        },
+        {
+          "startTime": "23/05/2020 05:13 CH",
+          "endTime": "23/05/2020 05:21 CH"
         }
       ]
     },
@@ -21,6 +29,10 @@
         {
           "startTime": "23/05/2020 04:51 CH",
           "endTime": "23/05/2020 04:51 CH"
+        },
+        {
+          "startTime": "23/05/2020 05:21 CH",
+          "endTime": null
         }
       ]
     }
