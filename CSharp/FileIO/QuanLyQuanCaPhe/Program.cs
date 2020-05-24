@@ -102,7 +102,7 @@ namespace QuanLyQuanCaPhe
                     if (Console.ReadLine() == "y")
                     {
                         staffWorkingTime[^1].endTime = DateTime.Now.ToString("dd/MM/yyyy hh:mm tt");
-                        staffWorkingTime[^1].timeWorking = (DateTime.Parse(staffWorkingTime[^1].endTime) - DateTime.Parse(staffWorkingTime[^1].startTime)).TotalMinutes / 60;
+                        staffWorkingTime[^1].workingTime = (DateTime.Parse(staffWorkingTime[^1].endTime) - DateTime.Parse(staffWorkingTime[^1].startTime)).TotalMinutes / 60;
                         json.WriteJsonStaffs();
                     }
                 }
@@ -323,7 +323,7 @@ namespace QuanLyQuanCaPhe
             foreach (var staff in json.staffs.staffs)
                 if (staffId == staff.id)
                     foreach (var workingTimes in staff.workingTimes)
-                        salary += workingTimes.timeWorking * staff.coefficientsSalary;
+                        salary += workingTimes.workingTime * staff.coefficientsSalary;
             return (int)salary * json.staffs.basicSalary;
         }
         static void ShowStaffDetail(string staffId)
@@ -335,7 +335,7 @@ namespace QuanLyQuanCaPhe
                 {
                     string working = "Working Times: \n";
                     foreach (var workingTimes in staff.workingTimes)
-                        working += $"Start time: {workingTimes.startTime},\tEnd Time: {workingTimes.endTime}\tIn hours: {workingTimes.timeWorking}.\n";
+                        working += $"Start time: {workingTimes.startTime},\tEnd Time: {workingTimes.endTime}\tIn hours: {workingTimes.workingTime}.\n";
                     result += $"ID: {staff.id}, Name: {staff.name}\n{working}";
                 }
             Console.WriteLine(result);

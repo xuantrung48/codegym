@@ -1,0 +1,20 @@
+{
+  "id": "s2",
+  "name": "Khoa",
+  "payTime": "24_05_2020",
+  "salary": 1080000,
+  "workingTimes": [
+    {
+      "startTime": "24/05/2020 10:12 SA",
+      "endTime": "24/05/2020 10:14 CH",
+      "workingTime": 12.033333333333333
+    },
+    {
+      "startTime": "23/05/2020 10:12 SA",
+      "endTime": "23/05/2020 10:14 CH",
+      "workingTime": 12.033333333333333
+    }
+  ],
+  "orders": [
+  ]
+}

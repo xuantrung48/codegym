@@ -1,0 +1,21 @@
+{
+  "table": "1",
+  "timeIn": "24/05/2020 07:40 CH",
+  "timeOut": "24/05/2020 10:12 CH",
+  "orderDetails": [
+    {
+      "drinkName": "Black Coffee",
+      "price": 15000,
+      "amount": 1
+    },
+    {
+      "drinkName": "Milk Coffee",
+      "price": 20000,
+      "amount": 2
+    }
+  ],
+  "cashier": {
+    "name": "Khoa"
+  },
+  "Total": 55000
+}

@@ -8,6 +8,6 @@ namespace QuanLyQuanCaPhe.Models
     {
         public string startTime;
         public string endTime;
-        public double timeWorking;
+        public double workingTime;
     }
 }
