@@ -1,0 +1,43 @@
+{
+  "table": "1",
+  "timeIn": "24/05/2020 11:24 SA",
+  "timeOut": "24/05/2020 11:59 SA",
+  "orderDetails": [
+    {
+      "staff": "Trung",
+      "orderTime": "24/05/2020 11:24 SA",
+      "items": [
+        {
+          "drinkName": "Milk Coffee",
+          "price": 20000,
+          "amount": 2
+        },
+        {
+          "drinkName": "Cappuccino",
+          "price": 25000,
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "staff": "Khoa",
+      "orderTime": "24/05/2020 11:30 SA",
+      "items": [
+        {
+          "drinkName": "Black Coffee",
+          "price": 15000,
+          "amount": 1
+        },
+        {
+          "drinkName": "Espresso",
+          "price": 25000,
+          "amount": 2
+        }
+      ]
+    }
+  ],
+  "cashier": {
+    "name": "Khoa"
+  },
+  "Total": 130000
+}

@@ -3,6 +3,6 @@
     class OrderDrink
     {
         public string drinkId;
-        public uint amount;
+        public int amount;
     }
 }

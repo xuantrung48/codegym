@@ -1,0 +1,37 @@
+{
+  "id": "s1",
+  "name": "Trung",
+  "payTime": "24_05_2020",
+  "salary": 900000,
+  "workingTimes": [
+    {
+      "startTime": "24/05/2020 07:45 SA",
+      "endTime": "24/05/2020 07:46 CH",
+      "timeWorking": 12.016666666666667
+    }
+  ],
+  "orders": [
+    {
+      "tableId": "1",
+      "orderTime": "24/05/2020 07:40 CH",
+      "orderDetails": [
+        {
+          "drinkName": "Black Coffee",
+          "price": 15000,
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "tableId": "1",
+      "orderTime": "24/05/2020 07:41 CH",
+      "orderDetails": [
+        {
+          "drinkName": "Milk Coffee",
+          "price": 20000,
+          "amount": 2
+        }
+      ]
+    }
+  ]
+}

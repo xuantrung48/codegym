@@ -2,6 +2,7 @@
 using System.IO;
 using QuanLyQuanCaPhe.Models;
 using Newtonsoft.Json;
+using QuanLyQuanCaPhe.Models.Staff;
 
 namespace QuanLyQuanCaPhe.Services
 {
@@ -13,12 +14,15 @@ namespace QuanLyQuanCaPhe.Services
         private string billJsonFolder;
         private string cashierJsonName;
         private string tablesJsonFile;
+        private string staffsJsonFile;
+        private string StaffSalaryFolder;
         public Cashier currentCashier { get; set; }
         public Customers customers { get; private set; }
         public Menu menu { get; private set; }
         public Cashiers cashiers { get; private set; }
         public Tables tables { get; set; }
-        public JsonService(string pathToFolder, string customersJsonFileName, string menuJsonFileName, string billJsonFolderName, string cashierJsonFileName, string tablesJsonFileName)
+        public Staffs staffs { get; set; }
+        public JsonService(string pathToFolder, string customersJsonFileName, string menuJsonFileName, string billJsonFolderName, string cashierJsonFileName, string tablesJsonFileName, string staffsJsonFileName, string StaffSalaryFolderName)
         {
             path = pathToFolder;
             customersJsonFile = customersJsonFileName;
@@ -26,6 +30,24 @@ namespace QuanLyQuanCaPhe.Services
             billJsonFolder = billJsonFolderName;
             cashierJsonName = cashierJsonFileName;
             tablesJsonFile = tablesJsonFileName;
+            staffsJsonFile = staffsJsonFileName;
+            StaffSalaryFolder = StaffSalaryFolderName;
+        }
+        public void WriteJsonSalary(StaffSalary staffSalary)
+        {
+            using StreamWriter sw = File.CreateText($"{path + StaffSalaryFolder}\\{staffSalary.name}_{staffSalary.payTime}.json");
+            sw.Write(JsonConvert.SerializeObject(staffSalary));
+        }
+        public void ReadJsonStaffs()
+        {
+            using StreamReader sr = File.OpenText(path + staffsJsonFile);
+            staffs = JsonConvert.DeserializeObject<Staffs>(sr.ReadToEnd());
+            sr.Close();
+        }
+        public void WriteJsonStaffs()
+        {
+            using StreamWriter sw = File.CreateText(path + staffsJsonFile);
+            sw.Write(JsonConvert.SerializeObject(staffs));
         }
         public void ReadJsonCashier()
         {

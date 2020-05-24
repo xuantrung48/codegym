@@ -1,0 +1,41 @@
+{
+  "staffs": [
+    {
+      "id": "s1",
+      "name": "Trung",
+      "coefficientsSalary": 7.5,
+      "workingTimes": [
+      ],
+      "orders": [
+      ]
+    },
+    {
+      "id": "s2",
+      "name": "Khoa",
+      "coefficientsSalary": 4.5,
+      "workingTimes": [
+      ],
+      "orders": [
+      ]
+    },
+    {
+      "id": "s3",
+      "name": "Phuc",
+      "coefficientsSalary": 3.5,
+      "workingTimes": [
+      ],
+      "orders": [
+      ]
+    },
+    {
+      "id": "s4",
+      "name": "Khanh",
+      "coefficientsSalary": 2.5,
+      "workingTimes": [
+      ],
+      "orders": [
+      ]
+    }
+  ],
+  "basicSalary": 10000
+}

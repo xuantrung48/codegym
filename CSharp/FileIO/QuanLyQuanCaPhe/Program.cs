@@ -4,12 +4,13 @@ using QuanLyQuanCaPhe.Services;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using QuanLyQuanCaPhe.Models.Staff;
 
 namespace QuanLyQuanCaPhe
 {
     class Program
     {
-        static JsonService json = new JsonService(@"D:\codegym\github\codegym\CSharp\FileIO\QuanLyQuanCaPhe\Json\", "customers.json", "Menu.json", "JsonBills", "Cashiers.json", "Tables.json");
+        static JsonService json = new JsonService(@"D:\codegym\github\codegym\CSharp\FileIO\QuanLyQuanCaPhe\Json\", "customers.json", "Menu.json", "JsonBills", "Cashiers.json", "Tables.json", "Staffs.json", "Salary");
 
         static void Main(string[] args)
         {
@@ -17,6 +18,7 @@ namespace QuanLyQuanCaPhe
             json.ReadJsonCashier();
             json.ReadJsonTables();
             json.ReadJsonCustomers();
+            json.ReadJsonStaffs();
             Console.OutputEncoding = Encoding.UTF8;
             Console.InputEncoding = Encoding.UTF8;
             string option;
@@ -29,13 +31,14 @@ namespace QuanLyQuanCaPhe
                                  "4. Chỉnh sửa thực đơn\n" +
                                  "5. Quản lý bàn\n" +
                                  "6. Cập nhật thu ngân vào nhận ca\n" +
-                                 "7. Kết thúc ngày làm việc\n" +
-                                 "8. Thoát\n" +
+                                 "7. Quản lý danh sách nhân viên\n" +
+                                 "8. Kết thúc ngày làm việc\n" +
+                                 "9. Thoát\n" +
                                  "___________________________\n" +
                                  "Lựa chọn của bạn: ");
                 option = Console.ReadLine();
                 Process(option);
-            } while (option != "8");
+            } while (option != "9");
         }
         static void Process(string option)
         {
@@ -74,9 +77,268 @@ namespace QuanLyQuanCaPhe
                     UpdateCashier();
                     break;
                 case "7":
+                    ManageStaffs();
+                    break;
+                case "8":
                     End();
                     break;
             }
+        }
+        static int IndexOfStaff(string staffId)
+        {
+            for (int i = 0; i < json.staffs.staffs.Count; i++)
+                if (staffId == json.staffs.staffs[i].id)
+                    return i;
+            return -1;
+        }
+        static void StartEndWorkingTime(string staffId)
+        {
+            int indexOfStaff = IndexOfStaff(staffId);
+            var staffWorkingTime = json.staffs.staffs[indexOfStaff].workingTimes;
+            if (staffWorkingTime.Count != 0)
+                if (staffWorkingTime[^1].endTime == null)
+                {
+                    Console.Write("Kết thúc ca? y/n: ");
+                    if (Console.ReadLine() == "y")
+                    {
+                        staffWorkingTime[^1].endTime = DateTime.Now.ToString("dd/MM/yyyy hh:mm tt");
+                        staffWorkingTime[^1].timeWorking = (DateTime.Parse(staffWorkingTime[^1].endTime) - DateTime.Parse(staffWorkingTime[^1].startTime)).TotalMinutes / 60;
+                        json.WriteJsonStaffs();
+                    }
+                }
+                else
+                {
+                    Console.Write("Bắt đầu làm việc? y/n: ");
+                    if (Console.ReadLine() == "y")
+                    {
+                        staffWorkingTime.Add(new WorkingTime()
+                        {
+                            startTime = DateTime.Now.ToString("dd/MM/yyyy hh:mm tt")
+                        });
+                        json.WriteJsonStaffs();
+                    }
+                }
+            else
+            {
+                Console.Write("Bắt đầu làm việc? y/n: ");
+                if (Console.ReadLine() == "y")
+                {
+                    staffWorkingTime.Add(new WorkingTime()
+                    {
+                        startTime = DateTime.Now.ToString("dd/MM/yyyy hh:mm tt")
+                    });
+                    json.WriteJsonStaffs();
+                }
+            }
+        }
+        static void ManageStaff()
+        {
+            int indexOfStaff = 0;
+            string staffId = "";
+            do
+            {
+                if (indexOfStaff == -1)
+                {
+                    Console.Write($"Không có nhân viên nào có mã {staffId}. Bạn có muốn thêm mới không? y/n: ");
+                    if (Console.ReadLine() == "y")
+                    {
+                        AddStaff(staffId);
+                        json.WriteJsonStaffs();
+                    }
+                }
+                Console.Write("Nhập vào mã nhân viên: ");
+                staffId = Console.ReadLine();
+                indexOfStaff = IndexOfStaff(staffId);
+            } while (indexOfStaff == -1);
+
+            string option;
+            do
+            {
+                Console.Write("1. Vào ca / Kết thúc ca\n" +
+                    "2. Hiển thị chi tiết\n" +
+                    "3. Tính lương\n" +
+                    "4. Thoát\n" +
+                    "____________________\n" +
+                    "Lựa chọn của bạn: ");
+                option = Console.ReadLine();
+                switch (option)
+                {
+                    case "1":
+                        StartEndWorkingTime(staffId);
+                        break;
+                    case "2":
+                        ShowStaffDetail(staffId);
+                        break;
+                    case "3":
+                        CalculateSalary(staffId);
+                        break;
+                }
+            } while (option != "4");
+        }
+        static void ManageStaffs()
+        {
+            string option;
+            do
+            {
+                Console.Write("QUẢN LÝ DANH SÁCH NHÂN VIÊN:\n" +
+                    "1. Hiển thị danh sách nhân viên\n" +
+                    "2. Quản lý nhân viên\n" +
+                    "3. Thêm nhân viên mới\n" +
+                    "4. Chỉnh sửa thông tin nhân viên\n" +
+                    "5. Loại bỏ nhân viên\n" +
+                    "6. Thoát\n" +
+                    "___________________\n" +
+                    "Lựa chọn của bạn: ");
+                option = Console.ReadLine();
+                switch (option)
+                {
+                    case "1":
+                        ShowStaff();
+                        break;
+                    case "2":
+                        ManageStaff();
+                        break;
+                    case "3":
+                        string staffId = "";
+                        int indexOfStaff = -1;
+                        do
+                        {
+                            if (indexOfStaff != -1)
+                                Console.WriteLine($"Mã nhân viên {staffId} đã tồn tại, hãy nhập mã khác!");
+                            Console.Write("Nhập vào mã nhân viên: ");
+                            staffId = Console.ReadLine();
+                            indexOfStaff = IndexOfStaff(staffId);
+                        } while (indexOfStaff != -1);
+                        AddStaff(staffId);
+                        break;
+                    case "4":
+                        EditStaff();
+                        break;
+                    case "5":
+                        RemoveStaff();
+                        break;
+                }
+            } while (option != "6");
+        }
+        static void EditStaff()
+        {
+            Console.Write("Nhập vào mã nhân viên: ");
+            string staffId = Console.ReadLine();
+            int indexOfStaff = IndexOfStaff(staffId);
+            if (indexOfStaff == -1)
+                Console.WriteLine($"Mã nhân viên {staffId} không tồn tại!");
+            else
+            {
+                string option;
+                do
+                {
+                    Console.Write($"Chỉnh sửa thông tin nhân viên {staffId}:\n" +
+                        $"1. Sửa tên\n" +
+                        $"2. Sửa hệ số lương\n" +
+                        $"3. Thoát\n" +
+                        $"_______________\n" +
+                        $"Lựa chọn của bạn: ");
+                    option = Console.ReadLine();
+                    switch (option)
+                    {
+                        case "1":
+                            Console.Write("Nhập tên mới: ");
+                            json.staffs.staffs[indexOfStaff].name = Console.ReadLine();
+                            break;
+                        case "2":
+                            Console.Write("Nhập hệ số lương mới: ");
+                            double.TryParse(Console.ReadLine(), out json.staffs.staffs[indexOfStaff].coefficientsSalary);
+                            break;
+                    }
+                } while (option != "3");
+                json.WriteJsonStaffs();
+                Console.WriteLine($"Đã chỉnh sửa thông tin nhân viên {staffId}!");
+            }
+        }
+        static void RemoveStaff()
+        {
+            Console.Write("Nhập vào mã nhân viên: ");
+            string staffId = Console.ReadLine();
+            int indexOfStaff = IndexOfStaff(staffId);
+            if (indexOfStaff == -1)
+                Console.WriteLine($"Mã nhân viên {staffId} không tồn tại!");
+            else
+            {
+                json.staffs.staffs.RemoveAt(indexOfStaff);
+                json.WriteJsonStaffs();
+                Console.WriteLine($"Đã loại bỏ nhân viên {staffId}!");
+            }
+        }
+        static void AddStaff(string staffId)
+        {
+            Console.Write("Nhập vào tên nhân viên: ");
+            string staffName = Console.ReadLine();
+            Console.Write("Nhập vào hệ số lương: ");
+            double.TryParse(Console.ReadLine(), out double staffCoefficientsSalary);
+            json.staffs.staffs.Add(new Staff()
+            {
+                id = staffId,
+                name = staffName,
+                coefficientsSalary = staffCoefficientsSalary,
+                orders = new List<StaffOrder>(),
+                workingTimes = new List<WorkingTime>()
+            });
+            json.WriteJsonStaffs();
+            Console.WriteLine("Đã tạo thành công nhân viên mới!");
+        }
+        static void ShowStaff()
+        {
+            Console.Clear();
+            Console.WriteLine("Danh sách nhân viên: ");
+            foreach (var staff in json.staffs.staffs)
+                Console.WriteLine($"ID: {staff.id}, Tên: {staff.name}, Hệ số lương: {staff.coefficientsSalary}.");
+        }
+        static void CalculateSalary(string staffId)
+        {
+            int salary = SalaryOfStaff(staffId);
+            Console.WriteLine($"Lương nhân viên: {salary}VND");
+            Console.Write("Thanh toán lương cho nhân viên? y/n :");
+            if (Console.ReadLine() == "y")
+            {
+                int indexOfStaff = IndexOfStaff(staffId);
+
+                json.WriteJsonSalary(new StaffSalary()
+                {
+                    id = staffId,
+                    name = json.staffs.staffs[indexOfStaff].name,
+                    payTime = DateTime.Now.ToString("dd_MM_yyyy"),
+                    salary =  salary,
+                    orders = json.staffs.staffs[indexOfStaff].orders,
+                    workingTimes = json.staffs.staffs[indexOfStaff].workingTimes
+                });
+                json.staffs.staffs[indexOfStaff].workingTimes.Clear();
+                json.staffs.staffs[indexOfStaff].orders.Clear();
+                json.WriteJsonStaffs();
+            }
+        }
+        static int SalaryOfStaff(string staffId)
+        {
+            Console.Clear();
+            double salary = 0;
+            foreach (var staff in json.staffs.staffs)
+                if (staffId == staff.id)
+                    foreach (var workingTimes in staff.workingTimes)
+                        salary += workingTimes.timeWorking * staff.coefficientsSalary;
+            return (int)salary * json.staffs.basicSalary;
+        }
+        static void ShowStaffDetail(string staffId)
+        {
+            Console.Clear();
+            string result = "";
+            foreach (var staff in json.staffs.staffs)
+                if (staffId == staff.id)
+                {
+                    string working = "Working Times: \n";
+                    foreach (var workingTimes in staff.workingTimes)
+                        working += $"Start time: {workingTimes.startTime},\tEnd Time: {workingTimes.endTime}\tIn hours: {workingTimes.timeWorking}.\n";
+                    result += $"ID: {staff.id}, Name: {staff.name}\n{working}";
+                }
+            Console.WriteLine(result);
         }
         static void ManageTables()
         {
@@ -145,8 +407,15 @@ namespace QuanLyQuanCaPhe
         }
         static void End()
         {
-            if (json.customers.customers.Count != 0)
-                Console.WriteLine("Vẫn còn bàn chưa thanh toán. Bạn không thể kết thúc ngày.");
+            bool staffIsWorking = false;
+            foreach (var staff in json.staffs.staffs)
+                if (staff.workingTimes.Count != 0)
+                    if (staff.workingTimes[^1].endTime == null)
+                        staffIsWorking = true;
+            if (staffIsWorking)
+                Console.WriteLine("Vẫn còn nhân viên chưa kết thúc ca làm việc. Bạn chưa thể kết thúc ngày.");
+            else if (json.customers.customers.Count != 0)
+                Console.WriteLine("Vẫn còn bàn chưa thanh toán. Bạn chưa thể kết thúc ngày.");
             else
             {
                 Console.Write("Bạn có chắc kết thúc ngày làm việc không?\n" +
@@ -323,12 +592,8 @@ namespace QuanLyQuanCaPhe
         }
         static bool CreateNewTable(string tableId)
         {
-            Console.Write($"Bàn {tableId} không có trong hệ thống. Bạn có muốn tạo mới?\n" +
-                $"1. Có\n" +
-                $"2. Không\n" +
-                $"___________________\n" +
-                $"Lựa chọn của bạn: ");
-            if (Console.ReadLine() == "1")
+            Console.Write($"Bàn {tableId} không có trong hệ thống. Bạn có muốn tạo mới? y/n: ");
+            if (Console.ReadLine() == "y")
             {
                 json.tables.tables.Add(new Table()
                 {
@@ -346,7 +611,7 @@ namespace QuanLyQuanCaPhe
             if (IndexOfTable(tableId) == -1)
                 if (CreateNewTable(tableId))
                     CreateNewCustomer(tableId);
-            int tablePos = FindUsingTable(tableId);
+            int tablePos = IndexOfUsingTable(tableId);
             int indexOfTable = IndexOfTable(tableId);
             if (indexOfTable != -1)
             {
@@ -390,11 +655,11 @@ namespace QuanLyQuanCaPhe
         {
             ShowCustomerDetails(tablePosition);
             var customer = json.customers.customers[tablePosition];
-            var checkoutDrinks = new List<CheckOutDrink>();
+            var checkoutDrinks = new List<DrinkInBill>();
             foreach(var item in customer.orderDetails)
                 foreach(var drink in json.menu.drinks)
                     if (item.drinkId == drink.id)
-                        checkoutDrinks.Add(new CheckOutDrink()
+                        checkoutDrinks.Add(new DrinkInBill()
                             {
                                 drinkName = drink.name,
                                 price = drink.price,
@@ -441,7 +706,7 @@ namespace QuanLyQuanCaPhe
         {
             var customer = json.customers.customers[tablePosition];
             Console.WriteLine("Thêm order: ");
-            AddDrinkToTable(out string drinkId, out uint drinkAmount);
+            AddDrinkToTable(out string drinkId, out int drinkAmount, out int indexOfStaff);
             int drinkPos = -1;
             for (int i = 0; i < customer.orderDetails.Count; i++)
                 if (drinkId == customer.orderDetails[i].drinkId)
@@ -455,10 +720,41 @@ namespace QuanLyQuanCaPhe
             else
                 customer.orderDetails[drinkPos].amount += drinkAmount;
 
+            AddOrderToStaff(drinkId, drinkAmount, indexOfStaff, tablePosition);
             json.WriteJsonCustomers();
         }
-        static void AddDrinkToTable(out string drinkId, out uint drinkAmount)
+        static void AddOrderToStaff(string drinkId, int drinkAmount, int indexOfStaff, int tablePosition)
         {
+            var customer = json.customers.customers[tablePosition];
+            var orderItems = new List<DrinkInBill>();
+            var indexOfItem = IndexOfDrink(drinkId);
+            orderItems.Add(new DrinkInBill()
+            {
+                drinkName = json.menu.drinks[indexOfItem].name,
+                price = json.menu.drinks[indexOfItem].price,
+                amount = drinkAmount
+            });
+            json.staffs.staffs[indexOfStaff].orders.Add(new StaffOrder()
+            {
+                tableId = customer.table,
+                orderTime = DateTime.Now.ToString("dd/MM/yyyy hh:mm tt"),
+                orderDetails = orderItems
+            });
+            json.WriteJsonStaffs();
+        }
+        static void AddDrinkToTable(out string drinkId, out int drinkAmount, out int indexOfStaff)
+        {
+            string staffId = "";
+            indexOfStaff = 0;
+            do
+            {
+                if (indexOfStaff == -1)
+                    Console.WriteLine($"Không có nhân viên {staffId}, Xin hãy nhập lại!");
+                Console.Write("ID nhân viên order: ");
+                staffId = Console.ReadLine();
+                indexOfStaff = IndexOfStaff(staffId);
+            } while (indexOfStaff == -1);
+
             ShowMenu();
             bool drinkIsNotValid = false;
             do
@@ -475,42 +771,29 @@ namespace QuanLyQuanCaPhe
                         break;
                     }
                 Console.Write("Nhập số lượng thức uống: ");
-                uint.TryParse(Console.ReadLine(), out drinkAmount);
+                int.TryParse(Console.ReadLine(), out drinkAmount);
             } while (drinkIsNotValid);
         }
         static void CreateNewCustomer(string tableId)
         {
             Console.WriteLine($"TẠO BÀN MỚI: {tableId}");
             var drinksOrder = new List<OrderDrink>();
-            string option;
-            do
-            {
-                Console.Write("1. Order đồ uống\n" +
-                    "2. Thoát\n" +
-                    "_______________________\n" +
-                    "Lựa chọn của bạn: ");
-                option = Console.ReadLine();
+            AddDrinkToTable(out string drinkId, out int drinkAmount, out int indexOfStaff);
 
-                if (option == "1")
+            int inndexOfDrink = -1;
+            for (int i = 0; i < drinksOrder.Count; i++)
+                if (drinkId == drinksOrder[i].drinkId)
+                    inndexOfDrink = i;
+
+            if (inndexOfDrink == -1)
+                drinksOrder.Add(new OrderDrink()
                 {
-                    AddDrinkToTable(out string drinkId, out uint drinkAmount);
+                    drinkId = drinkId,
+                    amount = drinkAmount
+                });
+            else
+                drinksOrder[inndexOfDrink].amount += drinkAmount;
 
-                    int inndexOfDrink = -1;
-                    for (int i = 0; i < drinksOrder.Count; i++)
-                        if (drinkId == drinksOrder[i].drinkId)
-                            inndexOfDrink = i;
-
-                    if (inndexOfDrink == -1)
-                        drinksOrder.Add(new OrderDrink()
-                        {
-                            drinkId = drinkId,
-                            amount = drinkAmount
-                        });
-                    else
-                        drinksOrder[inndexOfDrink].amount += drinkAmount;
-                }
-            }
-            while (option != "2");
             var customer = new Customer
             {
                 table = tableId,
@@ -520,9 +803,10 @@ namespace QuanLyQuanCaPhe
             json.tables.tables[IndexOfTable(tableId)].available = false;
             json.WriteJsonTables();
             json.customers.customers.Add(customer);
+            AddOrderToStaff(drinkId, drinkAmount, indexOfStaff, IndexOfUsingTable(tableId));
             json.WriteJsonCustomers();
         }
-        static int FindUsingTable(string tableId)
+        static int IndexOfUsingTable(string tableId)
         {
             for (int i = 0; i < json.customers.customers.Count; i++)
                 if (tableId == json.customers.customers[i].table)

@@ -7,7 +7,7 @@ namespace QuanLyQuanCaPhe.Models
         public string table;
         public string timeIn;
         public string timeOut;
-        public List<CheckOutDrink> orderDetails;
+        public List<DrinkInBill> orderDetails;
         public CashierInBill cashier;
         public int Total;
     }
