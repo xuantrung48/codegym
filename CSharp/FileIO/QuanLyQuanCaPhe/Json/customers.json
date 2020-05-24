@@ -1,1 +1,44 @@
-{"customers":[{"table":"6","timeIn":"23/05/2020 05:20 CH","orderDetails":[{"drinkId":"cf2","amount":3},{"drinkId":"cf3","amount":2}]},{"table":"3","timeIn":"24/05/2020 11:56 SA","orderDetails":[]},{"table":"2","timeIn":"24/05/2020 11:56 SA","orderDetails":[]},{"table":"1","timeIn":"24/05/2020 07:40 CH","orderDetails":[{"drinkId":"cf0","amount":1},{"drinkId":"cf1","amount":2}]}]}
+{
+  "customers": [
+    {
+      "table": "6",
+      "timeIn": "23/05/2020 05:20 CH",
+      "orderDetails": [
+        {
+          "drinkId": "cf2",
+          "amount": 3
+        },
+        {
+          "drinkId": "cf3",
+          "amount": 2
+        }
+      ]
+    },
+    {
+      "table": "3",
+      "timeIn": "24/05/2020 11:56 SA",
+      "orderDetails": [
+      ]
+    },
+    {
+      "table": "2",
+      "timeIn": "24/05/2020 11:56 SA",
+      "orderDetails": [
+      ]
+    },
+    {
+      "table": "1",
+      "timeIn": "24/05/2020 07:40 CH",
+      "orderDetails": [
+        {
+          "drinkId": "cf0",
+          "amount": 1
+        },
+        {
+          "drinkId": "cf1",
+          "amount": 2
+        }
+      ]
+    }
+  ]
+}

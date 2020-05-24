@@ -54,7 +54,7 @@ namespace QuanLyQuanCaPhe
                     Console.Clear();
                     string emptyTables = "Bàn trống: ";
                     foreach (var item in json.tables.tables)
-                        if (item.available == true)
+                        if (item.available)
                             emptyTables += $"{item.id}\t";
                     Console.WriteLine(emptyTables);
                     break;
@@ -615,7 +615,7 @@ namespace QuanLyQuanCaPhe
             int indexOfTable = IndexOfTable(tableId);
             if (indexOfTable != -1)
             {
-                if (json.tables.tables[indexOfTable].available == true)
+                if (json.tables.tables[indexOfTable].available)
                     CreateNewCustomer(tableId);
                 else
                 {
