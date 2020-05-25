@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace QuanLyQuanCaPhe.Models.Staff
 {
-    class StaffOrder
+    internal class StaffOrder
     {
         public string tableId;
         public string orderTime;

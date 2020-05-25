@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace QuanLyQuanCaPhe.Models
+﻿namespace QuanLyQuanCaPhe.Models
 {
-    class WorkingTime
+    internal class WorkingTime
     {
         public string startTime;
         public string endTime;

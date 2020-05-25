@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace QuanLyQuanCaPhe.Models
 {
-    class Cashiers
+    internal class Cashiers
     {
         public List<Cashier> cashiers;
     }

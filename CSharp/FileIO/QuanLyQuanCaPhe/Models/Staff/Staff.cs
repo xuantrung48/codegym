@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace QuanLyQuanCaPhe.Models.Staff
 {
-    class Staff
+    internal class Staff
     {
         public string id;
         public string name;

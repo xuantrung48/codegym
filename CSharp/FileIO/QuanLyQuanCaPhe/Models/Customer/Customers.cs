@@ -2,7 +2,7 @@
 
 namespace QuanLyQuanCaPhe.Models
 {
-    class Customers
+    internal class Customers
     {
         public List<Customer> customers;
     }

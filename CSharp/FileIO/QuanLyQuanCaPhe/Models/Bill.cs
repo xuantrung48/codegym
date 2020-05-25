@@ -2,7 +2,7 @@
 
 namespace QuanLyQuanCaPhe.Models
 {
-    class Bill
+    internal class Bill
     {
         public string table;
         public string timeIn;

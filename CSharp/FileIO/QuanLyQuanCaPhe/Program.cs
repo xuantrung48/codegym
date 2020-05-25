@@ -1,18 +1,17 @@
-﻿using Newtonsoft.Json;
-using QuanLyQuanCaPhe.Models;
+﻿using QuanLyQuanCaPhe.Models;
+using QuanLyQuanCaPhe.Models.Staff;
 using QuanLyQuanCaPhe.Services;
 using System;
 using System.Collections.Generic;
 using System.Text;
-using QuanLyQuanCaPhe.Models.Staff;
 
 namespace QuanLyQuanCaPhe
 {
-    class Program
+    internal class Program
     {
-        static JsonService json = new JsonService(@"D:\codegym\github\codegym\CSharp\FileIO\QuanLyQuanCaPhe\Json\", "customers.json", "Menu.json", "JsonBills", "Cashiers.json", "Tables.json", "Staffs.json", "Salary");
+        private static JsonService json = new JsonService(@"D:\codegym\github\codegym\CSharp\FileIO\QuanLyQuanCaPhe\Json\", "customers.json", "Menu.json", "JsonBills", "Cashiers.json", "Tables.json", "Staffs.json", "Salary");
 
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             json.ReadJsonMenu();
             json.ReadJsonCashier();
@@ -40,16 +39,18 @@ namespace QuanLyQuanCaPhe
                 Process(option);
             } while (option != "9");
         }
-        static void Process(string option)
+
+        private static void Process(string option)
         {
             switch (option)
             {
                 case "1":
                     Console.Clear();
                     Console.WriteLine("Thông tin các bàn:");
-                    for(int i = 0; i < json.customers.customers.Count; i++)
+                    for (int i = 0; i < json.customers.customers.Count; i++)
                         ShowCustomerDetails(i);
                     break;
+
                 case "2":
                     Console.Clear();
                     string emptyTables = "Bàn trống: ";
@@ -58,6 +59,7 @@ namespace QuanLyQuanCaPhe
                             emptyTables += $"{item.id}\t";
                     Console.WriteLine(emptyTables);
                     break;
+
                 case "3":
                     if (json.currentCashier == null)
                         Console.WriteLine("Hãy cập nhật thông tin thu ngân trước khi xử lý");
@@ -67,31 +69,38 @@ namespace QuanLyQuanCaPhe
                         ProcessTable(Console.ReadLine());
                     }
                     break;
+
                 case "4":
                     EditMenu();
                     break;
+
                 case "5":
                     ManageTables();
                     break;
+
                 case "6":
                     UpdateCashier();
                     break;
+
                 case "7":
                     ManageStaffs();
                     break;
+
                 case "8":
                     End();
                     break;
             }
         }
-        static int IndexOfStaff(string staffId)
+
+        private static int IndexOfStaff(string staffId)
         {
             for (int i = 0; i < json.staffs.staffs.Count; i++)
                 if (staffId == json.staffs.staffs[i].id)
                     return i;
             return -1;
         }
-        static void StartEndWorkingTime(string staffId)
+
+        private static void StartEndWorkingTime(string staffId)
         {
             int indexOfStaff = IndexOfStaff(staffId);
             var staffWorkingTime = json.staffs.staffs[indexOfStaff].workingTimes;
@@ -131,7 +140,8 @@ namespace QuanLyQuanCaPhe
                 }
             }
         }
-        static void ManageStaff()
+
+        private static void ManageStaff()
         {
             int indexOfStaff = 0;
             string staffId = "";
@@ -166,16 +176,19 @@ namespace QuanLyQuanCaPhe
                     case "1":
                         StartEndWorkingTime(staffId);
                         break;
+
                     case "2":
                         ShowStaffDetail(staffId);
                         break;
+
                     case "3":
                         CalculateSalary(staffId);
                         break;
                 }
             } while (option != "4");
         }
-        static void ManageStaffs()
+
+        private static void ManageStaffs()
         {
             string option;
             do
@@ -195,9 +208,11 @@ namespace QuanLyQuanCaPhe
                     case "1":
                         ShowStaff();
                         break;
+
                     case "2":
                         ManageStaff();
                         break;
+
                     case "3":
                         string staffId = "";
                         int indexOfStaff = -1;
@@ -211,16 +226,19 @@ namespace QuanLyQuanCaPhe
                         } while (indexOfStaff != -1);
                         AddStaff(staffId);
                         break;
+
                     case "4":
                         EditStaff();
                         break;
+
                     case "5":
                         RemoveStaff();
                         break;
                 }
             } while (option != "6");
         }
-        static void EditStaff()
+
+        private static void EditStaff()
         {
             Console.Write("Nhập vào mã nhân viên: ");
             string staffId = Console.ReadLine();
@@ -245,6 +263,7 @@ namespace QuanLyQuanCaPhe
                             Console.Write("Nhập tên mới: ");
                             json.staffs.staffs[indexOfStaff].name = Console.ReadLine();
                             break;
+
                         case "2":
                             Console.Write("Nhập hệ số lương mới: ");
                             double.TryParse(Console.ReadLine(), out json.staffs.staffs[indexOfStaff].coefficientsSalary);
@@ -255,7 +274,8 @@ namespace QuanLyQuanCaPhe
                 Console.WriteLine($"Đã chỉnh sửa thông tin nhân viên {staffId}!");
             }
         }
-        static void RemoveStaff()
+
+        private static void RemoveStaff()
         {
             Console.Write("Nhập vào mã nhân viên: ");
             string staffId = Console.ReadLine();
@@ -269,7 +289,8 @@ namespace QuanLyQuanCaPhe
                 Console.WriteLine($"Đã loại bỏ nhân viên {staffId}!");
             }
         }
-        static void AddStaff(string staffId)
+
+        private static void AddStaff(string staffId)
         {
             Console.Write("Nhập vào tên nhân viên: ");
             string staffName = Console.ReadLine();
@@ -286,14 +307,16 @@ namespace QuanLyQuanCaPhe
             json.WriteJsonStaffs();
             Console.WriteLine("Đã tạo thành công nhân viên mới!");
         }
-        static void ShowStaff()
+
+        private static void ShowStaff()
         {
             Console.Clear();
             Console.WriteLine("Danh sách nhân viên: ");
             foreach (var staff in json.staffs.staffs)
                 Console.WriteLine($"ID: {staff.id}, Tên: {staff.name}, Hệ số lương: {staff.coefficientsSalary}.");
         }
-        static void CalculateSalary(string staffId)
+
+        private static void CalculateSalary(string staffId)
         {
             int salary = SalaryOfStaff(staffId);
             Console.WriteLine($"Lương nhân viên: {salary}VND");
@@ -307,7 +330,7 @@ namespace QuanLyQuanCaPhe
                     id = staffId,
                     name = json.staffs.staffs[indexOfStaff].name,
                     payTime = DateTime.Now.ToString("dd_MM_yyyy"),
-                    salary =  salary,
+                    salary = salary,
                     orders = json.staffs.staffs[indexOfStaff].orders,
                     workingTimes = json.staffs.staffs[indexOfStaff].workingTimes
                 });
@@ -316,7 +339,8 @@ namespace QuanLyQuanCaPhe
                 json.WriteJsonStaffs();
             }
         }
-        static int SalaryOfStaff(string staffId)
+
+        private static int SalaryOfStaff(string staffId)
         {
             Console.Clear();
             double salary = 0;
@@ -326,7 +350,8 @@ namespace QuanLyQuanCaPhe
                         salary += workingTimes.workingTime * staff.coefficientsSalary;
             return (int)salary * json.staffs.basicSalary;
         }
-        static void ShowStaffDetail(string staffId)
+
+        private static void ShowStaffDetail(string staffId)
         {
             Console.Clear();
             string result = "";
@@ -340,7 +365,8 @@ namespace QuanLyQuanCaPhe
                 }
             Console.WriteLine(result);
         }
-        static void ManageTables()
+
+        private static void ManageTables()
         {
             string option;
             do
@@ -367,12 +393,14 @@ namespace QuanLyQuanCaPhe
                         else
                             Console.WriteLine($"Bàn {tableID} đã có trên hệ thống.");
                         break;
+
                     case "2":
                         if (IndexOfTable(tableID) != -1)
                             EditTableID(tableID);
                         else
                             Console.WriteLine($"Bàn {tableID} không có trên hệ thống.");
                         break;
+
                     case "3":
                         if (IndexOfTable(tableID) != -1)
                             RemoveTable(tableID);
@@ -381,9 +409,9 @@ namespace QuanLyQuanCaPhe
                         break;
                 }
             } while (option != "4");
-
         }
-        static void EditTableID(string tableID)
+
+        private static void EditTableID(string tableID)
         {
             int indexOfNewTable = -1;
             string newTableID = "";
@@ -399,13 +427,15 @@ namespace QuanLyQuanCaPhe
             json.WriteJsonTables();
             Console.WriteLine($"Đã đổi bàn thành {newTableID}!");
         }
-        static void RemoveTable(string tableID)
+
+        private static void RemoveTable(string tableID)
         {
             json.tables.tables.RemoveAt(IndexOfTable(tableID));
             json.WriteJsonTables();
             Console.WriteLine($"Đã xóa bàn {tableID}!");
         }
-        static void End()
+
+        private static void End()
         {
             bool staffIsWorking = false;
             foreach (var staff in json.staffs.staffs)
@@ -436,21 +466,24 @@ namespace QuanLyQuanCaPhe
                 }
             }
         }
-        static int IndexOfTable(string tableID)
+
+        private static int IndexOfTable(string tableID)
         {
             for (int i = 0; i < json.tables.tables.Count; i++)
                 if (tableID == json.tables.tables[i].id)
                     return i;
             return -1;
         }
-        static int IndexOfCashier(string cashierID)
+
+        private static int IndexOfCashier(string cashierID)
         {
             for (int i = 0; i < json.cashiers.cashiers.Count; i++)
                 if (cashierID == json.cashiers.cashiers[i].id)
                     return i;
             return -1;
         }
-        static void AddNewCashier(string cashierID)
+
+        private static void AddNewCashier(string cashierID)
         {
             Console.Write("Nhập vào tên nhân viên: ");
             string cashierName = Console.ReadLine();
@@ -462,7 +495,8 @@ namespace QuanLyQuanCaPhe
             });
             json.WriteJsonCashier();
         }
-        static void UpdateCashier()
+
+        private static void UpdateCashier()
         {
             int index = 0;
             string cashierID = "";
@@ -495,14 +529,16 @@ namespace QuanLyQuanCaPhe
             json.currentCashier = json.cashiers.cashiers[IndexOfCashier(cashierID)];
             json.WriteJsonCashier();
         }
-        static void ShowMenu()
+
+        private static void ShowMenu()
         {
             string menu = "";
             foreach (var item in json.menu.drinks)
                 menu += $"ID: {item.id}\tTên: {item.name}\tGiá: {item.price}VND\n";
             Console.Write($"Thực đơn:\n{menu}\n");
         }
-        static void EditMenu()
+
+        private static void EditMenu()
         {
             string option;
             do
@@ -520,16 +556,19 @@ namespace QuanLyQuanCaPhe
                     case "1":
                         AddDrinkToMenu();
                         break;
+
                     case "2":
                         RemoveDrinkFromMenu();
                         break;
+
                     case "3":
                         UpdateDrinkPrice();
                         break;
                 }
             } while (option != "4");
         }
-        static void UpdateDrinkPrice()
+
+        private static void UpdateDrinkPrice()
         {
             Console.Write("Nhập ID thức uống: ");
             string drinkId = Console.ReadLine();
@@ -545,14 +584,16 @@ namespace QuanLyQuanCaPhe
                 Console.WriteLine("Đã cập nhật giá thức uống!");
             }
         }
-        static int IndexOfDrink(string drinkID)
+
+        private static int IndexOfDrink(string drinkID)
         {
             for (int i = 0; i < json.menu.drinks.Count; i++)
                 if (drinkID == json.menu.drinks[i].id)
                     return i;
             return -1;
         }
-        static void RemoveDrinkFromMenu()
+
+        private static void RemoveDrinkFromMenu()
         {
             Console.Write("Nhập ID thức uống: ");
             string drinkId = Console.ReadLine();
@@ -566,7 +607,8 @@ namespace QuanLyQuanCaPhe
                 Console.WriteLine("Đã bỏ thức uống!");
             }
         }
-        static void AddDrinkToMenu()
+
+        private static void AddDrinkToMenu()
         {
             int indexOfDrinkId = -1;
             string drinkId;
@@ -590,7 +632,8 @@ namespace QuanLyQuanCaPhe
             });
             json.WriteJsonMenu();
         }
-        static bool CreateNewTable(string tableId)
+
+        private static bool CreateNewTable(string tableId)
         {
             Console.Write($"Bàn {tableId} không có trong hệ thống. Bạn có muốn tạo mới? y/n: ");
             if (Console.ReadLine() == "y")
@@ -606,7 +649,8 @@ namespace QuanLyQuanCaPhe
             }
             return false;
         }
-        static void ProcessTable(string tableId)
+
+        private static void ProcessTable(string tableId)
         {
             if (IndexOfTable(tableId) == -1)
                 if (CreateNewTable(tableId))
@@ -637,10 +681,12 @@ namespace QuanLyQuanCaPhe
                                 Console.WriteLine($"Bàn {tableId}:");
                                 AddDrinkToCurrentCustomer(tablePos);
                                 break;
+
                             case "2":
                                 Console.Clear();
                                 ShowCustomerDetails(tablePos);
                                 break;
+
                             case "3":
                                 Console.Clear();
                                 CheckOut(tablePos);
@@ -651,20 +697,21 @@ namespace QuanLyQuanCaPhe
                 }
             }
         }
-        static void CheckOut(int tablePosition)
+
+        private static void CheckOut(int tablePosition)
         {
             ShowCustomerDetails(tablePosition);
             var customer = json.customers.customers[tablePosition];
             var checkoutDrinks = new List<DrinkInBill>();
-            foreach(var item in customer.orderDetails)
-                foreach(var drink in json.menu.drinks)
+            foreach (var item in customer.orderDetails)
+                foreach (var drink in json.menu.drinks)
                     if (item.drinkId == drink.id)
                         checkoutDrinks.Add(new DrinkInBill()
-                            {
-                                drinkName = drink.name,
-                                price = drink.price,
-                                amount = (int)item.amount
-                            });
+                        {
+                            drinkName = drink.name,
+                            price = drink.price,
+                            amount = (int)item.amount
+                        });
             var newCheckOut = new Bill()
             {
                 table = customer.table,
@@ -684,16 +731,18 @@ namespace QuanLyQuanCaPhe
             json.WriteJsonTables();
             json.WriteJsonCustomers();
         }
-        static int TotalCheckOut(int tablePosition)
+
+        private static int TotalCheckOut(int tablePosition)
         {
             int total = 0;
-            foreach(var order in json.customers.customers[tablePosition].orderDetails)
-                foreach(var item in json.menu.drinks)
+            foreach (var order in json.customers.customers[tablePosition].orderDetails)
+                foreach (var item in json.menu.drinks)
                     if (order.drinkId == item.id)
                         total += (int)order.amount * item.price;
             return total;
         }
-        static void ShowCustomerDetails(int tablePosition)
+
+        private static void ShowCustomerDetails(int tablePosition)
         {
             string orderDetails = "Thức uống (số lượng): ";
             var customer = json.customers.customers[tablePosition];
@@ -702,7 +751,8 @@ namespace QuanLyQuanCaPhe
             string result = $"Bàn: {customer.table}\tGiờ vào: {customer.timeIn}\t{orderDetails}\tTổng cộng: {TotalCheckOut(tablePosition)}";
             Console.WriteLine(result);
         }
-        static void AddDrinkToCurrentCustomer(int tablePosition)
+
+        private static void AddDrinkToCurrentCustomer(int tablePosition)
         {
             var customer = json.customers.customers[tablePosition];
             Console.WriteLine("Thêm order: ");
@@ -723,7 +773,8 @@ namespace QuanLyQuanCaPhe
             AddOrderToStaff(drinkId, drinkAmount, indexOfStaff, tablePosition);
             json.WriteJsonCustomers();
         }
-        static void AddOrderToStaff(string drinkId, int drinkAmount, int indexOfStaff, int tablePosition)
+
+        private static void AddOrderToStaff(string drinkId, int drinkAmount, int indexOfStaff, int tablePosition)
         {
             var customer = json.customers.customers[tablePosition];
             var orderItems = new List<DrinkInBill>();
@@ -742,7 +793,8 @@ namespace QuanLyQuanCaPhe
             });
             json.WriteJsonStaffs();
         }
-        static void AddDrinkToTable(out string drinkId, out int drinkAmount, out int indexOfStaff)
+
+        private static void AddDrinkToTable(out string drinkId, out int drinkAmount, out int indexOfStaff)
         {
             string staffId = "";
             indexOfStaff = 0;
@@ -774,7 +826,8 @@ namespace QuanLyQuanCaPhe
                 int.TryParse(Console.ReadLine(), out drinkAmount);
             } while (drinkIsNotValid);
         }
-        static void CreateNewCustomer(string tableId)
+
+        private static void CreateNewCustomer(string tableId)
         {
             Console.WriteLine($"TẠO BÀN MỚI: {tableId}");
             var drinksOrder = new List<OrderDrink>();
@@ -806,7 +859,8 @@ namespace QuanLyQuanCaPhe
             AddOrderToStaff(drinkId, drinkAmount, indexOfStaff, IndexOfUsingTable(tableId));
             json.WriteJsonCustomers();
         }
-        static int IndexOfUsingTable(string tableId)
+
+        private static int IndexOfUsingTable(string tableId)
         {
             for (int i = 0; i < json.customers.customers.Count; i++)
                 if (tableId == json.customers.customers[i].table)

@@ -2,7 +2,7 @@
 
 namespace QuanLyQuanCaPhe.Models
 {
-    class Menu
+    internal class Menu
     {
         public List<Drink> drinks;
     }

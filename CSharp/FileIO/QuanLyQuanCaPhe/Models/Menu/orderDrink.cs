@@ -1,6 +1,6 @@
 ﻿namespace QuanLyQuanCaPhe.Models
 {
-    class OrderDrink
+    internal class OrderDrink
     {
         public string drinkId;
         public int amount;

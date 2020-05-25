@@ -1,1 +1,18 @@
-{"customers":[{"table":"6","timeIn":"23/05/2020 05:20 CH","orderDetails":[{"drinkId":"cf2","amount":3},{"drinkId":"cf3","amount":2}]}]}
+{
+  "customers": [
+    {
+      "table": "6",
+      "timeIn": "23/05/2020 05:20 CH",
+      "orderDetails": [
+        {
+          "drinkId": "cf2",
+          "amount": 3
+        },
+        {
+          "drinkId": "cf3",
+          "amount": 2
+        }
+      ]
+    }
+  ]
+}

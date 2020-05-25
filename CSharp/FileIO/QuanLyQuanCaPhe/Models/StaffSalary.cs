@@ -1,11 +1,9 @@
 ﻿using QuanLyQuanCaPhe.Models.Staff;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace QuanLyQuanCaPhe.Models
 {
-    class StaffSalary
+    internal class StaffSalary
     {
         public string id;
         public string name;

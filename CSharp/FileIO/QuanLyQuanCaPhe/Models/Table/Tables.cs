@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace QuanLyQuanCaPhe.Models
 {
-    class Tables
+    internal class Tables
     {
         public List<Table> tables;
     }

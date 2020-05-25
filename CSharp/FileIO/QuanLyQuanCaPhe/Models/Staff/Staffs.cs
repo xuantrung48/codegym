@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace QuanLyQuanCaPhe.Models.Staff
 {
-    class Staffs
+    internal class Staffs
     {
         public List<Staff> staffs;
         public int basicSalary;

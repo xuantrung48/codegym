@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace QuanLyQuanCaPhe.Models
+﻿namespace QuanLyQuanCaPhe.Models
 {
-    class CurrentCashier
+    internal class CurrentCashier
     {
         public Cashier cashier;
     }
