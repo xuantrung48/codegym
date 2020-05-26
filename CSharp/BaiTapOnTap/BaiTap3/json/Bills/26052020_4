@@ -1,0 +1,27 @@
+{
+  "id": "4",
+  "orderStatus": 2,
+  "customer": {
+    "id": "2",
+    "name": "Super Man",
+    "phoneNumber": "0703004004",
+    "address": "28 Nguyen Tri Phuong, Hue"
+  },
+  "items": [
+    {
+      "id": "t1",
+      "name": "Pants 01",
+      "price": 150000,
+      "quantity": 3,
+      "itemAmount": 450000
+    },
+    {
+      "id": "j1",
+      "name": "Jeans 01",
+      "price": 200000,
+      "quantity": 2,
+      "itemAmount": 400000
+    }
+  ],
+  "total": 850000
+}

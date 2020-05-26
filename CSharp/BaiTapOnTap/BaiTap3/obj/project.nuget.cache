@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "q9qHEE4XmLiieb/LSUzvgzfb+jKknUTDfltxRyig/mIKtjU6SxLL30ggzXQa3ffUPjM2XivihqwvOqI5dCfPHQ==",
+  "dgSpecHash": "7801giOZ5vbee97ccJ36ikXNiyjwUs/FOav5e8CQM0+pk+k3uGTeZeO92xGnc21pCfcsRliRVM5PqAcVL5gcbw==",
   "success": true,
   "projectFilePath": "D:\\codegym\\github\\codegym\\CSharp\\BaiTapOnTap\\BaiTap3\\BaiTap3.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Nhung\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
   "logs": []
 }
