@@ -1,0 +1,13 @@
+D:\codegym\github\codegym\CSharp\BaiTapOnTap\BaiTap1\bin\Debug\netcoreapp3.1\BaiTap1.exe
+D:\codegym\github\codegym\CSharp\BaiTapOnTap\BaiTap1\bin\Debug\netcoreapp3.1\BaiTap1.deps.json
+D:\codegym\github\codegym\CSharp\BaiTapOnTap\BaiTap1\bin\Debug\netcoreapp3.1\BaiTap1.runtimeconfig.json
+D:\codegym\github\codegym\CSharp\BaiTapOnTap\BaiTap1\bin\Debug\netcoreapp3.1\BaiTap1.runtimeconfig.dev.json
+D:\codegym\github\codegym\CSharp\BaiTapOnTap\BaiTap1\bin\Debug\netcoreapp3.1\BaiTap1.dll
+D:\codegym\github\codegym\CSharp\BaiTapOnTap\BaiTap1\bin\Debug\netcoreapp3.1\BaiTap1.pdb
+D:\codegym\github\codegym\CSharp\BaiTapOnTap\BaiTap1\obj\Debug\netcoreapp3.1\BaiTap1.csprojAssemblyReference.cache
+D:\codegym\github\codegym\CSharp\BaiTapOnTap\BaiTap1\obj\Debug\netcoreapp3.1\BaiTap1.csproj.CoreCompileInputs.cache
+D:\codegym\github\codegym\CSharp\BaiTapOnTap\BaiTap1\obj\Debug\netcoreapp3.1\BaiTap1.AssemblyInfoInputs.cache
+D:\codegym\github\codegym\CSharp\BaiTapOnTap\BaiTap1\obj\Debug\netcoreapp3.1\BaiTap1.AssemblyInfo.cs
+D:\codegym\github\codegym\CSharp\BaiTapOnTap\BaiTap1\obj\Debug\netcoreapp3.1\BaiTap1.dll
+D:\codegym\github\codegym\CSharp\BaiTapOnTap\BaiTap1\obj\Debug\netcoreapp3.1\BaiTap1.pdb
+D:\codegym\github\codegym\CSharp\BaiTapOnTap\BaiTap1\obj\Debug\netcoreapp3.1\BaiTap1.genruntimeconfig.cache
