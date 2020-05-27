@@ -8,11 +8,8 @@ namespace BaiTap3.Models
     {
         public string id;
         public string name;
-        public string phoneNumber;
-        public string address;
-        public override string ToString()
-        {
-            return $"User ID: {id}\tTên: {name}\tSDT: {phoneNumber}\tĐịa chỉ: {address}";
-        }
+        public string email;
+        public string passWord;
+        public Role role;
     }
 }

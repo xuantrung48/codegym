@@ -14,6 +14,7 @@ namespace BaiTap3.Service
         private string databaseFile;
         private string billFolder;
         public Database database;
+        public User currentUser;
         public JsonService(string pathToFolder, string databaseFileName, string billFolderName)
         {
             path = pathToFolder;

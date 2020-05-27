@@ -1,65 +1,90 @@
 {
-  "admin": {
-    "email": "xuantrung48@gmail.com",
-    "passWord": "Aa123456"
-  },
-  "products": [
-    {
-      "id": "j1",
-      "name": "Jeans 01",
-      "price": 200000,
-      "remain": 5
-    },
-    {
-      "id": "t1",
-      "name": "Pants 01",
-      "price": 150000,
-      "remain": 3
-    }
-  ],
   "users": [
     {
       "id": "1",
       "name": "Trung",
-      "phoneNumber": "0702004004",
-      "address": "28 Nguyen Tri Phuong, Hue"
+      "email": "xuantrung48@gmail.com",
+      "passWord": "Aa123456",
+      "role": 0
     },
     {
       "id": "2",
-      "name": "Super Man",
-      "phoneNumber": "0703004004",
-      "address": "28 Nguyen Tri Phuong, Hue"
+      "name": "Batman",
+      "email": "xuantrung49@gmail.com",
+      "passWord": "Aa123456",
+      "role": 1
     }
   ],
-  "userIdCounter": 3,
-  "orders": [
-    {
-      "id": "4",
-      "orderStatus": 0,
-      "customer": {
-        "id": "2",
-        "name": "Batman",
-        "phoneNumber": "0703004004",
+    "userIdCounter"
+    :
+    1,
+    "products"
+    :
+    [
+      {
+        "id": "j1",
+        "name": "Jeans 01",
+        "price": 200000,
+        "remain": 5
+      },
+      {
+        "id": "t1",
+        "name": "Pants 01",
+        "price": 150000,
+        "remain": 8
+      }
+    ],
+    "customers"
+    :
+    [
+      {
+        "id": "1",
+        "name": "Trung",
+        "phoneNumber": "0702004004",
         "address": "28 Nguyen Tri Phuong, Hue"
       },
-      "items": [
-        {
-          "id": "t1",
-          "name": "Pants 01",
-          "price": 150000,
-          "quantity": 3,
-          "itemAmount": 450000
+      {
+        "id": "2",
+        "name": "Super Man",
+        "phoneNumber": "0703004004",
+        "address": "28 Nguyen Tri Phuong, Hue"
+      }
+    ],
+    "customerIdCounter"
+    :
+    3,
+    "orders"
+    :
+    [
+      {
+        "id": "4",
+        "orderStatus": 0,
+        "customer": {
+          "id": "2",
+          "name": "Batman",
+          "phoneNumber": "0703004004",
+          "address": "28 Nguyen Tri Phuong, Hue"
         },
-        {
-          "id": "j1",
-          "name": "Jeans 01",
-          "price": 200000,
-          "quantity": 2,
-          "itemAmount": 400000
-        }
-      ],
-      "total": 850000
-    }
-  ],
-  "orderIdCounter": 4
+        "items": [
+          {
+            "id": "j1",
+            "name": "Jeans 01",
+            "price": 200000,
+            "quantity": 2,
+            "itemAmount": 400000
+          },
+          {
+            "id": "t1",
+            "name": "Pants 01",
+            "price": 150000,
+            "quantity": 7,
+            "itemAmount": 1050000
+          }
+        ],
+        "total": 1900000
+      }
+    ],
+    "orderIdCounter"
+    :
+    4
 }

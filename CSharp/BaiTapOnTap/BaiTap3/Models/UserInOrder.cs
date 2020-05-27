@@ -4,9 +4,9 @@ using System.Text;
 
 namespace BaiTap3.Models
 {
-    class Admin
+    class UserInOrder
     {
-        public string email;
-        public string passWord;
+        public string id;
+        public string name;
     }
 }
