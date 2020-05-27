@@ -37,13 +37,13 @@ namespace BaiTap3.Service
         }
         public void WriteJsonBill(Order order)
         {
-            using StreamWriter sw = File.CreateText(path + billFolder + $"\\{DateTime.Now:ddMMyyyy}_{order.id}");
+            using StreamWriter sw = File.CreateText(path + billFolder + $"\\{DateTime.Now:ddMMyyyy}_{order.id}.json");
             var data = JsonConvert.SerializeObject(order);
             sw.Write(data);
         }
         public void WriteJsonSalary(Salary salary)
         {
-            using StreamWriter sw = File.CreateText(path + salaryFolder + $"\\{DateTime.Now:ddMMyyyy}_{salary.name}");
+            using StreamWriter sw = File.CreateText(path + salaryFolder + $"\\{DateTime.Now:ddMMyyyy}_{salary.name}.json");
             var data = JsonConvert.SerializeObject(salary);
             sw.Write(data);
         }
