@@ -73,7 +73,7 @@ namespace BaiTap3
                         ManageProducts();
                         break;
                     case "4":
-                        ChangePassword();
+                        ChangeCurrentUserPassword();
                         break;
                     case "5":
                         ManageUser();
@@ -108,7 +108,7 @@ namespace BaiTap3
                         ManageProducts();
                         break;
                     case "4":
-                        ChangePassword();
+                        ChangeCurrentUserPassword();
                         break;
                 }
             } while (option != "5");
@@ -688,9 +688,122 @@ namespace BaiTap3
         }
         static void ManageUser()
         {
-
+            Console.Clear();
+            Console.WriteLine("QUẢN LÝ NHÂN VIÊN");
+            string option;
+            do
+            {
+                Console.Write("1. Hiển thị danh sách nhân viên\n" +
+                    "2. Tìm kiếm nhân viên\n" +
+                    "3. Thay đổi thông tin nhân viên\n" +
+                    "4. Thoát\n" +
+                    "____________________________\n" +
+                    "Lựa chọn của bạn: ");
+                option = Console.ReadLine();
+                switch (option)
+                {
+                    case "1":
+                        ShowUsers();
+                        break;
+                    case "2":
+                        SearchUser();
+                        break;
+                    case "3":
+                        ChangeUserInfo();
+                        break;
+                }
+            } while (option != "4");
         }
-        static void ChangePassword()
+        static void ShowUsers()
+        {
+            Console.Clear();
+            Console.WriteLine("Danh sách nhân viên: ");
+            foreach (var user in json.database.users)
+                Console.WriteLine(user);
+        }
+        static void SearchUser()
+        {
+            Console.Clear();
+            Console.WriteLine("TÌM KIẾM NHÂN VIÊN");
+            Console.Write("Nhập vào từ khóa: ");
+            string keyWord = Console.ReadLine().ToLower();
+            Console.WriteLine("Kết quả: ");
+            foreach (var user in json.database.users)
+                if (user.id.ToLower().Contains(keyWord) || user.name.ToLower().Contains(keyWord) || user.email.ToLower().Contains(keyWord))
+                    Console.WriteLine(user);
+        }
+        static void ChangeUserInfo()
+        {
+            Console.Clear();
+            Console.WriteLine("THAY ĐỔI THÔNG TIN NHÂN VIÊN");
+            Console.Write("Nhập vào ID nhân viên: ");
+            string userId = Console.ReadLine();
+            int indexOfUser = IndexOfUser(userId);
+            if (indexOfUser == -1)
+                Console.WriteLine($"Không có nhân viên {userId}!");
+            else
+            {
+                Console.WriteLine(json.database.users[indexOfUser]);
+                string option;
+                do
+                {
+                    Console.Write("1. Đổi tên\n" +
+                        "2. Đổi email\n" +
+                        "3. Đối password\n" +
+                        "4. Thoát\n" +
+                        "__________________\n" +
+                        "Lựa chọn của bạn: ");
+                    option = Console.ReadLine();
+                    switch (option)
+                    {
+                        case "1":
+                            ChangeUserName(indexOfUser);
+                            break;
+                        case "2":
+                            ChangeUserEmail(indexOfUser);
+                            break;
+                        case "3":
+                            ChangeUserPassword(indexOfUser);
+                            break;
+                    }
+                } while (option != "4");
+            }
+        }
+        static void ChangeUserName(int indexOfUser)
+        {
+            Console.Write("Nhập vào tên mới: ");
+            string newName = Console.ReadLine();
+            json.database.users[indexOfUser].name = newName;
+            json.WriteDatabase();
+            Console.WriteLine("Đã đổi tên!");
+        }
+        static void ChangeUserEmail(int indexOfUser)
+        {
+            Console.Write("Nhập vào email mới: ");
+            string newEmail = Console.ReadLine();
+            if (ValidateEmail(newEmail))
+            {
+                json.database.users[indexOfUser].email = newEmail;
+                json.WriteDatabase();
+                Console.WriteLine("Đã thay đổi email!");
+            }
+            else
+                Console.WriteLine("Email không hợp lệ!");
+        }
+        static void ChangeUserPassword(int indexOfUser)
+        {
+            Console.Write("Nhập vào mật khẩu mới: ");
+            string newPassword = Console.ReadLine();
+            if (ValidatePassword(newPassword))
+            {
+                json.database.users[indexOfUser].passWord = newPassword;
+                json.WriteDatabase();
+                Console.WriteLine("Đã đổi email!");
+            }
+            else
+                Console.WriteLine("Email không hợp lệ!");
+        }
+        static void ChangeCurrentUserPassword()
         {
             Console.Clear();
             Console.WriteLine("ĐỔI MẬT KHẨU");
@@ -707,6 +820,11 @@ namespace BaiTap3
             json.database.users[IndexOfUser(json.currentUser.id)].passWord = newPassword;
             json.WriteDatabase();
             Console.WriteLine("Đã thay đổi thành công!");
+        }
+        static bool ValidateEmail(string email)
+        {
+            string regex = @"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$";
+            return Regex.IsMatch(email, regex);
         }
         static bool ValidatePhoneNumber(string phoneNumber)
         {

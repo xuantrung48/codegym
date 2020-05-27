@@ -8,10 +8,10 @@ namespace BaiTap3.Models
     {
         public string id;
         public OrderStatus orderStatus;
-        public Customer customer;
-        public List<ItemOrder> items;
+        public Customer customer = new Customer();
+        public List<ItemOrder> items = new List<ItemOrder>();
+        public UserInOrder staff = new UserInOrder();
         public int total;
-        public UserInOrder staff;
         public override string ToString()
         {
             string listItem = "";

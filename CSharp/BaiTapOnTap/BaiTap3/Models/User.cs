@@ -11,5 +11,9 @@ namespace BaiTap3.Models
         public string email;
         public string passWord;
         public Role role;
+        public override string ToString()
+        {
+            return $"ID: {id}\tTên: {name}\tEmail: {email}.";
+        }
     }
 }
