@@ -1,0 +1,36 @@
+{
+  "id": "2",
+  "name": "Batman",
+  "workingTimes": [
+    {
+      "startTime": "27/05/2020 08:20 CH",
+      "endTime": "27/05/2020 08:21 CH",
+      "workingTime": 0.016666666666666666
+    }
+  ],
+  "orders": [
+    {
+      "id": "8",
+      "orderTime": "27/05/2020 08:20 CH",
+      "items": [
+        {
+          "id": "j1",
+          "name": "Jeans 01",
+          "price": 200000,
+          "quantity": 2,
+          "itemAmount": 400000
+        },
+        {
+          "id": "t1",
+          "name": "Pants 01",
+          "price": 150000,
+          "quantity": 3,
+          "itemAmount": 450000
+        }
+      ],
+      "total": 850000
+    }
+  ],
+  "coefficientsSalary": 2.5,
+  "totalSalary": 42500
+}

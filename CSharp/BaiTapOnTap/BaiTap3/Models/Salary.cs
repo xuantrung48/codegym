@@ -4,16 +4,14 @@ using System.Text;
 
 namespace BaiTap3.Models
 {
-    class User
+    class Salary
     {
         public string id;
         public string name;
-        public string email;
-        public string passWord;
-        public List<WorkingTime> workingTimes = new List<WorkingTime>();
-        public List<OrderInUser> orders = new List<OrderInUser>();
+        public List<WorkingTime> workingTimes;
+        public List<OrderInUser> orders;
         public double coefficientsSalary;
-        public Role role;
+        public int totalSalary;
         public override string ToString()
         {
             string working = "Thời gian làm việc chi tiết của nhân viên: \n";
@@ -22,7 +20,7 @@ namespace BaiTap3.Models
             string orderList = "Danh sách đơn hàng của nhân viên: \n";
             foreach (var order in orders)
                 orderList += order;
-            return $"ID: {id}\tTên: {name}\tEmail: {email}.\n{working}{orderList}\nLương tạm tính: {Program.SalaryOfUser(id)} VND";
+            return $"ID: {id}\tTên: {name}\n{working}{orderList}\nLương: {Program.SalaryOfUser(id)} VND";
         }
     }
 }

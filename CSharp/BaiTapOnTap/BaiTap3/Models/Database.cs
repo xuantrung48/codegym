@@ -13,5 +13,6 @@ namespace BaiTap3.Models
         public int customerIdCounter;
         public List<Order> orders = new List<Order>();
         public int orderIdCounter;
+        public int basicSalary;
     }
 }

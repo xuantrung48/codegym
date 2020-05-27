@@ -11,5 +11,9 @@ namespace BaiTap3.Models
         public int price;
         public int quantity;
         public int itemAmount;
+        public override string ToString()
+        {
+            return $"ID: {id}\tTên SP: {name}\tGiá: {price}\tSố lượng: {quantity}\tThành tiền: {itemAmount} VND\n";
+        }
     }
 }

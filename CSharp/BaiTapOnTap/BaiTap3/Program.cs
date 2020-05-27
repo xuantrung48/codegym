@@ -9,7 +9,7 @@ namespace BaiTap3
 {
     class Program
     {
-        static JsonService json = new JsonService(@"D:\codegym\github\codegym\CSharp\BaiTapOnTap\BaiTap3\json\", "database.json", "Bills");
+        static JsonService json = new JsonService(@"D:\codegym\github\codegym\CSharp\BaiTapOnTap\BaiTap3\json\", "database.json", "Bills", "Salary");
         static void Main(string[] args)
         {
             Console.OutputEncoding = Encoding.UTF8;
@@ -34,11 +34,21 @@ namespace BaiTap3
                     if (user.role == Role.Admin)
                     {
                         json.currentUser = user;
+                        json.database.users[IndexOfUser(json.currentUser.id)].workingTimes.Add(new WorkingTime()
+                        {
+                            startTime = DateTime.Now.ToString("dd/MM/yyyy hh:mm tt")
+                        });
+                        json.WriteDatabase();
                         MenuForAdmin();
                     }
                     else if(user.role == Role.User)
                     {
                         json.currentUser = user;
+                        json.database.users[IndexOfUser(json.currentUser.id)].workingTimes.Add(new WorkingTime()
+                        {
+                            startTime = DateTime.Now.ToString("dd/MM/yyyy hh:mm tt")
+                        });
+                        json.WriteDatabase();
                         MenuForUser();
                     }
                 else
@@ -51,13 +61,13 @@ namespace BaiTap3
             string option;
             do
             {
-                Console.Write("TRANG QUẢN LÝ DÀNH CHO QUẢN TRỊ VIÊN\n" +
+                Console.Write("MENU DÀNH CHO QUẢN TRỊ VIÊN\n" +
                     "1. Quản lý khách hàng\n" +
                     "2. Quản lý đơn hàng\n" +
                     "3. Quản lý sản phẩm\n" +
-                    "4. Đổi mật khẩu\n" +
-                    "5. Quản lý nhân viên\n" +
-                    "5. Thoát\n" +
+                    "4. Quản lý nhân viên\n" +
+                    "5. Thông tin quản trị viên\n" +
+                    "6. Thoát\n" +
                     "__________________\n" +
                     "Lựa chọn của bạn: ");
                 option = Console.ReadLine();
@@ -73,13 +83,17 @@ namespace BaiTap3
                         ManageProducts();
                         break;
                     case "4":
-                        ChangeCurrentUserPassword();
-                        break;
-                    case "5":
                         ManageUser();
                         break;
+                    case "5":
+                        ChangeCurrentUserInfo();
+                        break;
+                    case "6":
+                        Exit();
+                        Environment.Exit(0);
+                        break;
                 }
-            } while (option != "5");
+            } while (true);
         }
         static void MenuForUser()
         {
@@ -87,11 +101,11 @@ namespace BaiTap3
             string option;
             do
             {
-                Console.Write("TRANG QUẢN LÝ DÀNH CHO NHÂN VIÊN\n" +
+                Console.Write("MENU DÀNH CHO NHÂN VIÊN\n" +
                     "1. Quản lý khách hàng\n" +
                     "2. Quản lý đơn hàng\n" +
                     "3. Quản lý sản phẩm\n" +
-                    "4. Đổi mật khẩu\n" +
+                    "4. Thông tin nhân viên\n" +
                     "5. Thoát\n" +
                     "__________________\n" +
                     "Lựa chọn của bạn: ");
@@ -108,10 +122,14 @@ namespace BaiTap3
                         ManageProducts();
                         break;
                     case "4":
-                        ChangeCurrentUserPassword();
+                        ChangeCurrentUserInfo();
+                        break;
+                    case "5":
+                        Exit();
+                        Environment.Exit(0);
                         break;
                 }
-            } while (option != "5");
+            } while (true);
         }
         static void ManageCustomer()
         {
@@ -332,7 +350,7 @@ namespace BaiTap3
             string keyWord = Console.ReadLine().ToLower();
             Console.WriteLine("Kết quả: ");
             foreach (var order in json.database.orders)
-                if (order.id.Contains(keyWord) || order.customer.name.Contains(keyWord) || order.customer.address.Contains(keyWord))
+                if (order.id.ToLower().Contains(keyWord) || order.customer.name.ToLower().Contains(keyWord) || order.customer.address.ToLower().Contains(keyWord))
                     Console.WriteLine(order);
         }
         static void ChangeOrderStatus()
@@ -362,6 +380,7 @@ namespace BaiTap3
                 do
                 {
                     Console.WriteLine($"Thay đổi thông tin đơn hàng {orderId}");
+                    Console.WriteLine(json.database.orders[indexOfOrder]);
                     Console.Write("1. Thay đổi trạng thái đơn hàng\n" +
                         "2. Thay đổi thông tin khách hàng\n" +
                         "3. Thay đổi sản phẩm đặt hàng\n" +
@@ -386,40 +405,56 @@ namespace BaiTap3
         }
         static void ChangeOrderStatus(string orderId)
         {
-            string option;
-            do
+            int indexOfOrder = IndexOfOrder(orderId);
+            var order = json.database.orders[indexOfOrder];
+            if (order.orderStatus == OrderStatus.Canceled)
+                Console.WriteLine("Đơn hàng đã hủy!");
+            else if (order.orderStatus == OrderStatus.Completed)
+                Console.WriteLine("Đơn hàng đã hoàn thành!");
+            else
             {
-                var order = json.database.orders[IndexOfOrder(orderId)];
-                Console.Write("1. Pending\n" +
-                    "2. Processing\n" +
-                    "3. Completed\n" +
-                    "4. Canceled\n" +
-                    "______________\n" +
-                    "Lựa chọn của bạn: ");
-                option = Console.ReadLine();
-                switch (option)
+                string option;
+                do
                 {
-                    case "1":
-                        order.orderStatus = OrderStatus.Pending;
-                        json.WriteDatabase();
-                        break;
-                    case "2":
-                        order.orderStatus = OrderStatus.Processing;
-                        json.WriteDatabase();
-                        break;
-                    case "3":
-                        order.orderStatus = OrderStatus.Completed;
-                        json.WriteJsonBill(order);
-                        json.WriteDatabase();
-                        break;
-                    case "4":
-                        order.orderStatus = OrderStatus.Canceled;
-                        foreach (var item in order.items)
-                            json.database.products[IndexOfProduct(item.id)].remain += item.quantity;
-                        json.WriteDatabase();
-                        break;
-                }
-            } while (option != "1" && option != "2" && option != "3" && option != "4");
+                    Console.Write("1. Pending\n" +
+                        "2. Processing\n" +
+                        "3. Completed\n" +
+                        "4. Canceled\n" +
+                        "______________\n" +
+                        "Lựa chọn của bạn: ");
+                    option = Console.ReadLine();
+                    switch (option)
+                    {
+                        case "1":
+                            order.orderStatus = OrderStatus.Pending;
+                            json.WriteDatabase();
+                            break;
+                        case "2":
+                            order.orderStatus = OrderStatus.Processing;
+                            json.WriteDatabase();
+                            break;
+                        case "3":
+                            order.orderStatus = OrderStatus.Completed;
+                            int indexOfUser = IndexOfUser(order.staff.id);
+                            json.database.users[indexOfUser].orders.Add(new OrderInUser()
+                            {
+                                id = order.id,
+                                orderTime = order.orderTime,
+                                items = order.items,
+                                total = order.total
+                            });
+                            json.WriteJsonBill(order);
+                            json.WriteDatabase();
+                            break;
+                        case "4":
+                            order.orderStatus = OrderStatus.Canceled;
+                            foreach (var item in order.items)
+                                json.database.products[IndexOfProduct(item.id)].remain += item.quantity;
+                            json.WriteDatabase();
+                            break;
+                    }
+                } while (option != "1" && option != "2" && option != "3" && option != "4");
+            }
         }
         static void ChangeOrderCustomerInfo(string orderId)
         {
@@ -480,7 +515,7 @@ namespace BaiTap3
                     {
                         Console.Write("Nhập vào số lượng: ");
                         uint.TryParse(Console.ReadLine(), out uint itemQuantity);
-                        if (json.database.products[indexOfProduct].remain - (int)itemQuantity < 0)
+                        if (json.database.products[indexOfProduct].remain < itemQuantity)
                             Console.WriteLine("Sản phẩm không đủ số lượng!");
                         else
                         {
@@ -492,6 +527,7 @@ namespace BaiTap3
                                 quantity = (int)itemQuantity,
                                 itemAmount = json.database.products[indexOfProduct].price * (int)itemQuantity
                             });
+                            json.database.orders[indexOfOrder].total += json.database.products[indexOfProduct].price * (int)itemQuantity;
                             json.database.products[indexOfProduct].remain -= (int)itemQuantity;
                             json.WriteDatabase();
                             Console.WriteLine("Đã thêm sản phẩm!");
@@ -505,7 +541,7 @@ namespace BaiTap3
                     {
                         Console.Write("Nhập vào số lượng thêm / bớt (+/-): ");
                         int.TryParse(Console.ReadLine(), out int itemQuantity);
-                        if (json.database.products[indexOfProduct].remain - (int)itemQuantity < 0)
+                        if (json.database.products[indexOfProduct].remain < itemQuantity)
                             Console.WriteLine("Sản phẩm không đủ số lượng!");
                         else
                         {
@@ -540,7 +576,6 @@ namespace BaiTap3
                 indexOfCustomer = IndexOfCustomer(userId);
             } while (indexOfCustomer == -1);
 
-            var orderItems = new List<ItemOrder>();
             string option;
             do
             {
@@ -553,43 +588,14 @@ namespace BaiTap3
                 {
                     Console.Write("Số lượng: ");
                     uint.TryParse(Console.ReadLine(), out uint productQuantity);
-                    int indexOfProductInOrderItems = IndexOfProductInOrderItems(productId, orderItems);
-                    if (indexOfProductInOrderItems == -1)
-                    {
-                        orderItems.Add(new ItemOrder()
-                        {
-                            id = productId,
-                            name = json.database.products[indexOfProduct].name,
-                            price = json.database.products[indexOfProduct].price,
-                            quantity = (int)productQuantity,
-                            itemAmount = json.database.products[indexOfProduct].price * (int)productQuantity
-                        });
-                    }
+                    if (json.database.products[indexOfProduct].remain < productQuantity)
+                        Console.WriteLine("Sản phẩm không đủ số lượng!");
                     else
-                    {
-                        orderItems[indexOfProductInOrderItems].quantity += (int) productQuantity;
-                    }
+                        AddItemToOrder(productId, (int)productQuantity, orderId, json.currentUser.id, json.database.customers[indexOfCustomer].id);
                 }
                 Console.Write("Thêm sản phẩm khác? y/n: ");
                 option = Console.ReadLine(); 
             } while (option == "y");
-            int orderTotal = 0;
-            foreach (var item in orderItems)
-                orderTotal += item.itemAmount;
-            json.database.orders.Add(new Order()
-            {
-                id = orderId,
-                customer = json.database.customers[indexOfCustomer],
-                orderStatus = OrderStatus.Pending,
-                items = orderItems,
-                staff = new UserInOrder()
-                {
-                    id = json.currentUser.id,
-                    name = json.currentUser.name
-                },
-                total = orderTotal
-            });
-            json.WriteDatabase();
         }
         static void ManageProducts()
         {
@@ -688,7 +694,6 @@ namespace BaiTap3
         }
         static void ManageUser()
         {
-            Console.Clear();
             Console.WriteLine("QUẢN LÝ NHÂN VIÊN");
             string option;
             do
@@ -696,7 +701,8 @@ namespace BaiTap3
                 Console.Write("1. Hiển thị danh sách nhân viên\n" +
                     "2. Tìm kiếm nhân viên\n" +
                     "3. Thay đổi thông tin nhân viên\n" +
-                    "4. Thoát\n" +
+                    "4. Tính lương nhân viên\n" +
+                    "5. Thoát\n" +
                     "____________________________\n" +
                     "Lựa chọn của bạn: ");
                 option = Console.ReadLine();
@@ -711,8 +717,43 @@ namespace BaiTap3
                     case "3":
                         ChangeUserInfo();
                         break;
+                    case "4":
+                        CalculateSalary();
+                        break;
                 }
-            } while (option != "4");
+            } while (option != "5");
+        }
+        static void CalculateSalary()
+        {
+            Console.Clear();
+            Console.Write("TÍNH LƯƠNG NHÂN VIÊN\n" +
+                "Nhập vào ID nhân viên: ");
+            string userId = Console.ReadLine();
+            int indexOfUser = IndexOfUser(userId);
+            if (indexOfUser == -1)
+                Console.WriteLine($"Không có nhân viên {userId}");
+            else
+            {
+                Console.WriteLine(json.database.users[indexOfUser]);
+                Console.Write($"Tính lương cho nhân viên {userId}? y/n: ");
+                if (Console.ReadLine() == "y")
+                {
+                    var user = json.database.users[indexOfUser];
+                    Salary userSalary = new Salary()
+                    {
+                        id = user.id,
+                        name = user.name,
+                        workingTimes = user.workingTimes,
+                        orders = user.orders,
+                        coefficientsSalary = user.coefficientsSalary,
+                        totalSalary = Program.SalaryOfUser(user.id)
+                    };
+                    json.WriteJsonSalary(userSalary);
+                    user.workingTimes.Clear();
+                    user.orders.Clear();
+                    json.WriteDatabase();
+                }
+            }
         }
         static void ShowUsers()
         {
@@ -750,6 +791,7 @@ namespace BaiTap3
                     Console.Write("1. Đổi tên\n" +
                         "2. Đổi email\n" +
                         "3. Đối password\n" +
+                        "4. Đổi hệ số lương\n" +
                         "4. Thoát\n" +
                         "__________________\n" +
                         "Lựa chọn của bạn: ");
@@ -764,6 +806,9 @@ namespace BaiTap3
                             break;
                         case "3":
                             ChangeUserPassword(indexOfUser);
+                            break;
+                        case "4":
+                            ChangeCoefficientsSalary(indexOfUser);
                             break;
                     }
                 } while (option != "4");
@@ -798,10 +843,48 @@ namespace BaiTap3
             {
                 json.database.users[indexOfUser].passWord = newPassword;
                 json.WriteDatabase();
-                Console.WriteLine("Đã đổi email!");
+                Console.WriteLine($"Đã đổi mật khẩu!");
             }
             else
-                Console.WriteLine("Email không hợp lệ!");
+                Console.WriteLine("Mật khẩu không đủ mạnh!");
+        }
+        static void ChangeCoefficientsSalary(int indexOfUser)
+        {
+            Console.Write("Nhập vào hệ số lương mới: ");
+            double.TryParse(Console.ReadLine(), out double newcoefficientsSalary);
+            json.database.users[indexOfUser].coefficientsSalary = newcoefficientsSalary;
+            json.WriteDatabase();
+            Console.WriteLine($"Đã đổi hệ số lương thành {newcoefficientsSalary}!");
+        }
+        static void ChangeCurrentUserInfo()
+        {
+            Console.Clear();
+            Console.WriteLine("THÔNG TIN NGƯỜI DÙNG");
+            Console.WriteLine(json.currentUser);
+            int indexOfCurrentUser = IndexOfUser(json.currentUser.id);
+            string option;
+            do
+            {
+                Console.Write("1. Đổi tên\n" +
+                    "2. Đổi email\n" +
+                    "3. Đổi mật khẩu\n" +
+                    "4. Thoát\n" +
+                    "________________\n" +
+                    "Lựa chọn của bạn: ");
+                option = Console.ReadLine();
+                switch (option)
+                {
+                    case "1":
+                        ChangeUserName(indexOfCurrentUser);
+                        break;
+                    case "2":
+                        ChangeUserEmail(indexOfCurrentUser);
+                        break;
+                    case "3":
+                        ChangeUserPassword(indexOfCurrentUser);
+                        break;
+                }
+            } while (option != "4");
         }
         static void ChangeCurrentUserPassword()
         {
@@ -820,6 +903,89 @@ namespace BaiTap3
             json.database.users[IndexOfUser(json.currentUser.id)].passWord = newPassword;
             json.WriteDatabase();
             Console.WriteLine("Đã thay đổi thành công!");
+        }
+        static void Exit()
+        {
+            var currentUserWorkingTime = json.database.users[IndexOfUser(json.currentUser.id)].workingTimes[^1];
+            currentUserWorkingTime.endTime = DateTime.Now.ToString("dd/MM/yyyy hh:mm tt");
+            currentUserWorkingTime.workingTime = (DateTime.Parse(currentUserWorkingTime.endTime) - DateTime.Parse(currentUserWorkingTime.startTime)).TotalHours;
+            json.WriteDatabase();
+        }
+        public static void AddItemToOrder(string productId, int productQuantity, string orderId, string userId, string customerId)
+        {
+            int indexOfProduct = IndexOfProduct(productId);
+            int indexOfOrder = IndexOfOrder(orderId);
+            int indexOfUser = IndexOfUser(userId);
+            int indexOfOrderInUser = IndexOfOrderInUser(orderId, userId);
+            if (indexOfOrder == -1)
+            {
+                var item = new ItemOrder()
+                {
+                    id = productId,
+                    name = json.database.products[indexOfProduct].name,
+                    price = json.database.products[indexOfProduct].price,
+                    quantity = productQuantity,
+                    itemAmount = json.database.products[indexOfProduct].price * productQuantity
+                };
+                int indexOfCustomer = IndexOfCustomer(customerId);
+                json.database.orders.Add(new Order()
+                {
+                    id = orderId,
+                    orderTime = DateTime.Now.ToString("dd/MM/yyyy hh:mm tt"),
+                    customer = json.database.customers[indexOfCustomer],
+                    items = new List<ItemOrder>() { item },
+                    staff = new UserInOrder()
+                    {
+                        id = json.currentUser.id,
+                        name = json.currentUser.name
+                    },
+                    total = item.itemAmount
+                });
+                json.database.products[indexOfProduct].remain -= productQuantity;
+                json.WriteDatabase();
+            }
+            else
+            {
+                int indexOfProductInOrderItems = IndexOfProductInOrderItems(productId, json.database.orders[indexOfOrder].items);
+                if (indexOfProductInOrderItems == -1)
+                {
+                    var item = new ItemOrder()
+                    {
+                        id = productId,
+                        name = json.database.products[indexOfProduct].name,
+                        price = json.database.products[indexOfProduct].price,
+                        quantity = productQuantity,
+                        itemAmount = json.database.products[indexOfProduct].price * productQuantity
+                    };
+                    json.database.orders[indexOfOrder].items.Add(item);
+                    json.database.orders[indexOfOrder].total += json.database.products[indexOfProduct].price * productQuantity;
+                    json.database.products[indexOfProduct].remain -= productQuantity;
+                    json.WriteDatabase();
+                }
+                else
+                {
+                    var order = json.database.orders[indexOfOrder];
+                    var orderItem = json.database.orders[indexOfOrder].items[indexOfProductInOrderItems];
+
+                    orderItem.quantity += productQuantity;
+                    orderItem.itemAmount += json.database.products[indexOfProduct].price * productQuantity;
+                    order.total += json.database.products[indexOfProduct].price * productQuantity;
+
+                    json.database.products[indexOfProduct].remain -= productQuantity;
+                    json.WriteDatabase();
+                }
+            }
+        }
+        public static int SalaryOfUser(string userId)
+        {
+            var user = json.database.users[IndexOfUser(userId)];
+            double totalWorkingTime = 0;
+            foreach (var workingTime in user.workingTimes)
+                totalWorkingTime += workingTime.workingTime;
+            double commission = 0;
+            foreach (var order in user.orders)
+                commission += order.total * 0.05;
+            return (int)(totalWorkingTime * user.coefficientsSalary * json.database.basicSalary + commission);
         }
         static bool ValidateEmail(string email)
         {
@@ -850,10 +1016,10 @@ namespace BaiTap3
                     return i;
             return -1;
         }
-        static int IndexOfCustomer(string userId)
+        static int IndexOfCustomer(string customerId)
         {
             for (int i = 0; i < json.database.users.Count; i++)
-                if (userId == json.database.users[i].id)
+                if (customerId == json.database.users[i].id)
                     return i;
             return -1;
         }
@@ -861,6 +1027,25 @@ namespace BaiTap3
         {
             for (int i = 0; i < json.database.orders.Count; i++)
                 if (orderId == json.database.orders[i].id)
+                    return i;
+            return -1;
+        }
+        static int IndexOfOrderInUser(string orderId, string userId)
+        {
+            int indexOfOrder = IndexOfOrder(orderId);
+            int indexOfUser = IndexOfUser(userId);
+            for (int i = 0; i < json.database.users[indexOfUser].orders.Count; i++)
+                if (orderId == json.database.users[indexOfUser].orders[i].id)
+                    return i;
+            return -1;
+        }
+        static int IndexOfProductInUserOrderItems(string userId, string orderId, string productId)
+        {
+            int indexOfUser = IndexOfUser(userId);
+            int indexOfOrder = IndexOfOrder(orderId);
+            int indexOfOrderInUser = IndexOfOrderInUser(orderId, userId);
+            for (int i = 0; i < json.database.users[indexOfUser].orders[indexOfOrderInUser].items.Count; i++)
+                if (json.database.users[indexOfUser].orders[indexOfOrderInUser].items[i].id == productId)
                     return i;
             return -1;
         }

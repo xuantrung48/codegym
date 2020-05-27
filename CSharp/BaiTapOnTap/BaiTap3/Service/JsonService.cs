@@ -13,13 +13,15 @@ namespace BaiTap3.Service
         private string path;
         private string databaseFile;
         private string billFolder;
+        private string salaryFolder;
         public Database database;
         public User currentUser;
-        public JsonService(string pathToFolder, string databaseFileName, string billFolderName)
+        public JsonService(string pathToFolder, string databaseFileName, string billFolderName, string salaryFolderName)
         {
             path = pathToFolder;
             databaseFile = databaseFileName;
             billFolder = billFolderName;
+            salaryFolder = salaryFolderName;
         }
         public void ReadDatabase()
         {
@@ -37,6 +39,12 @@ namespace BaiTap3.Service
         {
             using StreamWriter sw = File.CreateText(path + billFolder + $"\\{DateTime.Now:ddMMyyyy}_{order.id}");
             var data = JsonConvert.SerializeObject(order);
+            sw.Write(data);
+        }
+        public void WriteJsonSalary(Salary salary)
+        {
+            using StreamWriter sw = File.CreateText(path + salaryFolder + $"\\{DateTime.Now:ddMMyyyy}_{salary.name}");
+            var data = JsonConvert.SerializeObject(salary);
             sw.Write(data);
         }
     }

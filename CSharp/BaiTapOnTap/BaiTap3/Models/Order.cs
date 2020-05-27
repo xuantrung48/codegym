@@ -7,7 +7,8 @@ namespace BaiTap3.Models
     class Order
     {
         public string id;
-        public OrderStatus orderStatus;
+        public string orderTime;
+        public OrderStatus orderStatus = OrderStatus.Pending;
         public Customer customer = new Customer();
         public List<ItemOrder> items = new List<ItemOrder>();
         public UserInOrder staff = new UserInOrder();
@@ -17,7 +18,7 @@ namespace BaiTap3.Models
             string listItem = "";
             foreach(var item in items)
                 listItem += $"Tên SP: {item.name}\tGiá: {item.price}\tSố lượng: {item.quantity}\tThành tiền: {item.itemAmount}\n";
-            return $"Order ID: {id}\nTrạng thái đơn hàng: {orderStatus}\nThông tin khách hàng:\n{customer.ToString()}\nSản phẩm đặt mua:\n{listItem}Tổng cộng: {total}\nNhân viên bán hàng: {staff.name}.";
+            return $"Order ID: {id}\nTrạng thái đơn hàng: {orderStatus}\nThông tin khách hàng:\n{customer}\nSản phẩm đặt mua:\n{listItem}Tổng cộng: {total} VND\nNhân viên bán hàng: {staff.name}.";
         }
     }
 }
