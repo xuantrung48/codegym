@@ -33,6 +33,25 @@ namespace BaiTap3
             else
                 Manage();
         }
+        static void ChangeAdminPassword()
+        {
+            Console.Clear();
+            Console.WriteLine("ĐỔI MẬT KHẨU");
+            string regex = @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,15}$";
+            string newPassword;
+            bool passWordIsNotValid = false;
+            do
+            {
+                if (passWordIsNotValid)
+                    Console.WriteLine("Mật khẩu không đủ mạnh, hãy nhập mật khẩu khác!");
+                Console.Write("Mật khẩu mới: ");
+                newPassword = Console.ReadLine();
+                passWordIsNotValid = !Regex.IsMatch(newPassword, regex);
+            } while (passWordIsNotValid);
+            json.database.admin.passWord = newPassword;
+            json.WriteDatabase();
+            Console.WriteLine("Đã thay đổi thành công!");
+        }
         static void Manage()
         {
             Console.Clear();
@@ -65,348 +84,6 @@ namespace BaiTap3
                 }
             } while (option != "5");
         }
-        static void ManageOrders()
-        {
-            Console.Clear();
-            string option;
-            do
-            {
-                Console.Write("QUẢN LÝ ĐƠN HÀNG\n" +
-                    "1. Hiển thị các đơn hàng\n" +
-                    "2. Tìm kiếm đơn hàng\n" +
-                    "3. Đổi trạng thái đơn hàng\n" +
-                    "4. Tạo đơn hàng mới\n" +
-                    "5. Thay đổi thông tin đơn hàng\n" +
-                    "6. Thoát\n" +
-                    "_________________________\n" +
-                    "Lựa chọn của bạn: ");
-                option = Console.ReadLine();
-                switch (option)
-                {
-                    case "1":
-                        ShowOrders();
-                        break;
-                    case "2":
-                        SearchOrder();
-                        break;
-                    case "3":
-                        ChangeOrderStatus();
-                        break;
-                    case "4":
-                        CreateNewOrder();
-                        break;
-                    case "5":
-                        UpdateOrder();
-                        break;
-                }
-            } while (option != "6");
-        }
-        static void UpdateOrder()
-        {
-            Console.Write("Nhập vào ID đơn hàng: ");
-            string orderId = Console.ReadLine();
-            int indexOfOrder = IndexOfOrder(orderId);
-            if (indexOfOrder == -1 || json.database.orders[indexOfOrder].orderStatus == OrderStatus.Canceled || json.database.orders[indexOfOrder].orderStatus == OrderStatus.Completed)
-                Console.WriteLine("Đơn hàng không tồn tại hoặc đã hoàn thành / đã hủy!");
-            else
-            {
-                string option;
-                do
-                {
-                    Console.WriteLine($"Thay đổi thông tin đơn hàng {orderId}");
-                    Console.Write("1. Thay đổi trạng thái đơn hàng\n" +
-                        "2. Thay đổi thông tin khách hàng\n" +
-                        "3. Thay đổi sản phẩm đặt hàng\n" +
-                        "4. Thoát\n" +
-                        "___________________\n" +
-                        "Lựa chọn của bạn: ");
-                    option = Console.ReadLine();
-                    switch (option)
-                    {
-                        case "1":
-                            ChangeOrderStatus(orderId);
-                            break;
-                        case "2":
-                            ChangeOrderUserInfo(orderId);
-                            break;
-                        case "3":
-                            ChangeOrderItems(orderId);
-                            break;
-                    }
-                } while (option != "4");
-            }
-        }
-        static void ChangeOrderItems(string orderId)
-        {
-            int indexOfOrder = IndexOfOrder(orderId);
-            Console.Write("Nhập ID sản phẩm: ");
-            string productId = Console.ReadLine();
-            int indexOfProduct = IndexOfProduct(productId);
-            if (indexOfProduct == -1)
-                Console.WriteLine($"Không có sản phẩm {productId}!");
-            else
-            {
-                int indexOfProductInOrderItems = IndexOfProductInOrderItems(productId, json.database.orders[indexOfOrder].items);
-                if (indexOfProductInOrderItems == -1)
-                {
-                    Console.Write("Thêm vào sản phẩm khác? y/n: ");
-                    if (Console.ReadLine() == "y")
-                    {
-                        Console.Write("Nhập vào số lượng: ");
-                        uint.TryParse(Console.ReadLine(), out uint itemQuantity);
-                        json.database.orders[indexOfOrder].items.Add(new ItemOrder()
-                        {
-                            id = productId,
-                            name = json.database.products[indexOfProduct].name,
-                            price = json.database.products[indexOfProduct].price,
-                            quantity = (int)itemQuantity,
-                            itemAmount = json.database.products[indexOfProduct].price * (int)itemQuantity
-                        });
-                        json.database.products[indexOfProduct].remain += (int)itemQuantity;
-                        json.WriteDatabase();
-                        Console.WriteLine("Đã thêm sản phẩm!");
-                    }
-                }
-                else
-                {
-                    Console.Write("Thêm / bớt số lượng sản phẩm? y/n: ");
-                    if (Console.ReadLine() == "y")
-                    {
-                        Console.Write("Nhập vào số lượng thêm / bớt (+/-): ");
-                        int.TryParse(Console.ReadLine(), out int itemQuantity);
-                        json.database.orders[indexOfOrder].items[indexOfProductInOrderItems].quantity += itemQuantity;
-                        json.database.orders[indexOfOrder].items[indexOfProductInOrderItems].itemAmount += json.database.orders[indexOfOrder].items[indexOfProductInOrderItems].price * itemQuantity;
-                        json.database.orders[indexOfOrder].total += json.database.orders[indexOfOrder].items[indexOfProductInOrderItems].price * itemQuantity;
-                        json.database.products[indexOfProduct].remain += itemQuantity;
-                        json.WriteDatabase();
-                        Console.WriteLine("Đã thay đổi số lượng!");
-                    }
-                }
-            }
-        }
-        static void ChangeOrderUserInfo(string orderId)
-        {
-            string option;
-            do
-            {
-                Console.Write("1. Đổi tên\n" +
-                    "2. Đổi số điện thoại\n" +
-                    "3. Đổi địa chỉ\n" +
-                    "4. Thoát\n" +
-                    "________________\n" +
-                    "Lựa chọn của bạn: ");
-                option = Console.ReadLine();
-                switch (option)
-                {
-                    case "1":
-                        Console.Write("Nhập tên mới: ");
-                        json.database.orders[IndexOfOrder(orderId)].customer.name = Console.ReadLine();
-                        json.WriteDatabase();
-                        Console.WriteLine("Đã đổi tên!");
-                        break;
-                    case "2":
-                        Console.Write("Nhập số điện thoại mới: ");
-                        string newPhoneNumber = Console.ReadLine();
-                        if (ValidatePhoneNumber(newPhoneNumber))
-                        {
-                            json.database.orders[IndexOfOrder(orderId)].customer.name = Console.ReadLine();
-                            json.WriteDatabase();
-                            Console.WriteLine("Đã đổi tên!");
-                        }
-                        else
-                            Console.WriteLine("Số điện thoại không hợp lệ!");
-                        break;
-                    case "3":
-                        Console.Write("Nhập địa chỉ mới: ");
-                        json.database.orders[IndexOfOrder(orderId)].customer.address = Console.ReadLine();
-                        json.WriteDatabase();
-                        Console.WriteLine("Đã đổi địa chỉ!");
-                        break;
-                }
-            } while (option != "4");
-        }
-        static void CreateNewOrder()
-        {
-            Console.Clear();
-            Console.WriteLine("TẠO ĐƠN HÀNG MỚI");
-            string orderId = ++json.database.orderIdCounter + "";
-            string userId = "";
-            int indexOfUser = 0;
-            do
-            {
-                if (indexOfUser == -1)
-                {
-                    Console.Write($"Không có khách hàng {userId}. Bạn có muốn tạo khách hàng mới không? y/n: ");
-                    if (Console.ReadLine() == "y")
-                        CreateNewUser();
-                }
-                Console.Write("Nhập vào ID khách hàng: ");
-                userId = Console.ReadLine();
-                indexOfUser = IndexOfUser(userId);
-            } while (indexOfUser == -1);
-
-            var orderItems = new List<ItemOrder>();
-            string option;
-            do
-            {
-                Console.Write("Id sản phẩm: ");
-                string productId = Console.ReadLine();
-                int indexOfProduct = IndexOfProduct(productId);
-                if (indexOfProduct == -1)
-                    Console.WriteLine($"Không có sản phẩm {productId}");
-                else
-                {
-                    Console.Write("Số lượng: ");
-                    uint.TryParse(Console.ReadLine(), out uint productQuantity);
-                    int indexOfProductInOrderItems = IndexOfProductInOrderItems(productId, orderItems);
-                    if (indexOfProductInOrderItems == -1)
-                    {
-                        orderItems.Add(new ItemOrder()
-                        {
-                            id = productId,
-                            name = json.database.products[indexOfProduct].name,
-                            price = json.database.products[indexOfProduct].price,
-                            quantity = (int)productQuantity,
-                            itemAmount = json.database.products[indexOfProduct].price * (int)productQuantity
-                        });
-                    }
-                    else
-                    {
-                        orderItems[indexOfProductInOrderItems].quantity += (int) productQuantity;
-                    }
-                }
-                Console.Write("Thêm sản phẩm khác? y/n: ");
-                option = Console.ReadLine(); 
-            } while (option == "y");
-            int orderTotal = 0;
-            foreach (var item in orderItems)
-                orderTotal += item.itemAmount;
-            json.database.orders.Add(new Order()
-            {
-                id = orderId,
-                customer = json.database.users[indexOfUser],
-                orderStatus = OrderStatus.Pending,
-                items = orderItems,
-                total = orderTotal
-            });
-            json.WriteDatabase();
-        }
-        static int IndexOfProductInOrderItems(string productId, List<ItemOrder> items)
-        {
-            for (int i = 0; i < items.Count; i++)
-                if (productId == items[i].id)
-                    return i;
-            return -1;
-        }
-
-        static void ChangeOrderStatus(string orderId)
-        {
-            string option;
-            do
-            {
-                var order = json.database.orders[IndexOfOrder(orderId)];
-                Console.Write("1. Pending\n" +
-                    "2. Processing\n" +
-                    "3. Completed\n" +
-                    "4. Canceled\n" +
-                    "______________\n" +
-                    "Lựa chọn của bạn: ");
-                option = Console.ReadLine();
-                switch (option)
-                {
-                    case "1":
-                        order.orderStatus = OrderStatus.Pending;
-                        json.WriteDatabase();
-                        break;
-                    case "2":
-                        order.orderStatus = OrderStatus.Processing;
-                        json.WriteDatabase();
-                        break;
-                    case "3":
-                        order.orderStatus = OrderStatus.Completed;
-                        json.WriteJsonBill(order);
-                        json.WriteDatabase();
-                        break;
-                    case "4":
-                        order.orderStatus = OrderStatus.Canceled;
-                        foreach (var item in order.items)
-                            json.database.products[IndexOfProduct(item.id)].remain += item.quantity;
-                        json.WriteDatabase();
-                        break;
-                }
-            } while (option != "1" && option != "2" && option != "3" && option != "4");
-        }
-        static void ChangeOrderStatus()
-        {
-            Console.Clear();
-            Console.WriteLine("THAY ĐỔI TRẠNG THÁI ĐƠN HÀNG");
-            Console.Write("ID đơn hàng: ");
-            string orderId = Console.ReadLine();
-            int indexOfOrder = IndexOfOrder(orderId);
-            if (indexOfOrder == -1)
-                Console.WriteLine($"Không có đơn hàng {orderId}");
-            else
-            {
-                string option;
-                do
-                {
-                    var order = json.database.orders[indexOfOrder];
-                    Console.Write("1. Pending\n" +
-                        "2. Processing\n" +
-                        "3. Completed\n" +
-                        "4. Canceled\n" +
-                        "______________\n" +
-                        "Lựa chọn của bạn: ");
-                    option = Console.ReadLine();
-                    switch (option)
-                    {
-                        case "1":
-                            order.orderStatus = OrderStatus.Pending;
-                            json.WriteDatabase();
-                            break;
-                        case "2":
-                            order.orderStatus = OrderStatus.Processing;
-                            json.WriteDatabase();
-                            break;
-                        case "3":
-                            order.orderStatus = OrderStatus.Completed;
-                            json.WriteJsonBill(order);
-                            json.WriteDatabase();
-                            break;
-                        case "4":
-                            order.orderStatus = OrderStatus.Canceled;
-                            foreach(var item in order.items)
-                                json.database.products[IndexOfProduct(item.id)].remain += item.quantity;
-                            json.WriteDatabase();
-                            break;
-                    }
-                } while (option != "1" && option != "2" && option != "3" && option != "4");
-            }
-        }
-        static int IndexOfOrder(string orderId)
-        {
-            for(int i = 0; i < json.database.orders.Count; i++)
-                if (orderId == json.database.orders[i].id)
-                    return i;
-            return -1;
-        }
-        static void SearchOrder()
-        {
-            Console.WriteLine("TÌM KIẾM ĐƠN HÀNG");
-            Console.Write("Nhập vào từ khóa: ");
-            string keyWord = Console.ReadLine().ToLower();
-            Console.WriteLine("Kết quả: ");
-            foreach (var order in json.database.orders)
-                if (order.id.Contains(keyWord) || order.customer.name.Contains(keyWord) || order.customer.address.Contains(keyWord))
-                    Console.WriteLine(order);
-        }
-        static void ShowOrders()
-        {
-            Console.Clear();
-            Console.WriteLine("DANH SÁCH ĐƠN HÀNG");
-            foreach (var order in json.database.orders)
-                Console.WriteLine(order);
-        }
         static void ManageUsers()
         {
             Console.Clear();
@@ -415,9 +92,10 @@ namespace BaiTap3
             {
                 Console.Write("QUẢN LÝ THÀNH VIÊN\n" +
                     "1. Hiển thị danh sách thành viên\n" +
-                    "2. Chỉnh sửa thông tin thành viên\n" +
-                    "3. Tạo thành viên mới\n" +
-                    "4. Thoát\n" +
+                    "2. Tìm kiếm thành viên\n" +
+                    "3. Chỉnh sửa thông tin thành viên\n" +
+                    "4. Tạo thành viên mới\n" +
+                    "5. Thoát\n" +
                     "_____________________\n" +
                     "Lựa chọn của bạn: ");
                 option = Console.ReadLine();
@@ -427,65 +105,35 @@ namespace BaiTap3
                         ShowUsers();
                         break;
                     case "2":
-                        ChangeUserInfo();
+                        SearchUser();
                         break;
                     case "3":
+                        ChangeUserInfo();
+                        break;
+                    case "4":
                         CreateNewUser();
                         break;
                 }
-            } while (option != "4");
-            
+            } while (option != "5");
+
         }
-        static void CreateNewUser()
+        static void ShowUsers()
         {
             Console.Clear();
-            Console.WriteLine("TẠO THÀNH VIÊN MỚI");
-            string newUserId = ++json.database.userIdCounter + "";
-            string newUserName;
-            string newUserPhoneNumber;
-            string newUserAddress;
-            bool inputNotValid = false;
-            do
-            {
-                if (inputNotValid)
-                    Console.WriteLine("Tên không được để trống!");
-                inputNotValid = false;
-                Console.Write("Nhập tên: ");
-                newUserName = Console.ReadLine();
-                if (newUserName == "")
-                    inputNotValid = true;
-            } while (inputNotValid);
-
-            do
-            {
-                if (inputNotValid)
-                    Console.WriteLine("Số điện thoại không hợp lệ!");
-                inputNotValid = false;
-                Console.Write("Nhập số điện thoại: ");
-                newUserPhoneNumber = Console.ReadLine();
-                if (!ValidatePhoneNumber(newUserPhoneNumber))
-                    inputNotValid = true;
-            } while (inputNotValid);
-
-            do
-            {
-                if (inputNotValid)
-                    Console.WriteLine("Địa chỉ không được để trống!");
-                inputNotValid = false;
-                Console.Write("Nhập địa chỉ: ");
-                newUserAddress = Console.ReadLine();
-                if (newUserAddress == "")
-                    inputNotValid = true;
-            } while (inputNotValid);
-            json.database.users.Add(new User()
-            {
-                id = newUserId,
-                name = newUserName,
-                address = newUserAddress,
-                phoneNumber = newUserPhoneNumber
-            });
-            json.WriteDatabase();
-            Console.WriteLine("Đã tạo thành viên mới!");
+            Console.WriteLine("DANH SÁCH THÀNH VIÊN");
+            foreach (var user in json.database.users)
+                Console.WriteLine(user);
+        }
+        static void SearchUser()
+        {
+            Console.Clear();
+            Console.Write("TÌM KIẾM THÀNH VIÊN\n" +
+                "Từ khóa: ");
+            string keyWord = Console.ReadLine().ToLower();
+            Console.WriteLine("Kết quả: ");
+            foreach (var user in json.database.users)
+                if (user.id.ToLower().Contains(keyWord) || user.name.ToLower().Contains(keyWord) || user.address.ToLower().Contains(keyWord) || user.phoneNumber.ToLower().Contains(keyWord))
+                    Console.WriteLine(user);
         }
         static void ChangeUserInfo()
         {
@@ -554,24 +202,350 @@ namespace BaiTap3
                 } while (option != "4");
             }
         }
-        static bool ValidatePhoneNumber(string phoneNumber)
-        {
-            string regex = @"^(0[3|5|7|8|9])+([0-9]{8})\b$";
-            return Regex.IsMatch(phoneNumber, regex);
-        }
-        static int IndexOfUser(string userId)
-        {
-            for (int i = 0; i < json.database.users.Count; i++)
-                if (userId == json.database.users[i].id)
-                    return i;
-            return -1;
-        }
-        static void ShowUsers()
+        static void CreateNewUser()
         {
             Console.Clear();
-            Console.WriteLine("DANH SÁCH THÀNH VIÊN");
-            foreach (var user in json.database.users)
-                Console.WriteLine(user);
+            Console.WriteLine("TẠO THÀNH VIÊN MỚI");
+            string newUserId = ++json.database.userIdCounter + "";
+            string newUserName;
+            string newUserPhoneNumber;
+            string newUserAddress;
+            bool inputNotValid = false;
+            do
+            {
+                if (inputNotValid)
+                    Console.WriteLine("Tên không được để trống!");
+                inputNotValid = false;
+                Console.Write("Nhập tên: ");
+                newUserName = Console.ReadLine();
+                if (newUserName == "")
+                    inputNotValid = true;
+            } while (inputNotValid);
+
+            do
+            {
+                if (inputNotValid)
+                    Console.WriteLine("Số điện thoại không hợp lệ!");
+                inputNotValid = false;
+                Console.Write("Nhập số điện thoại: ");
+                newUserPhoneNumber = Console.ReadLine();
+                if (!ValidatePhoneNumber(newUserPhoneNumber))
+                    inputNotValid = true;
+            } while (inputNotValid);
+
+            do
+            {
+                if (inputNotValid)
+                    Console.WriteLine("Địa chỉ không được để trống!");
+                inputNotValid = false;
+                Console.Write("Nhập địa chỉ: ");
+                newUserAddress = Console.ReadLine();
+                if (newUserAddress == "")
+                    inputNotValid = true;
+            } while (inputNotValid);
+            json.database.users.Add(new User()
+            {
+                id = newUserId,
+                name = newUserName,
+                address = newUserAddress,
+                phoneNumber = newUserPhoneNumber
+            });
+            json.WriteDatabase();
+            Console.WriteLine("Đã tạo thành viên mới!");
+        }
+        static void ManageOrders()
+        {
+            Console.Clear();
+            string option;
+            do
+            {
+                Console.Write("QUẢN LÝ ĐƠN HÀNG\n" +
+                    "1. Hiển thị các đơn hàng\n" +
+                    "2. Tìm kiếm đơn hàng\n" +
+                    "3. Đổi trạng thái đơn hàng\n" +
+                    "4. Thay đổi thông tin đơn hàng\n" +
+                    "5. Tạo đơn hàng mới\n" +
+                    "6. Thoát\n" +
+                    "_________________________\n" +
+                    "Lựa chọn của bạn: ");
+                option = Console.ReadLine();
+                switch (option)
+                {
+                    case "1":
+                        ShowOrders();
+                        break;
+                    case "2":
+                        SearchOrder();
+                        break;
+                    case "3":
+                        ChangeOrderStatus();
+                        break;
+                    case "4":
+                        UpdateOrder();
+                        break;
+                    case "5":
+                        CreateNewOrder();
+                        break;
+                }
+            } while (option != "6");
+        }
+        static void ShowOrders()
+        {
+            Console.Clear();
+            Console.WriteLine("DANH SÁCH ĐƠN HÀNG");
+            foreach (var order in json.database.orders)
+                Console.WriteLine(order);
+        }
+        static void SearchOrder()
+        {
+            Console.WriteLine("TÌM KIẾM ĐƠN HÀNG");
+            Console.Write("Nhập vào từ khóa: ");
+            string keyWord = Console.ReadLine().ToLower();
+            Console.WriteLine("Kết quả: ");
+            foreach (var order in json.database.orders)
+                if (order.id.Contains(keyWord) || order.customer.name.Contains(keyWord) || order.customer.address.Contains(keyWord))
+                    Console.WriteLine(order);
+        }
+        static void ChangeOrderStatus()
+        {
+            Console.Clear();
+            Console.WriteLine("THAY ĐỔI TRẠNG THÁI ĐƠN HÀNG");
+            Console.Write("ID đơn hàng: ");
+            string orderId = Console.ReadLine();
+            int indexOfOrder = IndexOfOrder(orderId);
+            if (indexOfOrder == -1)
+                Console.WriteLine($"Không có đơn hàng {orderId}");
+            else
+            {
+                ChangeOrderStatus(orderId);
+            }
+        }
+        static void UpdateOrder()
+        {
+            Console.Write("Nhập vào ID đơn hàng: ");
+            string orderId = Console.ReadLine();
+            int indexOfOrder = IndexOfOrder(orderId);
+            if (indexOfOrder == -1 || json.database.orders[indexOfOrder].orderStatus == OrderStatus.Canceled || json.database.orders[indexOfOrder].orderStatus == OrderStatus.Completed)
+                Console.WriteLine("Đơn hàng không tồn tại hoặc đã hoàn thành / đã hủy!");
+            else
+            {
+                string option;
+                do
+                {
+                    Console.WriteLine($"Thay đổi thông tin đơn hàng {orderId}");
+                    Console.Write("1. Thay đổi trạng thái đơn hàng\n" +
+                        "2. Thay đổi thông tin khách hàng\n" +
+                        "3. Thay đổi sản phẩm đặt hàng\n" +
+                        "4. Thoát\n" +
+                        "___________________\n" +
+                        "Lựa chọn của bạn: ");
+                    option = Console.ReadLine();
+                    switch (option)
+                    {
+                        case "1":
+                            ChangeOrderStatus(orderId);
+                            break;
+                        case "2":
+                            ChangeOrderUserInfo(orderId);
+                            break;
+                        case "3":
+                            ChangeOrderItems(orderId);
+                            break;
+                    }
+                } while (option != "4");
+            }
+        }
+        static void ChangeOrderStatus(string orderId)
+        {
+            string option;
+            do
+            {
+                var order = json.database.orders[IndexOfOrder(orderId)];
+                Console.Write("1. Pending\n" +
+                    "2. Processing\n" +
+                    "3. Completed\n" +
+                    "4. Canceled\n" +
+                    "______________\n" +
+                    "Lựa chọn của bạn: ");
+                option = Console.ReadLine();
+                switch (option)
+                {
+                    case "1":
+                        order.orderStatus = OrderStatus.Pending;
+                        json.WriteDatabase();
+                        break;
+                    case "2":
+                        order.orderStatus = OrderStatus.Processing;
+                        json.WriteDatabase();
+                        break;
+                    case "3":
+                        order.orderStatus = OrderStatus.Completed;
+                        json.WriteJsonBill(order);
+                        json.WriteDatabase();
+                        break;
+                    case "4":
+                        order.orderStatus = OrderStatus.Canceled;
+                        foreach (var item in order.items)
+                            json.database.products[IndexOfProduct(item.id)].remain += item.quantity;
+                        json.WriteDatabase();
+                        break;
+                }
+            } while (option != "1" && option != "2" && option != "3" && option != "4");
+        }
+        static void ChangeOrderUserInfo(string orderId)
+        {
+            string option;
+            do
+            {
+                Console.Write("1. Đổi tên\n" +
+                    "2. Đổi số điện thoại\n" +
+                    "3. Đổi địa chỉ\n" +
+                    "4. Thoát\n" +
+                    "________________\n" +
+                    "Lựa chọn của bạn: ");
+                option = Console.ReadLine();
+                switch (option)
+                {
+                    case "1":
+                        Console.Write("Nhập tên mới: ");
+                        json.database.orders[IndexOfOrder(orderId)].customer.name = Console.ReadLine();
+                        json.WriteDatabase();
+                        Console.WriteLine("Đã đổi tên!");
+                        break;
+                    case "2":
+                        Console.Write("Nhập số điện thoại mới: ");
+                        string newPhoneNumber = Console.ReadLine();
+                        if (ValidatePhoneNumber(newPhoneNumber))
+                        {
+                            json.database.orders[IndexOfOrder(orderId)].customer.name = Console.ReadLine();
+                            json.WriteDatabase();
+                            Console.WriteLine("Đã đổi tên!");
+                        }
+                        else
+                            Console.WriteLine("Số điện thoại không hợp lệ!");
+                        break;
+                    case "3":
+                        Console.Write("Nhập địa chỉ mới: ");
+                        json.database.orders[IndexOfOrder(orderId)].customer.address = Console.ReadLine();
+                        json.WriteDatabase();
+                        Console.WriteLine("Đã đổi địa chỉ!");
+                        break;
+                }
+            } while (option != "4");
+        }
+        static void ChangeOrderItems(string orderId)
+        {
+            int indexOfOrder = IndexOfOrder(orderId);
+            Console.Write("Nhập ID sản phẩm: ");
+            string productId = Console.ReadLine();
+            int indexOfProduct = IndexOfProduct(productId);
+            if (indexOfProduct == -1)
+                Console.WriteLine($"Không có sản phẩm {productId}!");
+            else
+            {
+                int indexOfProductInOrderItems = IndexOfProductInOrderItems(productId, json.database.orders[indexOfOrder].items);
+                if (indexOfProductInOrderItems == -1)
+                {
+                    Console.Write("Thêm vào sản phẩm khác? y/n: ");
+                    if (Console.ReadLine() == "y")
+                    {
+                        Console.Write("Nhập vào số lượng: ");
+                        uint.TryParse(Console.ReadLine(), out uint itemQuantity);
+                        json.database.orders[indexOfOrder].items.Add(new ItemOrder()
+                        {
+                            id = productId,
+                            name = json.database.products[indexOfProduct].name,
+                            price = json.database.products[indexOfProduct].price,
+                            quantity = (int)itemQuantity,
+                            itemAmount = json.database.products[indexOfProduct].price * (int)itemQuantity
+                        });
+                        json.database.products[indexOfProduct].remain += (int)itemQuantity;
+                        json.WriteDatabase();
+                        Console.WriteLine("Đã thêm sản phẩm!");
+                    }
+                }
+                else
+                {
+                    Console.Write("Thêm / bớt số lượng sản phẩm? y/n: ");
+                    if (Console.ReadLine() == "y")
+                    {
+                        Console.Write("Nhập vào số lượng thêm / bớt (+/-): ");
+                        int.TryParse(Console.ReadLine(), out int itemQuantity);
+                        json.database.orders[indexOfOrder].items[indexOfProductInOrderItems].quantity += itemQuantity;
+                        json.database.orders[indexOfOrder].items[indexOfProductInOrderItems].itemAmount += json.database.orders[indexOfOrder].items[indexOfProductInOrderItems].price * itemQuantity;
+                        json.database.orders[indexOfOrder].total += json.database.orders[indexOfOrder].items[indexOfProductInOrderItems].price * itemQuantity;
+                        json.database.products[indexOfProduct].remain += itemQuantity;
+                        json.WriteDatabase();
+                        Console.WriteLine("Đã thay đổi số lượng!");
+                    }
+                }
+            }
+        }
+        static void CreateNewOrder()
+        {
+            Console.Clear();
+            Console.WriteLine("TẠO ĐƠN HÀNG MỚI");
+            string orderId = ++json.database.orderIdCounter + "";
+            string userId = "";
+            int indexOfUser = 0;
+            do
+            {
+                if (indexOfUser == -1)
+                {
+                    Console.Write($"Không có khách hàng {userId}. Bạn có muốn tạo khách hàng mới không? y/n: ");
+                    if (Console.ReadLine() == "y")
+                        CreateNewUser();
+                }
+                Console.Write("Nhập vào ID khách hàng: ");
+                userId = Console.ReadLine();
+                indexOfUser = IndexOfUser(userId);
+            } while (indexOfUser == -1);
+
+            var orderItems = new List<ItemOrder>();
+            string option;
+            do
+            {
+                Console.Write("Id sản phẩm: ");
+                string productId = Console.ReadLine();
+                int indexOfProduct = IndexOfProduct(productId);
+                if (indexOfProduct == -1)
+                    Console.WriteLine($"Không có sản phẩm {productId}");
+                else
+                {
+                    Console.Write("Số lượng: ");
+                    uint.TryParse(Console.ReadLine(), out uint productQuantity);
+                    int indexOfProductInOrderItems = IndexOfProductInOrderItems(productId, orderItems);
+                    if (indexOfProductInOrderItems == -1)
+                    {
+                        orderItems.Add(new ItemOrder()
+                        {
+                            id = productId,
+                            name = json.database.products[indexOfProduct].name,
+                            price = json.database.products[indexOfProduct].price,
+                            quantity = (int)productQuantity,
+                            itemAmount = json.database.products[indexOfProduct].price * (int)productQuantity
+                        });
+                    }
+                    else
+                    {
+                        orderItems[indexOfProductInOrderItems].quantity += (int) productQuantity;
+                    }
+                }
+                Console.Write("Thêm sản phẩm khác? y/n: ");
+                option = Console.ReadLine(); 
+            } while (option == "y");
+            int orderTotal = 0;
+            foreach (var item in orderItems)
+                orderTotal += item.itemAmount;
+            json.database.orders.Add(new Order()
+            {
+                id = orderId,
+                customer = json.database.users[indexOfUser],
+                orderStatus = OrderStatus.Pending,
+                items = orderItems,
+                total = orderTotal
+            });
+            json.WriteDatabase();
         }
         static void ManageProducts()
         {
@@ -602,6 +576,24 @@ namespace BaiTap3
 
                 }
             } while (option != "5");
+        }
+        static void ShowProducts()
+        {
+            Console.Clear();
+            Console.WriteLine("DANH SÁCH SẢN PHẨM");
+            foreach (var product in json.database.products)
+                Console.WriteLine(product);
+        }
+        static void SearchProduct()
+        {
+            Console.Clear();
+            Console.Write("TÌM KIẾM SẢN PHẨM\n" +
+                "Nhập vào từ khóa: ");
+            string keyWord = Console.ReadLine().ToLower();
+            Console.WriteLine("Kết quả: ");
+            foreach (var product in json.database.products)
+                if (product.id.ToLower().Contains(keyWord) || product.name.ToLower().Contains(keyWord))
+                    Console.WriteLine(product);
         }
         static void ChangeProductInfo()
         {
@@ -650,22 +642,10 @@ namespace BaiTap3
                 } while (option != "4");
             }
         }
-        static void SearchProduct()
+        static bool ValidatePhoneNumber(string phoneNumber)
         {
-            Console.Clear();
-            Console.Write("TÌM KIẾM SẢN PHẨM\n" +
-                "Nhập vào từ khóa: ");
-            string keyWord = Console.ReadLine().ToLower();
-            foreach (var product in json.database.products)
-                if (product.id.ToLower().Contains(keyWord) || product.name.ToLower().Contains(keyWord))
-                    Console.WriteLine(product);
-        }
-        static void ShowProducts()
-        {
-            Console.Clear();
-            Console.WriteLine("DANH SÁCH SẢN PHẨM");
-            foreach (var product in json.database.products)
-                Console.WriteLine(product);
+            string regex = @"^(0[3|5|7|8|9])+([0-9]{8})\b$";
+            return Regex.IsMatch(phoneNumber, regex);
         }
         static int IndexOfProduct(string productId)
         {
@@ -674,24 +654,26 @@ namespace BaiTap3
                     return i;
             return -1;
         }
-        static void ChangeAdminPassword()
+        static int IndexOfUser(string userId)
         {
-            Console.Clear();
-            Console.WriteLine("ĐỔI MẬT KHẨU");
-            string regex = @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,15}$";
-            string newPassword;
-            bool passWordIsNotValid = false;
-            do
-            {
-                if (passWordIsNotValid)
-                    Console.WriteLine("Mật khẩu không đủ mạnh, hãy nhập mật khẩu khác!");
-                Console.Write("Mật khẩu mới: ");
-                newPassword = Console.ReadLine();
-                passWordIsNotValid = !Regex.IsMatch(newPassword, regex);
-            } while (passWordIsNotValid);
-            json.database.admin.passWord = newPassword;
-            json.WriteDatabase();
-            Console.WriteLine("Đã thay đổi thành công!");
+            for (int i = 0; i < json.database.users.Count; i++)
+                if (userId == json.database.users[i].id)
+                    return i;
+            return -1;
+        }
+        static int IndexOfOrder(string orderId)
+        {
+            for (int i = 0; i < json.database.orders.Count; i++)
+                if (orderId == json.database.orders[i].id)
+                    return i;
+            return -1;
+        }
+        static int IndexOfProductInOrderItems(string productId, List<ItemOrder> items)
+        {
+            for (int i = 0; i < items.Count; i++)
+                if (productId == items[i].id)
+                    return i;
+            return -1;
         }
     }
 }
