@@ -1,0 +1,13 @@
+D:\codegym\github\codegym\CSharp\Exam\Cau1\bin\Debug\netcoreapp3.1\Cau1.exe
+D:\codegym\github\codegym\CSharp\Exam\Cau1\bin\Debug\netcoreapp3.1\Cau1.deps.json
+D:\codegym\github\codegym\CSharp\Exam\Cau1\bin\Debug\netcoreapp3.1\Cau1.runtimeconfig.json
+D:\codegym\github\codegym\CSharp\Exam\Cau1\bin\Debug\netcoreapp3.1\Cau1.runtimeconfig.dev.json
+D:\codegym\github\codegym\CSharp\Exam\Cau1\bin\Debug\netcoreapp3.1\Cau1.dll
+D:\codegym\github\codegym\CSharp\Exam\Cau1\bin\Debug\netcoreapp3.1\Cau1.pdb
+D:\codegym\github\codegym\CSharp\Exam\Cau1\obj\Debug\netcoreapp3.1\Cau1.csprojAssemblyReference.cache
+D:\codegym\github\codegym\CSharp\Exam\Cau1\obj\Debug\netcoreapp3.1\Cau1.csproj.CoreCompileInputs.cache
+D:\codegym\github\codegym\CSharp\Exam\Cau1\obj\Debug\netcoreapp3.1\Cau1.AssemblyInfoInputs.cache
+D:\codegym\github\codegym\CSharp\Exam\Cau1\obj\Debug\netcoreapp3.1\Cau1.AssemblyInfo.cs
+D:\codegym\github\codegym\CSharp\Exam\Cau1\obj\Debug\netcoreapp3.1\Cau1.dll
+D:\codegym\github\codegym\CSharp\Exam\Cau1\obj\Debug\netcoreapp3.1\Cau1.pdb
+D:\codegym\github\codegym\CSharp\Exam\Cau1\obj\Debug\netcoreapp3.1\Cau1.genruntimeconfig.cache

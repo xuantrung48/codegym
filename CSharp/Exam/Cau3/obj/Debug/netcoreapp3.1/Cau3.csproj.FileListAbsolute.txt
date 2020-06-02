@@ -1,0 +1,13 @@
+D:\codegym\github\codegym\CSharp\Exam\Cau3\bin\Debug\netcoreapp3.1\Cau3.exe
+D:\codegym\github\codegym\CSharp\Exam\Cau3\bin\Debug\netcoreapp3.1\Cau3.deps.json
+D:\codegym\github\codegym\CSharp\Exam\Cau3\bin\Debug\netcoreapp3.1\Cau3.runtimeconfig.json
+D:\codegym\github\codegym\CSharp\Exam\Cau3\bin\Debug\netcoreapp3.1\Cau3.runtimeconfig.dev.json
+D:\codegym\github\codegym\CSharp\Exam\Cau3\bin\Debug\netcoreapp3.1\Cau3.dll
+D:\codegym\github\codegym\CSharp\Exam\Cau3\bin\Debug\netcoreapp3.1\Cau3.pdb
+D:\codegym\github\codegym\CSharp\Exam\Cau3\obj\Debug\netcoreapp3.1\Cau3.csprojAssemblyReference.cache
+D:\codegym\github\codegym\CSharp\Exam\Cau3\obj\Debug\netcoreapp3.1\Cau3.csproj.CoreCompileInputs.cache
+D:\codegym\github\codegym\CSharp\Exam\Cau3\obj\Debug\netcoreapp3.1\Cau3.AssemblyInfoInputs.cache
+D:\codegym\github\codegym\CSharp\Exam\Cau3\obj\Debug\netcoreapp3.1\Cau3.AssemblyInfo.cs
+D:\codegym\github\codegym\CSharp\Exam\Cau3\obj\Debug\netcoreapp3.1\Cau3.dll
+D:\codegym\github\codegym\CSharp\Exam\Cau3\obj\Debug\netcoreapp3.1\Cau3.pdb
+D:\codegym\github\codegym\CSharp\Exam\Cau3\obj\Debug\netcoreapp3.1\Cau3.genruntimeconfig.cache

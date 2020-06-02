@@ -10,6 +10,11 @@
           "startTime": "27/05/2020 07:48 CH",
           "endTime": null,
           "workingTime": 0.0
+        },
+        {
+          "startTime": "28/05/2020 08:41 SA",
+          "endTime": null,
+          "workingTime": 0.0
         }
       ],
       "orders": [
@@ -27,6 +32,11 @@
           "startTime": "27/05/2020 08:26 CH",
           "endTime": "27/05/2020 08:26 CH",
           "workingTime": 0.0
+        },
+        {
+          "startTime": "28/05/2020 08:34 SA",
+          "endTime": "28/05/2020 08:40 SA",
+          "workingTime": 0.1
         }
       ],
       "orders": [
@@ -164,5 +174,5 @@
     }
   ],
   "orderIdCounter": 9,
-  "basicSalary": 0
+  "basicSalary": 10000
 }
